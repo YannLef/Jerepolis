@@ -1,0 +1,2 @@
+/usr/bin/ar qc libBetterTerminal.a  CMakeFiles/BetterTerminal.dir/src/BetterTerminal.c.o
+/usr/bin/ranlib libBetterTerminal.a

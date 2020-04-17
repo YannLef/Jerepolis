@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yncrea/Bureau/projet/algo-s2/BetterTerminal/headers/BetterTerminal.h
+
+/home/yncrea/Bureau/projet/algo-s2/BetterTerminal/src/BetterTerminal.c
+stdlib.h
+-
+stdio.h
+-
+stdarg.h
+-
+../headers/BetterTerminal.h
+/home/yncrea/Bureau/projet/algo-s2/BetterTerminal/headers/BetterTerminal.h
+
