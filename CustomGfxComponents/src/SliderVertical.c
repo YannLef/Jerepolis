@@ -1,15 +1,33 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Mouse.h"
 #include "../headers/Page.h"
+
+/**
+ * Includes correspondant
+ * */
 #include "../headers/SliderVertical.h"
 
 extern mouse souris;
@@ -25,6 +43,7 @@ extern mouse souris;
  * @author Yann LEFEVRE
  * */
 void initSliderVertical(sliderVertical* sli, int x, int y, int hauteur, int epaisseurLigne, int epaisseurPointeur, couleur cLigne, couleur cPointeur, int min, int max, int* var){
+	debug("<initSliderVertical> begin");
 	
 	sli->x = x;
 	sli->y = y;
@@ -37,6 +56,7 @@ void initSliderVertical(sliderVertical* sli, int x, int y, int hauteur, int epai
 	sli->max = max;
 	sli->var = var; // Le pointeur vers la variable que fait évoluer le slider
 	
+	debug("<initSliderVertical> end");
 }
 
  /**
@@ -50,6 +70,8 @@ void initSliderVertical(sliderVertical* sli, int x, int y, int hauteur, int epai
  * @author Yann LEFEVRE
  * */
 void afficheSliderVertical(sliderVertical sli){
+	debug("<afficheSliderVertical> begin");
+	
 	// Partie ligne
 	epaisseurDeTrait(sli.epaisseurLigne);
 	changeColor(sli.cLigne);
@@ -66,6 +88,8 @@ void afficheSliderVertical(sliderVertical sli){
 	epaisseurDeTrait(sli.epaisseurPointeur);
 	changeColor(sli.cPointeur);
 	point(sli.x,sli.y - sli.hauteur/2 + posY);
+	
+	debug("<afficheSliderVertical> end");
 }
 
  /**
@@ -79,6 +103,8 @@ void afficheSliderVertical(sliderVertical sli){
  * @author Yann LEFEVRE
  * */
 void gereClicSliderVertical(sliderVertical* sli, int xSouris, int ySouris){
+	debug("<gereClicSliderVertical> begin");
+	
 	if(mouseLeftIsDown()){
 		if(ySouris >= sli->y - sli->hauteur/2){
 			if(ySouris <= sli->y + sli->hauteur/2){
@@ -95,4 +121,6 @@ void gereClicSliderVertical(sliderVertical* sli, int xSouris, int ySouris){
 			*(sli->var) = sli->min;
 		}
 	}
+	
+	debug("<gereClicSliderVertical> end");
 }

@@ -1,12 +1,30 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
+
+/**
+ * Includes correspondant
+ * */
 #include "../headers/Couleur.h"
 
 extern couleurTab c; // Synchronise le clavier avec les autres fichiers
@@ -23,6 +41,8 @@ extern couleurTab c; // Synchronise le clavier avec les autres fichiers
  * @author Yann LEFEVRE
  * */
 void initCouleurTab(couleurTab* c){
+	debug("<initCouleurTab> begin");
+	
 	initCouleur(&(c->couleurHomme), 49, 140, 231);
 	initCouleur(&(c->couleurFemme), 223, 115, 255);
 	initCouleur(&(c->couleurMenuDeroulant), 130, 224, 170);
@@ -33,6 +53,8 @@ void initCouleurTab(couleurTab* c){
 	initCouleur(&(c->vertPrincipal), 139, 195, 74);
 	initCouleur(&(c->bleuEcriture), 38, 193, 225);
 	initCouleur(&(c->fondPrincipal), 241, 255, 251);
+	
+	debug("<initCouleurTab> end");
 }
 
 /**
@@ -41,9 +63,13 @@ void initCouleurTab(couleurTab* c){
  * @author Yann LEFEVRE
  * */
 void initCouleur(couleur* c, unsigned char r, unsigned char v, unsigned char b){
+	debug("<initCouleur> begin");
+	
 	c->r = r;
 	c->v = v;
 	c->b = b;
+	
+	debug("<initCouleur> end");
 }
 
 /**
@@ -51,5 +77,9 @@ void initCouleur(couleur* c, unsigned char r, unsigned char v, unsigned char b){
  * @author Yann LEFEVRE
  * */
 void changeColor(couleur c){
+	debug("<changeColor> begin");
+	
 	couleurCourante(c.r,c.v,c.b);
+	
+	debug("<changeColor> end");
 }

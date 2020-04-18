@@ -1,15 +1,33 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Mouse.h"
 #include "../headers/Page.h"
+
+/**
+ * Includes correspondant
+ * */
 #include "../headers/SliderHorizontal.h"
 
 extern mouse souris;
@@ -25,6 +43,7 @@ extern mouse souris;
  * @author Yann LEFEVRE
  * */
 void initSliderHorizontal(sliderHorizontal* sli, int x, int y, int largeur, int epaisseurLigne, int epaisseurPointeur, couleur cLigne, couleur cPointeur, int min, int max, int* var){
+	debug("<initSliderHorizontal> begin");
 	
 	sli->x = x;
 	sli->y = y;
@@ -37,6 +56,7 @@ void initSliderHorizontal(sliderHorizontal* sli, int x, int y, int largeur, int 
 	sli->max = max;
 	sli->var = var; // Le pointeur vers la variable que fait évoluer le slider
 	
+	debug("<initSliderHorizontal> end");
 }
 
  /**
@@ -50,6 +70,8 @@ void initSliderHorizontal(sliderHorizontal* sli, int x, int y, int largeur, int 
  * @author Yann LEFEVRE
  * */
 void afficheSliderHorizontal(sliderHorizontal sli){
+	debug("<afficheSliderHorizontal> begin");
+	
 	// Partie ligne
 	epaisseurDeTrait(sli.epaisseurLigne);
 	changeColor(sli.cLigne);
@@ -66,6 +88,8 @@ void afficheSliderHorizontal(sliderHorizontal sli){
 	epaisseurDeTrait(sli.epaisseurPointeur);
 	changeColor(sli.cPointeur);
 	point(sli.x - sli.largeur/2 + posX,sli.y);
+	
+	debug("<afficheSliderHorizontal> end");
 }
 
  /**
@@ -79,6 +103,8 @@ void afficheSliderHorizontal(sliderHorizontal sli){
  * @author Yann LEFEVRE
  * */
 void gereClicSliderHorizontal(sliderHorizontal* sli, int xSouris, int ySouris){
+	debug("<gereClicSliderHorizontal> begin");
+	
 	if(mouseLeftIsDown()){
 		if(xSouris >= sli->x - sli->largeur/2){
 			if(xSouris <= sli->x + sli->largeur/2){
@@ -96,4 +122,6 @@ void gereClicSliderHorizontal(sliderHorizontal* sli, int xSouris, int ySouris){
 			*(sli->var) = sli->min;
 		}
 	}
+	
+	debug("<gereClicSliderHorizontal> end");
 }

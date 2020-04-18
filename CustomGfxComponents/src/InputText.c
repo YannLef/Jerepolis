@@ -1,16 +1,33 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Keyboard.h"
 #include "../headers/Rectangle.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/InputText.h"
 
 extern keyboard keys; // Synchronise le clavier avec les autres fichiers
@@ -26,10 +43,14 @@ extern keyboard keys; // Synchronise le clavier avec les autres fichiers
  * @author Yann LEFEVRE
  * */
 void initInputText(inputText* input, int etat, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure){
+	debug("<initInputText> begin");
+	
 	input->etat = etat; // l'état permet de savoir si l'input à le focus (=1) ou non (=0) : si on a le focus alors on peut nous écrire dedans
 	input->size = 0; // la taille actuelle de la chaine, gérée dynamiquement
 	input->string = NULL; // la chaine, initialement vide => NULL
 	initRectangle(&(input->rect),x,y,largeur,hauteur,epaisseurBordure,cInterieur,cBordure);
+	
+	debug("<initInputText> end");
 }
 
 /**
@@ -37,11 +58,15 @@ void initInputText(inputText* input, int etat, int x, int y, int largeur, int ha
  * @author Yann LEFEVRE
  * */
 void resetInputText(inputText* input){
+	debug("<resetInputText> begin");
+	
 	if(input->string != NULL){
 		free(input->string); // On libère la mémoire allouée
 		input->string = NULL; // On met le pointeur à null
 		input->size = 0; // On indique que la taille de la chaine est = à 0
 	}
+	
+	debug("<resetInputText> end");
 }
 
 /**
@@ -51,6 +76,8 @@ void resetInputText(inputText* input){
  * @author Yann LEFEVRE
  * */
 void setString(inputText* input, char* string){
+	debug("<setString> begin");
+	
 	if(string != NULL){
 		input->string = malloc(sizeof(char*)*(strlen(string) + 1));
 		input->size = strlen(string) + 1;
@@ -61,6 +88,8 @@ void setString(inputText* input, char* string){
 		}
 		input->string = NULL;
 	}
+	
+	debug("<setString> end");
 }
   
  /**
@@ -74,6 +103,8 @@ void setString(inputText* input, char* string){
  * @author Yann LEFEVRE
  * */
 void afficheInputTexte(inputText input, int xEcran, int yEcran, float coefZoom){
+	debug("<afficheInputTexte> begin");
+	
 	afficheRectangle(input.rect,0,xEcran,yEcran,coefZoom); // Affiche le rectangle servant pour limitation de l'input
 	if(input.string != NULL){
 		couleurCourante(0,0,0);
@@ -85,6 +116,8 @@ void afficheInputTexte(inputText input, int xEcran, int yEcran, float coefZoom){
 		int y = input.rect.y - taille/3;
 		afficheChaine(input.string,taille,x,y);
 	}
+	
+	debug("<afficheInputTexte> end");
 }
 
  /**
@@ -98,18 +131,26 @@ void afficheInputTexte(inputText input, int xEcran, int yEcran, float coefZoom){
  * @author Yann LEFEVRE
  * */
 void toggleEtatInput(inputText* input){
+	debug("<toggleEtatInput> begin");
+	
 	if(input->etat){
 		input->etat = 0;
 	}else{
 		input->etat = 1;
 	}
+	
+	debug("<toggleEtatInput> begin");
 }
 
 /**
  * Fonction permettant de définir l'etat d'un input
  * */
 void setEtatInput(inputText* input, bool etat){
+	debug("<setEtatInput> begin");
+	
 	input->etat = etat;
+	
+	debug("<setEtatInput> begin");
 }
 
 /**
@@ -117,6 +158,8 @@ void setEtatInput(inputText* input, bool etat){
  * @author Yann LEFEVRE
  * */
 void completeInputText(inputText* input, char c){
+	debug("<completeInputText> begin");
+	
 	char* tmp; // On utilise un variable temporaire pour permutter entre l'ancienne chaine et la nouvelle
 	if(c != 127 && c != 8){ // On ajoute une lettre (car la touche appué n'est ni del ni backspace)
 			input->size ++; // On augmente la taille actuelle
@@ -156,6 +199,8 @@ void completeInputText(inputText* input, char c){
 			}
 		}
 	}
+	
+	debug("<completeInputText> end");
 }
 
 /**
@@ -164,6 +209,8 @@ void completeInputText(inputText* input, char c){
  * @author Yann LEFEVRE
  * */
 void updateInputText(inputText* input){
+	debug("<updateInputText> begin");
+	
 	if(input->etat){
 			// On vérifie quelle touche a été enfoncée.
 			// Si une touche est enfoncée, on indique à l'input qu'il doit la prendre en compte (modifier sa chaine en fonction).
@@ -240,6 +287,8 @@ void updateInputText(inputText* input){
 			if(keys.key_del==0){ completeInputText(input, 127); keys.key_del = 1; }
 			if(keys.key_backspace==0){ completeInputText(input, 8); keys.key_backspace = 1; }
 		}
+		
+	debug("<updateInputText> end");
 }
 
  /**
@@ -254,9 +303,13 @@ void updateInputText(inputText* input){
  * @author Yann LEFEVRE
  * */
 void gereSourisInputText(inputText* input, int xSouris, int ySouris){
+	debug("<gereSourisInputText> begin");
+	
 	if(isOnRectangle(xSouris,ySouris,input->rect)){
 		setEtatInput(input,1);
 	}else{
 		setEtatInput(input,0);
 	}
+	
+	debug("<gereSourisInputText> end");
 }

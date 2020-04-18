@@ -63,6 +63,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -85,6 +87,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -107,6 +111,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -131,6 +137,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -159,6 +167,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -179,6 +189,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -201,6 +213,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -225,6 +239,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -243,6 +259,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -267,6 +285,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -295,6 +315,8 @@ unistd.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -345,6 +367,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -381,12 +405,14 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
-../headers/Keyboard.h
-/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Keyboard.h
 ../headers/Page.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Page.h
+../headers/Keyboard.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Keyboard.h
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Mouse.c
 stdlib.h
@@ -401,6 +427,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Mouse.h
@@ -419,6 +447,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -431,10 +461,10 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Formulaire.h
 ../headers/DropDownMenuRight.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/DropDownMenuRight.h
-../headers/Navbar.h
-/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Navbar.h
 ../headers/InputText.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
+../headers/Navbar.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Navbar.h
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Page.c
 stdlib.h
@@ -449,6 +479,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Formulaire.h
@@ -473,6 +505,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -497,6 +531,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -519,6 +555,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -543,6 +581,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../headers/Couleur.h
@@ -563,4 +603,6 @@ windows.h
 -
 stdbool.h
 -
+
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 

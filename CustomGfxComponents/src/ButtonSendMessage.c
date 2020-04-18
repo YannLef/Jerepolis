@@ -1,11 +1,25 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Page.h"
@@ -13,6 +27,9 @@
 #include "../headers/Conversation.h"
 #include "../headers/InputText.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/ButtonSendMessage.h"
 
 
@@ -27,6 +44,7 @@
  * @author Yann LEFEVRE
  * */
 void initBoutonSendMessage(boutonSendMessage* b, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure, couleur cText, int epaisseurTrait){
+	debug("<initBoutonSendMessage> begin");
 
 	b->string = malloc(sizeof(char)*3);
 	strcpy(b->string,"OK");
@@ -34,6 +52,7 @@ void initBoutonSendMessage(boutonSendMessage* b, int x, int y, int largeur, int 
 	b->epaisseurTrait = epaisseurTrait;
 	initRectangle(&(b->rect),x,y,largeur,hauteur,epaisseurBordure,cInterieur, cBordure);
 	
+	debug("<initBoutonSendMessage> end");
 }
 
  /**
@@ -47,6 +66,8 @@ void initBoutonSendMessage(boutonSendMessage* b, int x, int y, int largeur, int 
  * @author Yann LEFEVRE
  * */
 void afficheBoutonSendMessage(boutonSendMessage b, int xEcran, int yEcran, float coefZoom){
+	debug("<afficheBoutonSendMessage> begin");
+	
 	afficheRectangle(b.rect,0,xEcran,yEcran,coefZoom);
 	if(b.string != NULL){
 		couleurCourante(b.cText.r,b.cText.v,b.cText.b);
@@ -70,6 +91,8 @@ void afficheBoutonSendMessage(boutonSendMessage b, int xEcran, int yEcran, float
 		int y = b.rect.y - taille/3;
 		afficheChaine(b.string,taille,x,y);
 	}
+	
+	debug("<afficheBoutonSendMessage> end");
 }
 
  /**
@@ -83,6 +106,8 @@ void afficheBoutonSendMessage(boutonSendMessage b, int xEcran, int yEcran, float
  * @author Yann LEFEVRE
  * */
 void gereSourisBoutonSendMessage(boutonSendMessage b, inputText* inputAssistant, message*** messages, int nbMessageMax, int* nbMessage, int xSouris, int ySouris){
+	debug("<gereSourisBoutonSendMessage> begin");
+	
 	// On vérifie que le clic est bel est bien sur le bouton
 	if(isOnRectangle(xSouris,ySouris,b.rect)){
 		message* msg = (message*)malloc(sizeof(message));
@@ -91,4 +116,6 @@ void gereSourisBoutonSendMessage(boutonSendMessage b, inputText* inputAssistant,
 
 		resetInputText(inputAssistant);
 	}
+	
+	debug("<gereSourisBoutonSendMessage> end");
 }

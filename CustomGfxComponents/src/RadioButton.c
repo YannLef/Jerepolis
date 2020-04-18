@@ -1,15 +1,33 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Carre.h"
 #include "../headers/Checkbox.h"
+
+/**
+ * Includes correspondant
+ * */
 #include "../headers/RadioButton.h"
 
  /**
@@ -25,6 +43,8 @@
  * @param nb le nombre de cases 
  * */
 void initRadioButton(radiobutton* rb, char* type, int x, int y, int cote, int epaisseurBordure, couleur cInterieur, couleur cBordure, int nb, int on){
+	debug("<initRadioButton> begin");
+	
 	rb->nb = nb;
 	rb->cases = NULL;
 	rb->on = on;
@@ -50,6 +70,8 @@ void initRadioButton(radiobutton* rb, char* type, int x, int y, int cote, int ep
 			}
 		}
 	}
+	
+	debug("<initRadioButton> end");
 }
 
 /**
@@ -64,9 +86,13 @@ void initRadioButton(radiobutton* rb, char* type, int x, int y, int cote, int ep
  * @param rb le radiobutton en question
  * */
 void afficheRadioButton(radiobutton rb){
+	debug("<afficheRadioButton> begin");
+	
 	for(int i=0;i<rb.nb;i++){
 		afficheCheckbox(rb.cases[i]);
 	}
+	
+	debug("<afficheRadioButton> end");
 }
 
  /**
@@ -81,6 +107,8 @@ void afficheRadioButton(radiobutton rb){
  * @param rb le radiobutton en question
  * */
 void updateRadioButton(radiobutton* rb){
+	debug("<updateRadioButton> begin");
+	
 	for(int i=0;i<rb->nb;i++){
 		if(rb->on != -1){ // Si la valeur de on n'est pas -1
 			if(rb->on == i){ // Si la valeur de on est égale à la checkbox actuelle, on passe son état à 1
@@ -92,6 +120,8 @@ void updateRadioButton(radiobutton* rb){
 			setEtatCheckbox(&(rb->cases[i]), 0);
 		}
 	}
+	
+	debug("<updateRadioButton> end");
 }
 
  /**
@@ -109,6 +139,8 @@ void updateRadioButton(radiobutton* rb){
  * @param ySouris l'ordonnée du clic souris
  * */
 void gereClicRadioButton(radiobutton* rb, int xSouris, int ySouris){
+	debug("<gereClicRadioButton> begin");
+	
 	for(int i=0;i<rb->nb;i++){
 		if(isOnCarre(xSouris,ySouris,(rb->cases[i]).square)){
 			if((rb->cases[i]).etat){ // Si on clique sur une case déjà activée, on la désactive et plus aucunes cases n'est activée
@@ -119,4 +151,6 @@ void gereClicRadioButton(radiobutton* rb, int xSouris, int ySouris){
 		}
 	}
 	updateRadioButton(rb);
+	
+	debug("<gereClicRadioButton> end");
 }

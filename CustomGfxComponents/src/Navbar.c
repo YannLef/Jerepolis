@@ -1,19 +1,37 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Keyboard.h"
 #include "../headers/Page.h"
 #include "../headers/Formulaire.h"
 #include "../headers/DropDownMenuRight.h"
-#include "../headers/Navbar.h"
 #include "../headers/InputText.h"
+
+/**
+ * Includes correspondant
+ * */
+#include "../headers/Navbar.h"
 
  /**
   * -----------------------------------------------------------
@@ -27,9 +45,13 @@
  * @author Yann LEFEVRE
  * */
 void initNavbar(int nav[10]){
+	debug("<initNavbar> begin");
+	
 	for(int i=0;i<10;i++){
 		nav[i] = 0;
 	}
+	
+	debug("<initNavbar> end");
 }
 
  /**
@@ -43,6 +65,7 @@ void initNavbar(int nav[10]){
  * @author Yann LEFEVRE
  * */
 void actualiseNavbar(int nbBouton, int nav[10]){
+	debug("<actualiseNavbar> begin");
 	
 	switch(nbBouton){
 		case 0:
@@ -75,6 +98,8 @@ void actualiseNavbar(int nbBouton, int nav[10]){
 		case 9:
 		break;
 	}
+	
+	debug("<actualiseNavbar> end");
 }
 
  /**
@@ -89,6 +114,8 @@ void actualiseNavbar(int nbBouton, int nav[10]){
  * @author Yann LEFEVRE
  * */
 void gereSourisNavbar(int xSouris, int ySouris, int nav[10]){
+	debug("<gereSourisNavbar> begin");
+	
 	if(xSouris >= 0 && xSouris <= 70){ // Si le x du clic se trouve entre 0 et 70, il est bien dans la zone de la navbar
 		for(int i=0; i<8; i++){ // En partant du haut on a 7 boutons de chacun 70 px de haut, pour chacuns d'eux on vérifie si le clic à lieu dessus
 			if(ySouris < hauteurFenetre() - 70*i && ySouris > hauteurFenetre() - 70*i - 70){
@@ -102,5 +129,7 @@ void gereSourisNavbar(int xSouris, int ySouris, int nav[10]){
 			}
 		}
 	}
+	
+	debug("<gereSourisNavbar> end");
 }
 

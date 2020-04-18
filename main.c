@@ -15,7 +15,7 @@
 /**
  * Includes Logger
  * */
- #include "Logger/headers/Logger.h"
+#include "Logger/headers/Logger.h"
 
 /**
  * Includes CustomGfxComponents

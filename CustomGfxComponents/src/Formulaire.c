@@ -1,12 +1,26 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 #include <unistd.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Keyboard.h"
@@ -24,20 +38,29 @@
 #include "../headers/Carre.h"
 #include "../headers/Checkbox.h"
 #include "../headers/RadioButton.h"
+
+/**
+ * Includes correspondant
+ * */
 #include "../headers/Formulaire.h"
 
 extern couleurTab c;
 
 void initForm(Form* formulaire){
+	debug("<initForm> begin");
+	
 	formulaire->nbCheckbox = 0;
 	formulaire->nbRadioButton = 0;
 	formulaire->nbInpuText = 0;
 	formulaire->tabCheckbox = NULL; // tableau des checkbox
 	formulaire->tabRadioButton = NULL; // tableau des radio button
     formulaire->tabInpuText = NULL; // tableau des input text
+    
+    debug("<initForm> end");
 }
 
 void freeForm(Form* formulaire){
+	debug("<freeForm> begin");
 	
 	// Il n'y a pas besoin de free les inputs eux même car ils sont en static et non malloc
 	
@@ -57,9 +80,13 @@ void freeForm(Form* formulaire){
 	}
 	free(formulaire->tabInpuText);
 	formulaire->tabInpuText = NULL;
+	
+	debug("<freeForm> end");
 }
 
 void addCheckboxToForm(Form* formulaire, checkbox* cb){
+	debug("<addCheckboxToForm> begin");
+	
 	if(formulaire->nbCheckbox == 0){ // Si le tableau est vide
 		formulaire->nbCheckbox = 1;
 		formulaire->tabCheckbox = (checkbox**)malloc(sizeof(checkbox*)*formulaire->nbCheckbox);
@@ -81,9 +108,13 @@ void addCheckboxToForm(Form* formulaire, checkbox* cb){
 		formulaire->tabCheckbox = tmp;
 		tmp = NULL;
 	}
+	
+	debug("<addCheckboxToForm> end");
 }
 
 void addRadioButtonToForm(Form* formulaire, radiobutton* rb){
+	debug("<addRadioButtonToForm> begin");
+	
 	if(formulaire->nbRadioButton == 0){ // Si le tableau est vide
 		formulaire->nbRadioButton = 1;
 		formulaire->tabRadioButton = (radiobutton**)malloc(sizeof(radiobutton*)*formulaire->nbRadioButton);
@@ -105,9 +136,13 @@ void addRadioButtonToForm(Form* formulaire, radiobutton* rb){
 		formulaire->tabRadioButton = tmp;
 		tmp = NULL;
 	}
+	
+	debug("<addRadioButtonToForm> end");
 }
 
 void addInputTextToForm(Form* formulaire, inputText* input){
+	debug("<addInputTextToForm> begin");
+	
 	if(formulaire->nbInpuText == 0){ // Si le tableau est vide
 		formulaire->nbInpuText = 1;
 		formulaire->tabInpuText = (inputText**)malloc(sizeof(inputText*)*formulaire->nbInpuText);
@@ -129,9 +164,12 @@ void addInputTextToForm(Form* formulaire, inputText* input){
 		formulaire->tabInpuText = tmp;
 		tmp = NULL;
 	}
+	
+	debug("<addInputTextToForm> end");
 }
 
 void afficheForm(Form formulaire, int xEcran, int yEcran, float coefZoom){
+	debug("<afficheForm> begin");
 	
 	// On affiche les checkbox
 	for(int i=0;i<formulaire.nbCheckbox;i++){
@@ -149,9 +187,12 @@ void afficheForm(Form formulaire, int xEcran, int yEcran, float coefZoom){
 		//~ printf("%s\n",(formulaire.tabInpuText[i])->string);
 		afficheInputTexte(*(formulaire.tabInpuText[i]),xEcran,yEcran,coefZoom);
 	}
+	
+	debug("<afficheForm> end");
 }
 
 void gereClicForm(Form formulaire, int xSouris, int ySouris){
+	debug("<gereClicForm> begin");
 	
 	// On gère les clis des checkbox
 	for(int i=0;i<formulaire.nbCheckbox;i++){
@@ -167,9 +208,12 @@ void gereClicForm(Form formulaire, int xSouris, int ySouris){
 	for(int i=0;i<formulaire.nbInpuText;i++){
 		gereSourisInputText(formulaire.tabInpuText[i],xSouris,ySouris);
 	}
+	
+	debug("<gereClicForm> end");
 }
 
 void updateForm(Form formulaire){
+	debug("<updateForm> begin");
 	
 	for(int i=0;i<formulaire.nbInpuText;i++){
 		updateInputText(formulaire.tabInpuText[i]);
@@ -178,4 +222,6 @@ void updateForm(Form formulaire){
 	for(int i=0;i<formulaire.nbRadioButton;i++){
 		updateRadioButton(formulaire.tabRadioButton[i]);
 	}
+	
+	debug("<updateForm> end");
 }

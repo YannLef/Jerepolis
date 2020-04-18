@@ -1,16 +1,33 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Keyboard.h"
 #include "../headers/BoundedRectangle.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/Conversation.h"
 
 extern couleurTab c; // Synchronise le tableau de couleurs
@@ -23,9 +40,13 @@ extern couleurTab c; // Synchronise le tableau de couleurs
  * @author Yann LEFEVRE
  * */
 void initMessage(message* msg, bool sender, char* string){
+	debug("<initMessage> begin");
+	
 	msg->sender = sender;
 	msg->string = malloc(sizeof(char)*(strlen(string) + 1));
-		strcpy(msg->string,string);
+	strcpy(msg->string,string);
+	
+	debug("<initMessage> end");
 }
 
 /**
@@ -33,9 +54,13 @@ void initMessage(message* msg, bool sender, char* string){
  * @author Yann LEFEVRE
  * */
 void libereMessage(message* msg){
+	debug("<libereMessage> begin");
+	
 	if(msg != NULL && msg->string != NULL){
 		free(msg->string);
 	}
+	
+	debug("<libereMessage> end");
 }
 
 /**
@@ -45,6 +70,8 @@ void libereMessage(message* msg){
  * @brief nbMessage Le nombre actuel de messages dans la conversation
  * */
 void ajouteMessage(message*** messages, message* msg, int nbMessageMax, int* nbMessage){
+	debug("<ajouteMessage> begin");
+	
 	if(*nbMessage < nbMessageMax){ // Si on a pas atteint le nombre max de messages, on rajoute simplement le nouveau message à la suite
 		*nbMessage = *nbMessage +1;
 		message** tmp = malloc(sizeof(message*)*(*nbMessage));
@@ -70,9 +97,13 @@ void ajouteMessage(message*** messages, message* msg, int nbMessageMax, int* nbM
 		*messages = tmp;
 		tmp = NULL;
 	}
+	
+	debug("<ajouteMessage> end");
 }
 
 void afficheConversation(message** messages, int nbMessage, DonneesImageRGB* user, DonneesImageRGB* help){
+	debug("<afficheConversation> begin");
+	
 	BoundedRectangle b;
 	int decalageCentre = 40;
 	int ordonneeBaseMessage = 700;
@@ -114,4 +145,6 @@ void afficheConversation(message** messages, int nbMessage, DonneesImageRGB* use
 
 		}
 	}
+	
+	debug("<afficheConversation> end");
 }

@@ -1,16 +1,33 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+ 
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Page.h"
 #include "../headers/Rectangle.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/DropDownMenuRight.h"
 
 extern couleurTab c; // Synchronise le tableau de couleurs
@@ -26,6 +43,8 @@ extern couleurTab c; // Synchronise le tableau de couleurs
  * @author Yann LEFEVRE
  * */
 void initMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int yBas, int yHaut, int xGauche, int xDroite, bool etat){
+	debug("<initMenuDeroulantVersDroite> begin");
+	
 	// Générales, ne changent pas
 	menu->yBas = yBas;
 	menu->yHaut = yHaut;
@@ -41,6 +60,8 @@ void initMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int yBas, int yH
 		menu->xActuel = xDroite;
 		menu->xFinal = xDroite;
 	}
+	
+	debug("<initMenuDeroulantVersDroite> end");
 }
   
  /**
@@ -54,6 +75,7 @@ void initMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int yBas, int yH
  * @author Yann LEFEVRE
  * */
 void afficheMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int xEcran, int yEcran, float coefZoom){
+	debug("<afficheMenuDeroulantVersDroite> begin");
 	
 	for(int i=0; i<25;i++){ // For permettant d'accélérer le déplacement du menu de 18 fois (tout en passant dans les tests et donc sans débordements contrairement à une incrémentation de 18 d'un coup)
 		if(menu->xActuel < menu->xFinal){ // Si la taille actuelle est plus petite que la taille finale visée on augmente celle ci
@@ -74,7 +96,8 @@ void afficheMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int xEcran, i
 	}else{
 		menu->etat = 0;
 	}
-
+	
+	debug("<afficheMenuDeroulantVersDroite> end");
 }
 
 /**
@@ -82,6 +105,8 @@ void afficheMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int xEcran, i
  * @author Yann LEFEVRE
  * */
 void afficheDetailMenu(int nav[10], pages p, menuDeroulantVersDroite* menuDeroulant){
+	debug("<afficheDetailMenu> begin");
+	
 	if (nav[0] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){ // Si l'onglet actuel est le numéro 0 et que le menu est entièrement ouvert
 	
 	}else if (nav[7] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){
@@ -97,6 +122,8 @@ void afficheDetailMenu(int nav[10], pages p, menuDeroulantVersDroite* menuDeroul
 	}else if (nav[9] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){
 		
 	}
+	
+	debug("<afficheDetailMenu> end");
 }
   
  /**
@@ -110,7 +137,11 @@ void afficheDetailMenu(int nav[10], pages p, menuDeroulantVersDroite* menuDeroul
  * @author Yann LEFEVRE
  * */
 void agrandiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu){
+	debug("<agrandiMenuDeroulantVersDroite> begin");
+	
 	menu->xFinal = menu->xDroite; // Définit l'objectif à atteindre en x à droite.
+	
+	debug("<agrandiMenuDeroulantVersDroite> end");
 }
 
 /**
@@ -118,7 +149,11 @@ void agrandiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu){
  * @author Yann LEFEVRE
  * */
 void reduiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu){
+	debug("<reduiMenuDeroulantVersDroite> begin");
+	
 	menu->xFinal = menu->xGauche; // Définit l'objectif à atteindre en x à gauche.
+	
+	debug("<reduiMenuDeroulantVersDroite> end");
 }
 
  /**
@@ -134,6 +169,8 @@ void reduiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu){
  * @author Yann LEFEVRE
  * */
 void gereMenuDeroulantVersDroite(int nav[10], menuDeroulantVersDroite* menuDeroulant){
+	debug("<gereMenuDeroulantVersDroite> begin");
+	
 	int tmp=0; // variable temporaire permettant de savoir si un onglet est ouvert ou non.
 	int tmp2=-1; // variable permettant de savoir quel est le numéro de l'onglet ouvert
 	
@@ -188,5 +225,7 @@ void gereMenuDeroulantVersDroite(int nav[10], menuDeroulantVersDroite* menuDerou
 			break;
 			
 		}
-	}	
+	}
+	
+	debug("<gereMenuDeroulantVersDroite> end");
 }

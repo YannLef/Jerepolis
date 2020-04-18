@@ -1,15 +1,32 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Keyboard.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/Rectangle.h"
 
  /**
@@ -23,6 +40,8 @@
  * @author Yann LEFEVRE
  * */
 void initRectangle(rec* rect, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure){
+	debug("<initRectangle> begin");
+	
 	rect->x = x;
 	rect->y = y;
 	rect->cInterieur = cInterieur;
@@ -30,6 +49,8 @@ void initRectangle(rec* rect, int x, int y, int largeur, int hauteur, int epaiss
 	rect->hauteur = hauteur;
 	rect->largeur = largeur;
 	rect->epaisseurBordure = epaisseurBordure;
+	
+	debug("<initRectangle> end");
 }
   
  /**
@@ -46,6 +67,8 @@ void initRectangle(rec* rect, int x, int y, int largeur, int hauteur, int epaiss
  * @author Yann LEFEVRE
  * */
 void afficheRectangle(rec rect, bool mobile, int xEcran, int yEcran, float coefZoom){
+	debug("<afficheRectangle> begin");
+	
 	epaisseurDeTrait(1);
 	int x1,x2,y1,y2;
 	
@@ -102,6 +125,8 @@ void afficheRectangle(rec rect, bool mobile, int xEcran, int yEcran, float coefZ
 	
 	if(coefZoom>0.5 || !mobile)
 		rectangle(x1,y1,x2,y2);
+		
+	debug("<afficheRectangle> end");
 }
 
  /**
@@ -115,11 +140,16 @@ void afficheRectangle(rec rect, bool mobile, int xEcran, int yEcran, float coefZ
  * @author Yann LEFEVRE
  * */
 bool isOnRectangle(int x, int y, rec rect){
+	debug("<isOnRectangle> begin");
+	
 	if(x > (rect.x - rect.largeur/2) && x < (rect.x + rect.largeur/2)){
 		if(y > (rect.y - rect.hauteur/2) && y < (rect.y + rect.hauteur/2)){
+			debug("<isOnRectangle> end : return 1");
 			return 1;
 		}
 	}
+	
+	debug("<isOnRectangle> end : return 0");
 	return 0;
 }
 
@@ -128,10 +158,15 @@ bool isOnRectangle(int x, int y, rec rect){
  * @author Yann LEFEVRE
  * */
 bool isOnRectangleMobile(int x, int y, rec rect, int xEcran, int yEcran, float coefZoom){
+	debug("<isOnRectangleMobile> begin");
+	
 	if(x > (rect.x + xEcran*coefZoom - (rect.largeur*coefZoom)/2) && x < (rect.x + xEcran*coefZoom + (rect.largeur*coefZoom)/2)){
 		if(y > (rect.y + yEcran*coefZoom - (rect.hauteur*coefZoom)/2) && y < (rect.y + yEcran*coefZoom + (rect.hauteur*coefZoom)/2)){
+			debug("<isOnRectangleMobile> end : return 1");
 			return 1;
 		}
 	}
+	
+	debug("<isOnRectangleMobile> end : return 0");
 	return 0;
 }

@@ -1,16 +1,33 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Page.h"
 #include "../headers/Rectangle.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/ButtonChangePage.h"
 
  /**
@@ -25,6 +42,8 @@
  * @author Yann LEFEVRE
  * */
 void initBoutonChangePage(boutonChangePage* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure, couleur cText, int epaisseurTrait, page pageSuivante){
+	debug("<initBoutonChangePage> begin");
+	
 	int i=0;
 	int taille=1;
 	while(string[i] != '\0'){
@@ -47,6 +66,7 @@ void initBoutonChangePage(boutonChangePage* b, char* string, int x, int y, int l
 	
 	initRectangle(&(b->rect),x,y,largeur,hauteur,epaisseurBordure,cInterieur, cBordure);
 	
+	debug("<initBoutonChangePage> end");
 }
 
  /**
@@ -60,6 +80,8 @@ void initBoutonChangePage(boutonChangePage* b, char* string, int x, int y, int l
  * @author Yann LEFEVRE
  * */
 void afficheBoutonChangePage(boutonChangePage b, int xEcran, int yEcran, float coefZoom){
+	debug("<afficheBoutonChangePage> begin");
+	
 	afficheRectangle(b.rect,0,xEcran,yEcran,coefZoom);
 	if(b.string != NULL){
 		couleurCourante(b.cText.r,b.cText.v,b.cText.b);
@@ -83,6 +105,8 @@ void afficheBoutonChangePage(boutonChangePage b, int xEcran, int yEcran, float c
 		int y = b.rect.y - taille/3;
 		afficheChaine(b.string,taille,x,y);
 	}
+	
+	debug("<afficheBoutonChangePage> end");
 }
 
  /**
@@ -96,6 +120,8 @@ void afficheBoutonChangePage(boutonChangePage b, int xEcran, int yEcran, float c
  * @author Yann LEFEVRE
  * */
 void gereSourisBoutonChangePage(boutonChangePage b, pages* pActuel, int xSouris, int ySouris){
+	debug("<gereSourisBoutonChangePage> begin");
+	
 	if(pActuel->pActuel == pActuel->pFinal){ // On vérifie que la page n'a pas été modifié par d'autres fonctions
 		// On vérifie que le clic est bel est bien sur le bouton
 		if(xSouris > (b.rect.x - b.rect.largeur/2) && xSouris < (b.rect.x + b.rect.largeur/2)){
@@ -104,4 +130,6 @@ void gereSourisBoutonChangePage(boutonChangePage b, pages* pActuel, int xSouris,
 			}
 		}
 	}
+	
+	debug("<gereSourisBoutonChangePage> end");
 }

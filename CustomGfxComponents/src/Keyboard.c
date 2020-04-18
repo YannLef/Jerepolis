@@ -16,17 +16,35 @@
 	#endif
 #endif
 
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
-#include "../headers/Keyboard.h"
 #include "../headers/Page.h"
+
+/**
+ * Includes correspondant
+ * */
+#include "../headers/Keyboard.h"
 
 extern keyboard keys; // Synchronise le clavier avec les autres fichiers
 
@@ -46,6 +64,7 @@ extern keyboard keys; // Synchronise le clavier avec les autres fichiers
  * @author Yann LEFEVRE
  * */
 void initKeyboard(void){
+	debug("<initKeyboard> begin");
 	
 	glutIgnoreKeyRepeat(1); // empêche de générer différents évènements si on reste appuyé sur une touche
 	glutKeyboardFunc(keyDown); // callback pour quand une touche normale est appuyée
@@ -134,6 +153,8 @@ void initKeyboard(void){
 	
 	
 	keys.key_slash = 1;
+	
+	debug("<initKeyboard> end");
 }
 
  /**
@@ -147,8 +168,9 @@ void initKeyboard(void){
  * Passe le booléen correspondant à la touche appuyée à 0 (permet d'informer le reste du programme que cette touche est enfoncée)
  * @author Yann LEFEVRE
  * */
-void keyDown(unsigned  char key, int x, int y)
-{
+void keyDown(unsigned  char key, int x, int y){
+	debug("<keyDown> begin");
+	
 	if(key=='a'){ keys.key_a = 0;} // a est appuyé
 	if(key=='A'){ keys.key_A = 0;} // A est appuyé
 	if(key=='b'){ keys.key_b = 0; } // b est appuyé
@@ -219,6 +241,8 @@ void keyDown(unsigned  char key, int x, int y)
 	if(key==8){ keys.key_backspace = 0; } // backspace est appuyé
 	
 	if(key=='/'){ keys.key_slash = 0; } // slash est appuyé
+	
+	debug("<keyDown> end");
 }
 
 /**
@@ -226,8 +250,9 @@ void keyDown(unsigned  char key, int x, int y)
  * Passe le booléen correspondant à la touche appuyée à 1 (permet d'informer le reste du programme que cette touche est relachée)
  * @author Yann LEFEVRE
  * */
-void keyUp(unsigned char key, int x, int y)
-{
+void keyUp(unsigned char key, int x, int y){
+	debug("<keyUp> begin");
+	
 	if(key=='a'){ keys.key_a = 1;} // a est relaché
 	if(key=='A'){ keys.key_A = 1;} // A est relaché
 	if(key=='b'){ keys.key_b = 1; } // b est relaché
@@ -298,6 +323,8 @@ void keyUp(unsigned char key, int x, int y)
 	if(key==8){ keys.key_backspace = 1; } // backsapce est relaché
 	
 	if(key=='/'){ keys.key_slash = 1; } // slash est relaché
+	
+	debug("<keyUp> end");
 }
 
 /**
@@ -305,8 +332,9 @@ void keyUp(unsigned char key, int x, int y)
  * Passe le booléen correspondant à la touche appuyée à 0 (permet d'informer le reste du programme que cette touche est enfoncée)
  * @author Yann LEFEVRE
  * */
-void specialKeyDown(int key, int x, int y)
-{
+void specialKeyDown(int key, int x, int y){
+	debug("<specialKeyDown> begin");
+	
 	if(key==GLUT_KEY_UP){ keys.key_up = 0; } // flèche du haut est appuyé
 	if(key==GLUT_KEY_DOWN){ keys.key_down = 0; } // flèche du bas est appuyé
 	if(key==GLUT_KEY_LEFT){ keys.key_left = 0; } // flèche de gauche appuyé 
@@ -314,6 +342,7 @@ void specialKeyDown(int key, int x, int y)
 	if(key==GLUT_KEY_PAGE_UP){ keys.key_page_up = 0; } // flèche haut de page appuyé
 	if(key==GLUT_KEY_PAGE_DOWN){ keys.key_page_down = 0; } // flèche bas de page appuyé
 	
+	debug("<specialKeyDown> end");
 }
 
 /**
@@ -321,14 +350,17 @@ void specialKeyDown(int key, int x, int y)
  * Passe le booléen correspondant à la touche appuyée à 1 (permet d'informer le reste du programme que cette touche est relachée)
  * @author Yann LEFEVRE
  * */
-void specialKeyUp(int key, int x, int y)
-{
+void specialKeyUp(int key, int x, int y){
+	debug("<specialKeyUp> begin");
+	
 	if(key==GLUT_KEY_UP){ keys.key_up = 1; } // flèche du haut relaché
 	if(key==GLUT_KEY_DOWN){ keys.key_down = 1; } // flèche du bas relaché
 	if(key==GLUT_KEY_LEFT){ keys.key_left = 1; } // flèche de gauche relaché
 	if(key==GLUT_KEY_RIGHT){ keys.key_right = 1; } // flèche de droite relaché
 	if(key==GLUT_KEY_PAGE_UP){ keys.key_page_up = 1; } // flèche haut de page relaché
 	if(key==GLUT_KEY_PAGE_DOWN){ keys.key_page_down = 1; } // flèche bas de page relaché
+	
+	debug("<specialKeyUp> end");
 }
 
  /**
@@ -343,7 +375,11 @@ void specialKeyUp(int key, int x, int y)
  * @author Yann LEFEVRE
  * */
 bool keyIsDown(bool key){
+	debug("<keyIsDown> begin");
+	
 	return !key;
+	
+	debug("<keyIsDown> end");
 }
 
 /**
@@ -352,5 +388,9 @@ bool keyIsDown(bool key){
  * @author Yann LEFEVRE
  * */
 bool keyIsUp(bool key){
+	debug("<keyIsUp> begin");
+	
 	return key;
+	
+	debug("<keyIsUp> end");
 }

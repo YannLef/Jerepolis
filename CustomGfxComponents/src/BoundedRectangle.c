@@ -1,20 +1,42 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Keyboard.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/BoundedRectangle.h"
 
 /* Fonction de trace de cercle */
-void cercle(float centreX, float centreY, float rayon)
-{
+/* Fonction de la GfxLib ! */
+/**
+ * Trace un cercle
+ * */
+void cercle(float centreX, float centreY, float rayon){
+	debug("<cercle> begin");
+	
 	const int Pas = 20; // Nombre de secteurs pour tracer le cercle
 	const double PasAngulaire = 2.*M_PI/Pas;
 	int index;
@@ -28,9 +50,16 @@ void cercle(float centreX, float centreY, float rayon)
 			// On trace le secteur a l'aide d'un triangle => approximation d'un cercle
 	}
 	
+	debug("<cercle> end");
 }
 
+/**
+ * Initialise une structure BoundedRectangle matérialisant un rectangle aux angles arrondis
+ * @author Yann LEFEVRE
+ * */
 void initBoundedRectangle(BoundedRectangle *b, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure){
+	debug("<initBoundedRectangle> begin");
+	
     b->x = x;
     b->y = y;
     b->largeur = largeur;
@@ -38,9 +67,17 @@ void initBoundedRectangle(BoundedRectangle *b, int x, int y, int largeur, int ha
     b->epaisseurBordure = epaisseurBordure;
     b->cInterieur = cInterieur;
     b->cBordure = cBordure;
+    
+    debug("<initBoundedRectangle> end");
 }
 
+/**
+ * Trace un rectangle aux bords arrondis
+ * @author Yann LEFEVRE
+ * */
 void afficheBoundedRectangle(BoundedRectangle b){
+	debug("<afficheBoundedRectangle> begin");
+	
 	int marge = 40;
 
 	changeColor(b.cBordure);
@@ -60,5 +97,6 @@ void afficheBoundedRectangle(BoundedRectangle b){
 	cercle(b.x - b.largeur/2 + marge + b.epaisseurBordure, b.y + b.hauteur/2 - marge - b.epaisseurBordure, marge); // En haut à gauche
 	cercle(b.x + b.largeur/2 - marge - b.epaisseurBordure, b.y + b.hauteur/2 - marge - b.epaisseurBordure, marge); // En haut à droite
 	
+	debug("<afficheBoundedRectangle> end");
 }
 

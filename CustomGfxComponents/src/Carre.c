@@ -1,13 +1,31 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
+
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/Carre.h"
 
  /**
@@ -21,12 +39,16 @@
  * @author Yann LEFEVRE
  * */
 void initCarre(carre* square, int x, int y, int cote, int epaisseurBordure, couleur cInterieur, couleur cBordure){
+	debug("<initCarre> begin");
+	
 	square->x = x;
 	square->y = y;
 	square->cInterieur = cInterieur;
 	square->cBordure = cBordure;
 	square->cote = cote;
 	square->epaisseurBordure = epaisseurBordure;
+	
+	debug("<initCarre> end");
 }
   
  /**
@@ -40,6 +62,8 @@ void initCarre(carre* square, int x, int y, int cote, int epaisseurBordure, coul
  * @author Yann LEFEVRE
  * */
 void afficheCarre(carre square){
+	debug("<afficheCarre> begin");
+	
 	epaisseurDeTrait(1);
 	int x1,x2,y1,y2;
 	
@@ -68,6 +92,8 @@ void afficheCarre(carre square){
 	y2 = square.y + (square.cote)/2 - square.epaisseurBordure;
 	
 	rectangle(x1,y1,x2,y2);
+	
+	debug("<afficheCarre> end");
 }
 
  /**
@@ -81,10 +107,15 @@ void afficheCarre(carre square){
  * @author Yann LEFEVRE
  * */
 bool isOnCarre(int x, int y, carre square){
+	debug("<isOnCarre> begin");
+	
 	if(x > (square.x - square.cote/2) && x < (square.x + square.cote/2)){
 		if(y > (square.y - square.cote/2) && y < (square.y + square.cote/2)){
+			debug("<isOnCarre> end : return 1");
 			return 1;
 		}
 	}
+	
+	debug("<isOnCarre> end : return 0");
 	return 0;
 }

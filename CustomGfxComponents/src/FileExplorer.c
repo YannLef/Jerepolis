@@ -1,17 +1,34 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Page.h"
 #include "../headers/ButtonChangePage.h"
 #include "../headers/ButtonChangeFile.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/FileExplorer.h"
 
 extern couleurTab c; // Synchronise le clavier avec les autres fichiers
@@ -28,8 +45,9 @@ extern couleurTab c; // Synchronise le clavier avec les autres fichiers
  * @param fichers L'adresse du tableau de fichiers qui sera rempli avec les informations organisées
  * @author Yann LEFEVRE
  * */
-void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, int* nombreFichiers)
-{
+void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, int* nombreFichiers){
+	debug("<recupereInfosFichiersDansDossier> begin");
+	
 	// Formule la commande
 	int taille = strlen("ls ") + strlen(cheminDossier) + strlen(" -lt>infosFichiers.txt") + 1;
 	char* commande = (char*) malloc(sizeof(char)*taille);
@@ -94,6 +112,7 @@ void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, i
 	free(commande); // On libère la chaine de caractère utilisée pour exécuter la commande
 	fclose(f);	// On ferme le fichier
 
+	debug("<recupereInfosFichiersDansDossier> end");
 }
 
  /**
@@ -108,6 +127,8 @@ void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, i
  * @author Yann LEFEVRE
  * */
 void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, DonneesImageRGB* fondExplorateur, fichier* listeFichiers, boutonChangePage exitOpenTree, boutonChangeFichiers nextFichiers, boutonChangeFichiers previousFichiers, int xEcran, int yEcran, float coefZoom, int debutAffichageExplorateur, int nombreFichiers){
+	debug("<afficheExplorateurDeFichiers> begin");
+	
 	if (enteteFondExplorateur != NULL){ ecrisImage(0, 640, enteteFondExplorateur->largeurImage, enteteFondExplorateur->hauteurImage, enteteFondExplorateur->donneesRGB);} // Si l'image de l'entête de l'explorateur de fichier a pu être lue, on l'affiche
 	int cpt=debutAffichageExplorateur;
 	for(int i=560; i>=80;i=i-80){
@@ -129,6 +150,8 @@ void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, Donnee
 	afficheBoutonChangePage(exitOpenTree, xEcran, yEcran, coefZoom);
 	afficheBoutonChangeFichiers(nextFichiers, xEcran, yEcran, coefZoom);
 	afficheBoutonChangeFichiers(previousFichiers, xEcran, yEcran, coefZoom);
+	
+	debug("<afficheExplorateurDeFichiers> end");
 }
 
 
@@ -145,6 +168,8 @@ void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, Donnee
  * */
 void gereSourisSelectionneFichier(int xSouris, int ySouris, int* debutAffichageExplorateur, int nombreFichiers, pages* pActuel, fichier* listeFichiers, fichier* fichierCharge, char** fileNameI,
 char** fileNameM){
+	debug("<gereSourisSelectionneFichier> begin");
+	
 	int cpt=*debutAffichageExplorateur; // Le compteur permettant de savoir à quel fichier on en est / écolue en même temps que la boucle
 	for(int i=560; i>=80;i=i-80){ // On boucle sur toutes les lignes affichants les fichiers
 		if(cpt < nombreFichiers){ // On vérifie qu'il y a bien un fichier affiché à cet endroit de l'écran (et non pas une case vide si il n'y a plus assez de fichiers à afficher)
@@ -155,4 +180,6 @@ char** fileNameM){
 			cpt++;
 		}
 	}
+	
+	debug("<gereSourisSelectionneFichier> end");
 }

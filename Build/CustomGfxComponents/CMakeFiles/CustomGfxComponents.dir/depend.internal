@@ -9,6 +9,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/BoundedRectangle.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/BoundedRectangle.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/ButtonChangeFile.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/ButtonChangeFile.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
@@ -17,6 +18,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/ButtonChangeFile.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/ButtonChangeFile.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/ButtonChangePage.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/ButtonChangePage.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
@@ -26,6 +28,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/ButtonChangePage.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/ButtonChangePage.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/ButtonSendMessage.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/ButtonSendMessage.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Conversation.h
@@ -37,6 +40,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/ButtonSendMessage.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/ButtonSendMessage.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Carre.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Carre.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
@@ -44,6 +48,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Carre.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Carre.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Checkbox.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Carre.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Checkbox.h
@@ -52,6 +57,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Checkbox.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Checkbox.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Conversation.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/BoundedRectangle.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Conversation.h
@@ -61,12 +67,14 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Conversation.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Conversation.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Couleur.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Couleur.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/DropDownMenuRight.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/DropDownMenuRight.h
@@ -76,6 +84,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/DropDownMenuRight.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/DropDownMenuRight.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/ButtonChangeFile.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/ButtonChangePage.h
@@ -86,6 +95,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/FileExplorer.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/ButtonChangeFile.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/ButtonChangePage.h
@@ -108,6 +118,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Formulaire.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/InputText.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
@@ -117,6 +128,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/InputText.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/InputText.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Keyboard.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Keyboard.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Page.h
@@ -124,12 +136,14 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Keyboard.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Keyboard.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Mouse.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Mouse.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Mouse.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Navbar.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/DropDownMenuRight.h
@@ -142,6 +156,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Navbar.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Navbar.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Page.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Formulaire.h
@@ -151,6 +166,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Page.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Page.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/RadioButton.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Carre.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Checkbox.h
@@ -160,6 +176,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/RadioButton.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/RadioButton.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Rectangle.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Keyboard.h
@@ -168,6 +185,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Rectangle.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Rectangle.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/SliderHorizontal.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Mouse.h
@@ -177,6 +195,7 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/SliderHorizontal.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/SliderHorizontal.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/SliderVertical.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Mouse.h
@@ -186,3 +205,4 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/SliderVertical.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/SliderVertical.c
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h

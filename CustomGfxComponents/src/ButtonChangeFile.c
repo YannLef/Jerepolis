@@ -1,15 +1,32 @@
+/**
+ * Includes Classiques
+ * */
 #include <stdlib.h> 
 #include <stdio.h> 
 #include <math.h> 
 #include <string.h>
 
+/**
+ * Includes GfxLib
+ * */
 #include "../../GfxLib/headers/GfxLib.h" 
 #include "../../GfxLib/headers/BmpLib.h"
 
+/**
+ * Includes Logger
+ * */
+#include "../../Logger/headers/Logger.h"
+
+/**
+ * Includes CustomGfxComponents
+ * */
 #include "../headers/structures.h"
 #include "../headers/Couleur.h"
 #include "../headers/Rectangle.h"
 
+/**
+ * Includes correspondant
+ * */
 #include "../headers/ButtonChangeFile.h"
 
  /**
@@ -24,6 +41,8 @@
  * @author Yann LEFEVRE
  * */
 void initBoutonChangeFichiers(boutonChangeFichiers* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure, couleur cText, int epaisseurTrait, int effet){
+	debug("<initBoutonChangeFichiers> begin");
+	
 	int i=0;
 	int taille=1;
 	while(string[i] != '\0'){
@@ -46,6 +65,7 @@ void initBoutonChangeFichiers(boutonChangeFichiers* b, char* string, int x, int 
 	
 	initRectangle(&(b->rect),x,y,largeur,hauteur,epaisseurBordure,cInterieur, cBordure);
 	
+	debug("<initBoutonChangeFichiers> end");
 }
 
  /**
@@ -59,6 +79,8 @@ void initBoutonChangeFichiers(boutonChangeFichiers* b, char* string, int x, int 
  * @author Yann LEFEVRE
  * */
 void afficheBoutonChangeFichiers(boutonChangeFichiers b, int xEcran, int yEcran, float coefZoom){
+	debug("<afficheBoutonChangeFichiers> begin");
+	
 	afficheRectangle(b.rect,0,xEcran,yEcran,coefZoom);
 	if(b.string != NULL){
 		couleurCourante(b.cText.r,b.cText.v,b.cText.b);
@@ -82,6 +104,8 @@ void afficheBoutonChangeFichiers(boutonChangeFichiers b, int xEcran, int yEcran,
 		int y = b.rect.y - taille/3;
 		afficheChaine(b.string,taille,x,y);
 	}
+	
+	debug("<afficheBoutonChangeFichiers> end");
 }
 
  /**
@@ -95,6 +119,8 @@ void afficheBoutonChangeFichiers(boutonChangeFichiers b, int xEcran, int yEcran,
  * @author Yann LEFEVRE
  * */
 void gereSourisBoutonChangeFichiers(boutonChangeFichiers b, int* debutAffichageExplorateur, int nombreFichiers, int xSouris, int ySouris){
+	debug("<gereSourisBoutonChangeFichiers> begin");
+	
 	// On vérifie que le clic est bel est bien sur le bouton
 	if(xSouris > (b.rect.x - b.rect.largeur/2) && xSouris < (b.rect.x + b.rect.largeur/2)){
 		if(ySouris > (b.rect.y - b.rect.hauteur/2) && ySouris < (b.rect.y + b.rect.hauteur/2)){
@@ -102,4 +128,6 @@ void gereSourisBoutonChangeFichiers(boutonChangeFichiers b, int* debutAffichageE
 				*debutAffichageExplorateur += b.effet; // On incrémente le numéro du premier élément à afficher en fonction de l'effet du bouton
 		}
 	}
+	
+	debug("<gereSourisBoutonChangeFichiers> end");
 }
