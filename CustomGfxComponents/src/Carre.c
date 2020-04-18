@@ -36,6 +36,13 @@
   
 /**
  * Initialise un carre , nécessite de nombreux paramètres pour être le plus complet possible
+ * @param square le pointeur vers le carré à initialiser
+ * @param x l'abscisse du centre du carré
+ * @param y l'odronnée du centre du carré
+ * @param cote la taille du côté du carré
+ * @param epaisseurBordure l'épaisseur de trait du carré
+ * @param cInterieur la couleure intérieure du carré
+ * @param cBordure la couleur des contours du carré
  * @author Yann LEFEVRE
  * */
 void initCarre(carre* square, int x, int y, int cote, int epaisseurBordure, couleur cInterieur, couleur cBordure){
