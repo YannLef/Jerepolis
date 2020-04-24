@@ -20,7 +20,7 @@
   * -----------------------------------------------------------
   * */
 
-void initRadioButton(radiobutton* rb, char* type, int x, int y, int cote, int epaisseurBordure, couleur cInterieur, couleur cBordure, int nb, int on);
+void initRadioButton(Radiobutton* rb, char* type, int x, int y, int cote, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, int nb, int on);
 
 /**
   * ----------------------------------------------------
@@ -28,7 +28,7 @@ void initRadioButton(radiobutton* rb, char* type, int x, int y, int cote, int ep
   * ----------------------------------------------------
   * */
   
-  void afficheRadioButton(radiobutton rb);
+  void afficheRadioButton(Radiobutton rb);
   
  /**
   * ---------------------------------------------------
@@ -36,7 +36,7 @@ void initRadioButton(radiobutton* rb, char* type, int x, int y, int cote, int ep
   * ---------------------------------------------------
   * */
 
-void updateRadioButton(radiobutton* rb);
+void updateRadioButton(Radiobutton* rb);
 
  /**
   * ---------------------------------------------------
@@ -44,6 +44,6 @@ void updateRadioButton(radiobutton* rb);
   * ---------------------------------------------------
   * */
 
-void gereClicRadioButton(radiobutton* rb, int xSouris, int ySouris);
+void gereClicRadioButton(Radiobutton* rb, int xSouris, int ySouris);
 
 #endif

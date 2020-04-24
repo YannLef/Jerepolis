@@ -19,7 +19,7 @@
   * -----------------------------------------------------------
   * */
   
-void initRectangle(rec* rect, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure);
+void initRectangle(Rec* rect, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure);
   
   
  /**
@@ -28,7 +28,7 @@ void initRectangle(rec* rect, int x, int y, int largeur, int hauteur, int epaiss
   * ----------------------------------------------------
   * */
   
-void afficheRectangle(rec rect, bool mobile, int xEcran, int yEcran, float coefZoom);
+void afficheRectangle(Rec rect, bool mobile, int xEcran, int yEcran, float coefZoom);
   
  /**
   * --------------------------------------------------
@@ -36,7 +36,7 @@ void afficheRectangle(rec rect, bool mobile, int xEcran, int yEcran, float coefZ
   * --------------------------------------------------
   * */
 
-bool isOnRectangle(int x, int y, rec rect);
-bool isOnRectangleMobile(int x, int y, rec rect, int xEcran, int yEcran, float coefZoom);
+bool isOnRectangle(int x, int y, Rec rect);
+bool isOnRectangleMobile(int x, int y, Rec rect, int xEcran, int yEcran, float coefZoom);
 
 #endif

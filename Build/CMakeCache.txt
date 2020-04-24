@@ -231,6 +231,21 @@ projet_BINARY_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Build
 //Value Computed by CMake
 projet_SOURCE_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2
 
+//Value Computed by CMake
+test_CustomGfxComponents_BINARY_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Build/Tests/CustomGfxComponents
+
+//Dependencies for target
+test_CustomGfxComponents_LIB_DEPENDS:STATIC=
+
+//Value Computed by CMake
+test_CustomGfxComponents_SOURCE_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Tests/CustomGfxComponents
+
+//Value Computed by CMake
+tests_BINARY_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Build/Tests
+
+//Value Computed by CMake
+tests_SOURCE_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Tests
+
 
 ########################
 # INTERNAL cache entries
@@ -322,7 +337,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

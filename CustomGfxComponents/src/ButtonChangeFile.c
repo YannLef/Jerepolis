@@ -40,7 +40,7 @@
  * Tous les paramètres sont spécifiques à l'affichage du bouton
  * @author Yann LEFEVRE
  * */
-void initBoutonChangeFichiers(boutonChangeFichiers* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure, couleur cText, int epaisseurTrait, int effet){
+void initBoutonChangeFichiers(BoutonChangeFichiers* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, Couleur cText, int epaisseurTrait, int effet){
 	debug("<initBoutonChangeFichiers> begin");
 	
 	int i=0;
@@ -78,7 +78,7 @@ void initBoutonChangeFichiers(boutonChangeFichiers* b, char* string, int x, int 
  * Fonction permettant d'afficher un bouton permettant de naviguer dans l'explorateur de fichiers
  * @author Yann LEFEVRE
  * */
-void afficheBoutonChangeFichiers(boutonChangeFichiers b, int xEcran, int yEcran, float coefZoom){
+void afficheBoutonChangeFichiers(BoutonChangeFichiers b, int xEcran, int yEcran, float coefZoom){
 	debug("<afficheBoutonChangeFichiers> begin");
 	
 	afficheRectangle(b.rect,0,xEcran,yEcran,coefZoom);
@@ -118,7 +118,7 @@ void afficheBoutonChangeFichiers(boutonChangeFichiers b, int xEcran, int yEcran,
  * Fonction permettant de changer de page d'affichage de l'explorateur de fichiers en fonction du clic
  * @author Yann LEFEVRE
  * */
-void gereSourisBoutonChangeFichiers(boutonChangeFichiers b, int* debutAffichageExplorateur, int nombreFichiers, int xSouris, int ySouris){
+void gereSourisBoutonChangeFichiers(BoutonChangeFichiers b, int* debutAffichageExplorateur, int nombreFichiers, int xSouris, int ySouris){
 	debug("<gereSourisBoutonChangeFichiers> begin");
 	
 	// On vérifie que le clic est bel est bien sur le bouton

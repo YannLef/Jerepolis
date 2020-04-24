@@ -46,7 +46,7 @@
  * */
 #include "../headers/Keyboard.h"
 
-extern keyboard keys; // Synchronise le clavier avec les autres fichiers
+extern Keyboard keys; // Synchronise le clavier avec les autres fichiers
 
  /**
   * -----------------------------------------------------------

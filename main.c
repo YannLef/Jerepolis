@@ -30,9 +30,9 @@
 #define LargeurFenetre 1080
 #define HauteurFenetre 720
 
-couleurTab c; // Définit le tableau de couleurs
-keyboard keys; // Définit le clavier -> à synchroniser avec les autres fichiers si nécessaire ("extern")
-mouse souris; // Définit le clavier -> à synchroniser avec les autres fichiers si nécessaire ("extern")
+CouleurTab c; // Définit le tableau de couleurs
+Keyboard keys; // Définit le clavier -> à synchroniser avec les autres fichiers si nécessaire ("extern")
+Mouse souris; // Définit le clavier -> à synchroniser avec les autres fichiers si nécessaire ("extern")
 int loggerLevel; // Définit le niveau de log -> à synchroniser avec les autres fichiers via ("extern")
 
 /* La fonction de gestion des evenements, appelee automatiquement par le systeme

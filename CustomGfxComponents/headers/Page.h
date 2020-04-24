@@ -19,7 +19,7 @@
   * -----------------------------------------------------------
   * */
 
-void initPage(pages* p, page pActuel);
+void initPage(Pages* p, Page pActuel);
 
  /**
   * ---------------------------------------------------
@@ -27,7 +27,7 @@ void initPage(pages* p, page pActuel);
   * ---------------------------------------------------
   * */
 
-void updatePage(pages* p);
+void updatePage(Pages* p);
 
  /**
   * --------------------------------------------------
@@ -35,7 +35,7 @@ void updatePage(pages* p);
   * --------------------------------------------------
   * */
   
-bool isOnPage(pages p, page pTest);
-bool willBeOnPage(pages p, page pTest);
+bool isOnPage(Pages p, Page pTest);
+bool willBeOnPage(Pages p, Page pTest);
 
 #endif

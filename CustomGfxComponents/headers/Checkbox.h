@@ -20,7 +20,7 @@
   * -----------------------------------------------------------
   * */
 
-void initCheckbox(checkbox* cb, int x, int y, int cote, int epaisseurBordure, couleur cInterieur, couleur cBordure, bool etat);
+void initCheckbox(Checkbox* cb, int x, int y, int cote, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, bool etat);
 
  /**
   * ----------------------------------------------------
@@ -28,7 +28,7 @@ void initCheckbox(checkbox* cb, int x, int y, int cote, int epaisseurBordure, co
   * ----------------------------------------------------
   * */
   
-void afficheCheckbox(checkbox cb);
+void afficheCheckbox(Checkbox cb);
 
  /**
   * ---------------------------------------------------
@@ -36,8 +36,8 @@ void afficheCheckbox(checkbox cb);
   * ---------------------------------------------------
   * */
 
-void setEtatCheckbox(checkbox* cb, bool etat);
-void toggleEtatCheckbox(checkbox* cb);
+void setEtatCheckbox(Checkbox* cb, bool etat);
+void toggleEtatCheckbox(Checkbox* cb);
 
  /**
   * ---------------------------------------------------
@@ -45,6 +45,6 @@ void toggleEtatCheckbox(checkbox* cb);
   * ---------------------------------------------------
   * */
 
-void gereClicCheckbox(checkbox* cb, int xSouris, int ySouris);
+void gereClicCheckbox(Checkbox* cb, int xSouris, int ySouris);
 
 #endif

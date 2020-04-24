@@ -30,7 +30,7 @@
  * */
 #include "../headers/DropDownMenuRight.h"
 
-extern couleurTab c; // Synchronise le tableau de couleurs
+extern CouleurTab c; // Synchronise le tableau de couleurs
 
  /**
   * -----------------------------------------------------------
@@ -42,7 +42,7 @@ extern couleurTab c; // Synchronise le tableau de couleurs
  * Fonction permettant d'initialiser un menu déroulant se déroulant de la gauche vers la droite
  * @author Yann LEFEVRE
  * */
-void initMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int yBas, int yHaut, int xGauche, int xDroite, bool etat){
+void initMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu, int yBas, int yHaut, int xGauche, int xDroite, bool etat){
 	debug("<initMenuDeroulantVersDroite> begin");
 	
 	// Générales, ne changent pas
@@ -74,7 +74,7 @@ void initMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int yBas, int yH
  * Fonction affichant un menu déroulant se déroulant de la gauche vers la droite
  * @author Yann LEFEVRE
  * */
-void afficheMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int xEcran, int yEcran, float coefZoom){
+void afficheMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu, int xEcran, int yEcran, float coefZoom){
 	debug("<afficheMenuDeroulantVersDroite> begin");
 	
 	for(int i=0; i<25;i++){ // For permettant d'accélérer le déplacement du menu de 18 fois (tout en passant dans les tests et donc sans débordements contrairement à une incrémentation de 18 d'un coup)
@@ -86,7 +86,7 @@ void afficheMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int xEcran, i
 	}
 	
 	// On affiche le rectangle correspondant
-	rec r;
+	Rec r;
 	initRectangle(&r,(menu->xActuel)/2,(menu->yHaut-menu->yBas)/2,menu->xActuel,hauteurFenetre(),0,c.couleurMenuDeroulant,c.couleurFemme);
 	afficheRectangle(r,0,xEcran,yEcran,coefZoom);
 	
@@ -104,7 +104,7 @@ void afficheMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int xEcran, i
  * Fonction permettant d'afficher le contenu d'un onglet si celui ci est selectionné et entièrement ouvert
  * @author Yann LEFEVRE
  * */
-void afficheDetailMenu(int nav[10], pages p, menuDeroulantVersDroite* menuDeroulant){
+void afficheDetailMenu(int nav[10], Pages p, MenuDeroulantVersDroite* menuDeroulant){
 	debug("<afficheDetailMenu> begin");
 	
 	if (nav[0] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){ // Si l'onglet actuel est le numéro 0 et que le menu est entièrement ouvert
@@ -136,7 +136,7 @@ void afficheDetailMenu(int nav[10], pages p, menuDeroulantVersDroite* menuDeroul
  * Fonction envoyant un signal d'extension à menu déroulant se déroulant de la gauche vers la droite
  * @author Yann LEFEVRE
  * */
-void agrandiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu){
+void agrandiMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu){
 	debug("<agrandiMenuDeroulantVersDroite> begin");
 	
 	menu->xFinal = menu->xDroite; // Définit l'objectif à atteindre en x à droite.
@@ -148,7 +148,7 @@ void agrandiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu){
  * Fonction envoyant un signal de repli à un menu déroulant se déroulant de la gauche vers la droite
  * @author Yann LEFEVRE
  * */
-void reduiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu){
+void reduiMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu){
 	debug("<reduiMenuDeroulantVersDroite> begin");
 	
 	menu->xFinal = menu->xGauche; // Définit l'objectif à atteindre en x à gauche.
@@ -168,7 +168,7 @@ void reduiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu){
  * En revanche si on clique sur un autre onglet, le menu reste ouvert (pour ne pas le fermer pour le réouvrir)
  * @author Yann LEFEVRE
  * */
-void gereMenuDeroulantVersDroite(int nav[10], menuDeroulantVersDroite* menuDeroulant){
+void gereMenuDeroulantVersDroite(int nav[10], MenuDeroulantVersDroite* menuDeroulant){
 	debug("<gereMenuDeroulantVersDroite> begin");
 	
 	int tmp=0; // variable temporaire permettant de savoir si un onglet est ouvert ou non.

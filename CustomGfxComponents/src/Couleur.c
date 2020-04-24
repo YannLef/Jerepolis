@@ -27,7 +27,7 @@
  * */
 #include "../headers/Couleur.h"
 
-extern couleurTab c; // Synchronise le clavier avec les autres fichiers
+extern CouleurTab c; // Synchronise le clavier avec les autres fichiers
 
  /**
   * -----------------------------------------------------------
@@ -40,7 +40,7 @@ extern couleurTab c; // Synchronise le clavier avec les autres fichiers
  * -> permet d'utiliser facilement des couleurs grâce à leur nom commun ce qui évite d'avoir à retenir les codes RGB 
  * @author Yann LEFEVRE
  * */
-void initCouleurTab(couleurTab* c){
+void initCouleurTab(CouleurTab* c){
 	debug("<initCouleurTab> begin");
 	
 	initCouleur(&(c->couleurHomme), 49, 140, 231);
@@ -62,7 +62,7 @@ void initCouleurTab(couleurTab* c){
  * -> permet de simplifier les prototypes de nombreuses fonctions (1 paramètre couleur au lieu de 3 paramètres pour R, V et B)
  * @author Yann LEFEVRE
  * */
-void initCouleur(couleur* c, unsigned char r, unsigned char v, unsigned char b){
+void initCouleur(Couleur* c, unsigned char r, unsigned char v, unsigned char b){
 	debug("<initCouleur> begin");
 	
 	c->r = r;
@@ -76,7 +76,7 @@ void initCouleur(couleur* c, unsigned char r, unsigned char v, unsigned char b){
  * Change la couleur de tracé de la GFX en lui appliquant la couleur passée en paramètre
  * @author Yann LEFEVRE
  * */
-void changeColor(couleur c){
+void changeColor(Couleur c){
 	debug("<changeColor> begin");
 	
 	couleurCourante(c.r,c.v,c.b);

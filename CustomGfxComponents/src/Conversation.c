@@ -30,7 +30,7 @@
  * */
 #include "../headers/Conversation.h"
 
-extern couleurTab c; // Synchronise le tableau de couleurs
+extern CouleurTab c; // Synchronise le tableau de couleurs
 
 /**
  * @brief Fonction permettant d'initialiser un message
@@ -39,7 +39,7 @@ extern couleurTab c; // Synchronise le tableau de couleurs
  * @param string le message
  * @author Yann LEFEVRE
  * */
-void initMessage(message* msg, bool sender, char* string){
+void initMessage(Message* msg, bool sender, char* string){
 	debug("<initMessage> begin");
 	
 	msg->sender = sender;
@@ -53,7 +53,7 @@ void initMessage(message* msg, bool sender, char* string){
  * @brief Fonction permettant de supprimer un message de la mémoire, permettant de faire une rotation propre des messages dans ajouteMessage()
  * @author Yann LEFEVRE
  * */
-void libereMessage(message* msg){
+void libereMessage(Message* msg){
 	debug("<libereMessage> begin");
 	
 	if(msg != NULL && msg->string != NULL){
@@ -69,12 +69,12 @@ void libereMessage(message* msg){
  * @param nbMessageMax Le nombre maximum de messages qui vont être stockés/affichés dans la conversation
  * @brief nbMessage Le nombre actuel de messages dans la conversation
  * */
-void ajouteMessage(message*** messages, message* msg, int nbMessageMax, int* nbMessage){
+void ajouteMessage(Message*** messages, Message* msg, int nbMessageMax, int* nbMessage){
 	debug("<ajouteMessage> begin");
 	
 	if(*nbMessage < nbMessageMax){ // Si on a pas atteint le nombre max de messages, on rajoute simplement le nouveau message à la suite
 		*nbMessage = *nbMessage +1;
-		message** tmp = malloc(sizeof(message*)*(*nbMessage));
+		Message** tmp = malloc(sizeof(Message*)*(*nbMessage));
 		for(int i=0;i<(*nbMessage)-1;i++){ // On recopie le début du tableau dans la variable temporaire
 			tmp[i] = (*messages)[i];
 		}
@@ -84,7 +84,7 @@ void ajouteMessage(message*** messages, message* msg, int nbMessageMax, int* nbM
 		*messages = tmp;
 		tmp = NULL;
 	}else{ // Si on a déjà atteint le nombre max de messages, il faut supprimer le plus vieux pour faire de la place et accueillir le nouveau message
-		message** tmp = malloc(sizeof(message*)*nbMessageMax);
+		Message** tmp = malloc(sizeof(Message*)*nbMessageMax);
 		for(int i=0;i<(*nbMessage);i++){ // On recopie le début du tableau dans la variable temporaire, excepté la première case qui va être supprimée
 			if(i != 0){
 				tmp[i-1] = (*messages)[i];
@@ -101,7 +101,7 @@ void ajouteMessage(message*** messages, message* msg, int nbMessageMax, int* nbM
 	debug("<ajouteMessage> end");
 }
 
-void afficheConversation(message** messages, int nbMessage, DonneesImageRGB* user, DonneesImageRGB* help){
+void afficheConversation(Message** messages, int nbMessage, DonneesImageRGB* user, DonneesImageRGB* help){
 	debug("<afficheConversation> begin");
 	
 	BoundedRectangle b;

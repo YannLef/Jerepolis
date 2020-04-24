@@ -57,7 +57,7 @@ void cercle(float centreX, float centreY, float rayon){
  * Initialise une structure BoundedRectangle matérialisant un rectangle aux angles arrondis
  * @author Yann LEFEVRE
  * */
-void initBoundedRectangle(BoundedRectangle *b, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure){
+void initBoundedRectangle(BoundedRectangle *b, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure){
 	debug("<initBoundedRectangle> begin");
 	
     b->x = x;

@@ -6,51 +6,42 @@
 /**
  * Structure couleur contenant les nuances de rouge (r), vert (v) et bleu (b)
  * */
-typedef struct couleur{
+typedef struct Couleur{
 	unsigned char r,v,b; // nuances de rouge, vert, bleu
-}couleur;
+}Couleur;
 
 /**
  * Structure contenant toutes les couleurs utiles de manière récurente
  * On justifie l'utilisation d'une structure et non d'un tableau pour pouvoir se servir des noms et non des indices (plus abstrait mais haut niveau et facile d'utilisation)
  * */
-typedef struct couleurTab{
-	couleur couleurHomme; // 49, 140, 231
-	couleur couleurFemme; // 223, 115, 255
-	couleur couleurMenuDeroulant; // 130, 224, 170
-	couleur gris180; // 180,180,180
-	couleur gris125; //125,125,125
-	couleur blanc; // 255, 255, 255
-	couleur noir; // 0, 0, 0
-	couleur vertPrincipal; // 139,195,74
-	couleur bleuEcriture; // 38, 193, 225
-	couleur fondPrincipal; // 241, 255, 251
-}couleurTab;
+typedef struct CouleurTab{
+	Couleur couleurHomme; // 49, 140, 231
+	Couleur couleurFemme; // 223, 115, 255
+	Couleur couleurMenuDeroulant; // 130, 224, 170
+	Couleur gris180; // 180,180,180
+	Couleur gris125; //125,125,125
+	Couleur blanc; // 255, 255, 255
+	Couleur noir; // 0, 0, 0
+	Couleur vertPrincipal; // 139,195,74
+	Couleur bleuEcriture; // 38, 193, 225
+	Couleur fondPrincipal; // 241, 255, 251
+}CouleurTab;
 
 /**
  * Structure matérialisant un rectangle, contient de nombreux paramètres pour répondre à tous les besoins
  * */
-typedef struct rec{
+typedef struct Rec{
 	int x,y; // coordonnées du centre du rectangle -> on calculera les différents point à partir de là
 	int hauteur, largeur; // hauteur et largeur du rectangle
 	int epaisseurBordure; // largeur de la bordure
-	couleur cInterieur; // couleur de l'intérieur du rectangle
-	couleur cBordure; // couleur des contours du rectangle
-}rec;
-
-/**
- * Structure matérialisant un lien de parenté entre deux personnes (d'un point de vu graphique)
- * Contient les adresses des deux rectangles à relier
- * */
-typedef struct lien{
-	rec* r1;
-	rec* r2;
-}lien;
+	Couleur cInterieur; // couleur de l'intérieur du rectangle
+	Couleur cBordure; // couleur des contours du rectangle
+}Rec;
 
 /**
  * Structure matérialisant un menu déroulant pouvant se dérouler vers la droite
  * */
-typedef struct menuDeroulantVersDroite{
+typedef struct MenuDeroulantVersDroite{
 	
 	// Générales, ne changent pas
 	int yBas,yHaut; // Le haut et le bas du menu déroulant à afficher
@@ -61,13 +52,13 @@ typedef struct menuDeroulantVersDroite{
 	// En cours
 	int xActuel; // Utile pour l'animation : variable qui évolue et permet de faire évoluer l'affichage
 	int xFinal; // Utile pour l'animation : variable à atteindre qui permet de faire évoluer xActuel dans un sens ou dans l'autre
-}menuDeroulantVersDroite;
+}MenuDeroulantVersDroite;
 
 /**
  * Structure contenant des booléens pour chaque touche utilisé dans le programme
  * On justifie l'utilisation d'une structure et non d'un tableau pour pouvoir se servir des noms et non des indices (plus abstrait mais haut niveau et facile d'utilisation)
  * */
-typedef struct keyboard{
+typedef struct Keyboard{
 	bool key_a; // Touche a minuscule
 	bool key_A; // Touche A majuscule
 	bool key_b; // Touche b minuscule
@@ -146,143 +137,143 @@ typedef struct keyboard{
 	bool key_page_down; // Touche bas de page (flèche peu utilisée)
 	
 	bool key_slash;
-}keyboard;
+}Keyboard;
 
 /**
  * Enumération permettant de générer différents affichages sous forme de "pages"
  * */
-typedef enum {accueil, newArbre, openArbre, arbre} page;
+typedef enum {accueil, newArbre, openArbre, arbre} Page;
 
 /**
  * Structure permettant de gérer l'affichage des pages : pFinal permet de ne pas changer de page brusquement en plein milieu d'un traitement.
  * */
-typedef struct pages{
-	page pActuel;
-	page pFinal;
-}pages;
+typedef struct Pages{
+	Page pActuel;
+	Page pFinal;
+}Pages;
 
 /**
  * Structure permettant d'avoir un bouton qui permet de changer de page au clic
  * */
-typedef struct boutonChangePage{
-	rec rect;
-	page pageSuivante;
+typedef struct BoutonChangePage{
+	Rec rect;
+	Page pageSuivante;
 	char* string;
-	couleur cText;
+	Couleur cText;
 	int epaisseurTrait;
-}boutonChangePage;
+}BoutonChangePage;
 
 /**
  * Structure matérialisant un input de type texte (permettant à l'utilisateur de rentrer du texte depuis le programme directement)
  * @author Yann LEFEVRE
  * */
-typedef struct inputText{
+typedef struct InputText{
 	bool etat; // définit si l'input est selectionné(=1) ou non(=0)
 	int size; // taille actuelle de la chaine entrée
 	char* string; // la chaine de caractères écrite par l'utilisateur
-	rec rect; // rectangle utilisé pour l'affichage
-}inputText;
+	Rec rect; // rectangle utilisé pour l'affichage
+}InputText;
 
 /**
  * Structure permettant de rassember toutes les informations récupérées concernant un fichier stocké sur l'ordinateur
  * */
-typedef struct fichier{
+typedef struct Fichier{
 	char nom[50];
 	char heure[10];
 	char jour[10];
 	char mois[15];
 	
-}fichier;
+}Fichier;
 
 /**
  * Structure permettant d'avoir un bouton qui permet de changer les fichiers affichés
  * */
-typedef struct boutonChangeFichiers{
-	rec rect;
+typedef struct BoutonChangeFichiers{
+	Rec rect;
 	char* string;
-	couleur cText;
+	Couleur cText;
 	int epaisseurTrait;
 	int effet; // la valeur dont sera incrémenté le numéro du premier élément affiché
-}boutonChangeFichiers;
+}BoutonChangeFichiers;
 
 /**
  * Structure permettant d'avoir un slider (input type range) qui permet de faire évoluer une variable qui lui est affecté en utilisant la souris
  * Ce slider est horizontal et permet donc de changer la valeur en bougeant la souris de droite à gauche
  * */
-typedef struct sliderHorizontal{ 
+typedef struct SliderHorizontal{ 
 	int x;
 	int y;
 	int largeur;
 	int epaisseurLigne;
 	int epaisseurPointeur;
-	couleur cLigne;
-	couleur cPointeur;
+	Couleur cLigne;
+	Couleur cPointeur;
 	int* var;
 	int min;
 	int max;
-}sliderHorizontal;
+}SliderHorizontal;
 
 /**
  * Structure permettant d'avoir un slider (input type range) qui permet de faire évoluer une variable qui lui est affecté en utilisant la souris
  * Ce slider est vertical et permet donc de changer la valeur en bougeant la souris de haut en bas
  * */
-typedef struct sliderVertical{ 
+typedef struct SliderVertical{ 
 	int x;
 	int y;
 	int hauteur;
 	int epaisseurLigne;
 	int epaisseurPointeur;
-	couleur cLigne;
-	couleur cPointeur;
+	Couleur cLigne;
+	Couleur cPointeur;
 	int* var;
 	int min;
 	int max;
-}sliderVertical;
+}SliderVertical;
 
 /**
  * Structure permettant de gérer la souris : de savoir en temps réel si les boutons sont appuyés ou relachés
  * */
-typedef struct mouse{
+typedef struct Mouse{
 	bool clicLeft;
 	bool clicRight;
-}mouse;
+}Mouse;
 
 /**
  * Structure permettant de matérialiser un carré
  * */
-typedef struct carre{
+typedef struct Carre{
 	int x,y; // coordonnées du centre du rectangle -> on calculera les différents point à partir de là
 	int cote; // hauteur et largeur du rectangle
 	int epaisseurBordure; // largeur de la bordure
-	couleur cInterieur; // couleur de l'intérieur du rectangle
-	couleur cBordure; // couleur des contours du rectangle
-}carre;
+	Couleur cInterieur; // couleur de l'intérieur du rectangle
+	Couleur cBordure; // couleur des contours du rectangle
+}Carre;
 
 /**
  * Structure matérialisant une checkbox (carré pouvant avoir deux états uniquement : 0 ou 1 en fonction de si elle est cochée ou non)
  * */
-typedef struct checkbox{
+typedef struct Checkbox{
 	bool etat; // l'état signalisant si la checkbox est cochée ou non
-	carre square; // Le carré servant de fond pour la checkbox
-}checkbox;
+	Carre square; // Le carré servant de fond pour la checkbox
+}Checkbox;
 
 /**
  * Structure matérialisant un radiobutton
  * */
-typedef struct radiobutton{
+typedef struct Radiobutton{
 	int on; // numéro de l'unique case selectionnée (-1 si aucun)
 	int nb; // le nombre de cases
-	checkbox* cases; // le tableau contenant les différentes checkbox matérialisant les différentes cases du radiobutton
-}radiobutton;
+	Checkbox* cases; // le tableau contenant les différentes checkbox matérialisant les différentes cases du radiobutton
+}Radiobutton;
 
 /**
  * Structure matérialisant un input de type select, permettant de choisir parmi différentes options proposées
  * */
-typedef struct inputSelect{
+typedef struct InputSelect{
 	char** options; // La liste des mots représentant les options
 	int nbOptions; // Le nombre d'options
 	int initial; // La valeur initialement selectionnée
-}inputSelect;
+}InputSelect;
 
 /**
  * @brief Structure permettatn de farie des rectangles avec les angles arrondis
@@ -294,34 +285,37 @@ typedef struct BoundedRectangle
     int largeur;
     int hauteur;
     int epaisseurBordure;
-    couleur cInterieur;
-    couleur cBordure;
+    Couleur cInterieur;
+    Couleur cBordure;
 }BoundedRectangle;
 
 /**
  * @brief Structure matérialisant les messages permettant le communication avec l'assistant
  * */
-typedef struct message{
+typedef struct Message{
 	bool sender; // 0 si assistant, 1 si utilisateur
 	char* string; // Le message
-}message;
+}Message;
 
 /**
  * Structure permettant d'avoir un bouton qui permet de changer de page au clic
  * */
-typedef struct boutonSendMessage{
-	rec rect;
+typedef struct BoutonSendMessage{
+	Rec rect;
 	char* string;
-	couleur cText;
+	Couleur cText;
 	int epaisseurTrait;
-}boutonSendMessage;
+}BoutonSendMessage;
 
+/**
+ * Structure matérialisant un formulaire, pouvant contenir différents composants graphiques
+ * */
 typedef struct Form {
 	int nbCheckbox, nbRadioButton, nbInpuText; // Les compteurs d'inputs
 	    
-    checkbox** tabCheckbox; //tableau des adresses de checkbox
-    radiobutton** tabRadioButton; //tableau des adresses de radio button
-    inputText** tabInpuText; //tableau des adresses de input text
+    Checkbox** tabCheckbox; //tableau des adresses de checkbox
+    Radiobutton** tabRadioButton; //tableau des adresses de radio button
+    InputText** tabInpuText; //tableau des adresses de input text
 }Form;
 
 

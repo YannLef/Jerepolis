@@ -19,7 +19,7 @@
   * -----------------------------------------------------------
   * */
   
-void initSliderVertical(sliderVertical* sli, int x, int y, int hauteur, int epaisseurLigne, int epaisseurPointeur, couleur cLigne, couleur cPointeur, int min, int max, int* var);
+void initSliderVertical(SliderVertical* sli, int x, int y, int hauteur, int epaisseurLigne, int epaisseurPointeur, Couleur cLigne, Couleur cPointeur, int min, int max, int* var);
 
  /**
   * ----------------------------------------------------
@@ -27,7 +27,7 @@ void initSliderVertical(sliderVertical* sli, int x, int y, int hauteur, int epai
   * ----------------------------------------------------
   * */
   
-void afficheSliderVertical(sliderVertical sli);
+void afficheSliderVertical(SliderVertical sli);
 
  /**
   * ---------------------------------------------------
@@ -35,6 +35,6 @@ void afficheSliderVertical(sliderVertical sli);
   * ---------------------------------------------------
   * */
   
-void gereClicSliderVertical(sliderVertical* sli, int xSouris, int ySouris);
+void gereClicSliderVertical(SliderVertical* sli, int xSouris, int ySouris);
 
 #endif

@@ -40,7 +40,7 @@
  * Fonction permettant d'initialiser la page d'un programme
  * @author Yann LEFEVRE
  * */
-void initPage(pages* p, page pActuel){
+void initPage(Pages* p, Page pActuel){
 	debug("<initPage> begin");
 	
 	p->pActuel = pActuel;
@@ -59,7 +59,7 @@ void initPage(pages* p, page pActuel){
  * Fonction permettant de changer de page de manière fluide ( à la fin du passage dans la boucle temporisation et non brutalement en plein traitement !)
  * @author Yann LEFEVRE
  * */
-void updatePage(pages* p){
+void updatePage(Pages* p){
 	debug("<updatePage> begin");
 	
 	p->pActuel = p->pFinal;
@@ -77,7 +77,7 @@ void updatePage(pages* p){
  * Fonction permettant de tester si la page passé en paramètre est la page actuelle
  * @author Yann LEFEVRE
  * */
-bool isOnPage(pages p, page pTest){
+bool isOnPage(Pages p, Page pTest){
 	debug("<isOnPage> begin");
 	
 	if(p.pActuel == pTest){
@@ -93,7 +93,7 @@ bool isOnPage(pages p, page pTest){
  * Fonction permettant de tester si la page passé en paramètre est la future page (pFinal deviendra pActuel à l'appel de la fonction updatePage)
  * @author Yann LEFEVRE
  * */
-bool willBeOnPage(pages p, page pTest){
+bool willBeOnPage(Pages p, Page pTest){
 	debug("<willBeOnPage> begin");
 	
 	if(p.pFinal == pTest){

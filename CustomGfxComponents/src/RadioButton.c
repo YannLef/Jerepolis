@@ -42,7 +42,7 @@
  * @param on Le numéro de la case à cocher par défaut
  * @param nb le nombre de cases 
  * */
-void initRadioButton(radiobutton* rb, char* type, int x, int y, int cote, int epaisseurBordure, couleur cInterieur, couleur cBordure, int nb, int on){
+void initRadioButton(Radiobutton* rb, char* type, int x, int y, int cote, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, int nb, int on){
 	debug("<initRadioButton> begin");
 	
 	rb->nb = nb;
@@ -50,7 +50,7 @@ void initRadioButton(radiobutton* rb, char* type, int x, int y, int cote, int ep
 	rb->on = on;
 	
 	if(nb>0){
-		rb->cases = malloc(sizeof(checkbox)*nb);
+		rb->cases = malloc(sizeof(Checkbox)*nb);
 	}
 	
 	if(strcmp(type,"vertical") == 0){ // Si le radiobutton est de type vertical
@@ -85,7 +85,7 @@ void initRadioButton(radiobutton* rb, char* type, int x, int y, int cote, int ep
  * @author Yann LEFEVRE
  * @param rb le radiobutton en question
  * */
-void afficheRadioButton(radiobutton rb){
+void afficheRadioButton(Radiobutton rb){
 	debug("<afficheRadioButton> begin");
 	
 	for(int i=0;i<rb.nb;i++){
@@ -106,7 +106,7 @@ void afficheRadioButton(radiobutton rb){
  * @author Yann LEFEVRE
  * @param rb le radiobutton en question
  * */
-void updateRadioButton(radiobutton* rb){
+void updateRadioButton(Radiobutton* rb){
 	debug("<updateRadioButton> begin");
 	
 	for(int i=0;i<rb->nb;i++){
@@ -138,7 +138,7 @@ void updateRadioButton(radiobutton* rb){
  * @param xSouris l'abscisse du clic souris
  * @param ySouris l'ordonnée du clic souris
  * */
-void gereClicRadioButton(radiobutton* rb, int xSouris, int ySouris){
+void gereClicRadioButton(Radiobutton* rb, int xSouris, int ySouris){
 	debug("<gereClicRadioButton> begin");
 	
 	for(int i=0;i<rb->nb;i++){

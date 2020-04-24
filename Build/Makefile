@@ -175,6 +175,19 @@ BetterTerminal/fast:
 	$(MAKE) -f BetterTerminal/CMakeFiles/BetterTerminal.dir/build.make BetterTerminal/CMakeFiles/BetterTerminal.dir/build
 .PHONY : BetterTerminal/fast
 
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) -f Tests/CMakeFiles/tests.dir/build.make Tests/CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -215,6 +228,7 @@ help:
 	@echo "... CustomGfxComponents"
 	@echo "... Logger"
 	@echo "... BetterTerminal"
+	@echo "... tests"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -30,7 +30,7 @@
  * */
 #include "../headers/SliderHorizontal.h"
 
-extern mouse souris;
+extern Mouse souris;
 
  /**
   * -----------------------------------------------------------
@@ -42,7 +42,7 @@ extern mouse souris;
  * Fonction permettant d'initialiser un slider horizontal
  * @author Yann LEFEVRE
  * */
-void initSliderHorizontal(sliderHorizontal* sli, int x, int y, int largeur, int epaisseurLigne, int epaisseurPointeur, couleur cLigne, couleur cPointeur, int min, int max, int* var){
+void initSliderHorizontal(SliderHorizontal* sli, int x, int y, int largeur, int epaisseurLigne, int epaisseurPointeur, Couleur cLigne, Couleur cPointeur, int min, int max, int* var){
 	debug("<initSliderHorizontal> begin");
 	
 	sli->x = x;
@@ -69,7 +69,7 @@ void initSliderHorizontal(sliderHorizontal* sli, int x, int y, int largeur, int 
  * Fonction permettant d'afficher un slider horizontal
  * @author Yann LEFEVRE
  * */
-void afficheSliderHorizontal(sliderHorizontal sli){
+void afficheSliderHorizontal(SliderHorizontal sli){
 	debug("<afficheSliderHorizontal> begin");
 	
 	// Partie ligne
@@ -102,7 +102,7 @@ void afficheSliderHorizontal(sliderHorizontal sli){
  * Fonction permettant de faire varier la valeur du slider horizontal en fonction du déplacement de la souris
  * @author Yann LEFEVRE
  * */
-void gereClicSliderHorizontal(sliderHorizontal* sli, int xSouris, int ySouris){
+void gereClicSliderHorizontal(SliderHorizontal* sli, int xSouris, int ySouris){
 	debug("<gereClicSliderHorizontal> begin");
 	
 	if(mouseLeftIsDown()){

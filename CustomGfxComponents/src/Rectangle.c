@@ -39,7 +39,7 @@
  * Initialise un rectangle "rect", nécessite de nombreux paramètres pour être le plus complet possible
  * @author Yann LEFEVRE
  * */
-void initRectangle(rec* rect, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure){
+void initRectangle(Rec* rect, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure){
 	debug("<initRectangle> begin");
 	
 	rect->x = x;
@@ -66,7 +66,7 @@ void initRectangle(rec* rect, int x, int y, int largeur, int hauteur, int epaiss
  * mobile=0 : la position du rectangle est fixe quoi qu'il arrive
  * @author Yann LEFEVRE
  * */
-void afficheRectangle(rec rect, bool mobile, int xEcran, int yEcran, float coefZoom){
+void afficheRectangle(Rec rect, bool mobile, int xEcran, int yEcran, float coefZoom){
 	debug("<afficheRectangle> begin");
 	
 	epaisseurDeTrait(1);
@@ -139,7 +139,7 @@ void afficheRectangle(rec rect, bool mobile, int xEcran, int yEcran, float coefZ
  * Fonction vérifiant si un point de coordonnée (x,y) appartient à un rectangle donné
  * @author Yann LEFEVRE
  * */
-bool isOnRectangle(int x, int y, rec rect){
+bool isOnRectangle(int x, int y, Rec rect){
 	debug("<isOnRectangle> begin");
 	
 	if(x > (rect.x - rect.largeur/2) && x < (rect.x + rect.largeur/2)){
@@ -157,7 +157,7 @@ bool isOnRectangle(int x, int y, rec rect){
  * Fonction vérifiant si un point de coordonnée (x,y) appartient à un rectangle mobile donné
  * @author Yann LEFEVRE
  * */
-bool isOnRectangleMobile(int x, int y, rec rect, int xEcran, int yEcran, float coefZoom){
+bool isOnRectangleMobile(int x, int y, Rec rect, int xEcran, int yEcran, float coefZoom){
 	debug("<isOnRectangleMobile> begin");
 	
 	if(x > (rect.x + xEcran*coefZoom - (rect.largeur*coefZoom)/2) && x < (rect.x + xEcran*coefZoom + (rect.largeur*coefZoom)/2)){

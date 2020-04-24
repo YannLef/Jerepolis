@@ -44,7 +44,7 @@
  * */
 #include "../headers/Formulaire.h"
 
-extern couleurTab c;
+extern CouleurTab c;
 
 void initForm(Form* formulaire){
 	debug("<initForm> begin");
@@ -84,16 +84,16 @@ void freeForm(Form* formulaire){
 	debug("<freeForm> end");
 }
 
-void addCheckboxToForm(Form* formulaire, checkbox* cb){
+void addCheckboxToForm(Form* formulaire, Checkbox* cb){
 	debug("<addCheckboxToForm> begin");
 	
 	if(formulaire->nbCheckbox == 0){ // Si le tableau est vide
 		formulaire->nbCheckbox = 1;
-		formulaire->tabCheckbox = (checkbox**)malloc(sizeof(checkbox*)*formulaire->nbCheckbox);
+		formulaire->tabCheckbox = (Checkbox**)malloc(sizeof(Checkbox*)*formulaire->nbCheckbox);
 		formulaire->tabCheckbox[0] = cb;
 	}else{ // Si le tableau n'est pas vide, il faut penser à recopier l'ancien tableau dans le nouveau
 		formulaire->nbCheckbox = formulaire->nbCheckbox + 1;
-		checkbox** tmp  = (checkbox**)malloc(sizeof(checkbox*)*formulaire->nbCheckbox);
+		Checkbox** tmp  = (Checkbox**)malloc(sizeof(Checkbox*)*formulaire->nbCheckbox);
 		
 		// On recopie l'ancien tableau
 		for(int i=0;i<formulaire->nbCheckbox-1;i++){
@@ -112,16 +112,16 @@ void addCheckboxToForm(Form* formulaire, checkbox* cb){
 	debug("<addCheckboxToForm> end");
 }
 
-void addRadioButtonToForm(Form* formulaire, radiobutton* rb){
+void addRadioButtonToForm(Form* formulaire, Radiobutton* rb){
 	debug("<addRadioButtonToForm> begin");
 	
 	if(formulaire->nbRadioButton == 0){ // Si le tableau est vide
 		formulaire->nbRadioButton = 1;
-		formulaire->tabRadioButton = (radiobutton**)malloc(sizeof(radiobutton*)*formulaire->nbRadioButton);
+		formulaire->tabRadioButton = (Radiobutton**)malloc(sizeof(Radiobutton*)*formulaire->nbRadioButton);
 		formulaire->tabRadioButton[0] = rb;
 	}else{ // Si le tableau n'est pas vide, il faut penser à recopier l'ancien tableau dans le nouveau
 		formulaire->nbRadioButton = formulaire->nbRadioButton + 1;
-		radiobutton** tmp  = (radiobutton**)malloc(sizeof(radiobutton*)*formulaire->nbRadioButton);
+		Radiobutton** tmp  = (Radiobutton**)malloc(sizeof(Radiobutton*)*formulaire->nbRadioButton);
 		
 		// On recopie l'ancien tableau
 		for(int i=0;i<formulaire->nbRadioButton-1;i++){
@@ -140,16 +140,16 @@ void addRadioButtonToForm(Form* formulaire, radiobutton* rb){
 	debug("<addRadioButtonToForm> end");
 }
 
-void addInputTextToForm(Form* formulaire, inputText* input){
+void addInputTextToForm(Form* formulaire, InputText* input){
 	debug("<addInputTextToForm> begin");
 	
 	if(formulaire->nbInpuText == 0){ // Si le tableau est vide
 		formulaire->nbInpuText = 1;
-		formulaire->tabInpuText = (inputText**)malloc(sizeof(inputText*)*formulaire->nbInpuText);
+		formulaire->tabInpuText = (InputText**)malloc(sizeof(InputText*)*formulaire->nbInpuText);
 		formulaire->tabInpuText[0] = input;
 	}else{ // Si le tableau n'est pas vide, il faut penser à recopier l'ancien tableau dans le nouveau
 		formulaire->nbInpuText = formulaire->nbInpuText + 1;
-		inputText** tmp  = (inputText**)malloc(sizeof(inputText*)*formulaire->nbInpuText);
+		InputText** tmp  = (InputText**)malloc(sizeof(InputText*)*formulaire->nbInpuText);
 		
 		// On recopie l'ancien tableau
 		for(int i=0;i<formulaire->nbInpuText-1;i++){

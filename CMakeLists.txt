@@ -27,6 +27,8 @@ add_subdirectory(CustomGfxComponents)
 add_subdirectory(Logger)
 add_subdirectory(BetterTerminal)
 
+add_subdirectory(Tests)
+
 SET(SRC
 	main.c
 	)

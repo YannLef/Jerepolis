@@ -20,7 +20,7 @@
   * -----------------------------------------------------------
   * */
   
-void initMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int yBas, int yHaut, int xGauche, int xDroite, bool etat);
+void initMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu, int yBas, int yHaut, int xGauche, int xDroite, bool etat);
 
  /**
   * ----------------------------------------------------
@@ -28,8 +28,8 @@ void initMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int yBas, int yH
   * ----------------------------------------------------
   * */
   
-void afficheMenuDeroulantVersDroite(menuDeroulantVersDroite* menu, int xEcran, int yEcran, float coefZoom);
-void afficheDetailMenu(int nav[10], pages p, menuDeroulantVersDroite* menuDeroulant);
+void afficheMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu, int xEcran, int yEcran, float coefZoom);
+void afficheDetailMenu(int nav[10], Pages p, MenuDeroulantVersDroite* menuDeroulant);
 
  /**
   * ---------------------------------------------------
@@ -37,8 +37,8 @@ void afficheDetailMenu(int nav[10], pages p, menuDeroulantVersDroite* menuDeroul
   * ---------------------------------------------------
   * */
   
-void agrandiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu);
-void reduiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu);
+void agrandiMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu);
+void reduiMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu);
 
  /**
   * ---------------------------------------------------
@@ -46,6 +46,6 @@ void reduiMenuDeroulantVersDroite(menuDeroulantVersDroite* menu);
   * ---------------------------------------------------
   * */
   
-void gereMenuDeroulantVersDroite(int nav[10], menuDeroulantVersDroite* menuDeroulant);
+void gereMenuDeroulantVersDroite(int nav[10], MenuDeroulantVersDroite* menuDeroulant);
 
 #endif

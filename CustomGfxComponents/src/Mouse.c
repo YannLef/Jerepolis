@@ -27,7 +27,7 @@
  * */
 #include "../headers/Mouse.h"
 
-extern mouse souris;
+extern Mouse souris;
 
  /**
   * -----------------------------------------------------------

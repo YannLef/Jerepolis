@@ -19,7 +19,7 @@
   * -----------------------------------------------------------
   * */
   
-void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, int* nombreFichiers);
+void recupereInfosFichiersDansDossier(char* cheminDossier, Fichier** fichiers, int* nombreFichiers);
 
  /**
   * ----------------------------------------------------
@@ -27,7 +27,7 @@ void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, i
   * ----------------------------------------------------
   * */
   
-void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, DonneesImageRGB* fondExplorateur, fichier* listeFichiers, boutonChangePage exitOpenTree, boutonChangeFichiers nextFichiers, boutonChangeFichiers previousFichiers, int xEcran, int yEcran, float coefZoom, int debutAffichageExplorateur, int nombreFichiers);
+void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, DonneesImageRGB* fondExplorateur, Fichier* listeFichiers, BoutonChangePage exitOpenTree, BoutonChangeFichiers nextFichiers, BoutonChangeFichiers previousFichiers, int xEcran, int yEcran, float coefZoom, int debutAffichageExplorateur, int nombreFichiers);
 
  /**
   * ----------------------------------------------------
@@ -35,7 +35,7 @@ void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, Donnee
   * ----------------------------------------------------
   * */
   
-void gereSourisSelectionneFichier(int xSouris, int ySouris, int* debutAffichageExplorateur, int nombreFichiers, pages* pActuel, fichier* listeFichiers, fichier* fichierCharge, char** fileNameI,
+void gereSourisSelectionneFichier(int xSouris, int ySouris, int* debutAffichageExplorateur, int nombreFichiers, Pages* pActuel, Fichier* listeFichiers, Fichier* fichierCharge, char** fileNameI,
 char** fileNameM);
 
 #endif

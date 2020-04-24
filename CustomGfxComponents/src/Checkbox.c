@@ -39,7 +39,7 @@
  * Fonction permettant d'initialiser une checkbox
  * @author Yann LEFEVRE
  * */
-void initCheckbox(checkbox* cb, int x, int y, int cote, int epaisseurBordure, couleur cInterieur, couleur cBordure, bool etat){
+void initCheckbox(Checkbox* cb, int x, int y, int cote, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, bool etat){
 	debug("<initCheckbox> begin");
 	
 	cb->etat = etat;
@@ -58,7 +58,7 @@ void initCheckbox(checkbox* cb, int x, int y, int cote, int epaisseurBordure, co
  * Fonction permettant d'afficher une checkbox
  * @author Yann LEFEVRE
  * */
-void afficheCheckbox(checkbox cb){
+void afficheCheckbox(Checkbox cb){
 	debug("<afficheCheckbox> begin");
 	
 	afficheCarre(cb.square);
@@ -83,7 +83,7 @@ void afficheCheckbox(checkbox cb){
  * Fonction permettant de définir l'etat d'une checkbox
  * @author Yann LEFEVRE
  * */
-void setEtatCheckbox(checkbox* cb, bool etat){
+void setEtatCheckbox(Checkbox* cb, bool etat){
 	debug("<setEtatCheckbox> begin");
 	
 	cb->etat = etat;
@@ -95,7 +95,7 @@ void setEtatCheckbox(checkbox* cb, bool etat){
  * Fonction permettant de changer l'etat d'une checkbox
  * @author Yann LEFEVRE
  * */
-void toggleEtatCheckbox(checkbox* cb){
+void toggleEtatCheckbox(Checkbox* cb){
 	debug("<toggleEtatCheckbox> begin");
 	
 	if(cb->etat){
@@ -118,7 +118,7 @@ void toggleEtatCheckbox(checkbox* cb){
  * Permet de changer son état (principe même d'une checkbox)
  * @author Yann LEFEVRE
  * */
-void gereClicCheckbox(checkbox* cb, int xSouris, int ySouris){
+void gereClicCheckbox(Checkbox* cb, int xSouris, int ySouris){
 	debug("<gereClicCheckbox> begin");
 	
 	if(isOnCarre(xSouris,ySouris,cb->square)){

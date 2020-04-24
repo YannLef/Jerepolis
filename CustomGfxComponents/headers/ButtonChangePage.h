@@ -19,7 +19,7 @@
   * -----------------------------------------------------------
   * */
   
-void initBoutonChangePage(boutonChangePage* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure, couleur cText, int epaisseurTrait, page pageSuivante);
+void initBoutonChangePage(BoutonChangePage* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, Couleur cText, int epaisseurTrait, Page pageSuivante);
 
  /**
   * ----------------------------------------------------
@@ -27,7 +27,7 @@ void initBoutonChangePage(boutonChangePage* b, char* string, int x, int y, int l
   * ----------------------------------------------------
   * */
   
-void afficheBoutonChangePage(boutonChangePage b, int xEcran, int yEcran, float coefZoom);
+void afficheBoutonChangePage(BoutonChangePage b, int xEcran, int yEcran, float coefZoom);
 
  /**
   * ---------------------------------------------------
@@ -35,6 +35,6 @@ void afficheBoutonChangePage(boutonChangePage b, int xEcran, int yEcran, float c
   * ---------------------------------------------------
   * */
   
-void gereSourisBoutonChangePage(boutonChangePage b, pages* pActuel, int xSouris, int ySouris);
+void gereSourisBoutonChangePage(BoutonChangePage b, Pages* pActuel, int xSouris, int ySouris);
 
 #endif

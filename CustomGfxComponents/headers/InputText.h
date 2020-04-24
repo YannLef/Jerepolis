@@ -20,9 +20,9 @@
   * -----------------------------------------------------------
   * */
   
-void initInputText(inputText* input, int etat, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure);
-void resetInputText(inputText* input);
-void setString(inputText* input, char* string);
+void initInputText(InputText* input, int etat, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure);
+void resetInputText(InputText* input);
+void setString(InputText* input, char* string);
 
  /**
   * ----------------------------------------------------
@@ -30,7 +30,7 @@ void setString(inputText* input, char* string);
   * ----------------------------------------------------
   * */
   
-void afficheInputTexte(inputText input, int xEcran, int yEcran, float coefZoom);
+void afficheInputTexte(InputText input, int xEcran, int yEcran, float coefZoom);
 
  /**
   * ---------------------------------------------------
@@ -38,10 +38,10 @@ void afficheInputTexte(inputText input, int xEcran, int yEcran, float coefZoom);
   * ---------------------------------------------------
   * */
   
-void toggleEtatInput(inputText* input);
-void setEtatInput(inputText* input, bool etat);
-void completeInputText(inputText* input, char c);
-void updateInputText(inputText* input);
+void toggleEtatInput(InputText* input);
+void setEtatInput(InputText* input, bool etat);
+void completeInputText(InputText* input, char c);
+void updateInputText(InputText* input);
 
  /**
   * ---------------------------------------------------
@@ -49,6 +49,6 @@ void updateInputText(inputText* input);
   * ---------------------------------------------------
   * */
   
-void gereSourisInputText(inputText* input, int xSouris, int ySouris);
+void gereSourisInputText(InputText* input, int xSouris, int ySouris);
 
 #endif

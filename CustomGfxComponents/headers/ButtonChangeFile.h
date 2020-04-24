@@ -18,7 +18,7 @@
   * -----------------------------------------------------------
   * */
   
-void initBoutonChangeFichiers(boutonChangeFichiers* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure, couleur cText, int epaisseurTrait, int effet);
+void initBoutonChangeFichiers(BoutonChangeFichiers* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, Couleur cText, int epaisseurTrait, int effet);
 
  /**
   * ----------------------------------------------------
@@ -26,7 +26,7 @@ void initBoutonChangeFichiers(boutonChangeFichiers* b, char* string, int x, int 
   * ----------------------------------------------------
   * */
   
-void afficheBoutonChangeFichiers(boutonChangeFichiers b, int xEcran, int yEcran, float coefZoom);
+void afficheBoutonChangeFichiers(BoutonChangeFichiers b, int xEcran, int yEcran, float coefZoom);
 
  /**
   * ---------------------------------------------------
@@ -34,6 +34,6 @@ void afficheBoutonChangeFichiers(boutonChangeFichiers b, int xEcran, int yEcran,
   * ---------------------------------------------------
   * */
   
-void gereSourisBoutonChangeFichiers(boutonChangeFichiers b, int* debutAffichageExplorateur, int nombreFichiers, int xSouris, int ySouris);
+void gereSourisBoutonChangeFichiers(BoutonChangeFichiers b, int* debutAffichageExplorateur, int nombreFichiers, int xSouris, int ySouris);
 
 #endif

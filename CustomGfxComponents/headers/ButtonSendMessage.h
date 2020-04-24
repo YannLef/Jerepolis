@@ -5,7 +5,7 @@
   * */
   
 
-void initBoutonSendMessage(boutonSendMessage* b, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure, couleur cText, int epaisseurTrait);
+void initBoutonSendMessage(BoutonSendMessage* b, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, Couleur cText, int epaisseurTrait);
 
  /**
   * ----------------------------------------------------
@@ -14,7 +14,7 @@ void initBoutonSendMessage(boutonSendMessage* b, int x, int y, int largeur, int 
   * */
   
 
-void afficheBoutonSendMessage(boutonSendMessage b, int xEcran, int yEcran, float coefZoom);
+void afficheBoutonSendMessage(BoutonSendMessage b, int xEcran, int yEcran, float coefZoom);
 
  /**
   * ---------------------------------------------------
@@ -22,4 +22,4 @@ void afficheBoutonSendMessage(boutonSendMessage b, int xEcran, int yEcran, float
   * ---------------------------------------------------
   * */
   
-void gereSourisBoutonSendMessage(boutonSendMessage b, inputText* inputAssistant, message*** messages, int nbMessageMax, int* nbMessage, int xSouris, int ySouris);
+void gereSourisBoutonSendMessage(BoutonSendMessage b, InputText* inputAssistant, Message*** messages, int nbMessageMax, int* nbMessage, int xSouris, int ySouris);

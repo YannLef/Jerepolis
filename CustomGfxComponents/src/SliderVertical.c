@@ -30,7 +30,7 @@
  * */
 #include "../headers/SliderVertical.h"
 
-extern mouse souris;
+extern Mouse souris;
 
  /**
   * -----------------------------------------------------------
@@ -42,7 +42,7 @@ extern mouse souris;
  * Fonction permettant d'initialiser un slider vertical
  * @author Yann LEFEVRE
  * */
-void initSliderVertical(sliderVertical* sli, int x, int y, int hauteur, int epaisseurLigne, int epaisseurPointeur, couleur cLigne, couleur cPointeur, int min, int max, int* var){
+void initSliderVertical(SliderVertical* sli, int x, int y, int hauteur, int epaisseurLigne, int epaisseurPointeur, Couleur cLigne, Couleur cPointeur, int min, int max, int* var){
 	debug("<initSliderVertical> begin");
 	
 	sli->x = x;
@@ -69,7 +69,7 @@ void initSliderVertical(sliderVertical* sli, int x, int y, int hauteur, int epai
  * Fonction permettant d'afficher un slider vertical
  * @author Yann LEFEVRE
  * */
-void afficheSliderVertical(sliderVertical sli){
+void afficheSliderVertical(SliderVertical sli){
 	debug("<afficheSliderVertical> begin");
 	
 	// Partie ligne
@@ -102,7 +102,7 @@ void afficheSliderVertical(sliderVertical sli){
  * Fonction permettant de faire varier la valeur du slider vertical en fonction du déplacement de la souris
  * @author Yann LEFEVRE
  * */
-void gereClicSliderVertical(sliderVertical* sli, int xSouris, int ySouris){
+void gereClicSliderVertical(SliderVertical* sli, int xSouris, int ySouris){
 	debug("<gereClicSliderVertical> begin");
 	
 	if(mouseLeftIsDown()){

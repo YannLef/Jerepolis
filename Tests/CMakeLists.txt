@@ -1,0 +1,10 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0.0)
+PROJECT(tests VERSION 0.1.0)
+
+
+
+SET(SRC
+	tests.c
+	)
+	
+ADD_EXECUTABLE(tests ${SRC})

@@ -41,7 +41,7 @@
  * Tous les paramètres sont spécifiques à l'affichage du bouton, excepté la page qui doit correspondre à la page sur laquelle on sera rediriger après le clic
  * @author Yann LEFEVRE
  * */
-void initBoutonChangePage(boutonChangePage* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure, couleur cText, int epaisseurTrait, page pageSuivante){
+void initBoutonChangePage(BoutonChangePage* b, char* string, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, Couleur cText, int epaisseurTrait, Page pageSuivante){
 	debug("<initBoutonChangePage> begin");
 	
 	int i=0;
@@ -79,7 +79,7 @@ void initBoutonChangePage(boutonChangePage* b, char* string, int x, int y, int l
  * Fonction permettant d'afficher un bouton permettant de changer de page
  * @author Yann LEFEVRE
  * */
-void afficheBoutonChangePage(boutonChangePage b, int xEcran, int yEcran, float coefZoom){
+void afficheBoutonChangePage(BoutonChangePage b, int xEcran, int yEcran, float coefZoom){
 	debug("<afficheBoutonChangePage> begin");
 	
 	afficheRectangle(b.rect,0,xEcran,yEcran,coefZoom);
@@ -119,7 +119,7 @@ void afficheBoutonChangePage(boutonChangePage b, int xEcran, int yEcran, float c
  * Fonction permettant de changer de page d'affichage en fonction du clic sur un bouton
  * @author Yann LEFEVRE
  * */
-void gereSourisBoutonChangePage(boutonChangePage b, pages* pActuel, int xSouris, int ySouris){
+void gereSourisBoutonChangePage(BoutonChangePage b, Pages* pActuel, int xSouris, int ySouris){
 	debug("<gereSourisBoutonChangePage> begin");
 	
 	if(pActuel->pActuel == pActuel->pFinal){ // On vérifie que la page n'a pas été modifié par d'autres fonctions

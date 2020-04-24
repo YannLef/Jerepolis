@@ -31,7 +31,7 @@
  * */
 #include "../headers/FileExplorer.h"
 
-extern couleurTab c; // Synchronise le clavier avec les autres fichiers
+extern CouleurTab c; // Synchronise le clavier avec les autres fichiers
 
  /**
   * -----------------------------------------------------------
@@ -45,7 +45,7 @@ extern couleurTab c; // Synchronise le clavier avec les autres fichiers
  * @param fichers L'adresse du tableau de fichiers qui sera rempli avec les informations organisées
  * @author Yann LEFEVRE
  * */
-void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, int* nombreFichiers){
+void recupereInfosFichiersDansDossier(char* cheminDossier, Fichier** fichiers, int* nombreFichiers){
 	debug("<recupereInfosFichiersDansDossier> begin");
 	
 	// Formule la commande
@@ -72,7 +72,7 @@ void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, i
 		
 		if(*fichiers != NULL){ // On regarde si le tableau est déjà initilisé ou non
 			// Si il est déjà initialisé on doit l'agrandir pour accueillir la prochaine ligne
-			fichier* fichierTmp = (fichier*)malloc(sizeof(fichier)*(cpt+1)); // On crée un tableau temporaire de 1 case de plus que l'ancient
+			Fichier* fichierTmp = (Fichier*)malloc(sizeof(Fichier)*(cpt+1)); // On crée un tableau temporaire de 1 case de plus que l'ancient
 			for(int i=0; i<cpt; i++){ // On recopie toutes les informations déjà récupérées dans le nouveau tableau
 				strcpy(fichierTmp[i].nom,(*fichiers)[i].nom);
 				strcpy(fichierTmp[i].heure,(*fichiers)[i].heure);
@@ -84,7 +84,7 @@ void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, i
 			*fichiers = fichierTmp;
 			fichierTmp = NULL;
 		}else{ // Si il n'est pas encore initialisé on l'initialise pour qu'il accueille la première donnée
-			*fichiers = (fichier*)malloc(sizeof(fichier)*(cpt+1));
+			*fichiers = (Fichier*)malloc(sizeof(Fichier)*(cpt+1));
 		}
 		
 		// Pour chaque ligne on passe les 5 premiers termes (inutiles pour nous) renvoyés par la commande système.
@@ -126,7 +126,7 @@ void recupereInfosFichiersDansDossier(char* cheminDossier, fichier** fichiers, i
  * Permet notamment de faciliter la lecture du main
  * @author Yann LEFEVRE
  * */
-void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, DonneesImageRGB* fondExplorateur, fichier* listeFichiers, boutonChangePage exitOpenTree, boutonChangeFichiers nextFichiers, boutonChangeFichiers previousFichiers, int xEcran, int yEcran, float coefZoom, int debutAffichageExplorateur, int nombreFichiers){
+void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, DonneesImageRGB* fondExplorateur, Fichier* listeFichiers, BoutonChangePage exitOpenTree, BoutonChangeFichiers nextFichiers, BoutonChangeFichiers previousFichiers, int xEcran, int yEcran, float coefZoom, int debutAffichageExplorateur, int nombreFichiers){
 	debug("<afficheExplorateurDeFichiers> begin");
 	
 	if (enteteFondExplorateur != NULL){ ecrisImage(0, 640, enteteFondExplorateur->largeurImage, enteteFondExplorateur->hauteurImage, enteteFondExplorateur->donneesRGB);} // Si l'image de l'entête de l'explorateur de fichier a pu être lue, on l'affiche
@@ -166,7 +166,7 @@ void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, Donnee
  * Modifie la variable static du main fichierCharge en lui attribuant le fichier selectionne et change de page pour afficher l'arbre seelctionne
  * @author Yann LEFEVRE
  * */
-void gereSourisSelectionneFichier(int xSouris, int ySouris, int* debutAffichageExplorateur, int nombreFichiers, pages* pActuel, fichier* listeFichiers, fichier* fichierCharge, char** fileNameI,
+void gereSourisSelectionneFichier(int xSouris, int ySouris, int* debutAffichageExplorateur, int nombreFichiers, Pages* pActuel, Fichier* listeFichiers, Fichier* fichierCharge, char** fileNameI,
 char** fileNameM){
 	debug("<gereSourisSelectionneFichier> begin");
 	

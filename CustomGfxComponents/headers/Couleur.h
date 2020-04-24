@@ -17,8 +17,8 @@
   * -----------------------------------------------------------
   * */
   
-void initCouleurTab(couleurTab* c);
-void initCouleur(couleur* c, unsigned char r, unsigned char v, unsigned char b);
-void changeColor(couleur c);
+void initCouleurTab(CouleurTab* c);
+void initCouleur(Couleur* c, unsigned char r, unsigned char v, unsigned char b);
+void changeColor(Couleur c);
 
 #endif

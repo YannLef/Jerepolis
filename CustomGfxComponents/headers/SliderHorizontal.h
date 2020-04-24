@@ -20,7 +20,7 @@
   * -----------------------------------------------------------
   * */
   
-void initSliderHorizontal(sliderHorizontal* sli, int x, int y, int largeur, int epaisseurLigne, int epaisseurPointeur, couleur cLigne, couleur cPointeur, int min, int max, int* var);
+void initSliderHorizontal(SliderHorizontal* sli, int x, int y, int largeur, int epaisseurLigne, int epaisseurPointeur, Couleur cLigne, Couleur cPointeur, int min, int max, int* var);
 
  /**
   * ----------------------------------------------------
@@ -28,7 +28,7 @@ void initSliderHorizontal(sliderHorizontal* sli, int x, int y, int largeur, int 
   * ----------------------------------------------------
   * */
   
-void afficheSliderHorizontal(sliderHorizontal sli);
+void afficheSliderHorizontal(SliderHorizontal sli);
 
  /**
   * ---------------------------------------------------
@@ -36,6 +36,6 @@ void afficheSliderHorizontal(sliderHorizontal sli);
   * ---------------------------------------------------
   * */
   
-void gereClicSliderHorizontal(sliderHorizontal* sli, int xSouris, int ySouris);
+void gereClicSliderHorizontal(SliderHorizontal* sli, int xSouris, int ySouris);
 
 #endif

@@ -30,7 +30,7 @@
  * */
 #include "../headers/InputText.h"
 
-extern keyboard keys; // Synchronise le clavier avec les autres fichiers
+extern Keyboard keys; // Synchronise le clavier avec les autres fichiers
 
  /**
   * -----------------------------------------------------------
@@ -42,7 +42,7 @@ extern keyboard keys; // Synchronise le clavier avec les autres fichiers
  * Fonction qui initialise un input de type texte.
  * @author Yann LEFEVRE
  * */
-void initInputText(inputText* input, int etat, int x, int y, int largeur, int hauteur, int epaisseurBordure, couleur cInterieur, couleur cBordure){
+void initInputText(InputText* input, int etat, int x, int y, int largeur, int hauteur, int epaisseurBordure, Couleur cInterieur, Couleur cBordure){
 	debug("<initInputText> begin");
 	
 	input->etat = etat; // l'état permet de savoir si l'input à le focus (=1) ou non (=0) : si on a le focus alors on peut nous écrire dedans
@@ -57,7 +57,7 @@ void initInputText(inputText* input, int etat, int x, int y, int largeur, int ha
  * @brief Fonction permettant de remettre à 0 proprement la chaine de l'input
  * @author Yann LEFEVRE
  * */
-void resetInputText(inputText* input){
+void resetInputText(InputText* input){
 	debug("<resetInputText> begin");
 	
 	if(input->string != NULL){
@@ -75,7 +75,7 @@ void resetInputText(inputText* input){
  * @param string la chaine à ajouter
  * @author Yann LEFEVRE
  * */
-void setString(inputText* input, char* string){
+void setString(InputText* input, char* string){
 	debug("<setString> begin");
 	
 	if(string != NULL){
@@ -102,7 +102,7 @@ void setString(inputText* input, char* string){
  * Fonction affichant un input ( rectangle de base avec sa chaine centrée et automatiquement dimensionnée pour ne pas sortir du rectangle)
  * @author Yann LEFEVRE
  * */
-void afficheInputTexte(inputText input, int xEcran, int yEcran, float coefZoom){
+void afficheInputTexte(InputText input, int xEcran, int yEcran, float coefZoom){
 	debug("<afficheInputTexte> begin");
 	
 	afficheRectangle(input.rect,0,xEcran,yEcran,coefZoom); // Affiche le rectangle servant pour limitation de l'input
@@ -130,7 +130,7 @@ void afficheInputTexte(inputText input, int xEcran, int yEcran, float coefZoom){
  * Fonction permettant de changer l'etat d'un input
  * @author Yann LEFEVRE
  * */
-void toggleEtatInput(inputText* input){
+void toggleEtatInput(InputText* input){
 	debug("<toggleEtatInput> begin");
 	
 	if(input->etat){
@@ -145,7 +145,7 @@ void toggleEtatInput(inputText* input){
 /**
  * Fonction permettant de définir l'etat d'un input
  * */
-void setEtatInput(inputText* input, bool etat){
+void setEtatInput(InputText* input, bool etat){
 	debug("<setEtatInput> begin");
 	
 	input->etat = etat;
@@ -157,7 +157,7 @@ void setEtatInput(inputText* input, bool etat){
  * Fonction permettant de mettre à jour la chaine de caractère d'un input texte en fonction du clavier
  * @author Yann LEFEVRE
  * */
-void completeInputText(inputText* input, char c){
+void completeInputText(InputText* input, char c){
 	debug("<completeInputText> begin");
 	
 	char* tmp; // On utilise un variable temporaire pour permutter entre l'ancienne chaine et la nouvelle
@@ -208,7 +208,7 @@ void completeInputText(inputText* input, char c){
  * Sert d'interprête entre les informations du clavier et l'input
  * @author Yann LEFEVRE
  * */
-void updateInputText(inputText* input){
+void updateInputText(InputText* input){
 	debug("<updateInputText> begin");
 	
 	if(input->etat){
@@ -302,7 +302,7 @@ void updateInputText(inputText* input){
  * Passe son état à 1 si le clic est dessus / à 0 si le clic est en dehors
  * @author Yann LEFEVRE
  * */
-void gereSourisInputText(inputText* input, int xSouris, int ySouris){
+void gereSourisInputText(InputText* input, int xSouris, int ySouris){
 	debug("<gereSourisInputText> begin");
 	
 	if(isOnRectangle(xSouris,ySouris,input->rect)){
