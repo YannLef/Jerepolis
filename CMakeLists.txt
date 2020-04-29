@@ -26,6 +26,7 @@ add_subdirectory(GfxLib)
 add_subdirectory(CustomGfxComponents)
 add_subdirectory(Logger)
 add_subdirectory(BetterTerminal)
+add_subdirectory(Jerepolis)
 
 add_subdirectory(Tests)
 
@@ -40,6 +41,7 @@ target_link_libraries(main
     CustomGfxComponents
     Logger
     BetterTerminal
+    Jerepolis
     ${OPENGL_LIBRARY}
     ${GLUT_LIBRARY}
     m

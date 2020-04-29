@@ -26,8 +26,16 @@
 #include "CustomGfxComponents/headers/Keyboard.h"
 #include "CustomGfxComponents/headers/Navbar.h"
 
+/**
+ * Includes Jerepolis
+ * */
+#include "Jerepolis/headers/structures.h"
+#include "Jerepolis/headers/ModeleBatiment.h"
+#include "Jerepolis/headers/AmeliorationBatiment.h"
+#include "Jerepolis/headers/Batiment.h"
+
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
-#define LargeurFenetre 1080
+#define LargeurFenetre 1152
 #define HauteurFenetre 720
 
 CouleurTab c; // Définit le tableau de couleurs
@@ -39,8 +47,7 @@ int loggerLevel; // Définit le niveau de log -> à synchroniser avec les autres
 des qu'une evenement survient */
 void gestionEvenement(EvenementGfx evenement);
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv){
 	// Initialise le logger
 	setLoggerLevel("none"); // Default
 	if(argc == 2){
@@ -65,25 +72,82 @@ des qu'une evenement survient */
 void gestionEvenement(EvenementGfx evenement){
 	debug("<gestionEvenement> begin");
 	
-	static int nav[10]; // Tableau d'entier décrivants l'état des onglets de la barre de navigation (actifs=1 ou non=0)
+	// Images
+	static DonneesImageRGB *background = NULL;
+	
+	// Bâtiments
+	static Batiment senat;
+	static ModeleBatiment* modeleSenat;
+	
+	static Batiment ferme;
+	static ModeleBatiment* modeleFerme;
+	
+	// File de constructions
+	static ameliorationBatiment* fileDeConstructions;
+	
+	// Ressources
+	static int bois;
+	static int pierre;
+	static int argent;
+	
 	
 	switch (evenement)
 	{
 		case Initialisation:
+			demandeTemporisation(100);
 			initCouleurTab(&c); // Initialise le tableau de couleurs
             initKeyboard(); // Initialise le clavier
-            initNavbar(nav);
             
-			demandeTemporisation(20);
+            // Images
+            background = lisBMPRGB("../Jerepolis/ressources/images/background.bmp");
+            //~ libereDonneesImageRGB(background);
+            
+            // Bâtiments
+            modeleSenat = NULL;
+            initModeleBatiment(&modeleSenat, "senat", BATIMENT_NORMAL);
+            initBatiment(&senat, modeleSenat,1017, 615);
+            
+            modeleFerme = NULL;
+            initModeleBatiment(&modeleFerme, "ferme", BATIMENT_NORMAL);
+            initBatiment(&ferme, modeleFerme,1017, 615);
+            
+            // File de constructions
+            fileDeConstructions = NULL;
+            
+            // Ressources
+            bois = 400;
+            pierre = 400;
+            argent = 400;
+            
+            // Tests
 			break;
 		
 		case Temporisation:
+			gereFileDeConstructions(&fileDeConstructions);
+		
 			rafraichisFenetre();
 			break;
 			
 		case Affichage:
 			// On part d'un fond d'ecran blanc
 			effaceFenetre (255, 255, 255);
+			
+			if(background != NULL){ ecrisImage(0, 0, background->largeurImage, background->hauteurImage, background->donneesRGB);}
+			afficheBatiment(senat);
+			afficheBatiment(ferme);
+			
+			// Affichages ressources (temporaire)
+			char texteBois[100];
+			sprintf(texteBois,"Bois : %d", bois);
+			afficheChaine(texteBois, 20, 50, 150);
+			
+			char textePierre[100];
+			sprintf(textePierre,"Pierre : %d", pierre);
+			afficheChaine(textePierre, 20, 50, 100);
+			
+			char texteArgent[100];
+			sprintf(texteArgent,"Argent : %d", argent);
+			afficheChaine(texteArgent, 20, 50, 50);
 
 			break;
 			
@@ -97,11 +161,11 @@ void gestionEvenement(EvenementGfx evenement){
 			if (etatBoutonSouris() == GaucheAppuye)
 			{
 				mouseLeftDown();
-				gereSourisNavbar(abscisseSouris(), ordonneeSouris(), nav);
 			}
 			else if (etatBoutonSouris() == GaucheRelache)
 			{
 				mouseLeftUp();
+				gereClicBatiment(&senat, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions);
 			}
 			break;
 		
@@ -112,8 +176,6 @@ void gestionEvenement(EvenementGfx evenement){
 			break;
 		
 		case Redimensionnement:
-			printf("Largeur : %d\t", largeurFenetre());
-			printf("Hauteur : %d\n", hauteurFenetre());
 			break;
 	}
 	

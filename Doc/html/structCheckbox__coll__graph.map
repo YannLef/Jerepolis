@@ -1,0 +1,4 @@
+<map id="Checkbox" name="Checkbox">
+<area shape="rect" id="node2" href="$structCarre.html" title="Carre" alt="" coords="19,109,73,136"/>
+<area shape="rect" id="node3" href="$structCouleur.html" title="Couleur" alt="" coords="13,5,79,32"/>
+</map>

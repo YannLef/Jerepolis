@@ -176,6 +176,19 @@ BetterTerminal/fast:
 .PHONY : BetterTerminal/fast
 
 #=============================================================================
+# Target rules for targets named Jerepolis
+
+# Build rule for target.
+Jerepolis: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Jerepolis
+.PHONY : Jerepolis
+
+# fast build rule for target.
+Jerepolis/fast:
+	$(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/build
+.PHONY : Jerepolis/fast
+
+#=============================================================================
 # Target rules for targets named tests
 
 # Build rule for target.
@@ -228,6 +241,7 @@ help:
 	@echo "... CustomGfxComponents"
 	@echo "... Logger"
 	@echo "... BetterTerminal"
+	@echo "... Jerepolis"
 	@echo "... tests"
 	@echo "... main.o"
 	@echo "... main.i"

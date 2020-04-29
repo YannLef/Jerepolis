@@ -94,6 +94,7 @@ main: GfxLib/libGfxLib.a
 main: CustomGfxComponents/libCustomGfxComponents.a
 main: Logger/libLogger.a
 main: BetterTerminal/libBetterTerminal.a
+main: Jerepolis/libJerepolis.a
 main: /usr/lib/x86_64-linux-gnu/libGLU.so
 main: /usr/lib/x86_64-linux-gnu/libGL.so
 main: /usr/lib/x86_64-linux-gnu/libglut.so

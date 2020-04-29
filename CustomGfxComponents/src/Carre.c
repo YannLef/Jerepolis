@@ -28,139 +28,82 @@
  * */
 #include "../headers/Carre.h"
 
-/**
-* ----------------------------------------------------
-* -------------------- 1) MEMOIRE --------------------
-* ----------------------------------------------------
-* */
+ /**
+  * -----------------------------------------------------------
+  * -------------------- 1) INITIALISATION --------------------
+  * -----------------------------------------------------------
+  * */
 
-/**
- * Alloue dynamiquement un Carre
- * @author Yann LEFEVRE
- * */
-void newCarre(Carre** carre){
-	debug("<newCarre> begin");
+void initCarre(Carre* square, int x, int y, int cote, int epaisseurBordure, Couleur cInterieur, Couleur cBordure){
+	debug("<initCarre> begin");
 	
-	if(carre == NULL){
-		error("Le pointeur vers le carré ne doit pas être à NULL");
-		debug("<newCarre> end : NULL pointer");
-		return;
-	}
+	square->x = x;
+	square->y = y;
+	square->cInterieur = cInterieur;
+	square->cBordure = cBordure;
+	square->cote = cote;
+	square->epaisseurBordure = epaisseurBordure;
 	
-	if(*carre != NULL){
-		warn("Le carré pointé n'est pas à NULL, la mémoire n'a peut-être pa été libérée correctement");
-	}
+	debug("<initCarre> end");
+}
+  
+ /**
+  * ------------------------------------------------------
+  * -------------------- 2) AFFICHAGE --------------------
+  * ------------------------------------------------------
+  * */
+  
+void afficheCarre(Carre square){
+	debug("<afficheCarre> begin");
 	
-	*carre = NULL;
-	*carre = (Carre*)malloc(sizeof(Carre));
-	if(*carre == NULL){
-		error("L'allocation mémoire du carré n'a pas fonctionné");
-		debug("<newCarre> end : malloc failed");
-		return;
-	}
+	epaisseurDeTrait(1);
+	int x1,x2,y1,y2;
 	
-	debug("<newCarre> end");
+	// Bordure
+	
+	changeColor(square.cBordure);
+	// point 1 -> coin bas gauche
+	// point 2 -> coin haut droit
+
+	x1 = square.x - (square.cote)/2;
+	x2 = square.x + (square.cote)/2;
+	y1 = square.y - (square.cote)/2;
+	y2 = square.y + (square.cote)/2;
+	
+	rectangle(x1,y1,x2,y2);
+	
+	// Interieur
+	
+	changeColor(square.cInterieur);
+	
+	// point 1 -> coin bas gauche
+	// point 2 -> coin haut droit
+	x1 = square.x - (square.cote)/2 + square.epaisseurBordure;
+	x2 = square.x + (square.cote)/2 - square.epaisseurBordure;
+	y1 = square.y - (square.cote)/2 + square.epaisseurBordure;
+	y2 = square.y + (square.cote)/2 - square.epaisseurBordure;
+	
+	rectangle(x1,y1,x2,y2);
+	
+	debug("<afficheCarre> end");
 }
 
- //~ /**
-  //~ * -----------------------------------------------------------
-  //~ * -------------------- 1) INITIALISATION --------------------
-  //~ * -----------------------------------------------------------
-  //~ * */
-  
-//~ /**
- //~ * Initialise un carre , nécessite de nombreux paramètres pour être le plus complet possible
- //~ * @param square le pointeur vers le carré à initialiser
- //~ * @param x l'abscisse du centre du carré
- //~ * @param y l'odronnée du centre du carré
- //~ * @param cote la taille du côté du carré
- //~ * @param epaisseurBordure l'épaisseur de trait du carré
- //~ * @param cInterieur la couleure intérieure du carré
- //~ * @param cBordure la couleur des contours du carré
- //~ * @author Yann LEFEVRE
- //~ * */
-//~ void initCarre(carre* square, int x, int y, int cote, int epaisseurBordure, couleur cInterieur, couleur cBordure){
-	//~ debug("<initCarre> begin");
-	
-	//~ square->x = x;
-	//~ square->y = y;
-	//~ square->cInterieur = cInterieur;
-	//~ square->cBordure = cBordure;
-	//~ square->cote = cote;
-	//~ square->epaisseurBordure = epaisseurBordure;
-	
-	//~ debug("<initCarre> end");
-//~ }
-  
- //~ /**
-  //~ * ------------------------------------------------------
-  //~ * -------------------- 2) AFFICHAGE --------------------
-  //~ * ------------------------------------------------------
-  //~ * */
-  
-//~ /**
- //~ * Affiche un carre à partir de ses valeurs
- //~ * @param square le carré à afficher
- //~ * @author Yann LEFEVRE
- //~ * */
-//~ void afficheCarre(carre square){
-	//~ debug("<afficheCarre> begin");
-	
-	//~ epaisseurDeTrait(1);
-	//~ int x1,x2,y1,y2;
-	
-	//~ // Bordure
-	
-	//~ changeColor(square.cBordure);
-	//~ // point 1 -> coin bas gauche
-	//~ // point 2 -> coin haut droit
+ /**
+  * --------------------------------------------------
+  * -------------------- 3) TESTS --------------------
+  * --------------------------------------------------
+  * */
 
-	//~ x1 = square.x - (square.cote)/2;
-	//~ x2 = square.x + (square.cote)/2;
-	//~ y1 = square.y - (square.cote)/2;
-	//~ y2 = square.y + (square.cote)/2;
+bool isOnCarre(int x, int y, Carre square){
+	debug("<isOnCarre> begin");
 	
-	//~ rectangle(x1,y1,x2,y2);
+	if(x > (square.x - square.cote/2) && x < (square.x + square.cote/2)){
+		if(y > (square.y - square.cote/2) && y < (square.y + square.cote/2)){
+			debug("<isOnCarre> end : return 1");
+			return 1;
+		}
+	}
 	
-	//~ // Interieur
-	
-	//~ changeColor(square.cInterieur);
-	
-	//~ // point 1 -> coin bas gauche
-	//~ // point 2 -> coin haut droit
-	//~ x1 = square.x - (square.cote)/2 + square.epaisseurBordure;
-	//~ x2 = square.x + (square.cote)/2 - square.epaisseurBordure;
-	//~ y1 = square.y - (square.cote)/2 + square.epaisseurBordure;
-	//~ y2 = square.y + (square.cote)/2 - square.epaisseurBordure;
-	
-	//~ rectangle(x1,y1,x2,y2);
-	
-	//~ debug("<afficheCarre> end");
-//~ }
-
- //~ /**
-  //~ * --------------------------------------------------
-  //~ * -------------------- 3) TESTS --------------------
-  //~ * --------------------------------------------------
-  //~ * */
-  
-//~ /**
- //~ * Fonction vérifiant si un point de coordonnée (x,y) appartient à un carré donné
- //~ * @param x l'abscisse du point à tester
- //~ * @param y l'ordonnée du point à tester
- //~ * @param carre le carré par rapport auquel on veut tester
- //~ * @author Yann LEFEVRE
- //~ * */
-//~ bool isOnCarre(int x, int y, carre square){
-	//~ debug("<isOnCarre> begin");
-	
-	//~ if(x > (square.x - square.cote/2) && x < (square.x + square.cote/2)){
-		//~ if(y > (square.y - square.cote/2) && y < (square.y + square.cote/2)){
-			//~ debug("<isOnCarre> end : return 1");
-			//~ return 1;
-		//~ }
-	//~ }
-	
-	//~ debug("<isOnCarre> end : return 0");
-	//~ return 0;
-//~ }
+	debug("<isOnCarre> end : return 0");
+	return 0;
+}

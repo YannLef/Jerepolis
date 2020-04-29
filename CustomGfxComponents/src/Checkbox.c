@@ -35,10 +35,6 @@
   * -----------------------------------------------------------
   * */
 
-/**
- * Fonction permettant d'initialiser une checkbox
- * @author Yann LEFEVRE
- * */
 void initCheckbox(Checkbox* cb, int x, int y, int cote, int epaisseurBordure, Couleur cInterieur, Couleur cBordure, bool etat){
 	debug("<initCheckbox> begin");
 	
@@ -49,15 +45,11 @@ void initCheckbox(Checkbox* cb, int x, int y, int cote, int epaisseurBordure, Co
 }
 
  /**
-  * ----------------------------------------------------
-  * -------------------- 2) DISPLAY --------------------
-  * ----------------------------------------------------
+  * ------------------------------------------------------
+  * -------------------- 2) AFFICHAGE --------------------
+  * ------------------------------------------------------
   * */
 
-/**
- * Fonction permettant d'afficher une checkbox
- * @author Yann LEFEVRE
- * */
 void afficheCheckbox(Checkbox cb){
 	debug("<afficheCheckbox> begin");
 	
@@ -74,15 +66,11 @@ void afficheCheckbox(Checkbox cb){
 }
 
  /**
-  * ---------------------------------------------------
-  * -------------------- 3) UPDATE --------------------
-  * ---------------------------------------------------
+  * --------------------------------------------------------
+  * -------------------- 3) MISE A JOUR --------------------
+  * --------------------------------------------------------
   * */
 
-/**
- * Fonction permettant de définir l'etat d'une checkbox
- * @author Yann LEFEVRE
- * */
 void setEtatCheckbox(Checkbox* cb, bool etat){
 	debug("<setEtatCheckbox> begin");
 	
@@ -91,10 +79,6 @@ void setEtatCheckbox(Checkbox* cb, bool etat){
 	debug("<setEtatCheckbox> end");
 }
 
-/**
- * Fonction permettant de changer l'etat d'une checkbox
- * @author Yann LEFEVRE
- * */
 void toggleEtatCheckbox(Checkbox* cb){
 	debug("<toggleEtatCheckbox> begin");
 	
@@ -108,16 +92,11 @@ void toggleEtatCheckbox(Checkbox* cb){
 }
 
  /**
-  * ---------------------------------------------------
-  * -------------------- 4) EVENTS --------------------
-  * ---------------------------------------------------
+  * -------------------------------------------------------
+  * -------------------- 4) EVENEMENTS --------------------
+  * -------------------------------------------------------
   * */
 
-/**
- * Fonction permettant de gérer le clic sur une checkbox
- * Permet de changer son état (principe même d'une checkbox)
- * @author Yann LEFEVRE
- * */
 void gereClicCheckbox(Checkbox* cb, int xSouris, int ySouris){
 	debug("<gereClicCheckbox> begin");
 	

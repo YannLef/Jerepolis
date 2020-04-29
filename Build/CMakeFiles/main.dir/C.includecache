@@ -30,6 +30,14 @@ windows.h
 stdbool.h
 -
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+
 /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 
 /home/yncrea/Bureau/projet/algo-s2/main.c
@@ -57,4 +65,12 @@ CustomGfxComponents/headers/Keyboard.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Keyboard.h
 CustomGfxComponents/headers/Navbar.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Navbar.h
+Jerepolis/headers/structures.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+Jerepolis/headers/ModeleBatiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
+Jerepolis/headers/AmeliorationBatiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
+Jerepolis/headers/Batiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
 

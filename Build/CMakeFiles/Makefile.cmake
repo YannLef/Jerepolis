@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../CMakeLists.txt"
   "../CustomGfxComponents/CMakeLists.txt"
   "../GfxLib/CMakeLists.txt"
+  "../Jerepolis/CMakeLists.txt"
   "../Logger/CMakeLists.txt"
   "../Tests/CMakeLists.txt"
   "/usr/share/cmake-3.5/Modules/CMakeCInformation.cmake"
@@ -51,6 +52,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CustomGfxComponents/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Logger/CMakeFiles/CMakeDirectoryInformation.cmake"
   "BetterTerminal/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Jerepolis/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -61,5 +63,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/DependInfo.cmake"
   "Logger/CMakeFiles/Logger.dir/DependInfo.cmake"
   "BetterTerminal/CMakeFiles/BetterTerminal.dir/DependInfo.cmake"
+  "Jerepolis/CMakeFiles/Jerepolis.dir/DependInfo.cmake"
   "Tests/CMakeFiles/tests.dir/DependInfo.cmake"
   )

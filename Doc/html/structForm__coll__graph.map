@@ -1,0 +1,8 @@
+<map id="Form" name="Form">
+<area shape="rect" id="node2" href="$structCheckbox.html" title="Checkbox" alt="" coords="110,199,191,225"/>
+<area shape="rect" id="node7" href="$structRadiobutton.html" title="Radiobutton" alt="" coords="104,300,196,327"/>
+<area shape="rect" id="node3" href="$structCarre.html" title="Carre" alt="" coords="124,109,179,136"/>
+<area shape="rect" id="node4" href="$structCouleur.html" title="Couleur" alt="" coords="162,5,229,32"/>
+<area shape="rect" id="node6" href="$structRec.html" title="Rec" alt="" coords="216,109,263,136"/>
+<area shape="rect" id="node5" href="$structInputText.html" title="InputText" alt="" coords="205,249,282,276"/>
+</map>

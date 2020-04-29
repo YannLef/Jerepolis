@@ -1,0 +1,5 @@
+<map id="Radiobutton" name="Radiobutton">
+<area shape="rect" id="node2" href="$structCheckbox.html" title="Checkbox" alt="" coords="11,199,92,225"/>
+<area shape="rect" id="node3" href="$structCarre.html" title="Carre" alt="" coords="24,109,79,136"/>
+<area shape="rect" id="node4" href="$structCouleur.html" title="Couleur" alt="" coords="18,5,85,32"/>
+</map>

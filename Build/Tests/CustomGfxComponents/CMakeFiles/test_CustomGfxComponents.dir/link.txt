@@ -1,2 +1,0 @@
-/usr/bin/ar qc libtest_CustomGfxComponents.a  CMakeFiles/test_CustomGfxComponents.dir/src/test_Carre.c.o
-/usr/bin/ranlib libtest_CustomGfxComponents.a

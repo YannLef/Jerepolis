@@ -13,6 +13,9 @@
 /home/yncrea/Bureau/projet/algo-s2/Build/BetterTerminal/CMakeFiles/edit_cache.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/BetterTerminal/CMakeFiles/rebuild_cache.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/BetterTerminal/CMakeFiles/BetterTerminal.dir
+/home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis/CMakeFiles/edit_cache.dir
+/home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis/CMakeFiles/rebuild_cache.dir
+/home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis/CMakeFiles/Jerepolis.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/Tests/CMakeFiles/edit_cache.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/Tests/CMakeFiles/rebuild_cache.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/Tests/CMakeFiles/tests.dir

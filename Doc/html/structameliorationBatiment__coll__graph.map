@@ -1,0 +1,4 @@
+<map id="ameliorationBatiment" name="ameliorationBatiment">
+<area shape="rect" id="node2" href="$structBatiment.html" title="Batiment" alt="" coords="40,95,115,121"/>
+<area shape="rect" id="node3" href="$structModeleBatiment.html" title="ModeleBatiment" alt="" coords="19,5,135,32"/>
+</map>
