@@ -109,7 +109,7 @@ void gestionEvenement(EvenementGfx evenement){
             
             modeleFerme = NULL;
             initModeleBatiment(&modeleFerme, "ferme", BATIMENT_NORMAL);
-            initBatiment(&ferme, modeleFerme,1017, 615);
+            initBatiment(&ferme, modeleFerme,100, 615);
             
             // File de constructions
             fileDeConstructions = NULL;

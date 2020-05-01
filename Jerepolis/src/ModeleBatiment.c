@@ -133,11 +133,16 @@ void initNiveauBatiment(ModeleBatiment** lvl, char* nom, typeBatiment type, int 
 	(*lvl)->suivant = NULL;
 	
 	char tmp[100];
-	strcpy(tmp, "../Jerepolis/ressources/images/batiments/senat/");
+	strcpy(tmp, "../Jerepolis/ressources/images/batiments/");
+	strcat(tmp, (*lvl)->nom);
+	strcat(tmp, "/");
 	strcat(tmp, image);
 	strcat(tmp, ".bmp");
 	
 	(*lvl)->image = lisBMPRGB(tmp);
+	if((*lvl)->image == NULL){
+		error("Erreur lors de l'ouverture de l'image du batiment");
+	}
 	
 	debug("<initNiveauBatiment> end");
 }
