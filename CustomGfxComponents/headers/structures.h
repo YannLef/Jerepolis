@@ -7,7 +7,7 @@
  * Structure couleur contenant les nuances de rouge (r), vert (v) et bleu (b)
  * */
 typedef struct Couleur{
-	unsigned char r,v,b; // nuances de rouge, vert, bleu
+	int r,v,b; // nuances de rouge, vert, bleu
 }Couleur;
 
 /**
@@ -25,6 +25,7 @@ typedef struct CouleurTab{
 	Couleur vertPrincipal; // 139,195,74
 	Couleur bleuEcriture; // 38, 193, 225
 	Couleur fondPrincipal; // 241, 255, 251
+	Couleur invisible; // -1, -1, -1
 }CouleurTab;
 
 /**

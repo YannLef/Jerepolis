@@ -19,7 +19,7 @@ void printBatiment(Batiment batiment);
  * @param m le modèle du batiment
  * @author Yann LEFEVRE
  * */
-void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y);
+void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox, int xFinHitBox, int yDebutHitBox, int yFinHitBox);
 
 /**
  * Ameliore un batiment sous certaines conditions :
@@ -33,7 +33,7 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y);
  * @param fileDeConstructions la file de constructions
  * @author Yann LEFEVRE
  * */
-void amelioreBatiment(Batiment* batiment, int* bois, int* pierre, int* argent, ameliorationBatiment** fileDeConstructions);
+void amelioreBatiment(Batiment* batiment, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions);
 
 /**
  * Affiche un batiment graphiquement
@@ -41,4 +41,31 @@ void amelioreBatiment(Batiment* batiment, int* bois, int* pierre, int* argent, a
  * */
 void afficheBatiment(Batiment b);
 
-void gereClicBatiment(Batiment* senat, int x, int y, int* bois, int* pierre, int* argent, ameliorationBatiment** fileDeConstructions);
+/**
+ * Gere les clics : détermine s'il est surla hitbox du batiment et agit en fonction
+ * @param b le pointeur vers le batiment concerné
+ * @param x l'abscisse du clic
+ * @param y l'ordonnée du clic
+ * @param bois le pointeur vers la ressource bois
+ * @param pierre le pointeur vers la ressource pierre
+ * @param argent le pointeur ver la ressource argent
+ * @param fileDeConstruction la file de construction
+ * @author Yann LEFEVRE
+ * */
+void gereClicBatiment(Batiment* b, int x, int y, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions);
+
+/**
+ * Peuple un batiment en lui affectant le nombre d'habitant voulu
+ * @param b le pointeur vers batiment concerné
+ * @param nouvellePopulation le nombre d'habitant à affecter au batiment
+ * @author Yann LEFEVRE
+ * */
+void peupleBatiment(Batiment* b, int nouvellePopulation);
+
+/**
+ * Simue la production de ressource par le batiment
+ * @param b le batiment de production
+ * @param ressource la ressource prouite par le batiment
+ * @author Yann LEFEVRE
+ * */
+void genereRessource(Batiment b, float* ressource, int stockageEntrepot);

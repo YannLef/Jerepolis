@@ -30,6 +30,8 @@ add_subdirectory(Jerepolis)
 
 add_subdirectory(Tests)
 
+add_dependencies(Jerepolis Logger)
+
 SET(SRC
 	main.c
 	)

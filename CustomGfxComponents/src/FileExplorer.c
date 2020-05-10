@@ -126,7 +126,7 @@ void recupereInfosFichiersDansDossier(char* cheminDossier, Fichier** fichiers, i
  * Permet notamment de faciliter la lecture du main
  * @author Yann LEFEVRE
  * */
-void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, DonneesImageRGB* fondExplorateur, Fichier* listeFichiers, BoutonChangePage exitOpenTree, BoutonChangeFichiers nextFichiers, BoutonChangeFichiers previousFichiers, int xEcran, int yEcran, float coefZoom, int debutAffichageExplorateur, int nombreFichiers){
+void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, DonneesImageRGB* fondExplorateur, Fichier* listeFichiers, BoutonChangePage exitOpenTree, BoutonChangeFichiers nextFichiers, BoutonChangeFichiers previousFichiers, int debutAffichageExplorateur, int nombreFichiers){
 	debug("<afficheExplorateurDeFichiers> begin");
 	
 	if (enteteFondExplorateur != NULL){ ecrisImage(0, 640, enteteFondExplorateur->largeurImage, enteteFondExplorateur->hauteurImage, enteteFondExplorateur->donneesRGB);} // Si l'image de l'entête de l'explorateur de fichier a pu être lue, on l'affiche
@@ -147,9 +147,9 @@ void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, Donnee
 			cpt++;
 		}
 	}
-	afficheBoutonChangePage(exitOpenTree, xEcran, yEcran, coefZoom);
-	afficheBoutonChangeFichiers(nextFichiers, xEcran, yEcran, coefZoom);
-	afficheBoutonChangeFichiers(previousFichiers, xEcran, yEcran, coefZoom);
+	afficheBoutonChangePage(exitOpenTree);
+	afficheBoutonChangeFichiers(nextFichiers);
+	afficheBoutonChangeFichiers(previousFichiers);
 	
 	debug("<afficheExplorateurDeFichiers> end");
 }

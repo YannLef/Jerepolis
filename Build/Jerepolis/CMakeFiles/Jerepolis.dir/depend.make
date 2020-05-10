@@ -16,6 +16,7 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o: ../Jerepolis/headers/Batime
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o: ../Jerepolis/headers/ModeleBatiment.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o: ../Jerepolis/headers/structures.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o: ../Jerepolis/src/Batiment.c
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o: ../Logger/headers/Image.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o: ../Logger/headers/Logger.h
 
 Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o: ../GfxLib/headers/BmpLib.h

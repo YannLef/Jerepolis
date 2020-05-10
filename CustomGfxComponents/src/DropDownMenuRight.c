@@ -74,7 +74,7 @@ void initMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu, int yBas, int yH
  * Fonction affichant un menu déroulant se déroulant de la gauche vers la droite
  * @author Yann LEFEVRE
  * */
-void afficheMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu, int xEcran, int yEcran, float coefZoom){
+void afficheMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu){
 	debug("<afficheMenuDeroulantVersDroite> begin");
 	
 	for(int i=0; i<25;i++){ // For permettant d'accélérer le déplacement du menu de 18 fois (tout en passant dans les tests et donc sans débordements contrairement à une incrémentation de 18 d'un coup)
@@ -88,7 +88,7 @@ void afficheMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu, int xEcran, i
 	// On affiche le rectangle correspondant
 	Rec r;
 	initRectangle(&r,(menu->xActuel)/2,(menu->yHaut-menu->yBas)/2,menu->xActuel,hauteurFenetre(),0,c.couleurMenuDeroulant,c.couleurFemme);
-	afficheRectangle(r,0,xEcran,yEcran,coefZoom);
+	afficheRectangle(r);
 	
 	// On détermine l'état du menu déroulant (ouvert totalement ou non)
 	if(menu->xActuel == menu->xDroite){

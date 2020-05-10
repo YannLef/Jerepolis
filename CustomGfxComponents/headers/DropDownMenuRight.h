@@ -28,7 +28,7 @@ void initMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu, int yBas, int yH
   * ----------------------------------------------------
   * */
   
-void afficheMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu, int xEcran, int yEcran, float coefZoom);
+void afficheMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu);
 void afficheDetailMenu(int nav[10], Pages p, MenuDeroulantVersDroite* menuDeroulant);
 
  /**

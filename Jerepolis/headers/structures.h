@@ -23,7 +23,7 @@ typedef struct ModeleBatiment{
 	unsigned int tempsAmelioration;
 	DonneesImageRGB *image;
 
-	int production;
+	float production;
 	
 	int dernier;
 	
@@ -42,12 +42,14 @@ typedef struct Batiment{
 	typeBatiment type;
 	int niveau;
 	int populationMax;
+	int population;
 	int nbAmeliorationsEnCours;
 	int prixAmeliorationBois;
 	int prixAmeliorationPierre;
 	int prixAmeliorationArgent;
 	int tempsAmelioration;
 	int max;
+	float production;
 	
 	// Modèle du batiment
 	ModeleBatiment* modele;
@@ -56,6 +58,11 @@ typedef struct Batiment{
 	int x;
 	int y;
 	DonneesImageRGB *image;
+	DonneesImageRGB *icon;
+	int xDebutHitBox;
+	int xFinHitBox;
+	int yDebutHitBox;
+	int yFinHitBox;
 }Batiment;
 
 /**

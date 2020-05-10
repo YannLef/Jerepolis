@@ -185,7 +185,7 @@ void afficheForm(Form formulaire, int xEcran, int yEcran, float coefZoom){
 	for(int i=0;i<formulaire.nbInpuText;i++){
 		//~ printf("%d\n",i);
 		//~ printf("%s\n",(formulaire.tabInpuText[i])->string);
-		afficheInputTexte(*(formulaire.tabInpuText[i]),xEcran,yEcran,coefZoom);
+		afficheInputTexte(*(formulaire.tabInpuText[i]));
 	}
 	
 	debug("<afficheForm> end");

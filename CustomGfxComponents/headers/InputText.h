@@ -30,7 +30,7 @@ void setString(InputText* input, char* string);
   * ----------------------------------------------------
   * */
   
-void afficheInputTexte(InputText input, int xEcran, int yEcran, float coefZoom);
+void afficheInputTexte(InputText input);
 
  /**
   * ---------------------------------------------------

@@ -79,10 +79,10 @@ void initBoutonChangePage(BoutonChangePage* b, char* string, int x, int y, int l
  * Fonction permettant d'afficher un bouton permettant de changer de page
  * @author Yann LEFEVRE
  * */
-void afficheBoutonChangePage(BoutonChangePage b, int xEcran, int yEcran, float coefZoom){
+void afficheBoutonChangePage(BoutonChangePage b){
 	debug("<afficheBoutonChangePage> begin");
 	
-	afficheRectangle(b.rect,0,xEcran,yEcran,coefZoom);
+	afficheRectangle(b.rect);
 	if(b.string != NULL){
 		couleurCourante(b.cText.r,b.cText.v,b.cText.b);
 		epaisseurDeTrait(b.epaisseurTrait);

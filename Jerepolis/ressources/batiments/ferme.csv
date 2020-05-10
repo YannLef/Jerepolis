@@ -1,7 +1,7 @@
-niveau;populationMax;prixAmeliroationBois;prixAmeliorationPierre;prixAmeliorationArgent;tempsAmelioration
-1;1;27;12;10;2000;1
-2;3;64;32;25;2000;2
-3;6;118;67;49;2000;3
-4;8;191;117;81;2000;3
-5;12;283;186;123;2000;4
-6;15;394;275;176;2000;4
+niveau;populationMax;prixAmeliroationBois;prixAmeliorationPierre;prixAmeliorationArgent;tempsAmelioration;image
+1;1;10;10;10;2000;1bis
+2;3;20;20;20;4000;2bis
+3;6;40;40;40;8000;3bis
+4;8;80;80;80;8000;3bis
+5;12;160;160;160;16000;4bis
+6;15;320;320;320;16000;4bis

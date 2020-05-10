@@ -57,6 +57,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
 ../../Logger/headers/Logger.h
 /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
+../../Logger/headers/Image.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Image.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
 ../headers/ModeleBatiment.h
@@ -85,6 +87,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
 ../headers/ModeleBatiment.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
+
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Image.h
 
 /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 

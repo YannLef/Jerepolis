@@ -1,2 +1,2 @@
-/usr/bin/ar qc libLogger.a  CMakeFiles/Logger.dir/src/Logger.c.o
+/usr/bin/ar qc libLogger.a  CMakeFiles/Logger.dir/src/Logger.c.o CMakeFiles/Logger.dir/src/Image.c.o
 /usr/bin/ranlib libLogger.a

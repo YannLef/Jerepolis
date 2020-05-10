@@ -102,10 +102,10 @@ void setString(InputText* input, char* string){
  * Fonction affichant un input ( rectangle de base avec sa chaine centrée et automatiquement dimensionnée pour ne pas sortir du rectangle)
  * @author Yann LEFEVRE
  * */
-void afficheInputTexte(InputText input, int xEcran, int yEcran, float coefZoom){
+void afficheInputTexte(InputText input){
 	debug("<afficheInputTexte> begin");
 	
-	afficheRectangle(input.rect,0,xEcran,yEcran,coefZoom); // Affiche le rectangle servant pour limitation de l'input
+	afficheRectangle(input.rect); // Affiche le rectangle servant pour limitation de l'input
 	if(input.string != NULL){
 		couleurCourante(0,0,0);
 		float taille = 0;

@@ -28,7 +28,7 @@ void initModeleBatiment(ModeleBatiment** m, char* nom, typeBatiment type);
  * @param tempsAmelioration le temps qu'il faudra attendre pour atteidnre ce niveau (en ms)
  * @author Yann LEFEVRE
  * */
-void initNiveauBatiment(ModeleBatiment** lvl, char* nom, typeBatiment type, int niveau, int populationMax, int prixAmeliorationBois, int prixAmeliorationPierre, int prixAmeliorationArgent, int tempsAmelioration, char image[10], int production);
+void initNiveauBatiment(ModeleBatiment** lvl, char* nom, typeBatiment type, int niveau, int populationMax, int prixAmeliorationBois, int prixAmeliorationPierre, int prixAmeliorationArgent, int tempsAmelioration, char image[10], float production);
 
 /**
  * Ajoute un niveau de batiment à la liste chainée du modèle du batiment

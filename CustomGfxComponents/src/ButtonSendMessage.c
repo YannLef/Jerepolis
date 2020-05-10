@@ -65,10 +65,10 @@ void initBoutonSendMessage(BoutonSendMessage* b, int x, int y, int largeur, int 
  * @brief Fonction permettant d'afficher un bouton permettant denvoyer un message
  * @author Yann LEFEVRE
  * */
-void afficheBoutonSendMessage(BoutonSendMessage b, int xEcran, int yEcran, float coefZoom){
+void afficheBoutonSendMessage(BoutonSendMessage b){
 	debug("<afficheBoutonSendMessage> begin");
 	
-	afficheRectangle(b.rect,0,xEcran,yEcran,coefZoom);
+	afficheRectangle(b.rect);
 	if(b.string != NULL){
 		couleurCourante(b.cText.r,b.cText.v,b.cText.b);
 		epaisseurDeTrait(b.epaisseurTrait);

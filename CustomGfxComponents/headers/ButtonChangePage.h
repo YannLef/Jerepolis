@@ -27,7 +27,7 @@ void initBoutonChangePage(BoutonChangePage* b, char* string, int x, int y, int l
   * ----------------------------------------------------
   * */
   
-void afficheBoutonChangePage(BoutonChangePage b, int xEcran, int yEcran, float coefZoom);
+void afficheBoutonChangePage(BoutonChangePage b);
 
  /**
   * ---------------------------------------------------

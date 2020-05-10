@@ -78,10 +78,10 @@ void initBoutonChangeFichiers(BoutonChangeFichiers* b, char* string, int x, int 
  * Fonction permettant d'afficher un bouton permettant de naviguer dans l'explorateur de fichiers
  * @author Yann LEFEVRE
  * */
-void afficheBoutonChangeFichiers(BoutonChangeFichiers b, int xEcran, int yEcran, float coefZoom){
+void afficheBoutonChangeFichiers(BoutonChangeFichiers b){
 	debug("<afficheBoutonChangeFichiers> begin");
 	
-	afficheRectangle(b.rect,0,xEcran,yEcran,coefZoom);
+	afficheRectangle(b.rect);
 	if(b.string != NULL){
 		couleurCourante(b.cText.r,b.cText.v,b.cText.b);
 		epaisseurDeTrait(b.epaisseurTrait);

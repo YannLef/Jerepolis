@@ -14,7 +14,7 @@ void initBoutonSendMessage(BoutonSendMessage* b, int x, int y, int largeur, int 
   * */
   
 
-void afficheBoutonSendMessage(BoutonSendMessage b, int xEcran, int yEcran, float coefZoom);
+void afficheBoutonSendMessage(BoutonSendMessage b);
 
  /**
   * ---------------------------------------------------

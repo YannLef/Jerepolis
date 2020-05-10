@@ -3,9 +3,11 @@
 
 CMakeFiles/main.dir/main.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
+ /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Keyboard.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Mouse.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Navbar.h
+ /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Rectangle.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/ESLib.h
@@ -14,5 +16,6 @@ CMakeFiles/main.dir/main.c.o
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Image.h
  /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
  /home/yncrea/Bureau/projet/algo-s2/main.c

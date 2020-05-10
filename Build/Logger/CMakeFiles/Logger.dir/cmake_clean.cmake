@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Logger.dir/src/Logger.c.o"
+  "CMakeFiles/Logger.dir/src/Image.c.o"
   "libLogger.pdb"
   "libLogger.a"
 )

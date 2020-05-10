@@ -42,3 +42,5 @@ void printAmeliorationBatiment(ameliorationBatiment* amelioration);
  * @author Yann LEFEVRE
  * */
 void printFileDeConstructions(ameliorationBatiment* fileDeConstructions);
+
+void afficheFileDeConstructions(ameliorationBatiment* fileDeConstructions);

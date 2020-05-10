@@ -80,8 +80,8 @@ void initModeleBatiment(ModeleBatiment** m, char* nom, typeBatiment type){
 	char image[20];
 	
 	if(type == BATIMENT_PRODUCTION){
-		int production = 0;
-		while(fscanf(fichier,"%d;%d;%d;%d;%d;%d;%s;%d;", &niveau, &populationMax, &prixAmeliorationBois, &prixAmeliorationPierre, &prixAmeliorationArgent, &tempsAmelioration, image, &production) != EOF){
+		float production = 0;
+		while(fscanf(fichier,"%d;%d;%d;%d;%d;%d;%[^;];%f", &niveau, &populationMax, &prixAmeliorationBois, &prixAmeliorationPierre, &prixAmeliorationArgent, &tempsAmelioration, image, &production) != EOF){
 			ModeleBatiment* lvl;
 			initNiveauBatiment(&lvl, nom, type, niveau, populationMax, prixAmeliorationBois, prixAmeliorationPierre, prixAmeliorationArgent, tempsAmelioration, image, production);
 			ajouteNiveauBatiment(m, lvl);
@@ -100,7 +100,7 @@ void initModeleBatiment(ModeleBatiment** m, char* nom, typeBatiment type){
 	debug("<initBatiment> end");
 }
 
-void initNiveauBatiment(ModeleBatiment** lvl, char* nom, typeBatiment type, int niveau, int populationMax, int prixAmeliorationBois, int prixAmeliorationPierre, int prixAmeliorationArgent, int tempsAmelioration, char image[10], int production){
+void initNiveauBatiment(ModeleBatiment** lvl, char* nom, typeBatiment type, int niveau, int populationMax, int prixAmeliorationBois, int prixAmeliorationPierre, int prixAmeliorationArgent, int tempsAmelioration, char image[10], float production){
 	debug("<initNiveauBatiment> begin");
 	
 	if(lvl == NULL){
@@ -193,7 +193,7 @@ void printNiveauBatiment(ModeleBatiment* lvl){
 	printf("Temps Amelioration : %d\n", lvl->tempsAmelioration);
 	
 	if(lvl->type == BATIMENT_PRODUCTION){
-		printf("Production : %d\n",lvl->production);
+		printf("Production : %f\n",lvl->production);
 	}
 	
 	debug("<printNiveauBatiment> end");

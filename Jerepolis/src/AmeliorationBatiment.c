@@ -119,13 +119,14 @@ void gereFileDeConstructions(ameliorationBatiment** fileDeConstructions){
 		return;
 	}
 	
-	(*fileDeConstructions)->timer = (*fileDeConstructions)->timer - 100;
+	(*fileDeConstructions)->timer = (*fileDeConstructions)->timer - 20;
 	if((*fileDeConstructions)->timer <= 0){
 		(*fileDeConstructions)->batiment->nbAmeliorationsEnCours--;
 		(*fileDeConstructions)->batiment->niveau = (*fileDeConstructions)->niveauSuivant;
 		(*fileDeConstructions)->batiment->image = getModeleNiveauBatiment((*fileDeConstructions)->batiment->modele,(*fileDeConstructions)->niveauSuivant)->image;
 		
 		ameliorationBatiment* tmp = *fileDeConstructions;
+		printf("L'amélioration du batiment %s est terminée\n", tmp->batiment->nom);
 		*fileDeConstructions = (*fileDeConstructions)->next;
 		free(tmp);
 		tmp = NULL;
@@ -135,18 +136,18 @@ void gereFileDeConstructions(ameliorationBatiment** fileDeConstructions){
 }
 
 void printAmeliorationBatiment(ameliorationBatiment* amelioration){
-	debug("<afficheAmeliorationBatiment> begin");
+	debug("<printAmeliorationBatiment> begin");
 	
 	printf("Batiment amélioré : %s\n", amelioration->batiment->nom);
 	printf("Niveau précédent : %d\n", amelioration->niveauPrecedent);
 	printf("Niveau suivant : %d\n", amelioration->niveauSuivant);
 	printf("Timer : %d\n", amelioration->timer);
 	
-	debug("<afficheAmeliorationBatiment> end");
+	debug("<printAmeliorationBatiment> end");
 }
 
 void printFileDeConstructions(ameliorationBatiment* fileDeConstructions){
-	debug("<afficheFileDeConstructions> begin");
+	debug("<printFileDeConstructions> begin");
 	
 	printf("\nFile de construction :\n");
 	
@@ -162,6 +163,43 @@ void printFileDeConstructions(ameliorationBatiment* fileDeConstructions){
 		printAmeliorationBatiment(courant);
 		printf("-----\n");
 		courant = courant->next;
+	}
+	
+	debug("<printFileDeConstructions> end");
+}
+
+void afficheFileDeConstructions(ameliorationBatiment* fileDeConstructions){
+	debug("<afficheFileDeConstructions> begin");
+	
+	ameliorationBatiment* courant = fileDeConstructions;
+	int cpt = 0;
+	int x = 0;
+	int y = 0;
+	
+	while(courant != NULL){
+		switch(cpt){
+			case 0:
+				x = 435;
+				y = 27;
+				break;
+			case 1:
+				x = 535;
+				y = 27;
+				break;
+			case 2:
+				x = 635;
+				y = 27;
+				break;
+			case 3:
+				x = 735;
+				y = 27;
+				break;
+		}
+		
+		
+		if(courant->batiment->icon != NULL){ ecrisImage(x, y, courant->batiment->icon->largeurImage, courant->batiment->icon->hauteurImage, courant->batiment->icon->donneesRGB);}
+		courant = courant->next;
+		cpt++;
 	}
 	
 	debug("<afficheFileDeConstructions> end");

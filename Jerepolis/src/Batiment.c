@@ -8,13 +8,14 @@
 /**
  * Includes GfxLib
  * */
- #include "../../GfxLib/headers/GfxLib.h"
+#include "../../GfxLib/headers/GfxLib.h"
 #include "../../GfxLib/headers/BmpLib.h"
 
 /**
  * Includes Logger
  * */
 #include "../../Logger/headers/Logger.h"
+#include "../../Logger/headers/Image.h"
 
 /**
  * Includes Jerepolis
@@ -60,7 +61,7 @@ void printBatiment(Batiment batiment){
 	debug("<printBatiment> end");
 }
 
-void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y){
+void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox, int xFinHitBox, int yDebutHitBox, int yFinHitBox){
 	debug("<initBatiment> begin");
 	
 	if(b == NULL){
@@ -75,7 +76,7 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y){
 		return;
 	}
 	
-	ModeleBatiment* lvl = getModeleNiveauBatiment(m, 1);
+	ModeleBatiment* lvl = m;
 	if(lvl == NULL){
 		error("Le niveau demandé n'est pas disponnible dans le modèle. Impossible d'initialiser le batiment");
 		debug("<initBatiment> end : niveau indisponible dans le modèle");
@@ -84,8 +85,10 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y){
 	
 	b->nom = lvl->nom;
 	b->type = lvl->type;
-	b->niveau = 1;
+	b->niveau = lvl->niveau;
 	b->nbAmeliorationsEnCours = 0;
+	b->populationMax = 0;
+	b->populationMax = lvl->populationMax;
 	b->prixAmeliorationBois = lvl->prixAmeliorationBois;
 	b->prixAmeliorationPierre = lvl->prixAmeliorationPierre;
 	b->prixAmeliorationArgent = lvl->prixAmeliorationArgent;
@@ -95,11 +98,28 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y){
 	b->x = x;
 	b->y = y;
 	b->image = lvl->image;
+	b->production = lvl->production;
+	
+	char tmp[100];
+	strcpy(tmp, "../Jerepolis/ressources/images/batiments/");
+	strcat(tmp, b->nom);
+	strcat(tmp, "/");
+	strcat(tmp, "icon.bmp");
+	
+	b->icon = lisBMPRGB(tmp);
+	if(b->icon == NULL){
+		error("Erreur lors de l'ouverture de l'icon du batiment");
+	}
+	
+	b->xDebutHitBox = xDebutHitBox;
+	b->xFinHitBox = xFinHitBox;
+	b->yDebutHitBox = yDebutHitBox;
+	b->yFinHitBox = yFinHitBox;
 	
 	debug("<initBatiment> end");
 }
 
-void amelioreBatiment(Batiment* batiment, int* bois, int* pierre, int* argent, ameliorationBatiment** fileDeConstructions){
+void amelioreBatiment(Batiment* batiment, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions){
 	debug("<amelioreBatiment> begin");
 	
 	if(fileDeConstructions == NULL){
@@ -144,7 +164,7 @@ void amelioreBatiment(Batiment* batiment, int* bois, int* pierre, int* argent, a
 		printf("Vous n'avez pas assez de argent\n");
 		return;
 	}
-	if(getTailleFileDeConstruction(*fileDeConstructions) > 4){
+	if(getTailleFileDeConstruction(*fileDeConstructions) >= 4){
 		printf("Votre file de constructions est pleine\n");
 		return;
 	}
@@ -190,17 +210,49 @@ void amelioreBatiment(Batiment* batiment, int* bois, int* pierre, int* argent, a
 void afficheBatiment(Batiment b){
 	debug("<afficheBatiment> begin");
 	
-	//~ DonneesImageRGB *image = NULL;
-	//~ image = lisBMPRGB(b.image);
-	if(b.image != NULL){ ecrisImage(b.x, b.y, b.image->largeurImage, b.image->hauteurImage, b.image->donneesRGB);}
+	couleur magenta;
+	magenta.r = 255;
+	magenta.v = 0;
+	magenta.b = 255;
+	if(b.image != NULL){ ecrisImageSansFond(b.x, b.y, b.image->largeurImage, b.image->hauteurImage, b.image->donneesRGB, magenta);}
+	
+	// Affichage des Hitboxes :
+	//~ couleurCourante(255, 0, 0);
+	//~ rectangle(b.xDebutHitBox, b.yDebutHitBox, b.xFinHitBox, b.yFinHitBox);
 	
 	debug("<afficheBatiment> end");
 }
 
-void gereClicBatiment(Batiment*  b, int x, int y, int* bois, int* pierre, int* argent, ameliorationBatiment** fileDeConstructions){
-	if(x > b->x && x < b->x + b->image->largeurImage && y > b->y && y < b->y + b->image->hauteurImage){
+void gereClicBatiment(Batiment*  b, int x, int y, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions){
+	debug("<gereClicBatiment> begin");
+	
+	if(x > b->xDebutHitBox && x < b->xFinHitBox && y > b->yDebutHitBox && y < b->yFinHitBox){
 		amelioreBatiment(b, bois, pierre, argent, fileDeConstructions);
 	}
+	
+	debug("<gereClicBatiment> end");
+}
+
+void peupleBatiment(Batiment* b, int nouvellePopulation){
+	debug("<peupleBatiment> begin");
+	
+	if(b->populationMax > b->population + nouvellePopulation){
+		b->population += nouvellePopulation;
+	}
+	
+	debug("<peupleBatiment> end");
+}
+
+void genereRessource(Batiment b, float* ressource, int stockageEntrepot){
+	debug("<genereRessource> begin");
+
+	*ressource += b.production;
+	
+	if(*ressource > stockageEntrepot){
+		*ressource = stockageEntrepot;
+	}
+	
+	debug("<genereRessource> end");
 }
 
 

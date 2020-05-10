@@ -81,17 +81,43 @@ Logger/CMakeFiles/Logger.dir/src/Logger.c.o.provides: Logger/CMakeFiles/Logger.d
 Logger/CMakeFiles/Logger.dir/src/Logger.c.o.provides.build: Logger/CMakeFiles/Logger.dir/src/Logger.c.o
 
 
+Logger/CMakeFiles/Logger.dir/src/Image.c.o: Logger/CMakeFiles/Logger.dir/flags.make
+Logger/CMakeFiles/Logger.dir/src/Image.c.o: ../Logger/src/Image.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object Logger/CMakeFiles/Logger.dir/src/Image.c.o"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Logger && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Logger.dir/src/Image.c.o   -c /home/yncrea/Bureau/projet/algo-s2/Logger/src/Image.c
+
+Logger/CMakeFiles/Logger.dir/src/Image.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Logger.dir/src/Image.c.i"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Logger && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yncrea/Bureau/projet/algo-s2/Logger/src/Image.c > CMakeFiles/Logger.dir/src/Image.c.i
+
+Logger/CMakeFiles/Logger.dir/src/Image.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Logger.dir/src/Image.c.s"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Logger && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yncrea/Bureau/projet/algo-s2/Logger/src/Image.c -o CMakeFiles/Logger.dir/src/Image.c.s
+
+Logger/CMakeFiles/Logger.dir/src/Image.c.o.requires:
+
+.PHONY : Logger/CMakeFiles/Logger.dir/src/Image.c.o.requires
+
+Logger/CMakeFiles/Logger.dir/src/Image.c.o.provides: Logger/CMakeFiles/Logger.dir/src/Image.c.o.requires
+	$(MAKE) -f Logger/CMakeFiles/Logger.dir/build.make Logger/CMakeFiles/Logger.dir/src/Image.c.o.provides.build
+.PHONY : Logger/CMakeFiles/Logger.dir/src/Image.c.o.provides
+
+Logger/CMakeFiles/Logger.dir/src/Image.c.o.provides.build: Logger/CMakeFiles/Logger.dir/src/Image.c.o
+
+
 # Object files for target Logger
 Logger_OBJECTS = \
-"CMakeFiles/Logger.dir/src/Logger.c.o"
+"CMakeFiles/Logger.dir/src/Logger.c.o" \
+"CMakeFiles/Logger.dir/src/Image.c.o"
 
 # External object files for target Logger
 Logger_EXTERNAL_OBJECTS =
 
 Logger/libLogger.a: Logger/CMakeFiles/Logger.dir/src/Logger.c.o
+Logger/libLogger.a: Logger/CMakeFiles/Logger.dir/src/Image.c.o
 Logger/libLogger.a: Logger/CMakeFiles/Logger.dir/build.make
 Logger/libLogger.a: Logger/CMakeFiles/Logger.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libLogger.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libLogger.a"
 	cd /home/yncrea/Bureau/projet/algo-s2/Build/Logger && $(CMAKE_COMMAND) -P CMakeFiles/Logger.dir/cmake_clean_target.cmake
 	cd /home/yncrea/Bureau/projet/algo-s2/Build/Logger && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Logger.dir/link.txt --verbose=$(VERBOSE)
 
@@ -101,6 +127,7 @@ Logger/CMakeFiles/Logger.dir/build: Logger/libLogger.a
 .PHONY : Logger/CMakeFiles/Logger.dir/build
 
 Logger/CMakeFiles/Logger.dir/requires: Logger/CMakeFiles/Logger.dir/src/Logger.c.o.requires
+Logger/CMakeFiles/Logger.dir/requires: Logger/CMakeFiles/Logger.dir/src/Image.c.o.requires
 
 .PHONY : Logger/CMakeFiles/Logger.dir/requires
 

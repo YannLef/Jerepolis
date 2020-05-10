@@ -53,6 +53,7 @@ void initCouleurTab(CouleurTab* c){
 	initCouleur(&(c->vertPrincipal), 139, 195, 74);
 	initCouleur(&(c->bleuEcriture), 38, 193, 225);
 	initCouleur(&(c->fondPrincipal), 241, 255, 251);
+	initCouleur(&(c->invisible), -1, -1, -1);
 	
 	debug("<initCouleurTab> end");
 }
@@ -62,7 +63,7 @@ void initCouleurTab(CouleurTab* c){
  * -> permet de simplifier les prototypes de nombreuses fonctions (1 paramètre couleur au lieu de 3 paramètres pour R, V et B)
  * @author Yann LEFEVRE
  * */
-void initCouleur(Couleur* c, unsigned char r, unsigned char v, unsigned char b){
+void initCouleur(Couleur* c, int r, int v, int b){
 	debug("<initCouleur> begin");
 	
 	c->r = r;

@@ -28,7 +28,7 @@ void initRectangle(Rec* rect, int x, int y, int largeur, int hauteur, int epaiss
   * ----------------------------------------------------
   * */
   
-void afficheRectangle(Rec rect, bool mobile, int xEcran, int yEcran, float coefZoom);
+void afficheRectangle(Rec rect);
   
  /**
   * --------------------------------------------------
@@ -37,6 +37,5 @@ void afficheRectangle(Rec rect, bool mobile, int xEcran, int yEcran, float coefZ
   * */
 
 bool isOnRectangle(int x, int y, Rec rect);
-bool isOnRectangleMobile(int x, int y, Rec rect, int xEcran, int yEcran, float coefZoom);
 
 #endif

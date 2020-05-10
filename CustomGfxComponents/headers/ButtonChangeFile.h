@@ -26,7 +26,7 @@ void initBoutonChangeFichiers(BoutonChangeFichiers* b, char* string, int x, int 
   * ----------------------------------------------------
   * */
   
-void afficheBoutonChangeFichiers(BoutonChangeFichiers b, int xEcran, int yEcran, float coefZoom);
+void afficheBoutonChangeFichiers(BoutonChangeFichiers b);
 
  /**
   * ---------------------------------------------------

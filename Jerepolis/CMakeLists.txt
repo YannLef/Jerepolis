@@ -15,3 +15,4 @@ SET(HEADERS
 	)
 	
 add_library(Jerepolis ${SRC} ${HEADERS})
+target_link_libraries(Jerepolis Logger)
