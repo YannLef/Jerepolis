@@ -16,6 +16,8 @@
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Navbar.h
 
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Page.h
+
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Rectangle.h
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
@@ -77,6 +79,8 @@ CustomGfxComponents/headers/InputText.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
 CustomGfxComponents/headers/Rectangle.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Rectangle.h
+CustomGfxComponents/headers/Page.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Page.h
 Jerepolis/headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
 Jerepolis/headers/ModeleBatiment.h

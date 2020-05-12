@@ -6,6 +6,7 @@ CMakeFiles/main.dir/main.c.o: ../CustomGfxComponents/headers/InputText.h
 CMakeFiles/main.dir/main.c.o: ../CustomGfxComponents/headers/Keyboard.h
 CMakeFiles/main.dir/main.c.o: ../CustomGfxComponents/headers/Mouse.h
 CMakeFiles/main.dir/main.c.o: ../CustomGfxComponents/headers/Navbar.h
+CMakeFiles/main.dir/main.c.o: ../CustomGfxComponents/headers/Page.h
 CMakeFiles/main.dir/main.c.o: ../CustomGfxComponents/headers/Rectangle.h
 CMakeFiles/main.dir/main.c.o: ../CustomGfxComponents/headers/structures.h
 CMakeFiles/main.dir/main.c.o: ../GfxLib/headers/BmpLib.h

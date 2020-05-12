@@ -143,7 +143,7 @@ typedef struct Keyboard{
 /**
  * Enumération permettant de générer différents affichages sous forme de "pages"
  * */
-typedef enum {accueil, newArbre, openArbre, arbre} Page;
+typedef enum {accueil, partie} Page;
 
 /**
  * Structure permettant de gérer l'affichage des pages : pFinal permet de ne pas changer de page brusquement en plein milieu d'un traitement.

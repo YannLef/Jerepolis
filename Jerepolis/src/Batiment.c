@@ -111,6 +111,17 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox
 		error("Erreur lors de l'ouverture de l'icon du batiment");
 	}
 	
+	strcpy(tmp, "../Jerepolis/ressources/images/batiments/");
+	strcat(tmp, b->nom);
+	strcat(tmp, "/");
+	strcat(tmp, "popup.bmp");
+	b->popup = lisBMPRGB(tmp);
+	if(b->popup == NULL){
+		error("Erreur lors de l'ouverture de l'icon du batiment");
+	}
+	
+	b->popupValue = POPUP_SENAT;
+	
 	b->xDebutHitBox = xDebutHitBox;
 	b->xFinHitBox = xFinHitBox;
 	b->yDebutHitBox = yDebutHitBox;
@@ -152,20 +163,12 @@ void amelioreBatiment(Batiment* batiment, float* bois, float* pierre, float* arg
 		printf("Ce bâtiment est déjà au niveau maximum\n");
 		return;
 	}
-	if(batiment->prixAmeliorationBois > *bois){
-		printf("Vous n'avez pas assez de bois\n");
-		return;
-	}
-	if(batiment->prixAmeliorationPierre > *pierre){
-		printf("Vous n'avez pas assez de pierre\n");
-		return;
-	}
-	if(batiment->prixAmeliorationArgent > *argent){
-		printf("Vous n'avez pas assez de argent\n");
+	if(batiment->prixAmeliorationBois > *bois || batiment->prixAmeliorationPierre > *pierre || batiment->prixAmeliorationArgent > *argent){
+		printf("Vous n'avez pas assez de ressources\n");
 		return;
 	}
 	if(getTailleFileDeConstruction(*fileDeConstructions) >= 4){
-		printf("Votre file de constructions est pleine\n");
+		printf("La file de constructions est pleine\n");
 		return;
 	}
 	
@@ -223,14 +226,14 @@ void afficheBatiment(Batiment b){
 	debug("<afficheBatiment> end");
 }
 
-void gereClicBatiment(Batiment*  b, int x, int y, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions){
-	debug("<gereClicBatiment> begin");
+void gereClicDroitBatiment(Batiment*  b, int x, int y, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions){
+	debug("<gereClicDroitBatiment> begin");
 	
 	if(x > b->xDebutHitBox && x < b->xFinHitBox && y > b->yDebutHitBox && y < b->yFinHitBox){
 		amelioreBatiment(b, bois, pierre, argent, fileDeConstructions);
 	}
 	
-	debug("<gereClicBatiment> end");
+	debug("<gereClicDroitBatiment> end");
 }
 
 void peupleBatiment(Batiment* b, int nouvellePopulation){
@@ -253,6 +256,16 @@ void genereRessource(Batiment b, float* ressource, int stockageEntrepot){
 	}
 	
 	debug("<genereRessource> end");
+}
+
+void gereClicGaucheBatiment(Batiment*  b, int x, int y, Popup* popup){
+	debug("<gereClicGaucheBatiment> begin");
+	
+	if(x > b->xDebutHitBox && x < b->xFinHitBox && y > b->yDebutHitBox && y < b->yFinHitBox){
+		*popup = b->popupValue;
+	}
+	
+	debug("<gereClicGaucheBatiment> end");
 }
 
 

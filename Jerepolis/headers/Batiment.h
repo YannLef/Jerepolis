@@ -52,7 +52,7 @@ void afficheBatiment(Batiment b);
  * @param fileDeConstruction la file de construction
  * @author Yann LEFEVRE
  * */
-void gereClicBatiment(Batiment* b, int x, int y, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions);
+void gereClicDroitBatiment(Batiment* b, int x, int y, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions);
 
 /**
  * Peuple un batiment en lui affectant le nombre d'habitant voulu
@@ -69,3 +69,5 @@ void peupleBatiment(Batiment* b, int nouvellePopulation);
  * @author Yann LEFEVRE
  * */
 void genereRessource(Batiment b, float* ressource, int stockageEntrepot);
+
+void gereClicGaucheBatiment(Batiment*  b, int x, int y, Popup* popup);

@@ -107,19 +107,19 @@ void afficheMenuDeroulantVersDroite(MenuDeroulantVersDroite* menu){
 void afficheDetailMenu(int nav[10], Pages p, MenuDeroulantVersDroite* menuDeroulant){
 	debug("<afficheDetailMenu> begin");
 	
-	if (nav[0] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){ // Si l'onglet actuel est le numéro 0 et que le menu est entièrement ouvert
+	if (nav[0] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal){ // Si l'onglet actuel est le numéro 0 et que le menu est entièrement ouvert
 	
-	}else if (nav[7] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){
+	}else if (nav[7] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal){
 		
-	}else if (nav[5] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){
+	}else if (nav[5] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal){
 
-	}else if (nav[6] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)) {
+	}else if (nav[6] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal) {
 		
-	}else if (nav[1] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){
+	}else if (nav[1] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal){
 
-	}else if  (nav[3] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){
+	}else if  (nav[3] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal){
 			
-	}else if (nav[9] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal && isOnPage(p,arbre)){
+	}else if (nav[9] == 1 && menuDeroulant->xActuel == menuDeroulant->xFinal){
 		
 	}
 	

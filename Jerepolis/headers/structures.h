@@ -7,6 +7,8 @@
  * */
 typedef enum{ BATIMENT_NORMAL, BATIMENT_PRODUCTION} typeBatiment;
 
+typedef enum Popup{ NONE, POPUP_SENAT }Popup;
+
 /**
  * Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d'un fichier .csv et permettant de déterminer le coportement d'un batiment.
  * @author Yann LEFEVRE
@@ -59,6 +61,8 @@ typedef struct Batiment{
 	int y;
 	DonneesImageRGB *image;
 	DonneesImageRGB *icon;
+	DonneesImageRGB *popup;
+	Popup popupValue;
 	int xDebutHitBox;
 	int xFinHitBox;
 	int yDebutHitBox;
