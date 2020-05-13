@@ -37,6 +37,9 @@
 #include "Jerepolis/headers/ModeleBatiment.h"
 #include "Jerepolis/headers/AmeliorationBatiment.h"
 #include "Jerepolis/headers/Batiment.h"
+#include "Jerepolis/headers/Senat.h"
+#include "Jerepolis/headers/Ferme.h"
+#include "Jerepolis/headers/Entrepot.h"
 
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1152
@@ -80,13 +83,15 @@ void gestionEvenement(EvenementGfx evenement){
 	static Pages p;
 	
 	// Popup
-	static Popup popup;
+	static Popups popups;
 	
 	// Images
 	static DonneesImageRGB *background = NULL;
 	static DonneesImageRGB *ameliorer = NULL;
+	static DonneesImageRGB *construire = NULL;
 	static DonneesImageRGB *impossible = NULL;
 	static DonneesImageRGB *maximum = NULL;
+	static DonneesImageRGB *infosBatiment = NULL;
 	
 	// Bâtiments
 	static Batiment senat;
@@ -138,14 +143,17 @@ void gestionEvenement(EvenementGfx evenement){
             initPage(&p, partie);
             
             // Popup
-            popup = NONE;
+            popups.actuel = NONE;
+            popups.final = NONE;
             
             
             // Images
             background = lisBMPRGB("../Jerepolis/ressources/images/background.bmp");
             ameliorer = lisBMPRGB("../Jerepolis/ressources/images/boutons/ameliorer.bmp");
+            construire = lisBMPRGB("../Jerepolis/ressources/images/boutons/construire.bmp");
             impossible = lisBMPRGB("../Jerepolis/ressources/images/boutons/impossible.bmp");
             maximum = lisBMPRGB("../Jerepolis/ressources/images/boutons/maximum.bmp");
+            infosBatiment = lisBMPRGB("../Jerepolis/ressources/images/batiments/infos.bmp");
             
             // Bâtiments
             modeleSenat = NULL;
@@ -189,7 +197,7 @@ void gestionEvenement(EvenementGfx evenement){
             pierre = 200;
             argent = 200;
             stockageEntrepot = 0;
-            capacitePopulationRestante = 20;
+            capacitePopulationRestante = 0;
             
             // Nom ville
             initInputText(&nomVille, 0, 576, 699, 156, 26, 2, c.invisible, c.invisible);
@@ -207,7 +215,9 @@ void gestionEvenement(EvenementGfx evenement){
 				case partie:
 					gereFileDeConstructions(&fileDeConstructions);
 					updateInputText(&nomVille);
-					stockageEntrepot = entrepot.population * 50 + 200;
+					actualisePopup(&popups);
+					actualiseStockageEntrepot(&stockageEntrepot, entrepot);
+					actualiseCapacitePopulationRestante(&capacitePopulationRestante, ferme, senat, entrepot, scierie, temple, carriere, caserne, mine);
 					genereRessource(carriere, &pierre, stockageEntrepot);
 					genereRessource(scierie, &bois, stockageEntrepot);
 					genereRessource(mine, &argent, stockageEntrepot);
@@ -267,90 +277,11 @@ void gestionEvenement(EvenementGfx evenement){
 					// Affiche nom ville
 					afficheInputTexte(nomVille);
 					
+					// Affiche informations batiments
+					afficheInfosBatiment(senat, infosBatiment, ferme, scierie, entrepot, carriere, caserne, temple, mine);
+					
 					// Affiche popup
-					if(popup == POPUP_SENAT){
-						if(senat.popup != NULL){ ecrisImage(167, 90, senat.popup->largeurImage, senat.popup->hauteurImage, senat.popup->donneesRGB);}
-						// Sénat
-						if(senat.max){
-							if(maximum != NULL){ ecrisImage(487, 549, maximum->largeurImage, maximum->hauteurImage, maximum->donneesRGB);}
-						}else{
-							if(senat.prixAmeliorationBois < bois && senat.prixAmeliorationPierre < pierre && senat.prixAmeliorationArgent < argent && getTailleFileDeConstruction(fileDeConstructions) < 4){
-								if(ameliorer != NULL){ ecrisImage(487, 549, ameliorer->largeurImage, ameliorer->hauteurImage, ameliorer->donneesRGB);}
-							}else{
-								if(impossible != NULL){ ecrisImage(487, 549, impossible->largeurImage, impossible->hauteurImage, impossible->donneesRGB);}
-							}
-						}
-						// Scierie
-						if(scierie.max){
-							if(maximum != NULL){ ecrisImage(205, 482, maximum->largeurImage, maximum->hauteurImage, maximum->donneesRGB);}
-						}else{
-							if(scierie.prixAmeliorationBois < bois && scierie.prixAmeliorationPierre < pierre && scierie.prixAmeliorationArgent < argent && getTailleFileDeConstruction(fileDeConstructions) < 4){
-								if(ameliorer != NULL){ ecrisImage(205, 482, ameliorer->largeurImage, ameliorer->hauteurImage, ameliorer->donneesRGB);}
-							}else{
-								if(impossible != NULL){ ecrisImage(205, 482, impossible->largeurImage, impossible->hauteurImage, impossible->donneesRGB);}
-							}
-						}
-						// Ferme
-						if(ferme.max){
-							if(maximum != NULL){ ecrisImage(393, 482, maximum->largeurImage, maximum->hauteurImage, maximum->donneesRGB);}
-						}else{
-							if(ferme.prixAmeliorationBois < bois && ferme.prixAmeliorationPierre < pierre && ferme.prixAmeliorationArgent < argent && getTailleFileDeConstruction(fileDeConstructions) < 4){
-								if(ameliorer != NULL){ ecrisImage(393, 482, ameliorer->largeurImage, ameliorer->hauteurImage, ameliorer->donneesRGB);}
-							}else{
-								if(impossible != NULL){ ecrisImage(393, 482, impossible->largeurImage, impossible->hauteurImage, impossible->donneesRGB);}
-							}
-						}
-						// Carrière
-						if(carriere.max){
-							if(maximum != NULL){ ecrisImage(581, 482, maximum->largeurImage, maximum->hauteurImage, maximum->donneesRGB);}
-						}else{
-							if(carriere.prixAmeliorationBois < bois && carriere.prixAmeliorationPierre < pierre && carriere.prixAmeliorationArgent < argent && getTailleFileDeConstruction(fileDeConstructions) < 4){
-								if(ameliorer != NULL){ ecrisImage(581, 482, ameliorer->largeurImage, ameliorer->hauteurImage, ameliorer->donneesRGB);}
-							}else{
-								if(impossible != NULL){ ecrisImage(581, 482, impossible->largeurImage, impossible->hauteurImage, impossible->donneesRGB);}
-							}
-						}
-						// Entreot
-						if(entrepot.max){
-							if(maximum != NULL){ ecrisImage(769, 482, maximum->largeurImage, maximum->hauteurImage, maximum->donneesRGB);}
-						}else{
-							if(entrepot.prixAmeliorationBois < bois && entrepot.prixAmeliorationPierre < pierre && entrepot.prixAmeliorationArgent < argent && getTailleFileDeConstruction(fileDeConstructions) < 4){
-								if(ameliorer != NULL){ ecrisImage(769, 482, ameliorer->largeurImage, ameliorer->hauteurImage, ameliorer->donneesRGB);}
-							}else{
-								if(impossible != NULL){ ecrisImage(769, 482, impossible->largeurImage, impossible->hauteurImage, impossible->donneesRGB);}
-							}
-						}
-						// Mine
-						if(mine.max){
-							if(maximum != NULL){ ecrisImage(205, 404, maximum->largeurImage, maximum->hauteurImage, maximum->donneesRGB);}
-						}else{
-							if(mine.prixAmeliorationBois < bois && mine.prixAmeliorationPierre < pierre && mine.prixAmeliorationArgent < argent && getTailleFileDeConstruction(fileDeConstructions) < 4){
-								if(ameliorer != NULL){ ecrisImage(205, 404, ameliorer->largeurImage, ameliorer->hauteurImage, ameliorer->donneesRGB);}
-							}else{
-								if(impossible != NULL){ ecrisImage(205, 404, impossible->largeurImage, impossible->hauteurImage, impossible->donneesRGB);}
-							}
-						}
-						// Caserne
-						if(caserne.max){
-							if(maximum != NULL){ ecrisImage(393, 404, maximum->largeurImage, maximum->hauteurImage, maximum->donneesRGB);}
-						}else{
-							if(caserne.prixAmeliorationBois < bois && caserne.prixAmeliorationPierre < pierre && caserne.prixAmeliorationArgent < argent && getTailleFileDeConstruction(fileDeConstructions) < 4){
-								if(ameliorer != NULL){ ecrisImage(393, 404, ameliorer->largeurImage, ameliorer->hauteurImage, ameliorer->donneesRGB);}
-							}else{
-								if(impossible != NULL){ ecrisImage(393, 404, impossible->largeurImage, impossible->hauteurImage, impossible->donneesRGB);}
-							}
-						}
-						// Temple
-						if(temple.max){
-							if(maximum != NULL){ ecrisImage(581, 404, maximum->largeurImage, maximum->hauteurImage, maximum->donneesRGB);}
-						}else{
-							if(temple.prixAmeliorationBois < bois && temple.prixAmeliorationPierre < pierre && temple.prixAmeliorationArgent < argent && getTailleFileDeConstruction(fileDeConstructions) < 4){
-								if(ameliorer != NULL){ ecrisImage(581, 404, ameliorer->largeurImage, ameliorer->hauteurImage, ameliorer->donneesRGB);}
-							}else{
-								if(impossible != NULL){ ecrisImage(581, 404, impossible->largeurImage, impossible->hauteurImage, impossible->donneesRGB);}
-							}
-						}
-					}
+					affichePopupSenat(popups, maximum, impossible, ameliorer, construire, &bois, &pierre, &argent, fileDeConstructions, senat, scierie, ferme, entrepot, mine, carriere, temple, caserne);
 					break;
 			}
 
@@ -369,13 +300,8 @@ void gestionEvenement(EvenementGfx evenement){
 			}else if (etatBoutonSouris() == GaucheRelache){
 				mouseLeftUp();
 				gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
-				gereClicGaucheBatiment(&senat, abscisseSouris(), ordonneeSouris(), &popup);
-				
-				if(popup == POPUP_SENAT){
-					if(abscisseSouris() > 960 && abscisseSouris() < 978 && ordonneeSouris() > 633 && ordonneeSouris() < 647){
-						popup = NONE;
-					}
-				}
+				gereClicGaucheBatiment(&senat, abscisseSouris(), ordonneeSouris(), &popups);
+				gereClicGauchePopupSenat(&popups, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions, &senat, &scierie, &ferme, &carriere, &entrepot, &mine, &caserne, &temple);
 			}
 			
 			if(etatBoutonSouris() == DroiteAppuye){
@@ -387,14 +313,14 @@ void gestionEvenement(EvenementGfx evenement){
 					
 						break;
 					case partie:
-						gereClicDroitBatiment(&senat, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions);
-						gereClicDroitBatiment(&ferme, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions);
-						gereClicDroitBatiment(&carriere, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions);
-						gereClicDroitBatiment(&scierie, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions);
-						gereClicDroitBatiment(&mine, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions);
-						gereClicDroitBatiment(&entrepot, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions);
-						gereClicDroitBatiment(&temple, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions);
-						gereClicDroitBatiment(&caserne, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions);
+						gereClicDroitBatiment(&senat, abscisseSouris(), ordonneeSouris());
+						gereClicDroitBatiment(&ferme, abscisseSouris(), ordonneeSouris());
+						gereClicDroitBatiment(&carriere, abscisseSouris(), ordonneeSouris());
+						gereClicDroitBatiment(&scierie, abscisseSouris(), ordonneeSouris());
+						gereClicDroitBatiment(&mine, abscisseSouris(), ordonneeSouris());
+						gereClicDroitBatiment(&entrepot, abscisseSouris(), ordonneeSouris());
+						gereClicDroitBatiment(&temple, abscisseSouris(), ordonneeSouris());
+						gereClicDroitBatiment(&caserne, abscisseSouris(), ordonneeSouris());
 						break;
 				}
 			}

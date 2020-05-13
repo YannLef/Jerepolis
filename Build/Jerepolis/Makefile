@@ -179,6 +179,60 @@ src/Batiment.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.s
 .PHONY : src/Batiment.c.s
 
+src/Entrepot.o: src/Entrepot.c.o
+
+.PHONY : src/Entrepot.o
+
+# target to build an object file
+src/Entrepot.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o
+.PHONY : src/Entrepot.c.o
+
+src/Entrepot.i: src/Entrepot.c.i
+
+.PHONY : src/Entrepot.i
+
+# target to preprocess a source file
+src/Entrepot.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.i
+.PHONY : src/Entrepot.c.i
+
+src/Entrepot.s: src/Entrepot.c.s
+
+.PHONY : src/Entrepot.s
+
+# target to generate assembly for a file
+src/Entrepot.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.s
+.PHONY : src/Entrepot.c.s
+
+src/Ferme.o: src/Ferme.c.o
+
+.PHONY : src/Ferme.o
+
+# target to build an object file
+src/Ferme.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o
+.PHONY : src/Ferme.c.o
+
+src/Ferme.i: src/Ferme.c.i
+
+.PHONY : src/Ferme.i
+
+# target to preprocess a source file
+src/Ferme.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.i
+.PHONY : src/Ferme.c.i
+
+src/Ferme.s: src/Ferme.c.s
+
+.PHONY : src/Ferme.s
+
+# target to generate assembly for a file
+src/Ferme.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.s
+.PHONY : src/Ferme.c.s
+
 src/ModeleBatiment.o: src/ModeleBatiment.c.o
 
 .PHONY : src/ModeleBatiment.o
@@ -206,6 +260,33 @@ src/ModeleBatiment.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.s
 .PHONY : src/ModeleBatiment.c.s
 
+src/Senat.o: src/Senat.c.o
+
+.PHONY : src/Senat.o
+
+# target to build an object file
+src/Senat.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o
+.PHONY : src/Senat.c.o
+
+src/Senat.i: src/Senat.c.i
+
+.PHONY : src/Senat.i
+
+# target to preprocess a source file
+src/Senat.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.i
+.PHONY : src/Senat.c.i
+
+src/Senat.s: src/Senat.c.s
+
+.PHONY : src/Senat.s
+
+# target to generate assembly for a file
+src/Senat.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.s
+.PHONY : src/Senat.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -221,9 +302,18 @@ help:
 	@echo "... src/Batiment.o"
 	@echo "... src/Batiment.i"
 	@echo "... src/Batiment.s"
+	@echo "... src/Entrepot.o"
+	@echo "... src/Entrepot.i"
+	@echo "... src/Entrepot.s"
+	@echo "... src/Ferme.o"
+	@echo "... src/Ferme.i"
+	@echo "... src/Ferme.s"
 	@echo "... src/ModeleBatiment.o"
 	@echo "... src/ModeleBatiment.i"
 	@echo "... src/ModeleBatiment.s"
+	@echo "... src/Senat.o"
+	@echo "... src/Senat.i"
+	@echo "... src/Senat.s"
 .PHONY : help
 
 

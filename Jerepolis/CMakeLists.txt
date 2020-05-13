@@ -5,6 +5,9 @@ SET(SRC
 	src/Batiment.c
 	src/AmeliorationBatiment.c
 	src/ModeleBatiment.c
+	src/Senat.c
+	src/Ferme.c
+	src/Entrepot.c
 	)
 
 SET(HEADERS
@@ -12,6 +15,9 @@ SET(HEADERS
 	headers/Batiment.h
 	headers/AmeliorationBatiment.h
 	headers/ModeleBatiment.h
+	headers/Senat.h
+	headers/Ferme.h
+	headers/Entrepot.h
 	)
 	
 add_library(Jerepolis ${SRC} ${HEADERS})

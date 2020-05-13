@@ -129,11 +129,86 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o.provides: Jerepolis/CM
 Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o.provides.build: Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o
 
 
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o: Jerepolis/CMakeFiles/Jerepolis.dir/flags.make
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o: ../Jerepolis/src/Senat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Jerepolis.dir/src/Senat.c.o   -c /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Senat.c
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Jerepolis.dir/src/Senat.c.i"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Senat.c > CMakeFiles/Jerepolis.dir/src/Senat.c.i
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Jerepolis.dir/src/Senat.c.s"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Senat.c -o CMakeFiles/Jerepolis.dir/src/Senat.c.s
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o.requires:
+
+.PHONY : Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o.requires
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o.provides: Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o.requires
+	$(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o.provides.build
+.PHONY : Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o.provides
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o.provides.build: Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o
+
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o: Jerepolis/CMakeFiles/Jerepolis.dir/flags.make
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o: ../Jerepolis/src/Ferme.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Jerepolis.dir/src/Ferme.c.o   -c /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Ferme.c
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Jerepolis.dir/src/Ferme.c.i"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Ferme.c > CMakeFiles/Jerepolis.dir/src/Ferme.c.i
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Jerepolis.dir/src/Ferme.c.s"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Ferme.c -o CMakeFiles/Jerepolis.dir/src/Ferme.c.s
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o.requires:
+
+.PHONY : Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o.requires
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o.provides: Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o.requires
+	$(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o.provides.build
+.PHONY : Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o.provides
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o.provides.build: Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o
+
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o: Jerepolis/CMakeFiles/Jerepolis.dir/flags.make
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o: ../Jerepolis/src/Entrepot.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Jerepolis.dir/src/Entrepot.c.o   -c /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Entrepot.c
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Jerepolis.dir/src/Entrepot.c.i"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Entrepot.c > CMakeFiles/Jerepolis.dir/src/Entrepot.c.i
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Jerepolis.dir/src/Entrepot.c.s"
+	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Entrepot.c -o CMakeFiles/Jerepolis.dir/src/Entrepot.c.s
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o.requires:
+
+.PHONY : Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o.requires
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o.provides: Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o.requires
+	$(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o.provides.build
+.PHONY : Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o.provides
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o.provides.build: Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o
+
+
 # Object files for target Jerepolis
 Jerepolis_OBJECTS = \
 "CMakeFiles/Jerepolis.dir/src/Batiment.c.o" \
 "CMakeFiles/Jerepolis.dir/src/AmeliorationBatiment.c.o" \
-"CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o"
+"CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o" \
+"CMakeFiles/Jerepolis.dir/src/Senat.c.o" \
+"CMakeFiles/Jerepolis.dir/src/Ferme.c.o" \
+"CMakeFiles/Jerepolis.dir/src/Entrepot.c.o"
 
 # External object files for target Jerepolis
 Jerepolis_EXTERNAL_OBJECTS =
@@ -141,9 +216,12 @@ Jerepolis_EXTERNAL_OBJECTS =
 Jerepolis/libJerepolis.a: Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o
 Jerepolis/libJerepolis.a: Jerepolis/CMakeFiles/Jerepolis.dir/src/AmeliorationBatiment.c.o
 Jerepolis/libJerepolis.a: Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o
+Jerepolis/libJerepolis.a: Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o
+Jerepolis/libJerepolis.a: Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o
+Jerepolis/libJerepolis.a: Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o
 Jerepolis/libJerepolis.a: Jerepolis/CMakeFiles/Jerepolis.dir/build.make
 Jerepolis/libJerepolis.a: Jerepolis/CMakeFiles/Jerepolis.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libJerepolis.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C static library libJerepolis.a"
 	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && $(CMAKE_COMMAND) -P CMakeFiles/Jerepolis.dir/cmake_clean_target.cmake
 	cd /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Jerepolis.dir/link.txt --verbose=$(VERBOSE)
 
@@ -155,6 +233,9 @@ Jerepolis/CMakeFiles/Jerepolis.dir/build: Jerepolis/libJerepolis.a
 Jerepolis/CMakeFiles/Jerepolis.dir/requires: Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o.requires
 Jerepolis/CMakeFiles/Jerepolis.dir/requires: Jerepolis/CMakeFiles/Jerepolis.dir/src/AmeliorationBatiment.c.o.requires
 Jerepolis/CMakeFiles/Jerepolis.dir/requires: Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o.requires
+Jerepolis/CMakeFiles/Jerepolis.dir/requires: Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o.requires
+Jerepolis/CMakeFiles/Jerepolis.dir/requires: Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.o.requires
+Jerepolis/CMakeFiles/Jerepolis.dir/requires: Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o.requires
 
 .PHONY : Jerepolis/CMakeFiles/Jerepolis.dir/requires
 

@@ -18,6 +18,12 @@
 #include "../../Logger/headers/Image.h"
 
 /**
+ * Includes CustomGfxComponents
+ * */
+#include "../../CustomGfxComponents/headers/structures.h"
+#include "../../CustomGfxComponents/headers/Couleur.h"
+
+/**
  * Includes Jerepolis
  * */
 #include "../headers/structures.h"
@@ -28,6 +34,8 @@
  * Includes correspondant
  * */
 #include "../headers/Batiment.h"
+
+extern CouleurTab c;
 
 
 char* getBatimentTypeName(typeBatiment type){
@@ -117,7 +125,7 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox
 	strcat(tmp, "popup.bmp");
 	b->popup = lisBMPRGB(tmp);
 	if(b->popup == NULL){
-		error("Erreur lors de l'ouverture de l'icon du batiment");
+		error("Erreur lors de l'ouverture de la popup du batiment");
 	}
 	
 	b->popupValue = POPUP_SENAT;
@@ -226,11 +234,11 @@ void afficheBatiment(Batiment b){
 	debug("<afficheBatiment> end");
 }
 
-void gereClicDroitBatiment(Batiment*  b, int x, int y, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions){
+void gereClicDroitBatiment(Batiment*  b, int x, int y){
 	debug("<gereClicDroitBatiment> begin");
 	
 	if(x > b->xDebutHitBox && x < b->xFinHitBox && y > b->yDebutHitBox && y < b->yFinHitBox){
-		amelioreBatiment(b, bois, pierre, argent, fileDeConstructions);
+		peupleBatiment(b, 1);
 	}
 	
 	debug("<gereClicDroitBatiment> end");
@@ -239,8 +247,10 @@ void gereClicDroitBatiment(Batiment*  b, int x, int y, float* bois, float* pierr
 void peupleBatiment(Batiment* b, int nouvellePopulation){
 	debug("<peupleBatiment> begin");
 	
-	if(b->populationMax > b->population + nouvellePopulation){
+	if(b->populationMax >= b->population + nouvellePopulation){
 		b->population += nouvellePopulation;
+	}else{
+		printf("Population maximale atteinte pour %s, améliorez la batiment pour augmenter la limite\n", b->nom);
 	}
 	
 	debug("<peupleBatiment> end");
@@ -258,14 +268,102 @@ void genereRessource(Batiment b, float* ressource, int stockageEntrepot){
 	debug("<genereRessource> end");
 }
 
-void gereClicGaucheBatiment(Batiment*  b, int x, int y, Popup* popup){
+void gereClicGaucheBatiment(Batiment*  b, int x, int y, Popups* popups){
 	debug("<gereClicGaucheBatiment> begin");
 	
 	if(x > b->xDebutHitBox && x < b->xFinHitBox && y > b->yDebutHitBox && y < b->yFinHitBox){
-		*popup = b->popupValue;
+		if(popups->actuel == popups->final){
+				popups->final = b->popupValue;
+		}
 	}
 	
 	debug("<gereClicGaucheBatiment> end");
+}
+
+void afficheInfosBatiment(Batiment senat, DonneesImageRGB* infosBatiment, Batiment ferme, Batiment scierie, Batiment entrepot, Batiment carriere, Batiment caserne, Batiment temple, Batiment mine){
+	
+	couleur magenta;
+	magenta.r = 255;
+	magenta.v = 0;
+	magenta.b = 255;
+	
+	char population[100];
+	char niveau[100];
+	int x = 0;
+	int y = 0;
+	changeColor(c.blanc);
+	
+	// Senat
+	x = 620;
+	y = 420;
+	if(infosBatiment != NULL){ ecrisImageSansFond(x, y, infosBatiment->largeurImage, infosBatiment->hauteurImage, infosBatiment->donneesRGB, magenta);}
+	sprintf(population,"%d/%d", senat.population, senat.populationMax);
+	afficheChaine(population, 10, x+30, y+5);
+	sprintf(population,"%d", senat.niveau);
+	afficheChaine(population, 10, x+30, y+25);
+	
+	// Ferme
+	x = 740;
+	y = 450;
+	if(infosBatiment != NULL){ ecrisImageSansFond(x, y, infosBatiment->largeurImage, infosBatiment->hauteurImage, infosBatiment->donneesRGB, magenta);}
+	sprintf(population,"%d/%d", ferme.population, ferme.populationMax);
+	afficheChaine(population, 10, x+30, y+5);
+	sprintf(population,"%d", ferme.niveau);
+	afficheChaine(population, 10, x+30, y+25);
+	
+	// Scierie
+	x = 640;
+	y = 220;
+	if(infosBatiment != NULL){ ecrisImageSansFond(x, y, infosBatiment->largeurImage, infosBatiment->hauteurImage, infosBatiment->donneesRGB, magenta);}
+	sprintf(population,"%d/%d", scierie.population, scierie.populationMax);
+	afficheChaine(population, 10, x+30, y+5);
+	sprintf(population,"%d", scierie.niveau);
+	afficheChaine(population, 10, x+30, y+25);
+	
+	// Entrepot
+	x = 570;
+	y = 305;
+	if(infosBatiment != NULL){ ecrisImageSansFond(x, y, infosBatiment->largeurImage, infosBatiment->hauteurImage, infosBatiment->donneesRGB, magenta);}
+	sprintf(population,"%d/%d", entrepot.population, entrepot.populationMax);
+	afficheChaine(population, 10, x+30, y+5);
+	sprintf(population,"%d", entrepot.niveau);
+	afficheChaine(population, 10, x+30, y+25);
+	
+	// Carriere
+	x = 435;
+	y = 290;
+	if(infosBatiment != NULL){ ecrisImageSansFond(x, y, infosBatiment->largeurImage, infosBatiment->hauteurImage, infosBatiment->donneesRGB, magenta);}
+	sprintf(population,"%d/%d", carriere.population, carriere.populationMax);
+	afficheChaine(population, 10, x+30, y+5);
+	sprintf(population,"%d", carriere.niveau);
+	afficheChaine(population, 10, x+30, y+25);
+	
+	// Caserne
+	x = 490;
+	y = 360;
+	if(infosBatiment != NULL){ ecrisImageSansFond(x, y, infosBatiment->largeurImage, infosBatiment->hauteurImage, infosBatiment->donneesRGB, magenta);}
+	sprintf(population,"%d/%d", caserne.population, caserne.populationMax);
+	afficheChaine(population, 10, x+30, y+5);
+	sprintf(population,"%d", caserne.niveau);
+	afficheChaine(population, 10, x+30, y+25);
+	
+	// Temple
+	x = 400;
+	y = 380;
+	if(infosBatiment != NULL){ ecrisImageSansFond(x, y, infosBatiment->largeurImage, infosBatiment->hauteurImage, infosBatiment->donneesRGB, magenta);}
+	sprintf(population,"%d/%d", temple.population, temple.populationMax);
+	afficheChaine(population, 10, x+30, y+5);
+	sprintf(population,"%d", temple.niveau);
+	afficheChaine(population, 10, x+30, y+25);
+	
+	// Mine
+	x = 390;
+	y = 480;
+	if(infosBatiment != NULL){ ecrisImageSansFond(x, y, infosBatiment->largeurImage, infosBatiment->hauteurImage, infosBatiment->donneesRGB, magenta);}
+	sprintf(population,"%d/%d", mine.population, mine.populationMax);
+	afficheChaine(population, 10, x+30, y+5);
+	sprintf(population,"%d", mine.niveau);
+	afficheChaine(population, 10, x+30, y+25);
 }
 
 

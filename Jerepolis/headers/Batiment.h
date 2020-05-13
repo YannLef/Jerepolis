@@ -46,13 +46,9 @@ void afficheBatiment(Batiment b);
  * @param b le pointeur vers le batiment concerné
  * @param x l'abscisse du clic
  * @param y l'ordonnée du clic
- * @param bois le pointeur vers la ressource bois
- * @param pierre le pointeur vers la ressource pierre
- * @param argent le pointeur ver la ressource argent
- * @param fileDeConstruction la file de construction
  * @author Yann LEFEVRE
  * */
-void gereClicDroitBatiment(Batiment* b, int x, int y, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions);
+void gereClicDroitBatiment(Batiment* b, int x, int y);
 
 /**
  * Peuple un batiment en lui affectant le nombre d'habitant voulu
@@ -70,4 +66,6 @@ void peupleBatiment(Batiment* b, int nouvellePopulation);
  * */
 void genereRessource(Batiment b, float* ressource, int stockageEntrepot);
 
-void gereClicGaucheBatiment(Batiment*  b, int x, int y, Popup* popup);
+void gereClicGaucheBatiment(Batiment*  b, int x, int y, Popups* popups);
+
+void afficheInfosBatiment(Batiment senat, DonneesImageRGB* infosBatiment, Batiment ferme, Batiment scierie, Batiment entrepot, Batiment carriere, Batiment caserne, Batiment temple, Batiment mine);

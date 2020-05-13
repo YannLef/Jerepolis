@@ -1,2 +1,2 @@
-/usr/bin/ar qc libJerepolis.a  CMakeFiles/Jerepolis.dir/src/Batiment.c.o CMakeFiles/Jerepolis.dir/src/AmeliorationBatiment.c.o CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o
+/usr/bin/ar qc libJerepolis.a  CMakeFiles/Jerepolis.dir/src/Batiment.c.o CMakeFiles/Jerepolis.dir/src/AmeliorationBatiment.c.o CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o CMakeFiles/Jerepolis.dir/src/Senat.c.o CMakeFiles/Jerepolis.dir/src/Ferme.c.o CMakeFiles/Jerepolis.dir/src/Entrepot.c.o
 /usr/bin/ranlib libJerepolis.a
