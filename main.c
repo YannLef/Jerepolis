@@ -41,6 +41,9 @@
 #include "Jerepolis/headers/Ferme.h"
 #include "Jerepolis/headers/Entrepot.h"
 #include "Jerepolis/headers/Mine.h"
+#include "Jerepolis/headers/Carriere.h"
+#include "Jerepolis/headers/Scierie.h"
+#include "Jerepolis/headers/Temple.h"
 
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1152
@@ -133,6 +136,10 @@ void gestionEvenement(EvenementGfx evenement){
 	// Nom ville
 	static InputText nomVille;
 	
+	// Divinité
+	static Divinite divinite;
+	static Divinite divinite_selec;
+	
 	switch (evenement)
 	{
 		case Initialisation:
@@ -144,8 +151,8 @@ void gestionEvenement(EvenementGfx evenement){
             initPage(&p, partie);
             
             // Popup
-            popups.actuel = NONE;
-            popups.final = NONE;
+            popups.actuel = POPUP_NONE;
+            popups.final = POPUP_NONE;
             
             
             // Images
@@ -167,11 +174,11 @@ void gestionEvenement(EvenementGfx evenement){
             
             modeleCarriere = NULL;
             initModeleBatiment(&modeleCarriere, "carriere", BATIMENT_PRODUCTION);
-            initBatiment(&carriere, modeleCarriere, 414, 314, 425, 535, 320, 370, NONE);
+            initBatiment(&carriere, modeleCarriere, 414, 314, 425, 535, 320, 370, POPUP_CARRIERE);
             
             modeleScierie = NULL;
             initModeleBatiment(&modeleScierie, "scierie", BATIMENT_PRODUCTION);
-            initBatiment(&scierie, modeleScierie, 645, 238, 645, 705, 240, 290, NONE);
+            initBatiment(&scierie, modeleScierie, 645, 238, 645, 705, 240, 290, POPUP_SCIERIE);
             
             modeleMine = NULL;
             initModeleBatiment(&modeleMine, "mine", BATIMENT_PRODUCTION);
@@ -183,11 +190,11 @@ void gestionEvenement(EvenementGfx evenement){
             
             modeleTemple = NULL;
             initModeleBatiment(&modeleTemple, "temple", BATIMENT_PRODUCTION);
-            initBatiment(&temple, modeleTemple, 398, 420, 400, 480, 420, 470, NONE);
+            initBatiment(&temple, modeleTemple, 398, 420, 400, 480, 420, 470, POPUP_TEMPLE);
             
             modeleCaserne = NULL;
             initModeleBatiment(&modeleCaserne, "caserne", BATIMENT_NORMAL);
-            initBatiment(&caserne, modeleCaserne, 480, 378, 483, 580, 382, 437, NONE);
+            initBatiment(&caserne, modeleCaserne, 480, 378, 483, 580, 382, 437, POPUP_NONE);
             
             // File de constructions
             fileDeConstructions = NULL;
@@ -203,6 +210,10 @@ void gestionEvenement(EvenementGfx evenement){
             // Nom ville
             initInputText(&nomVille, 0, 576, 699, 156, 26, 2, c.invisible, c.invisible);
             setString(&nomVille, "Nom de la ville");
+            
+            // Divinite
+            divinite = DIVINITE_NONE;
+            divinite_selec = DIVINITE_NONE;
             
             // Tests
             
@@ -286,6 +297,9 @@ void gestionEvenement(EvenementGfx evenement){
 					affichePopupMine(popups, mine);
 					affichePopupFerme(popups, ferme);
 					affichePopupEntrepot(popups, entrepot, bois, pierre, argent, stockageEntrepot);
+					affichePopupCarriere(popups, carriere);
+					affichePopupScierie(popups, scierie);
+					affichePopupTemple(popups, temple);
 					break;
 			}
 
@@ -310,12 +324,18 @@ void gestionEvenement(EvenementGfx evenement){
 				gereClicGaucheBatiment(&mine, abscisseSouris(), ordonneeSouris(), &popups);
 				gereClicGaucheBatiment(&ferme, abscisseSouris(), ordonneeSouris(), &popups);
 				gereClicGaucheBatiment(&entrepot, abscisseSouris(), ordonneeSouris(), &popups);
+				gereClicGaucheBatiment(&carriere, abscisseSouris(), ordonneeSouris(), &popups);
+				gereClicGaucheBatiment(&scierie, abscisseSouris(), ordonneeSouris(), &popups);
+				gereClicGaucheBatiment(&temple, abscisseSouris(), ordonneeSouris(), &popups);
 				
 				// Clic Popups
 				gereClicGauchePopupSenat(&popups, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions, &senat, &scierie, &ferme, &carriere, &entrepot, &mine, &caserne, &temple);
 				gereClicGauchePopupMine(&popups, abscisseSouris(), ordonneeSouris());
 				gereClicGauchePopupFerme(&popups, abscisseSouris(), ordonneeSouris());
 				gereClicGauchePopupEntrepot(&popups, abscisseSouris(), ordonneeSouris());
+				gereClicGauchePopupCarriere(&popups, abscisseSouris(), ordonneeSouris());
+				gereClicGauchePopupScierie(&popups, abscisseSouris(), ordonneeSouris());
+				gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple);
 			}
 			
 			if(etatBoutonSouris() == DroiteAppuye){

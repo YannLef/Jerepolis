@@ -9,6 +9,9 @@ SET(SRC
 	src/Ferme.c
 	src/Entrepot.c
 	src/Mine.c
+	src/Carriere.c
+	src/Scierie.c
+	src/Temple.c
 	)
 
 SET(HEADERS
@@ -20,6 +23,9 @@ SET(HEADERS
 	headers/Ferme.h
 	headers/Entrepot.h
 	headers/Mine.h
+	headers/Carriere.h
+	headers/Scierie.h
+	headers/Temple.h
 	)
 	
 add_library(Jerepolis ${SRC} ${HEADERS})

@@ -64,7 +64,7 @@ void gereClicGauchePopupEntrepot(Popups* popups, int x, int y){
 		// Gère clic sur la croix
 		if(x > 928 && x < 947 && y > 632 && y < 650){
 			if(popups->actuel == popups->final){
-				popups->final = NONE;
+				popups->final = POPUP_NONE;
 			}
 		}
 	}

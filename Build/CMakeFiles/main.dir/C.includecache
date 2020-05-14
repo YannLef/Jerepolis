@@ -42,6 +42,8 @@ stdbool.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Carriere.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Entrepot.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Ferme.h
@@ -50,7 +52,11 @@ stdbool.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Scierie.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Senat.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Temple.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
 
@@ -105,4 +111,10 @@ Jerepolis/headers/Entrepot.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Entrepot.h
 Jerepolis/headers/Mine.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Mine.h
+Jerepolis/headers/Carriere.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Carriere.h
+Jerepolis/headers/Scierie.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Scierie.h
+Jerepolis/headers/Temple.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Temple.h
 

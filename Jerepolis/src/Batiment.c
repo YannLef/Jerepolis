@@ -119,14 +119,7 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox
 		error("Erreur lors de l'ouverture de l'icon du batiment");
 	}
 	
-	strcpy(tmp, "../Jerepolis/ressources/images/batiments/");
-	strcat(tmp, b->nom);
-	strcat(tmp, "/");
-	strcat(tmp, "popup.bmp");
-	b->popup = lisBMPRGB(tmp);
-	if(b->popup == NULL){
-		error("Erreur lors de l'ouverture de la popup du batiment");
-	}
+	setPopupImage(b, "popup");
 	
 	b->popupValue = popup;
 	
@@ -136,6 +129,27 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox
 	b->yFinHitBox = yFinHitBox;
 	
 	debug("<initBatiment> end");
+}
+
+void setPopupImage(Batiment* b, char* popupImageName){
+	char tmp[100];
+	
+	strcpy(tmp, "../Jerepolis/ressources/images/batiments/");
+	strcat(tmp, b->nom);
+	strcat(tmp, "/");
+	strcat(tmp, popupImageName);
+	strcat(tmp, ".bmp");
+	
+	if(b->popup != NULL){
+		warn("Une popup est déjà définie dans cette variable. Elle sera écrasée.");
+		libereDonneesImageRGB(&(b->popup));
+		b->popup = NULL;
+	}
+	
+	b->popup = lisBMPRGB(tmp);
+	if(b->popup == NULL){
+		error("Erreur lors de l'ouverture de la popup du batiment");
+	}
 }
 
 void amelioreBatiment(Batiment* batiment, float* bois, float* pierre, float* argent, ameliorationBatiment** fileDeConstructions){

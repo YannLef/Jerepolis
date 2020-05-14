@@ -179,6 +179,33 @@ src/Batiment.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.s
 .PHONY : src/Batiment.c.s
 
+src/Carriere.o: src/Carriere.c.o
+
+.PHONY : src/Carriere.o
+
+# target to build an object file
+src/Carriere.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o
+.PHONY : src/Carriere.c.o
+
+src/Carriere.i: src/Carriere.c.i
+
+.PHONY : src/Carriere.i
+
+# target to preprocess a source file
+src/Carriere.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.i
+.PHONY : src/Carriere.c.i
+
+src/Carriere.s: src/Carriere.c.s
+
+.PHONY : src/Carriere.s
+
+# target to generate assembly for a file
+src/Carriere.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.s
+.PHONY : src/Carriere.c.s
+
 src/Entrepot.o: src/Entrepot.c.o
 
 .PHONY : src/Entrepot.o
@@ -287,6 +314,33 @@ src/ModeleBatiment.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.s
 .PHONY : src/ModeleBatiment.c.s
 
+src/Scierie.o: src/Scierie.c.o
+
+.PHONY : src/Scierie.o
+
+# target to build an object file
+src/Scierie.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o
+.PHONY : src/Scierie.c.o
+
+src/Scierie.i: src/Scierie.c.i
+
+.PHONY : src/Scierie.i
+
+# target to preprocess a source file
+src/Scierie.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.i
+.PHONY : src/Scierie.c.i
+
+src/Scierie.s: src/Scierie.c.s
+
+.PHONY : src/Scierie.s
+
+# target to generate assembly for a file
+src/Scierie.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.s
+.PHONY : src/Scierie.c.s
+
 src/Senat.o: src/Senat.c.o
 
 .PHONY : src/Senat.o
@@ -314,6 +368,33 @@ src/Senat.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.s
 .PHONY : src/Senat.c.s
 
+src/Temple.o: src/Temple.c.o
+
+.PHONY : src/Temple.o
+
+# target to build an object file
+src/Temple.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o
+.PHONY : src/Temple.c.o
+
+src/Temple.i: src/Temple.c.i
+
+.PHONY : src/Temple.i
+
+# target to preprocess a source file
+src/Temple.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.i
+.PHONY : src/Temple.c.i
+
+src/Temple.s: src/Temple.c.s
+
+.PHONY : src/Temple.s
+
+# target to generate assembly for a file
+src/Temple.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.s
+.PHONY : src/Temple.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -329,6 +410,9 @@ help:
 	@echo "... src/Batiment.o"
 	@echo "... src/Batiment.i"
 	@echo "... src/Batiment.s"
+	@echo "... src/Carriere.o"
+	@echo "... src/Carriere.i"
+	@echo "... src/Carriere.s"
 	@echo "... src/Entrepot.o"
 	@echo "... src/Entrepot.i"
 	@echo "... src/Entrepot.s"
@@ -341,9 +425,15 @@ help:
 	@echo "... src/ModeleBatiment.o"
 	@echo "... src/ModeleBatiment.i"
 	@echo "... src/ModeleBatiment.s"
+	@echo "... src/Scierie.o"
+	@echo "... src/Scierie.i"
+	@echo "... src/Scierie.s"
 	@echo "... src/Senat.o"
 	@echo "... src/Senat.i"
 	@echo "... src/Senat.s"
+	@echo "... src/Temple.o"
+	@echo "... src/Temple.i"
+	@echo "... src/Temple.s"
 .PHONY : help
 
 

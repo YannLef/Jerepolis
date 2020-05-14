@@ -159,7 +159,7 @@ Batiment* ferme, Batiment* carriere, Batiment* entrepot, Batiment* mine, Batimen
 		// Gère clic sur la croix
 		if(x > 960 && x < 978 && y > 633 && y < 647){
 			if(popups->actuel == popups->final){
-				popups->final = NONE;
+				popups->final = POPUP_NONE;
 			}
 		}
 		

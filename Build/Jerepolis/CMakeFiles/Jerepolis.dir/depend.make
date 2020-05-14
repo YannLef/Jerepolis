@@ -21,6 +21,16 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o: ../Jerepolis/headers/struct
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o: ../Jerepolis/src/Batiment.c
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Batiment.c.o: ../Logger/headers/Logger.h
 
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o: ../CustomGfxComponents/headers/Couleur.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o: ../CustomGfxComponents/headers/Image.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o: ../CustomGfxComponents/headers/structures.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o: ../GfxLib/headers/BmpLib.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o: ../GfxLib/headers/GfxLib.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o: ../Jerepolis/headers/Carriere.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o: ../Jerepolis/headers/structures.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o: ../Jerepolis/src/Carriere.c
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.o: ../Logger/headers/Logger.h
+
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o: ../CustomGfxComponents/headers/Couleur.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o: ../CustomGfxComponents/headers/Image.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.o: ../CustomGfxComponents/headers/structures.h
@@ -55,6 +65,16 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o: ../Jerepolis/headers/
 Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o: ../Jerepolis/src/ModeleBatiment.c
 Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o: ../Logger/headers/Logger.h
 
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o: ../CustomGfxComponents/headers/Couleur.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o: ../CustomGfxComponents/headers/Image.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o: ../CustomGfxComponents/headers/structures.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o: ../GfxLib/headers/BmpLib.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o: ../GfxLib/headers/GfxLib.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o: ../Jerepolis/headers/Scierie.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o: ../Jerepolis/headers/structures.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o: ../Jerepolis/src/Scierie.c
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o: ../Logger/headers/Logger.h
+
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o: ../GfxLib/headers/BmpLib.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o: ../GfxLib/headers/GfxLib.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o: ../Jerepolis/headers/AmeliorationBatiment.h
@@ -62,4 +82,15 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o: ../Jerepolis/headers/Batiment.
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o: ../Jerepolis/headers/Senat.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o: ../Jerepolis/headers/structures.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.o: ../Jerepolis/src/Senat.c
+
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../CustomGfxComponents/headers/Couleur.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../CustomGfxComponents/headers/Image.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../CustomGfxComponents/headers/structures.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../GfxLib/headers/BmpLib.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../GfxLib/headers/GfxLib.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../Jerepolis/headers/Batiment.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../Jerepolis/headers/Temple.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../Jerepolis/headers/structures.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../Jerepolis/src/Temple.c
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Temple.c.o: ../Logger/headers/Logger.h
 

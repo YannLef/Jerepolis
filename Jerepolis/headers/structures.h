@@ -7,7 +7,9 @@
  * */
 typedef enum{ BATIMENT_NORMAL, BATIMENT_PRODUCTION} typeBatiment;
 
-typedef enum Popup{ NONE, POPUP_SENAT, POPUP_MINE, POPUP_FERME, POPUP_ENTREPOT }Popup;
+typedef enum Popup{ POPUP_NONE, POPUP_SENAT, POPUP_MINE, POPUP_FERME, POPUP_ENTREPOT, POPUP_CARRIERE, POPUP_SCIERIE, POPUP_TEMPLE }Popup;
+
+typedef enum Divinite{ DIVINITE_NONE, DIVINITE_ZEUS, DIVINITE_POSEIDON, DIVINITE_HADES }Divinite;
 
 typedef struct Popups{
 	Popup actuel;

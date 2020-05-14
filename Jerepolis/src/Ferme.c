@@ -57,9 +57,9 @@ void affichePopupFerme(Popups popups, Batiment ferme){
 void gereClicGauchePopupFerme(Popups* popups, int x, int y){
 	if(popups->actuel == POPUP_FERME){
 		// Gère clic sur la croix
-		if(x > 960 && x < 978 && y > 633 && y < 647){
+		if(x > 958 && x < 978 && y > 628 && y < 647){
 			if(popups->actuel == popups->final){
-				popups->final = NONE;
+				popups->final = POPUP_NONE;
 			}
 		}
 	}

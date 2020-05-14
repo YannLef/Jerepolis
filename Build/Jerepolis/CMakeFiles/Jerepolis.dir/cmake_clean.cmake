@@ -6,6 +6,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/Jerepolis.dir/src/Ferme.c.o"
   "CMakeFiles/Jerepolis.dir/src/Entrepot.c.o"
   "CMakeFiles/Jerepolis.dir/src/Mine.c.o"
+  "CMakeFiles/Jerepolis.dir/src/Carriere.c.o"
+  "CMakeFiles/Jerepolis.dir/src/Scierie.c.o"
+  "CMakeFiles/Jerepolis.dir/src/Temple.c.o"
   "libJerepolis.pdb"
   "libJerepolis.a"
 )
