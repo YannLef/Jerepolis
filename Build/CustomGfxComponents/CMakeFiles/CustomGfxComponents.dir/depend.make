@@ -119,6 +119,10 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../Gf
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../GfxLib/headers/GfxLib.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../Logger/headers/Logger.h
 
+CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Image.c.o: ../CustomGfxComponents/headers/Image.h
+CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Image.c.o: ../CustomGfxComponents/src/Image.c
+CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Image.c.o: ../GfxLib/headers/GfxLib.h
+
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/InputText.c.o: ../CustomGfxComponents/headers/Couleur.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/InputText.c.o: ../CustomGfxComponents/headers/InputText.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/InputText.c.o: ../CustomGfxComponents/headers/Keyboard.h

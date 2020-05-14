@@ -28,6 +28,8 @@
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Formulaire.h
 
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
+
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Keyboard.h
@@ -353,6 +355,16 @@ unistd.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/RadioButton.h
 ../headers/Formulaire.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Formulaire.h
+
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/Image.c
+stdlib.h
+-
+stdio.h
+-
+../../GfxLib/headers/GfxLib.h
+/home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+../headers/Image.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/src/InputText.c
 stdlib.h

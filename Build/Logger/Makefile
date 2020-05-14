@@ -125,33 +125,6 @@ Logger/fast:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Logger/CMakeFiles/Logger.dir/build.make Logger/CMakeFiles/Logger.dir/build
 .PHONY : Logger/fast
 
-src/Image.o: src/Image.c.o
-
-.PHONY : src/Image.o
-
-# target to build an object file
-src/Image.c.o:
-	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Logger/CMakeFiles/Logger.dir/build.make Logger/CMakeFiles/Logger.dir/src/Image.c.o
-.PHONY : src/Image.c.o
-
-src/Image.i: src/Image.c.i
-
-.PHONY : src/Image.i
-
-# target to preprocess a source file
-src/Image.c.i:
-	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Logger/CMakeFiles/Logger.dir/build.make Logger/CMakeFiles/Logger.dir/src/Image.c.i
-.PHONY : src/Image.c.i
-
-src/Image.s: src/Image.c.s
-
-.PHONY : src/Image.s
-
-# target to generate assembly for a file
-src/Image.c.s:
-	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Logger/CMakeFiles/Logger.dir/build.make Logger/CMakeFiles/Logger.dir/src/Image.c.s
-.PHONY : src/Image.c.s
-
 src/Logger.o: src/Logger.c.o
 
 .PHONY : src/Logger.o
@@ -188,9 +161,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Logger"
-	@echo "... src/Image.o"
-	@echo "... src/Image.i"
-	@echo "... src/Image.s"
 	@echo "... src/Logger.o"
 	@echo "... src/Logger.i"
 	@echo "... src/Logger.s"

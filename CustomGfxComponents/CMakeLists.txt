@@ -22,6 +22,7 @@ SET(SRC
 	src/ButtonChangeFile.c
 	src/ButtonChangePage.c
 	src/ButtonSendMessage.c
+	src/Image.c
 	)
 
 SET(HEADERS
@@ -46,6 +47,7 @@ SET(HEADERS
 	headers/ButtonChangeFile.h
 	headers/ButtonChangePage.h
 	headers/ButtonSendMessage.h
+	headers/Image.h
 	)
 	
 add_library(CustomGfxComponents ${SRC} ${HEADERS})

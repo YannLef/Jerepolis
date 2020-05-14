@@ -8,6 +8,8 @@
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
 
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
+
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Keyboard.h
@@ -52,8 +54,6 @@ stdbool.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
 
-/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Image.h
-
 /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 
 /home/yncrea/Bureau/projet/algo-s2/main.c
@@ -71,8 +71,6 @@ GfxLib/headers/ESLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/ESLib.h
 Logger/headers/Logger.h
 /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
-Logger/headers/Image.h
-/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Image.h
 CustomGfxComponents/headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 CustomGfxComponents/headers/Mouse.h
@@ -89,6 +87,8 @@ CustomGfxComponents/headers/Rectangle.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Rectangle.h
 CustomGfxComponents/headers/Page.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Page.h
+CustomGfxComponents/headers/Image.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
 Jerepolis/headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
 Jerepolis/headers/ModeleBatiment.h

@@ -16,7 +16,6 @@
  * Includes Logger
  * */
 #include "Logger/headers/Logger.h"
-#include "Logger/headers/Image.h"
 
 /**
  * Includes CustomGfxComponents
@@ -29,6 +28,7 @@
 #include "CustomGfxComponents/headers/InputText.h"
 #include "CustomGfxComponents/headers/Rectangle.h"
 #include "CustomGfxComponents/headers/Page.h"
+#include "CustomGfxComponents/headers/Image.h"
 
 /**
  * Includes Jerepolis

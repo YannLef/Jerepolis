@@ -422,6 +422,33 @@ src/Formulaire.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/build.make CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.s
 .PHONY : src/Formulaire.c.s
 
+src/Image.o: src/Image.c.o
+
+.PHONY : src/Image.o
+
+# target to build an object file
+src/Image.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/build.make CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Image.c.o
+.PHONY : src/Image.c.o
+
+src/Image.i: src/Image.c.i
+
+.PHONY : src/Image.i
+
+# target to preprocess a source file
+src/Image.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/build.make CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Image.c.i
+.PHONY : src/Image.c.i
+
+src/Image.s: src/Image.c.s
+
+.PHONY : src/Image.s
+
+# target to generate assembly for a file
+src/Image.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/build.make CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Image.c.s
+.PHONY : src/Image.c.s
+
 src/InputText.o: src/InputText.c.o
 
 .PHONY : src/InputText.o
@@ -707,6 +734,9 @@ help:
 	@echo "... src/Formulaire.o"
 	@echo "... src/Formulaire.i"
 	@echo "... src/Formulaire.s"
+	@echo "... src/Image.o"
+	@echo "... src/Image.i"
+	@echo "... src/Image.s"
 	@echo "... src/InputText.o"
 	@echo "... src/InputText.i"
 	@echo "... src/InputText.s"

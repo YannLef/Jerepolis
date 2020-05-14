@@ -1,1 +1,1 @@
-/usr/bin/cc     CMakeFiles/main.dir/main.c.o  -o main -rdynamic GfxLib/libGfxLib.a CustomGfxComponents/libCustomGfxComponents.a Logger/libLogger.a BetterTerminal/libBetterTerminal.a Jerepolis/libJerepolis.a -lGLU -lGL -lglut -lXmu -lXi -lm -lX11 Logger/libLogger.a 
+/usr/bin/cc     CMakeFiles/main.dir/main.c.o  -o main -rdynamic GfxLib/libGfxLib.a CustomGfxComponents/libCustomGfxComponents.a Logger/libLogger.a BetterTerminal/libBetterTerminal.a Jerepolis/libJerepolis.a -lGLU -lGL -lglut -lXmu -lXi -lm -lX11 CustomGfxComponents/libCustomGfxComponents.a 

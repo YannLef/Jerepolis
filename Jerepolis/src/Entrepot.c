@@ -14,13 +14,13 @@
  * Includes Logger
  * */
 #include "../../Logger/headers/Logger.h"
-#include "../../Logger/headers/Image.h"
 
 /**
  * Includes CustomGfxComponents
  * */
 #include "../../CustomGfxComponents/headers/structures.h"
 #include "../../CustomGfxComponents/headers/Couleur.h"
+#include "../../CustomGfxComponents/headers/Image.h"
 
 /**
  * Includes Jerepolis

@@ -100,7 +100,7 @@ main: /usr/lib/x86_64-linux-gnu/libGL.so
 main: /usr/lib/x86_64-linux-gnu/libglut.so
 main: /usr/lib/x86_64-linux-gnu/libXmu.so
 main: /usr/lib/x86_64-linux-gnu/libXi.so
-main: Logger/libLogger.a
+main: CustomGfxComponents/libCustomGfxComponents.a
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)

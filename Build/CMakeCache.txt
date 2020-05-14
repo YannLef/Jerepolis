@@ -208,7 +208,7 @@ GfxLib_SOURCE_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/GfxLib
 Jerepolis_BINARY_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis
 
 //Dependencies for the target
-Jerepolis_LIB_DEPENDS:STATIC=general;Logger;
+Jerepolis_LIB_DEPENDS:STATIC=general;CustomGfxComponents;
 
 //Value Computed by CMake
 Jerepolis_SOURCE_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Jerepolis

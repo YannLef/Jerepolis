@@ -19,6 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CustomGfxComponents.dir/src/ButtonChangeFile.c.o"
   "CMakeFiles/CustomGfxComponents.dir/src/ButtonChangePage.c.o"
   "CMakeFiles/CustomGfxComponents.dir/src/ButtonSendMessage.c.o"
+  "CMakeFiles/CustomGfxComponents.dir/src/Image.c.o"
   "libCustomGfxComponents.pdb"
   "libCustomGfxComponents.a"
 )
