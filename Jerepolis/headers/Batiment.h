@@ -19,7 +19,7 @@ void printBatiment(Batiment batiment);
  * @param m le modèle du batiment
  * @author Yann LEFEVRE
  * */
-void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox, int xFinHitBox, int yDebutHitBox, int yFinHitBox);
+void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox, int xFinHitBox, int yDebutHitBox, int yFinHitBox, Popup popup);
 
 /**
  * Ameliore un batiment sous certaines conditions :

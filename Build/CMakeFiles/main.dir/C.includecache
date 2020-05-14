@@ -44,6 +44,8 @@ stdbool.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Ferme.h
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Mine.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Senat.h
@@ -101,4 +103,6 @@ Jerepolis/headers/Ferme.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Ferme.h
 Jerepolis/headers/Entrepot.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Entrepot.h
+Jerepolis/headers/Mine.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Mine.h
 

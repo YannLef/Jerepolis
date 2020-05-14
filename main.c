@@ -40,6 +40,7 @@
 #include "Jerepolis/headers/Senat.h"
 #include "Jerepolis/headers/Ferme.h"
 #include "Jerepolis/headers/Entrepot.h"
+#include "Jerepolis/headers/Mine.h"
 
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1152
@@ -158,35 +159,35 @@ void gestionEvenement(EvenementGfx evenement){
             // Bâtiments
             modeleSenat = NULL;
             initModeleBatiment(&modeleSenat, "senat", BATIMENT_NORMAL);
-            initBatiment(&senat, modeleSenat, 610, 370, 605, 720, 380, 445);
+            initBatiment(&senat, modeleSenat, 610, 370, 605, 720, 380, 445, POPUP_SENAT);
             
             modeleFerme = NULL;
             initModeleBatiment(&modeleFerme, "ferme", BATIMENT_NORMAL);
-            initBatiment(&ferme, modeleFerme, 706, 400, 730, 830, 400, 460);
+            initBatiment(&ferme, modeleFerme, 706, 400, 730, 830, 400, 460, POPUP_FERME);
             
             modeleCarriere = NULL;
             initModeleBatiment(&modeleCarriere, "carriere", BATIMENT_PRODUCTION);
-            initBatiment(&carriere, modeleCarriere, 414, 314, 425, 535, 320, 370);
+            initBatiment(&carriere, modeleCarriere, 414, 314, 425, 535, 320, 370, NONE);
             
             modeleScierie = NULL;
             initModeleBatiment(&modeleScierie, "scierie", BATIMENT_PRODUCTION);
-            initBatiment(&scierie, modeleScierie, 645, 238, 645, 705, 240, 290);
+            initBatiment(&scierie, modeleScierie, 645, 238, 645, 705, 240, 290, NONE);
             
             modeleMine = NULL;
             initModeleBatiment(&modeleMine, "mine", BATIMENT_PRODUCTION);
-            initBatiment(&mine, modeleMine, 435, 460, 453, 490, 472, 500);
+            initBatiment(&mine, modeleMine, 435, 460, 453, 490, 472, 500, POPUP_MINE);
             
             modeleEntrepot = NULL;
             initModeleBatiment(&modeleEntrepot, "entrepot", BATIMENT_NORMAL);
-            initBatiment(&entrepot, modeleEntrepot, 577, 326, 580, 660, 330, 370);
+            initBatiment(&entrepot, modeleEntrepot, 577, 326, 580, 660, 330, 370, POPUP_ENTREPOT);
             
             modeleTemple = NULL;
             initModeleBatiment(&modeleTemple, "temple", BATIMENT_PRODUCTION);
-            initBatiment(&temple, modeleTemple, 398, 420, 400, 480, 420, 470);
+            initBatiment(&temple, modeleTemple, 398, 420, 400, 480, 420, 470, NONE);
             
             modeleCaserne = NULL;
             initModeleBatiment(&modeleCaserne, "caserne", BATIMENT_NORMAL);
-            initBatiment(&caserne, modeleCaserne, 480, 378, 483, 580, 382, 437);
+            initBatiment(&caserne, modeleCaserne, 480, 378, 483, 580, 382, 437, NONE);
             
             // File de constructions
             fileDeConstructions = NULL;
@@ -282,6 +283,9 @@ void gestionEvenement(EvenementGfx evenement){
 					
 					// Affiche popup
 					affichePopupSenat(popups, maximum, impossible, ameliorer, construire, &bois, &pierre, &argent, fileDeConstructions, senat, scierie, ferme, entrepot, mine, carriere, temple, caserne);
+					affichePopupMine(popups, mine);
+					affichePopupFerme(popups, ferme);
+					affichePopupEntrepot(popups, entrepot, bois, pierre, argent, stockageEntrepot);
 					break;
 			}
 
@@ -300,8 +304,18 @@ void gestionEvenement(EvenementGfx evenement){
 			}else if (etatBoutonSouris() == GaucheRelache){
 				mouseLeftUp();
 				gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
+				
+				// Clic Batiments
 				gereClicGaucheBatiment(&senat, abscisseSouris(), ordonneeSouris(), &popups);
+				gereClicGaucheBatiment(&mine, abscisseSouris(), ordonneeSouris(), &popups);
+				gereClicGaucheBatiment(&ferme, abscisseSouris(), ordonneeSouris(), &popups);
+				gereClicGaucheBatiment(&entrepot, abscisseSouris(), ordonneeSouris(), &popups);
+				
+				// Clic Popups
 				gereClicGauchePopupSenat(&popups, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions, &senat, &scierie, &ferme, &carriere, &entrepot, &mine, &caserne, &temple);
+				gereClicGauchePopupMine(&popups, abscisseSouris(), ordonneeSouris());
+				gereClicGauchePopupFerme(&popups, abscisseSouris(), ordonneeSouris());
+				gereClicGauchePopupEntrepot(&popups, abscisseSouris(), ordonneeSouris());
 			}
 			
 			if(etatBoutonSouris() == DroiteAppuye){

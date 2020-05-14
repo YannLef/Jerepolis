@@ -233,6 +233,33 @@ src/Ferme.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Ferme.c.s
 .PHONY : src/Ferme.c.s
 
+src/Mine.o: src/Mine.c.o
+
+.PHONY : src/Mine.o
+
+# target to build an object file
+src/Mine.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Mine.c.o
+.PHONY : src/Mine.c.o
+
+src/Mine.i: src/Mine.c.i
+
+.PHONY : src/Mine.i
+
+# target to preprocess a source file
+src/Mine.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Mine.c.i
+.PHONY : src/Mine.c.i
+
+src/Mine.s: src/Mine.c.s
+
+.PHONY : src/Mine.s
+
+# target to generate assembly for a file
+src/Mine.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Mine.c.s
+.PHONY : src/Mine.c.s
+
 src/ModeleBatiment.o: src/ModeleBatiment.c.o
 
 .PHONY : src/ModeleBatiment.o
@@ -308,6 +335,9 @@ help:
 	@echo "... src/Ferme.o"
 	@echo "... src/Ferme.i"
 	@echo "... src/Ferme.s"
+	@echo "... src/Mine.o"
+	@echo "... src/Mine.i"
+	@echo "... src/Mine.s"
 	@echo "... src/ModeleBatiment.o"
 	@echo "... src/ModeleBatiment.i"
 	@echo "... src/ModeleBatiment.s"

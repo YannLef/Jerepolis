@@ -29,7 +29,7 @@
 void actualiseCapacitePopulationRestante(int* capacitePopulationRestante, Batiment ferme, Batiment senat, Batiment entrepot, Batiment scierie, Batiment temple, Batiment carriere, Batiment caserne,
 Batiment mine){
 	// Production
-	*capacitePopulationRestante = ferme.population * 20;
+	*capacitePopulationRestante = 10 + ferme.population * 20;
 	
 	// Consommation
 	*capacitePopulationRestante -= ferme.population;
@@ -40,4 +40,21 @@ Batiment mine){
 	*capacitePopulationRestante -= carriere.population;
 	*capacitePopulationRestante -= caserne.population;
 	*capacitePopulationRestante -= mine.population;
+}
+
+void affichePopupFerme(Popups popups, Batiment ferme){
+	if(popups.actuel == POPUP_FERME){
+		if(ferme.popup != NULL){ ecrisImage(167, 90, ferme.popup->largeurImage, ferme.popup->hauteurImage, ferme.popup->donneesRGB);}
+	}
+}
+
+void gereClicGauchePopupFerme(Popups* popups, int x, int y){
+	if(popups->actuel == POPUP_FERME){
+		// Gère clic sur la croix
+		if(x > 960 && x < 978 && y > 633 && y < 647){
+			if(popups->actuel == popups->final){
+				popups->final = NONE;
+			}
+		}
+	}
 }

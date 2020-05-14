@@ -69,7 +69,7 @@ void printBatiment(Batiment batiment){
 	debug("<printBatiment> end");
 }
 
-void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox, int xFinHitBox, int yDebutHitBox, int yFinHitBox){
+void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox, int xFinHitBox, int yDebutHitBox, int yFinHitBox, Popup popup){
 	debug("<initBatiment> begin");
 	
 	if(b == NULL){
@@ -128,7 +128,7 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox
 		error("Erreur lors de l'ouverture de la popup du batiment");
 	}
 	
-	b->popupValue = POPUP_SENAT;
+	b->popupValue = popup;
 	
 	b->xDebutHitBox = xDebutHitBox;
 	b->xFinHitBox = xFinHitBox;

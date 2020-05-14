@@ -16,6 +16,7 @@ CMakeFiles/main.dir/main.c.o: ../Jerepolis/headers/AmeliorationBatiment.h
 CMakeFiles/main.dir/main.c.o: ../Jerepolis/headers/Batiment.h
 CMakeFiles/main.dir/main.c.o: ../Jerepolis/headers/Entrepot.h
 CMakeFiles/main.dir/main.c.o: ../Jerepolis/headers/Ferme.h
+CMakeFiles/main.dir/main.c.o: ../Jerepolis/headers/Mine.h
 CMakeFiles/main.dir/main.c.o: ../Jerepolis/headers/ModeleBatiment.h
 CMakeFiles/main.dir/main.c.o: ../Jerepolis/headers/Senat.h
 CMakeFiles/main.dir/main.c.o: ../Jerepolis/headers/structures.h

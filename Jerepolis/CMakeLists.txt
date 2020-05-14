@@ -8,6 +8,7 @@ SET(SRC
 	src/Senat.c
 	src/Ferme.c
 	src/Entrepot.c
+	src/Mine.c
 	)
 
 SET(HEADERS
@@ -18,6 +19,7 @@ SET(HEADERS
 	headers/Senat.h
 	headers/Ferme.h
 	headers/Entrepot.h
+	headers/Mine.h
 	)
 	
 add_library(Jerepolis ${SRC} ${HEADERS})
