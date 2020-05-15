@@ -91,6 +91,9 @@ void gestionEvenement(EvenementGfx evenement){
 	
 	// Images
 	static DonneesImageRGB *background = NULL;
+	static DonneesImageRGB *backgroundZeus = NULL;
+	static DonneesImageRGB *backgroundPoseidon = NULL;
+	static DonneesImageRGB *backgroundHades = NULL;
 	static DonneesImageRGB *ameliorer = NULL;
 	static DonneesImageRGB *construire = NULL;
 	static DonneesImageRGB *impossible = NULL;
@@ -157,6 +160,9 @@ void gestionEvenement(EvenementGfx evenement){
             
             // Images
             background = lisBMPRGB("../Jerepolis/ressources/images/background.bmp");
+            backgroundZeus = lisBMPRGB("../Jerepolis/ressources/images/backgroundZeus.bmp");
+            backgroundPoseidon = lisBMPRGB("../Jerepolis/ressources/images/backgroundPoseidon.bmp");
+            backgroundHades = lisBMPRGB("../Jerepolis/ressources/images/backgroundHades.bmp");
             ameliorer = lisBMPRGB("../Jerepolis/ressources/images/boutons/ameliorer.bmp");
             construire = lisBMPRGB("../Jerepolis/ressources/images/boutons/construire.bmp");
             impossible = lisBMPRGB("../Jerepolis/ressources/images/boutons/impossible.bmp");
@@ -233,7 +239,7 @@ void gestionEvenement(EvenementGfx evenement){
 					genereRessource(carriere, &pierre, stockageEntrepot);
 					genereRessource(scierie, &bois, stockageEntrepot);
 					genereRessource(mine, &argent, stockageEntrepot);
-					genereRessource(temple, &faveur, 500);
+					genereFaveurs(temple, divinite, &faveur);
 					break;
 			}
 		
@@ -250,7 +256,20 @@ void gestionEvenement(EvenementGfx evenement){
 					break;
 				case partie:
 					// Affichage du fond
-					if(background != NULL){ ecrisImage(0, 0, background->largeurImage, background->hauteurImage, background->donneesRGB);}
+					switch(divinite){
+						case DIVINITE_NONE:
+							if(background != NULL){ ecrisImage(0, 0, background->largeurImage, background->hauteurImage, background->donneesRGB);}
+							break;
+						case DIVINITE_ZEUS:
+							if(backgroundZeus != NULL){ ecrisImage(0, 0, backgroundZeus->largeurImage, backgroundZeus->hauteurImage, backgroundZeus->donneesRGB);}
+							break;
+						case DIVINITE_POSEIDON:
+							if(backgroundPoseidon != NULL){ ecrisImage(0, 0, backgroundPoseidon->largeurImage, backgroundPoseidon->hauteurImage, backgroundPoseidon->donneesRGB);}
+							break;
+						case DIVINITE_HADES:
+							if(backgroundHades != NULL){ ecrisImage(0, 0, backgroundHades->largeurImage, backgroundHades->hauteurImage, backgroundHades->donneesRGB);}
+							break;
+					}
 					// Affichage des batiments
 					afficheBatiment(senat);
 					afficheBatiment(ferme);
@@ -335,7 +354,7 @@ void gestionEvenement(EvenementGfx evenement){
 				gereClicGauchePopupEntrepot(&popups, abscisseSouris(), ordonneeSouris());
 				gereClicGauchePopupCarriere(&popups, abscisseSouris(), ordonneeSouris());
 				gereClicGauchePopupScierie(&popups, abscisseSouris(), ordonneeSouris());
-				gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple);
+				gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple, &faveur, &divinite);
 			}
 			
 			if(etatBoutonSouris() == DroiteAppuye){

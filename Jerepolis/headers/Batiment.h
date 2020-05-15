@@ -21,6 +21,7 @@ void printBatiment(Batiment batiment);
  * */
 void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox, int xFinHitBox, int yDebutHitBox, int yFinHitBox, Popup popup);
 
+void setIconImage(Batiment* b, char* iconImageName);
 void setPopupImage(Batiment* b, char* popupImageName);
 
 /**

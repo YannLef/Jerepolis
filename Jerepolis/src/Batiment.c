@@ -107,17 +107,8 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox
 	b->y = y;
 	b->image = lvl->image;
 	b->production = lvl->production;
-	
-	char tmp[100];
-	strcpy(tmp, "../Jerepolis/ressources/images/batiments/");
-	strcat(tmp, b->nom);
-	strcat(tmp, "/");
-	strcat(tmp, "icon.bmp");
-	
-	b->icon = lisBMPRGB(tmp);
-	if(b->icon == NULL){
-		error("Erreur lors de l'ouverture de l'icon du batiment");
-	}
+
+	setIconImage(b, "icon");
 	
 	setPopupImage(b, "popup");
 	
@@ -129,6 +120,27 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox
 	b->yFinHitBox = yFinHitBox;
 	
 	debug("<initBatiment> end");
+}
+
+void setIconImage(Batiment* b, char* iconImageName){
+	char tmp[100];
+	
+	strcpy(tmp, "../Jerepolis/ressources/images/batiments/");
+	strcat(tmp, b->nom);
+	strcat(tmp, "/");
+	strcat(tmp, iconImageName);
+	strcat(tmp, ".bmp");
+	
+	if(b->icon != NULL){
+		warn("Un icon est déjà défini dans cette variable. Il sera écrasé.");
+		libereDonneesImageRGB(&(b->icon));
+		b->icon = NULL;
+	}
+	
+	b->icon = lisBMPRGB(tmp);
+	if(b->icon == NULL){
+		error("Erreur lors de l'ouverture de l'icon du batiment");
+	}
 }
 
 void setPopupImage(Batiment* b, char* popupImageName){

@@ -239,6 +239,8 @@ stdlib.h
 -
 stdio.h
 -
+string.h
+-
 ../../GfxLib/headers/GfxLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
 ../../GfxLib/headers/BmpLib.h
