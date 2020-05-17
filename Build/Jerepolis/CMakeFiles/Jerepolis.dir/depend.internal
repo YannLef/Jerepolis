@@ -39,6 +39,7 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/Caserne.c.o
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Caserne.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Caserne.c
  /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
@@ -75,6 +76,13 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/ModeleBatiment.c
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.o
+ /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+ /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/RecrutementUnite.c
  /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h

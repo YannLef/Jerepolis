@@ -28,6 +28,7 @@
  * */
 #include "../headers/structures.h"
 #include "../headers/Batiment.h"
+#include "../headers/RecrutementUnite.h"
 
 /**
  * Includes correspondant
@@ -36,7 +37,7 @@
 
 extern CouleurTab c;
 
-void initUnite(Unite* u, int prixBois, int prixPierre, int prixArgent, int prixFaveur, int population, int temps, int attaque, int vitesse, int capacite){
+void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent, int prixFaveur, int population, int temps, int attaque, int vitesse, int capacite){
 	u->prixBois = prixBois;
 	u->prixPierre = prixPierre;
 	u->prixArgent = prixArgent;
@@ -46,16 +47,28 @@ void initUnite(Unite* u, int prixBois, int prixPierre, int prixArgent, int prixF
 	u->attaque = attaque;
 	u->vitesse = vitesse;
 	u->capacite = capacite;
+	u->nom = nom;
+	
+	char tmp[100];
+	
+	strcpy(tmp, "../Jerepolis/ressources/images/unites/");
+	strcat(tmp, nom);
+	strcat(tmp, ".bmp");
+	u->icon = lisBMPRGB(tmp);
+	if(u->icon == NULL){
+		error("Erreur lors de l'ouverture de l'icon de l'unité");
+	}
+	
 }
 
 void initUnites(Unite* epee, Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, Unite* catapulte){
-	initUnite(epee, 95, 0, 85, 0, 1, 270000, 5, 48, 16);
-	initUnite(frondeur, 55, 100, 40, 0, 1, 300000, 23, 84, 8);
-	initUnite(archer, 120, 0, 75, 0, 1, 285000, 8, 36, 24);
-	initUnite(hoplite, 0, 75, 150, 0, 1, 345000, 16, 18, 8);
-	initUnite(cavalier, 240, 120, 360, 0, 3, 1080000, 60, 66, 72);
-	initUnite(charr, 200, 440, 320, 0, 4, 1440000, 56, 54, 64);
-	initUnite(catapulte, 700, 700, 700, 0, 15, 3150000, 100, 6, 400);
+	initUnite(epee, "epee", 95, 0, 85, 0, 1, 270000, 5, 48, 16);
+	initUnite(frondeur, "frondeur", 55, 100, 40, 0, 1, 300000, 23, 84, 8);
+	initUnite(archer, "archer", 120, 0, 75, 0, 1, 285000, 8, 36, 24);
+	initUnite(hoplite, "hoplite", 0, 75, 150, 0, 1, 345000, 16, 18, 8);
+	initUnite(cavalier, "cavalier", 240, 120, 360, 0, 3, 1080000, 60, 66, 72);
+	initUnite(charr, "char", 200, 440, 320, 0, 4, 1440000, 56, 54, 64);
+	initUnite(catapulte, "catapulte", 700, 700, 700, 0, 15, 3150000, 100, 6, 400);
 }
 
 void chargeAffichageUnite(char prixBois[100], char prixPierre[100], char prixArgent[100], char prixFaveur[100], char population[100], char temps[100], char attaque[100], char vitesse[100],
@@ -160,10 +173,10 @@ void affichePopupCaserne(Popups popups, Batiment caserne, Troupe troupe, int nb_
 	}
 }
 
-void gereClicGauchePopupCaserne(Popups* popups, int x, int y, Batiment* caserne, float* bois, float* pierre, float* argent, float* faveur, Troupe* troupe, int* nb_troupe, Unite epee, 
-Unite frondeur, Unite archer, Unite hoplite, Unite cavalier, Unite charr, Unite catapulte){
+void gereClicGauchePopupCaserne(Popups* popups, int x, int y, Batiment* caserne, float* bois, float* pierre, float* argent, float* faveur, Troupe* troupe, int* nb_troupe, Unite* epee, 
+Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, Unite* catapulte, RecrutementUnite** fileDeRecrutement){
 	
-	Unite u;
+	Unite* u;
 	// Epee
 	if(*troupe == TROUPE_EPEE){
 		u = epee;
@@ -267,14 +280,22 @@ Unite frondeur, Unite archer, Unite hoplite, Unite cavalier, Unite charr, Unite 
 		
 		// Gère clic sur +
 		if(x > 366 && x < 396 && y > 387 && y < 419){
-			if(*bois >= (*nb_troupe + 1)*(u.prixBois) && *pierre >= (*nb_troupe + 1)*(u.prixPierre) && *argent >= (*nb_troupe + 1)*(u.prixArgent) && *faveur >= (*nb_troupe + 1)*(u.prixFaveur)){
+			if(*bois >= (*nb_troupe + 1)*(u->prixBois) && *pierre >= (*nb_troupe + 1)*(u->prixPierre) && *argent >= (*nb_troupe + 1)*(u->prixArgent) && *faveur >= (*nb_troupe + 1)*(u->prixFaveur)){
 				(*nb_troupe) ++;
 			}
 		}
 		
 		// Gère clic sur valider
 		if(x > 407 && x < 437 && y > 387 && y < 419){
-			printf("ok\n");
+			if(getTailleFileDeRecrutement(*fileDeRecrutement) < 7){
+				RecrutementUnite* recrutement;
+				initRecrutementUnite(&recrutement, *nb_troupe, u); 
+				ajouteRecrutementUnite(fileDeRecrutement, recrutement);
+				printf("recrute\n");
+			}else{
+				printf("La file de recrutement est pleine\n");
+			}
+			
 			*nb_troupe = 0;
 		}
 		

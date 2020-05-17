@@ -28,7 +28,19 @@ typedef struct Unite{
 	int attaque;
 	int vitesse;
 	int capacite;
+	
+	char* nom;
+	DonneesImageRGB *icon;
+	
 }Unite;
+
+typedef struct RecrutementUnite{
+	Unite* u;
+	int nbUnite;
+	int timer;
+	
+	struct RecrutementUnite* next;
+}RecrutementUnite;
 
 /**
  * Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d'un fichier .csv et permettant de déterminer le coportement d'un batiment.

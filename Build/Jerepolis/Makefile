@@ -341,6 +341,33 @@ src/ModeleBatiment.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.s
 .PHONY : src/ModeleBatiment.c.s
 
+src/RecrutementUnite.o: src/RecrutementUnite.c.o
+
+.PHONY : src/RecrutementUnite.o
+
+# target to build an object file
+src/RecrutementUnite.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.o
+.PHONY : src/RecrutementUnite.c.o
+
+src/RecrutementUnite.i: src/RecrutementUnite.c.i
+
+.PHONY : src/RecrutementUnite.i
+
+# target to preprocess a source file
+src/RecrutementUnite.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.i
+.PHONY : src/RecrutementUnite.c.i
+
+src/RecrutementUnite.s: src/RecrutementUnite.c.s
+
+.PHONY : src/RecrutementUnite.s
+
+# target to generate assembly for a file
+src/RecrutementUnite.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.s
+.PHONY : src/RecrutementUnite.c.s
+
 src/Scierie.o: src/Scierie.c.o
 
 .PHONY : src/Scierie.o
@@ -482,6 +509,9 @@ help:
 	@echo "... src/ModeleBatiment.o"
 	@echo "... src/ModeleBatiment.i"
 	@echo "... src/ModeleBatiment.s"
+	@echo "... src/RecrutementUnite.o"
+	@echo "... src/RecrutementUnite.i"
+	@echo "... src/RecrutementUnite.s"
 	@echo "... src/Scierie.o"
 	@echo "... src/Scierie.i"
 	@echo "... src/Scierie.s"

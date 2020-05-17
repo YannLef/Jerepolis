@@ -46,6 +46,7 @@
 #include "Jerepolis/headers/Temple.h"
 #include "Jerepolis/headers/Caserne.h"
 #include "Jerepolis/headers/Simplifications.h"
+#include "Jerepolis/headers/RecrutementUnite.h"
 
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1152
@@ -157,6 +158,7 @@ void gestionEvenement(EvenementGfx evenement){
 	// Troupe caserne
 	static Troupe troupe;
 	static int nb_troupe;
+	static RecrutementUnite* fileDeRecrutement;
 	
 	switch (evenement)
 	{
@@ -202,6 +204,7 @@ void gestionEvenement(EvenementGfx evenement){
             // Troupe caserne
             troupe = TROUPE_EPEE;
             nb_troupe = 0;
+            fileDeRecrutement = NULL;
             
             // Tests
             
@@ -282,6 +285,9 @@ void gestionEvenement(EvenementGfx evenement){
 					affichePopupScierie(popups, scierie);
 					affichePopupTemple(popups, temple);
 					affichePopupCaserne(popups, caserne, troupe, nb_troupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
+					
+					// Affichage de la file de recrutement
+					afficheFileDeRecrutement(fileDeRecrutement);
 					break;
 			}
 
@@ -331,7 +337,8 @@ void gestionEvenement(EvenementGfx evenement){
 				gereClicGauchePopupCarriere(&popups, abscisseSouris(), ordonneeSouris());
 				gereClicGauchePopupScierie(&popups, abscisseSouris(), ordonneeSouris());
 				gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple, &faveur, &divinite);
-				gereClicGauchePopupCaserne(&popups, abscisseSouris(), ordonneeSouris(), &caserne, &bois, &pierre, &argent, &faveur, &troupe, &nb_troupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
+				gereClicGauchePopupCaserne(&popups, abscisseSouris(), ordonneeSouris(), &caserne, &bois, &pierre, &argent, &faveur, &troupe, &nb_troupe, &epee, &frondeur, &archer, &hoplite, &cavalier, &charr,
+				&catapulte, &fileDeRecrutement);
 			}
 			
 			if(etatBoutonSouris() == DroiteAppuye){

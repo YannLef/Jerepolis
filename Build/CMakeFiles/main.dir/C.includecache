@@ -54,6 +54,8 @@ stdbool.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Scierie.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Senat.h
@@ -125,4 +127,6 @@ Jerepolis/headers/Caserne.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Caserne.h
 Jerepolis/headers/Simplifications.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
+Jerepolis/headers/RecrutementUnite.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
 
