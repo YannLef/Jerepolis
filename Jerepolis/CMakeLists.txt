@@ -12,6 +12,8 @@ SET(SRC
 	src/Carriere.c
 	src/Scierie.c
 	src/Temple.c
+	src/Caserne.c
+	src/Simplifications.c
 	)
 
 SET(HEADERS
@@ -26,7 +28,10 @@ SET(HEADERS
 	headers/Carriere.h
 	headers/Scierie.h
 	headers/Temple.h
+	headers/Caserne.h
+	headers/Simplifications.h
 	)
 	
 add_library(Jerepolis ${SRC} ${HEADERS})
 target_link_libraries(Jerepolis CustomGfxComponents)
+target_link_libraries(Jerepolis GfxLib)

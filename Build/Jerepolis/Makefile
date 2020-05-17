@@ -206,6 +206,33 @@ src/Carriere.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Carriere.c.s
 .PHONY : src/Carriere.c.s
 
+src/Caserne.o: src/Caserne.c.o
+
+.PHONY : src/Caserne.o
+
+# target to build an object file
+src/Caserne.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Caserne.c.o
+.PHONY : src/Caserne.c.o
+
+src/Caserne.i: src/Caserne.c.i
+
+.PHONY : src/Caserne.i
+
+# target to preprocess a source file
+src/Caserne.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Caserne.c.i
+.PHONY : src/Caserne.c.i
+
+src/Caserne.s: src/Caserne.c.s
+
+.PHONY : src/Caserne.s
+
+# target to generate assembly for a file
+src/Caserne.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Caserne.c.s
+.PHONY : src/Caserne.c.s
+
 src/Entrepot.o: src/Entrepot.c.o
 
 .PHONY : src/Entrepot.o
@@ -368,6 +395,33 @@ src/Senat.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Senat.c.s
 .PHONY : src/Senat.c.s
 
+src/Simplifications.o: src/Simplifications.c.o
+
+.PHONY : src/Simplifications.o
+
+# target to build an object file
+src/Simplifications.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Simplifications.c.o
+.PHONY : src/Simplifications.c.o
+
+src/Simplifications.i: src/Simplifications.c.i
+
+.PHONY : src/Simplifications.i
+
+# target to preprocess a source file
+src/Simplifications.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Simplifications.c.i
+.PHONY : src/Simplifications.c.i
+
+src/Simplifications.s: src/Simplifications.c.s
+
+.PHONY : src/Simplifications.s
+
+# target to generate assembly for a file
+src/Simplifications.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Simplifications.c.s
+.PHONY : src/Simplifications.c.s
+
 src/Temple.o: src/Temple.c.o
 
 .PHONY : src/Temple.o
@@ -413,6 +467,9 @@ help:
 	@echo "... src/Carriere.o"
 	@echo "... src/Carriere.i"
 	@echo "... src/Carriere.s"
+	@echo "... src/Caserne.o"
+	@echo "... src/Caserne.i"
+	@echo "... src/Caserne.s"
 	@echo "... src/Entrepot.o"
 	@echo "... src/Entrepot.i"
 	@echo "... src/Entrepot.s"
@@ -431,6 +488,9 @@ help:
 	@echo "... src/Senat.o"
 	@echo "... src/Senat.i"
 	@echo "... src/Senat.s"
+	@echo "... src/Simplifications.o"
+	@echo "... src/Simplifications.i"
+	@echo "... src/Simplifications.s"
 	@echo "... src/Temple.o"
 	@echo "... src/Temple.i"
 	@echo "... src/Temple.s"

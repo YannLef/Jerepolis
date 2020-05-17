@@ -7,14 +7,28 @@
  * */
 typedef enum{ BATIMENT_NORMAL, BATIMENT_PRODUCTION} typeBatiment;
 
-typedef enum Popup{ POPUP_NONE, POPUP_SENAT, POPUP_MINE, POPUP_FERME, POPUP_ENTREPOT, POPUP_CARRIERE, POPUP_SCIERIE, POPUP_TEMPLE }Popup;
+typedef enum Popup{ POPUP_NONE, POPUP_SENAT, POPUP_MINE, POPUP_FERME, POPUP_ENTREPOT, POPUP_CARRIERE, POPUP_SCIERIE, POPUP_TEMPLE, POPUP_CASERNE }Popup;
 
 typedef enum Divinite{ DIVINITE_NONE, DIVINITE_ZEUS, DIVINITE_POSEIDON, DIVINITE_HADES }Divinite;
+
+typedef enum Troupe{ TROUPE_EPEE, TROUPE_FRONDEUR, TROUPE_ARCHER, TROUPE_HOPLITE, TROUPE_CAVALIER, TROUPE_CHAR, TROUPE_CATAPULTE }Troupe;
 
 typedef struct Popups{
 	Popup actuel;
 	Popup final;
 }Popups;
+
+typedef struct Unite{
+	int prixBois;
+	int prixPierre;
+	int prixArgent;
+	int prixFaveur;
+	int population;
+	int temps;
+	int attaque;
+	int vitesse;
+	int capacite;
+}Unite;
 
 /**
  * Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d'un fichier .csv et permettant de déterminer le coportement d'un batiment.

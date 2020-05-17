@@ -30,6 +30,8 @@ stdbool.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Carriere.h
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Caserne.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Entrepot.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Ferme.h
@@ -41,6 +43,8 @@ stdbool.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Scierie.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Senat.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Temple.h
 
@@ -115,6 +119,32 @@ stdio.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
 ../headers/Carriere.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Carriere.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Caserne.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+../../GfxLib/headers/GfxLib.h
+/home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+../../GfxLib/headers/BmpLib.h
+/home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
+../../CustomGfxComponents/headers/structures.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
+../../CustomGfxComponents/headers/Couleur.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
+../../CustomGfxComponents/headers/Image.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
+../headers/structures.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+../headers/Batiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
+../headers/Caserne.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Caserne.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Entrepot.c
 stdlib.h
@@ -233,6 +263,32 @@ stdio.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
 ../headers/Senat.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Senat.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Simplifications.c
+stdlib.h
+-
+stdio.h
+-
+../../GfxLib/headers/GfxLib.h
+/home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+../../GfxLib/headers/BmpLib.h
+/home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
+../../CustomGfxComponents/headers/structures.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
+../../CustomGfxComponents/headers/Couleur.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
+../../CustomGfxComponents/headers/Image.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
+../headers/structures.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+../headers/Batiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
+../headers/ModeleBatiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
+../headers/Simplifications.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Temple.c
 stdlib.h

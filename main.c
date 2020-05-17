@@ -44,6 +44,8 @@
 #include "Jerepolis/headers/Carriere.h"
 #include "Jerepolis/headers/Scierie.h"
 #include "Jerepolis/headers/Temple.h"
+#include "Jerepolis/headers/Caserne.h"
+#include "Jerepolis/headers/Simplifications.h"
 
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1152
@@ -125,6 +127,15 @@ void gestionEvenement(EvenementGfx evenement){
 	static Batiment caserne;
 	static ModeleBatiment* modeleCaserne;
 	
+	// Unite
+	static Unite epee;
+	static Unite frondeur;
+	static Unite archer;
+	static Unite hoplite;
+	static Unite cavalier;
+	static Unite charr;
+	static Unite catapulte;
+	
 	// File de constructions
 	static ameliorationBatiment* fileDeConstructions;
 	
@@ -143,6 +154,10 @@ void gestionEvenement(EvenementGfx evenement){
 	static Divinite divinite;
 	static Divinite divinite_selec;
 	
+	// Troupe caserne
+	static Troupe troupe;
+	static int nb_troupe;
+	
 	switch (evenement)
 	{
 		case Initialisation:
@@ -154,53 +169,16 @@ void gestionEvenement(EvenementGfx evenement){
             initPage(&p, partie);
             
             // Popup
-            popups.actuel = POPUP_NONE;
-            popups.final = POPUP_NONE;
-            
+            initPopups(&popups);
             
             // Images
-            background = lisBMPRGB("../Jerepolis/ressources/images/background.bmp");
-            backgroundZeus = lisBMPRGB("../Jerepolis/ressources/images/backgroundZeus.bmp");
-            backgroundPoseidon = lisBMPRGB("../Jerepolis/ressources/images/backgroundPoseidon.bmp");
-            backgroundHades = lisBMPRGB("../Jerepolis/ressources/images/backgroundHades.bmp");
-            ameliorer = lisBMPRGB("../Jerepolis/ressources/images/boutons/ameliorer.bmp");
-            construire = lisBMPRGB("../Jerepolis/ressources/images/boutons/construire.bmp");
-            impossible = lisBMPRGB("../Jerepolis/ressources/images/boutons/impossible.bmp");
-            maximum = lisBMPRGB("../Jerepolis/ressources/images/boutons/maximum.bmp");
-            infosBatiment = lisBMPRGB("../Jerepolis/ressources/images/batiments/infos.bmp");
+            chargeImages(&background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible, &maximum, &infosBatiment);
             
             // Bâtiments
-            modeleSenat = NULL;
-            initModeleBatiment(&modeleSenat, "senat", BATIMENT_NORMAL);
-            initBatiment(&senat, modeleSenat, 610, 370, 605, 720, 380, 445, POPUP_SENAT);
+			initBatiments(&modeleSenat, &senat, &modeleFerme, &ferme, &modeleCarriere, &carriere, &modeleScierie, &scierie, &modeleMine, &mine, &modeleEntrepot, &entrepot, &modeleTemple, &temple, &modeleCaserne, &caserne);
             
-            modeleFerme = NULL;
-            initModeleBatiment(&modeleFerme, "ferme", BATIMENT_NORMAL);
-            initBatiment(&ferme, modeleFerme, 706, 400, 730, 830, 400, 460, POPUP_FERME);
-            
-            modeleCarriere = NULL;
-            initModeleBatiment(&modeleCarriere, "carriere", BATIMENT_PRODUCTION);
-            initBatiment(&carriere, modeleCarriere, 414, 314, 425, 535, 320, 370, POPUP_CARRIERE);
-            
-            modeleScierie = NULL;
-            initModeleBatiment(&modeleScierie, "scierie", BATIMENT_PRODUCTION);
-            initBatiment(&scierie, modeleScierie, 645, 238, 645, 705, 240, 290, POPUP_SCIERIE);
-            
-            modeleMine = NULL;
-            initModeleBatiment(&modeleMine, "mine", BATIMENT_PRODUCTION);
-            initBatiment(&mine, modeleMine, 435, 460, 453, 490, 472, 500, POPUP_MINE);
-            
-            modeleEntrepot = NULL;
-            initModeleBatiment(&modeleEntrepot, "entrepot", BATIMENT_NORMAL);
-            initBatiment(&entrepot, modeleEntrepot, 577, 326, 580, 660, 330, 370, POPUP_ENTREPOT);
-            
-            modeleTemple = NULL;
-            initModeleBatiment(&modeleTemple, "temple", BATIMENT_PRODUCTION);
-            initBatiment(&temple, modeleTemple, 398, 420, 400, 480, 420, 470, POPUP_TEMPLE);
-            
-            modeleCaserne = NULL;
-            initModeleBatiment(&modeleCaserne, "caserne", BATIMENT_NORMAL);
-            initBatiment(&caserne, modeleCaserne, 480, 378, 483, 580, 382, 437, POPUP_NONE);
+            // Unités
+            initUnites(&epee, &frondeur, &archer, &hoplite, &cavalier, &charr, &catapulte);
             
             // File de constructions
             fileDeConstructions = NULL;
@@ -220,6 +198,10 @@ void gestionEvenement(EvenementGfx evenement){
             // Divinite
             divinite = DIVINITE_NONE;
             divinite_selec = DIVINITE_NONE;
+            
+            // Troupe caserne
+            troupe = TROUPE_EPEE;
+            nb_troupe = 0;
             
             // Tests
             
@@ -256,29 +238,9 @@ void gestionEvenement(EvenementGfx evenement){
 					break;
 				case partie:
 					// Affichage du fond
-					switch(divinite){
-						case DIVINITE_NONE:
-							if(background != NULL){ ecrisImage(0, 0, background->largeurImage, background->hauteurImage, background->donneesRGB);}
-							break;
-						case DIVINITE_ZEUS:
-							if(backgroundZeus != NULL){ ecrisImage(0, 0, backgroundZeus->largeurImage, backgroundZeus->hauteurImage, backgroundZeus->donneesRGB);}
-							break;
-						case DIVINITE_POSEIDON:
-							if(backgroundPoseidon != NULL){ ecrisImage(0, 0, backgroundPoseidon->largeurImage, backgroundPoseidon->hauteurImage, backgroundPoseidon->donneesRGB);}
-							break;
-						case DIVINITE_HADES:
-							if(backgroundHades != NULL){ ecrisImage(0, 0, backgroundHades->largeurImage, backgroundHades->hauteurImage, backgroundHades->donneesRGB);}
-							break;
-					}
+					afficheBackground(divinite, background, backgroundZeus, backgroundPoseidon, backgroundHades);
 					// Affichage des batiments
-					afficheBatiment(senat);
-					afficheBatiment(ferme);
-					afficheBatiment(carriere);
-					afficheBatiment(scierie);
-					afficheBatiment(mine);
-					afficheBatiment(entrepot);
-					afficheBatiment(temple);
-					afficheBatiment(caserne);
+					afficheBatiments(senat, ferme, carriere, scierie, mine, entrepot, temple, caserne);
 					
 					// Affichage ressources
 					changeColor(c.blanc);
@@ -319,6 +281,7 @@ void gestionEvenement(EvenementGfx evenement){
 					affichePopupCarriere(popups, carriere);
 					affichePopupScierie(popups, scierie);
 					affichePopupTemple(popups, temple);
+					affichePopupCaserne(popups, caserne, troupe, nb_troupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
 					break;
 			}
 
@@ -339,13 +302,26 @@ void gestionEvenement(EvenementGfx evenement){
 				gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
 				
 				// Clic Batiments
-				gereClicGaucheBatiment(&senat, abscisseSouris(), ordonneeSouris(), &popups);
-				gereClicGaucheBatiment(&mine, abscisseSouris(), ordonneeSouris(), &popups);
-				gereClicGaucheBatiment(&ferme, abscisseSouris(), ordonneeSouris(), &popups);
-				gereClicGaucheBatiment(&entrepot, abscisseSouris(), ordonneeSouris(), &popups);
-				gereClicGaucheBatiment(&carriere, abscisseSouris(), ordonneeSouris(), &popups);
-				gereClicGaucheBatiment(&scierie, abscisseSouris(), ordonneeSouris(), &popups);
-				gereClicGaucheBatiment(&temple, abscisseSouris(), ordonneeSouris(), &popups);
+				if(popups.actuel == POPUP_NONE){
+					gereClicGaucheBatiment(&senat, abscisseSouris(), ordonneeSouris(), &popups);
+					if(mine.niveau > 0){
+						gereClicGaucheBatiment(&mine, abscisseSouris(), ordonneeSouris(), &popups);
+					}
+					gereClicGaucheBatiment(&ferme, abscisseSouris(), ordonneeSouris(), &popups);
+					gereClicGaucheBatiment(&entrepot, abscisseSouris(), ordonneeSouris(), &popups);
+					if(carriere.niveau > 0){
+						gereClicGaucheBatiment(&carriere, abscisseSouris(), ordonneeSouris(), &popups);	
+					}
+					if(scierie.niveau > 0){
+						gereClicGaucheBatiment(&scierie, abscisseSouris(), ordonneeSouris(), &popups);
+					}
+					if(temple.niveau > 0){
+						gereClicGaucheBatiment(&temple, abscisseSouris(), ordonneeSouris(), &popups);
+					}
+					if(caserne.niveau > 0){
+						gereClicGaucheBatiment(&caserne, abscisseSouris(), ordonneeSouris(), &popups);
+					}
+				}
 				
 				// Clic Popups
 				gereClicGauchePopupSenat(&popups, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions, &senat, &scierie, &ferme, &carriere, &entrepot, &mine, &caserne, &temple);
@@ -355,6 +331,7 @@ void gestionEvenement(EvenementGfx evenement){
 				gereClicGauchePopupCarriere(&popups, abscisseSouris(), ordonneeSouris());
 				gereClicGauchePopupScierie(&popups, abscisseSouris(), ordonneeSouris());
 				gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple, &faveur, &divinite);
+				gereClicGauchePopupCaserne(&popups, abscisseSouris(), ordonneeSouris(), &caserne, &bois, &pierre, &argent, &faveur, &troupe, &nb_troupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
 			}
 			
 			if(etatBoutonSouris() == DroiteAppuye){
