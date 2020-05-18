@@ -36,7 +36,7 @@
 
 
 void chargeImages(DonneesImageRGB** background, DonneesImageRGB** backgroundZeus, DonneesImageRGB** backgroundPoseidon, DonneesImageRGB** backgroundHades, DonneesImageRGB** ameliorer,
-DonneesImageRGB** construire, DonneesImageRGB** impossible, DonneesImageRGB** maximum, DonneesImageRGB** infosBatiment){
+DonneesImageRGB** construire, DonneesImageRGB** impossible, DonneesImageRGB** maximum, DonneesImageRGB** infosBatiment, DonneesImageRGB** annuler){
 	*background = lisBMPRGB("../Jerepolis/ressources/images/background.bmp");
 	*backgroundZeus = lisBMPRGB("../Jerepolis/ressources/images/backgroundZeus.bmp");
 	*backgroundPoseidon = lisBMPRGB("../Jerepolis/ressources/images/backgroundPoseidon.bmp");
@@ -46,6 +46,7 @@ DonneesImageRGB** construire, DonneesImageRGB** impossible, DonneesImageRGB** ma
 	*impossible = lisBMPRGB("../Jerepolis/ressources/images/boutons/impossible.bmp");
 	*maximum = lisBMPRGB("../Jerepolis/ressources/images/boutons/maximum.bmp");
 	*infosBatiment = lisBMPRGB("../Jerepolis/ressources/images/batiments/infos.bmp");
+	*annuler = lisBMPRGB("../Jerepolis/ressources/images/annuler.bmp");
 }
 
 void initPopups(Popups* popups){

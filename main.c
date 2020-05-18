@@ -102,6 +102,7 @@ void gestionEvenement(EvenementGfx evenement){
 	static DonneesImageRGB *impossible = NULL;
 	static DonneesImageRGB *maximum = NULL;
 	static DonneesImageRGB *infosBatiment = NULL;
+	static DonneesImageRGB *annuler = NULL;
 	
 	// Bâtiments
 	static Batiment senat;
@@ -174,7 +175,7 @@ void gestionEvenement(EvenementGfx evenement){
             initPopups(&popups);
             
             // Images
-            chargeImages(&background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible, &maximum, &infosBatiment);
+            chargeImages(&background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible, &maximum, &infosBatiment, &annuler);
             
             // Bâtiments
 			initBatiments(&modeleSenat, &senat, &modeleFerme, &ferme, &modeleCarriere, &carriere, &modeleScierie, &scierie, &modeleMine, &mine, &modeleEntrepot, &entrepot, &modeleTemple, &temple, &modeleCaserne, &caserne);
@@ -268,7 +269,7 @@ void gestionEvenement(EvenementGfx evenement){
 					afficheChaine(texteCapacitePopulationRestante, 20, 70, 287);
 					
 					// Affichage de la file de constructions
-					afficheFileDeConstructions(fileDeConstructions);
+					afficheFileDeConstructions(fileDeConstructions, annuler);
 					
 					// Affiche nom ville
 					afficheInputTexte(nomVille);
@@ -287,7 +288,7 @@ void gestionEvenement(EvenementGfx evenement){
 					affichePopupCaserne(popups, caserne, troupe, nb_troupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
 					
 					// Affichage de la file de recrutement
-					afficheFileDeRecrutement(fileDeRecrutement);
+					afficheFileDeRecrutement(fileDeRecrutement, annuler);
 					break;
 			}
 
@@ -339,6 +340,12 @@ void gestionEvenement(EvenementGfx evenement){
 				gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple, &faveur, &divinite);
 				gereClicGauchePopupCaserne(&popups, abscisseSouris(), ordonneeSouris(), &caserne, &bois, &pierre, &argent, &faveur, &troupe, &nb_troupe, &epee, &frondeur, &archer, &hoplite, &cavalier, &charr,
 				&catapulte, &fileDeRecrutement);
+				
+				// Clic File de Constructions
+				gereClicFileDeConstruction(abscisseSouris(), ordonneeSouris(), &fileDeConstructions, &bois, &pierre, &argent);
+				
+				// Clic File de Recrutement
+				gereClicFileDeRecrutement(abscisseSouris(), ordonneeSouris(), &fileDeRecrutement, popups, &bois, &pierre, &argent, &faveur);
 			}
 			
 			if(etatBoutonSouris() == DroiteAppuye){

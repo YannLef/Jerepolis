@@ -43,4 +43,9 @@ void printAmeliorationBatiment(ameliorationBatiment* amelioration);
  * */
 void printFileDeConstructions(ameliorationBatiment* fileDeConstructions);
 
-void afficheFileDeConstructions(ameliorationBatiment* fileDeConstructions);
+void afficheFileDeConstructions(ameliorationBatiment* fileDeConstructions, DonneesImageRGB* annuler);
+
+void gereClicFileDeConstruction(int x, int y, ameliorationBatiment** fileDeConstructions, float* bois, float* pierre, float* argent);
+
+void annulerConstruction(int numero, ameliorationBatiment** fileDeConstructions, float* bois, float* pierre, float* argent);
+int ameliorationsBatimentSuiteFile(ameliorationBatiment* amelioration);

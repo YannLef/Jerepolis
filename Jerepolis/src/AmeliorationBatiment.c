@@ -168,7 +168,7 @@ void printFileDeConstructions(ameliorationBatiment* fileDeConstructions){
 	debug("<printFileDeConstructions> end");
 }
 
-void afficheFileDeConstructions(ameliorationBatiment* fileDeConstructions){
+void afficheFileDeConstructions(ameliorationBatiment* fileDeConstructions, DonneesImageRGB* annuler){
 	debug("<afficheFileDeConstructions> begin");
 	
 	ameliorationBatiment* courant = fileDeConstructions;
@@ -198,9 +198,122 @@ void afficheFileDeConstructions(ameliorationBatiment* fileDeConstructions){
 		
 		
 		if(courant->batiment->icon != NULL){ ecrisImage(x, y, courant->batiment->icon->largeurImage, courant->batiment->icon->hauteurImage, courant->batiment->icon->donneesRGB);}
+		if(annuler != NULL){ ecrisImage(x, y, annuler->largeurImage, annuler->hauteurImage, annuler->donneesRGB);}
 		courant = courant->next;
 		cpt++;
 	}
 	
 	debug("<afficheFileDeConstructions> end");
+}
+
+void gereClicFileDeConstruction(int x, int y, ameliorationBatiment** fileDeConstructions, float* bois, float* pierre, float* argent){
+	
+	// Clic sur la construction 0
+	if(x > 435 && x < 435+17 && y > 27 && y < 27+17 && getTailleFileDeConstruction(*fileDeConstructions) >= 1){
+		annulerConstruction(0, fileDeConstructions, bois, pierre, argent);
+	}
+	
+	// Clic sur la construction 1
+	if(x > 535 && x < 535+17 && y > 27 && y < 27+17 && getTailleFileDeConstruction(*fileDeConstructions) >= 2){
+		annulerConstruction(1, fileDeConstructions, bois, pierre, argent);
+	}
+	
+	// Clic sur la construction 2
+	if(x > 635 && x < 635+17 && y > 27 && y < 27+17 && getTailleFileDeConstruction(*fileDeConstructions) >= 3){
+		annulerConstruction(2, fileDeConstructions, bois, pierre, argent);
+	}
+	
+	// Clic sur la construction 3
+	if(x > 735 && x < 735+17 && y > 27 && y < 27+17 && getTailleFileDeConstruction(*fileDeConstructions) >= 4){
+		annulerConstruction(3, fileDeConstructions, bois, pierre, argent);
+	}
+}
+
+void annulerConstruction(int numero, ameliorationBatiment** fileDeConstructions, float* bois, float* pierre, float* argent){
+	
+	if(fileDeConstructions == NULL){
+		return;
+	}
+	
+	if(numero == 0){
+		ameliorationBatiment* tmp = *fileDeConstructions;
+		
+		// Vérifie qu'il n'y a pas d'autres améliorations du même batiment plus loins dans la file de constructions
+		if(ameliorationsBatimentSuiteFile(tmp)){
+			printf("Annulation imposible car le batiment a d'autre améliorations en cours\n");
+			return;
+		}
+		
+		
+		*fileDeConstructions = tmp->next;
+		
+		// Remboursement à hauteur de 75%
+		ModeleBatiment* lvl = getModeleNiveauBatiment(tmp->batiment->modele, tmp->niveauPrecedent);
+		*bois += (lvl->prixAmeliorationBois)*0.75;
+		*pierre += (lvl->prixAmeliorationPierre)*0.75;
+		*argent += (lvl->prixAmeliorationArgent)*0.75;
+		
+		// Libération mémoire
+		free(tmp);
+		tmp = NULL;
+		
+		return;
+	}
+	
+	ameliorationBatiment* courant = *fileDeConstructions;
+	ameliorationBatiment* precedent = NULL;
+	ameliorationBatiment* tmp = NULL;
+	int cpt = 0;
+	
+	while(courant != NULL){
+		if(cpt == numero-1){
+			precedent = courant;
+		}
+		
+		if(cpt == numero){
+			tmp = courant;
+			// Vérifie qu'il n'y a pas d'autres améliorations du même batiment plus loins dans la file de constructions
+			if(ameliorationsBatimentSuiteFile(tmp)){
+				printf("Annulation imposible car le batiment a d'autre améliorations en cours\n");
+				return;
+			}
+			
+			precedent->next = tmp->next;
+			
+			// Remboursement à hauteur de 75%
+			ModeleBatiment* lvl = getModeleNiveauBatiment(tmp->batiment->modele, tmp->niveauPrecedent);
+			*bois += (lvl->prixAmeliorationBois)*0.75;
+			*pierre += (lvl->prixAmeliorationPierre)*0.75;
+			*argent += (lvl->prixAmeliorationArgent)*0.75;
+			
+			// Libération mémoire
+			free(tmp);
+			tmp = NULL;
+			
+			return;
+		}
+		
+		courant = courant->next;
+		cpt++;
+	}
+}
+
+int ameliorationsBatimentSuiteFile(ameliorationBatiment* amelioration){
+	ameliorationBatiment* tmp = amelioration;
+	
+	if(tmp == NULL){
+		return 0;
+	}
+	
+	tmp = tmp->next;
+	
+	while(tmp != NULL){
+		if(tmp->batiment->type == amelioration->batiment->type){
+			return 1;
+		}
+		
+		tmp = tmp->next;
+	}
+	
+	return 0;
 }

@@ -287,16 +287,21 @@ Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, U
 		
 		// Gère clic sur valider
 		if(x > 407 && x < 437 && y > 387 && y < 419){
-			if(getTailleFileDeRecrutement(*fileDeRecrutement) < 7){
-				RecrutementUnite* recrutement;
-				initRecrutementUnite(&recrutement, *nb_troupe, u); 
-				ajouteRecrutementUnite(fileDeRecrutement, recrutement);
-				printf("recrute\n");
-			}else{
-				printf("La file de recrutement est pleine\n");
+			if(*nb_troupe > 0){
+				if(getTailleFileDeRecrutement(*fileDeRecrutement) < 7){
+					RecrutementUnite* recrutement;
+					initRecrutementUnite(&recrutement, *nb_troupe, u); 
+					ajouteRecrutementUnite(fileDeRecrutement, recrutement);
+					*bois = *bois - (*nb_troupe)*(u->prixBois);
+					*pierre = *pierre - (*nb_troupe)*(u->prixPierre);
+					*argent = *argent - (*nb_troupe)*(u->prixArgent);
+					*faveur = *faveur - (*nb_troupe)*(u->prixArgent);
+				}else{
+					printf("La file de recrutement est pleine\n");
+				}
+				
+				*nb_troupe = 0;
 			}
-			
-			*nb_troupe = 0;
 		}
 		
 	}

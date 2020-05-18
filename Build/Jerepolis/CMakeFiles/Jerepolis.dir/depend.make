@@ -77,6 +77,8 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o: ../Jerepolis/headers/
 Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o: ../Jerepolis/src/ModeleBatiment.c
 Jerepolis/CMakeFiles/Jerepolis.dir/src/ModeleBatiment.c.o: ../Logger/headers/Logger.h
 
+Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.o: ../CustomGfxComponents/headers/Couleur.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.o: ../CustomGfxComponents/headers/structures.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.o: ../GfxLib/headers/BmpLib.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.o: ../GfxLib/headers/GfxLib.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.o: ../Jerepolis/headers/RecrutementUnite.h

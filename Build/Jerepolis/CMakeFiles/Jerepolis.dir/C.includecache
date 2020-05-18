@@ -241,6 +241,10 @@ stdio.h
 /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+../../CustomGfxComponents/headers/structures.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
+../../CustomGfxComponents/headers/Couleur.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
 ../headers/RecrutementUnite.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
 
