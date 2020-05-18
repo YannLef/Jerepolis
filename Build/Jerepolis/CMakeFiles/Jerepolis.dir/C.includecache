@@ -24,6 +24,8 @@ windows.h
 stdbool.h
 -
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Accueil.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
@@ -51,6 +53,26 @@ stdbool.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Temple.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Accueil.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+../../GfxLib/headers/GfxLib.h
+/home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+../../GfxLib/headers/BmpLib.h
+/home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+../../Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
+../../CustomGfxComponents/headers/structures.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
+../headers/structures.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+../headers/Accueil.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Accueil.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/AmeliorationBatiment.c
 stdlib.h
@@ -241,6 +263,8 @@ stdio.h
 /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+../headers/Caserne.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Caserne.h
 ../../CustomGfxComponents/headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../../CustomGfxComponents/headers/Couleur.h

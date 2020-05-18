@@ -34,9 +34,11 @@
  * */
 #include "../headers/Simplifications.h"
 
+extern int vitesse;
 
-void chargeImages(DonneesImageRGB** background, DonneesImageRGB** backgroundZeus, DonneesImageRGB** backgroundPoseidon, DonneesImageRGB** backgroundHades, DonneesImageRGB** ameliorer,
+void chargeImages(DonneesImageRGB** accueilBackground, DonneesImageRGB** background, DonneesImageRGB** backgroundZeus, DonneesImageRGB** backgroundPoseidon, DonneesImageRGB** backgroundHades, DonneesImageRGB** ameliorer,
 DonneesImageRGB** construire, DonneesImageRGB** impossible, DonneesImageRGB** maximum, DonneesImageRGB** infosBatiment, DonneesImageRGB** annuler){
+	*accueilBackground = lisBMPRGB("../Jerepolis/ressources/images/accueil.bmp");
 	*background = lisBMPRGB("../Jerepolis/ressources/images/background.bmp");
 	*backgroundZeus = lisBMPRGB("../Jerepolis/ressources/images/backgroundZeus.bmp");
 	*backgroundPoseidon = lisBMPRGB("../Jerepolis/ressources/images/backgroundPoseidon.bmp");
@@ -46,7 +48,7 @@ DonneesImageRGB** construire, DonneesImageRGB** impossible, DonneesImageRGB** ma
 	*impossible = lisBMPRGB("../Jerepolis/ressources/images/boutons/impossible.bmp");
 	*maximum = lisBMPRGB("../Jerepolis/ressources/images/boutons/maximum.bmp");
 	*infosBatiment = lisBMPRGB("../Jerepolis/ressources/images/batiments/infos.bmp");
-	*annuler = lisBMPRGB("../Jerepolis/ressources/images/annuler.bmp");
+	*annuler = lisBMPRGB("../Jerepolis/ressources/images/boutons/annuler.bmp");
 }
 
 void initPopups(Popups* popups){
@@ -116,5 +118,23 @@ void afficheBackground(Divinite divinite, DonneesImageRGB* background, DonneesIm
 			if(backgroundHades != NULL){ ecrisImage(0, 0, backgroundHades->largeurImage, backgroundHades->hauteurImage, backgroundHades->donneesRGB);}
 			break;
 	}	
+}
+
+void gereClicVitesse(int x, int y){
+	
+	if(x > 1055 && x < 1080 && y > 645 && y < 670){
+		vitesse = 1;
+		printf("La vitesse a été définie sur x1\n");
+	}
+	
+	if(x > 1086 && x < 1111 && y > 645 && y < 670){
+		vitesse = 2;
+		printf("La vitesse a été définie sur x2\n");
+	}
+	
+	if(x > 1115 && x < 1142 && y > 645 && y < 670){
+		vitesse = 3;
+		printf("La vitesse a été définie sur x3\n");
+	}
 }
 

@@ -27,6 +27,8 @@
  * */
 #include "../headers/AmeliorationBatiment.h"
 
+extern int vitesse;
+
 void initAmeliorationBatiment(ameliorationBatiment** amelioration, Batiment* batiment){
 	debug("<initAmeliorationBatiment> begin");
 	
@@ -119,7 +121,7 @@ void gereFileDeConstructions(ameliorationBatiment** fileDeConstructions){
 		return;
 	}
 	
-	(*fileDeConstructions)->timer = (*fileDeConstructions)->timer - 20;
+	(*fileDeConstructions)->timer = (*fileDeConstructions)->timer - 20*vitesse;
 	if((*fileDeConstructions)->timer <= 0){
 		(*fileDeConstructions)->batiment->nbAmeliorationsEnCours--;
 		(*fileDeConstructions)->batiment->niveau = (*fileDeConstructions)->niveauSuivant;

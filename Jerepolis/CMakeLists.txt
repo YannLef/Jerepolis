@@ -15,6 +15,7 @@ SET(SRC
 	src/Caserne.c
 	src/Simplifications.c
 	src/RecrutementUnite.c
+	src/Accueil.c
 	)
 
 SET(HEADERS
@@ -32,6 +33,7 @@ SET(HEADERS
 	headers/Caserne.h
 	headers/Simplifications.h
 	headers/RecrutementUnite.h
+	headers/Accueil.h
 	)
 	
 add_library(Jerepolis ${SRC} ${HEADERS})

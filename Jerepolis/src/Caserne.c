@@ -37,7 +37,7 @@
 
 extern CouleurTab c;
 
-void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent, int prixFaveur, int population, int temps, int attaque, int vitesse, int capacite){
+void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent, int prixFaveur, int population, int temps, int attaque, int vitesse, int capacite, Troupe type){
 	u->prixBois = prixBois;
 	u->prixPierre = prixPierre;
 	u->prixArgent = prixArgent;
@@ -48,7 +48,7 @@ void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent
 	u->vitesse = vitesse;
 	u->capacite = capacite;
 	u->nom = nom;
-	
+	u->type = type;
 	char tmp[100];
 	
 	strcpy(tmp, "../Jerepolis/ressources/images/unites/");
@@ -62,13 +62,13 @@ void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent
 }
 
 void initUnites(Unite* epee, Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, Unite* catapulte){
-	initUnite(epee, "epee", 95, 0, 85, 0, 1, 270000, 5, 48, 16);
-	initUnite(frondeur, "frondeur", 55, 100, 40, 0, 1, 300000, 23, 84, 8);
-	initUnite(archer, "archer", 120, 0, 75, 0, 1, 285000, 8, 36, 24);
-	initUnite(hoplite, "hoplite", 0, 75, 150, 0, 1, 345000, 16, 18, 8);
-	initUnite(cavalier, "cavalier", 240, 120, 360, 0, 3, 1080000, 60, 66, 72);
-	initUnite(charr, "char", 200, 440, 320, 0, 4, 1440000, 56, 54, 64);
-	initUnite(catapulte, "catapulte", 700, 700, 700, 0, 15, 3150000, 100, 6, 400);
+	initUnite(epee, "epee", 95, 0, 85, 0, 1, 270000, 5, 48, 16, TROUPE_EPEE);
+	initUnite(frondeur, "frondeur", 55, 100, 40, 0, 1, 300000, 23, 84, 8, TROUPE_FRONDEUR);
+	initUnite(archer, "archer", 120, 0, 75, 0, 1, 285000, 8, 36, 24, TROUPE_ARCHER);
+	initUnite(hoplite, "hoplite", 0, 75, 150, 0, 1, 345000, 16, 18, 8, TROUPE_HOPLITE);
+	initUnite(cavalier, "cavalier", 240, 120, 360, 0, 3, 1080000, 60, 66, 72, TROUPE_CAVALIER);
+	initUnite(charr, "char", 200, 440, 320, 0, 4, 1440000, 56, 54, 64, TROUPE_CHAR);
+	initUnite(catapulte, "catapulte", 700, 700, 700, 0, 15, 3150000, 100, 6, 400, TROUPE_CATAPULTE);
 }
 
 void chargeAffichageUnite(char prixBois[100], char prixPierre[100], char prixArgent[100], char prixFaveur[100], char population[100], char temps[100], char attaque[100], char vitesse[100],
@@ -304,5 +304,31 @@ Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, U
 			}
 		}
 		
+	}
+}
+
+void ajouteUnite(Troupe type, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte){
+	switch(type){
+		case TROUPE_EPEE:
+			*nbEpee++;
+			break;
+		case TROUPE_FRONDEUR:
+			*nbFrondeur++;
+			break;
+		case TROUPE_ARCHER:
+			*nbArcher++;
+			break;
+		case TROUPE_HOPLITE:
+			*nbHoplite++;
+			break;
+		case TROUPE_CAVALIER:
+			*nbCavalier++;
+			break;
+		case TROUPE_CHAR:
+			*nbChar++;
+			break;
+		case TROUPE_CATAPULTE:
+			*nbCatapulte++;
+			break;
 	}
 }

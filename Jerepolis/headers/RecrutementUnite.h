@@ -5,3 +5,4 @@ int getTailleFileDeRecrutement(RecrutementUnite* fileDeRecrutement);
 void printRecrutementUnite(RecrutementUnite recrutement);
 void gereClicFileDeRecrutement(int x, int y, RecrutementUnite** fileDeRecrutement, Popups popups, float* bois, float* pierre, float* argent, float* faveur);
 void annulerRecrutement(int numero, RecrutementUnite** fileDeRecrutement, float* bois, float* pierre, float* argent, float* faveur);
+void gereFileDeRecrutement(RecrutementUnite** fileDeRecrutement, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte);

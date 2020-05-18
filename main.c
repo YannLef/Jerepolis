@@ -47,6 +47,7 @@
 #include "Jerepolis/headers/Caserne.h"
 #include "Jerepolis/headers/Simplifications.h"
 #include "Jerepolis/headers/RecrutementUnite.h"
+#include "Jerepolis/headers/Accueil.h"
 
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1152
@@ -56,6 +57,7 @@ CouleurTab c; // Définit le tableau de couleurs
 Keyboard keys; // Définit le clavier -> à synchroniser avec les autres fichiers si nécessaire ("extern")
 Mouse souris; // Définit le clavier -> à synchroniser avec les autres fichiers si nécessaire ("extern")
 int loggerLevel; // Définit le niveau de log -> à synchroniser avec les autres fichiers via ("extern")
+int vitesse; // Définit la vitesse du jeu
 
 /* La fonction de gestion des evenements, appelee automatiquement par le systeme
 des qu'une evenement survient */
@@ -93,6 +95,7 @@ void gestionEvenement(EvenementGfx evenement){
 	static Popups popups;
 	
 	// Images
+	static DonneesImageRGB *accueilBackground = NULL;
 	static DonneesImageRGB *background = NULL;
 	static DonneesImageRGB *backgroundZeus = NULL;
 	static DonneesImageRGB *backgroundPoseidon = NULL;
@@ -131,12 +134,25 @@ void gestionEvenement(EvenementGfx evenement){
 	
 	// Unite
 	static Unite epee;
+	static int nbEpee;
+	
 	static Unite frondeur;
+	static int nbFrondeur;
+	
 	static Unite archer;
+	static int nbArcher;
+	
 	static Unite hoplite;
+	static int nbHoplite;
+	
 	static Unite cavalier;
+	static int nbCavalier;
+	
 	static Unite charr;
+	static int nbChar;
+	
 	static Unite catapulte;
+	static int nbCatapulte;
 	
 	// File de constructions
 	static ameliorationBatiment* fileDeConstructions;
@@ -167,27 +183,35 @@ void gestionEvenement(EvenementGfx evenement){
 			demandeTemporisation(20);
 			initCouleurTab(&c); // Initialise le tableau de couleurs
             initKeyboard(); // Initialise le clavier
+            vitesse = 1;
             
             // Pages
-            initPage(&p, partie);
+            initPage(&p, accueil);
             
             // Popup
             initPopups(&popups);
             
             // Images
-            chargeImages(&background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible, &maximum, &infosBatiment, &annuler);
+            chargeImages(&accueilBackground, &background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible, &maximum, &infosBatiment, &annuler);
             
             // Bâtiments
 			initBatiments(&modeleSenat, &senat, &modeleFerme, &ferme, &modeleCarriere, &carriere, &modeleScierie, &scierie, &modeleMine, &mine, &modeleEntrepot, &entrepot, &modeleTemple, &temple, &modeleCaserne, &caserne);
             
             // Unités
             initUnites(&epee, &frondeur, &archer, &hoplite, &cavalier, &charr, &catapulte);
+            nbEpee = 0;
+            nbFrondeur = 0;
+            nbArcher = 0;
+            nbHoplite = 0;
+            nbCavalier = 0;
+            nbChar = 0;
+            nbCatapulte = 0;
             
             // File de constructions
             fileDeConstructions = NULL;
             
             // Ressources
-            faveur = 200;
+            faveur = 0;
             bois = 200;
             pierre = 200;
             argent = 200;
@@ -212,6 +236,7 @@ void gestionEvenement(EvenementGfx evenement){
 			break;
 		
 		case Temporisation:
+			updatePage(&p);
 			switch(p.pActuel){
 				case accueil:
 				
@@ -226,6 +251,7 @@ void gestionEvenement(EvenementGfx evenement){
 					genereRessource(scierie, &bois, stockageEntrepot);
 					genereRessource(mine, &argent, stockageEntrepot);
 					genereFaveurs(temple, divinite, &faveur);
+					gereFileDeRecrutement(&fileDeRecrutement, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte);
 					break;
 			}
 		
@@ -238,11 +264,17 @@ void gestionEvenement(EvenementGfx evenement){
 			
 			switch(p.pActuel){
 				case accueil:
-				
+					if(accueilBackground != NULL){ ecrisImage(0, 0, accueilBackground->largeurImage, accueilBackground->hauteurImage, accueilBackground->donneesRGB);}
 					break;
 				case partie:
 					// Affichage du fond
 					afficheBackground(divinite, background, backgroundZeus, backgroundPoseidon, backgroundHades);
+					
+					changeColor(c.blanc);
+					char texteVitesse[100];
+					sprintf(texteVitesse,"x%d", vitesse);
+					afficheChaine(texteVitesse, 20, 1121, 625);
+					
 					// Affichage des batiments
 					afficheBatiments(senat, ferme, carriere, scierie, mine, entrepot, temple, caserne);
 					
@@ -306,46 +338,59 @@ void gestionEvenement(EvenementGfx evenement){
 				mouseLeftDown();
 			}else if (etatBoutonSouris() == GaucheRelache){
 				mouseLeftUp();
-				gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
+				switch(p.pActuel){
+					case accueil:
+						gereClicAccueil(abscisseSouris(), ordonneeSouris(), &accueilBackground, &background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible,
+						&maximum, &infosBatiment, &annuler, &p);
+						break;
+					case partie:
+						gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
 				
-				// Clic Batiments
-				if(popups.actuel == POPUP_NONE){
-					gereClicGaucheBatiment(&senat, abscisseSouris(), ordonneeSouris(), &popups);
-					if(mine.niveau > 0){
-						gereClicGaucheBatiment(&mine, abscisseSouris(), ordonneeSouris(), &popups);
-					}
-					gereClicGaucheBatiment(&ferme, abscisseSouris(), ordonneeSouris(), &popups);
-					gereClicGaucheBatiment(&entrepot, abscisseSouris(), ordonneeSouris(), &popups);
-					if(carriere.niveau > 0){
-						gereClicGaucheBatiment(&carriere, abscisseSouris(), ordonneeSouris(), &popups);	
-					}
-					if(scierie.niveau > 0){
-						gereClicGaucheBatiment(&scierie, abscisseSouris(), ordonneeSouris(), &popups);
-					}
-					if(temple.niveau > 0){
-						gereClicGaucheBatiment(&temple, abscisseSouris(), ordonneeSouris(), &popups);
-					}
-					if(caserne.niveau > 0){
-						gereClicGaucheBatiment(&caserne, abscisseSouris(), ordonneeSouris(), &popups);
-					}
+						// Clic Batiments
+						if(popups.actuel == POPUP_NONE){
+							gereClicGaucheBatiment(&senat, abscisseSouris(), ordonneeSouris(), &popups);
+							if(mine.niveau > 0){
+								gereClicGaucheBatiment(&mine, abscisseSouris(), ordonneeSouris(), &popups);
+							}
+							gereClicGaucheBatiment(&ferme, abscisseSouris(), ordonneeSouris(), &popups);
+							gereClicGaucheBatiment(&entrepot, abscisseSouris(), ordonneeSouris(), &popups);
+							if(carriere.niveau > 0){
+								gereClicGaucheBatiment(&carriere, abscisseSouris(), ordonneeSouris(), &popups);	
+							}
+							if(scierie.niveau > 0){
+								gereClicGaucheBatiment(&scierie, abscisseSouris(), ordonneeSouris(), &popups);
+							}
+							if(temple.niveau > 0){
+								gereClicGaucheBatiment(&temple, abscisseSouris(), ordonneeSouris(), &popups);
+							}
+							if(caserne.niveau > 0){
+								gereClicGaucheBatiment(&caserne, abscisseSouris(), ordonneeSouris(), &popups);
+							}
+						}
+						
+						// Clic Popups
+						gereClicGauchePopupSenat(&popups, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions, &senat, &scierie, &ferme, &carriere, &entrepot, &mine,
+						&caserne, &temple);
+						gereClicGauchePopupMine(&popups, abscisseSouris(), ordonneeSouris());
+						gereClicGauchePopupFerme(&popups, abscisseSouris(), ordonneeSouris());
+						gereClicGauchePopupEntrepot(&popups, abscisseSouris(), ordonneeSouris());
+						gereClicGauchePopupCarriere(&popups, abscisseSouris(), ordonneeSouris());
+						gereClicGauchePopupScierie(&popups, abscisseSouris(), ordonneeSouris());
+						gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple, &faveur, &divinite);
+						gereClicGauchePopupCaserne(&popups, abscisseSouris(), ordonneeSouris(), &caserne, &bois, &pierre, &argent, &faveur, &troupe, &nb_troupe, &epee, &frondeur, &archer, &hoplite,
+						&cavalier, &charr,
+						&catapulte, &fileDeRecrutement);
+						
+						// Clic File de Constructions
+						gereClicFileDeConstruction(abscisseSouris(), ordonneeSouris(), &fileDeConstructions, &bois, &pierre, &argent);
+						
+						// Clic File de Recrutement
+						gereClicFileDeRecrutement(abscisseSouris(), ordonneeSouris(), &fileDeRecrutement, popups, &bois, &pierre, &argent, &faveur);
+						
+						// Clic vitesse
+						gereClicVitesse(abscisseSouris(), ordonneeSouris());
+						break;
 				}
-				
-				// Clic Popups
-				gereClicGauchePopupSenat(&popups, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions, &senat, &scierie, &ferme, &carriere, &entrepot, &mine, &caserne, &temple);
-				gereClicGauchePopupMine(&popups, abscisseSouris(), ordonneeSouris());
-				gereClicGauchePopupFerme(&popups, abscisseSouris(), ordonneeSouris());
-				gereClicGauchePopupEntrepot(&popups, abscisseSouris(), ordonneeSouris());
-				gereClicGauchePopupCarriere(&popups, abscisseSouris(), ordonneeSouris());
-				gereClicGauchePopupScierie(&popups, abscisseSouris(), ordonneeSouris());
-				gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple, &faveur, &divinite);
-				gereClicGauchePopupCaserne(&popups, abscisseSouris(), ordonneeSouris(), &caserne, &bois, &pierre, &argent, &faveur, &troupe, &nb_troupe, &epee, &frondeur, &archer, &hoplite, &cavalier, &charr,
-				&catapulte, &fileDeRecrutement);
-				
-				// Clic File de Constructions
-				gereClicFileDeConstruction(abscisseSouris(), ordonneeSouris(), &fileDeConstructions, &bois, &pierre, &argent);
-				
-				// Clic File de Recrutement
-				gereClicFileDeRecrutement(abscisseSouris(), ordonneeSouris(), &fileDeRecrutement, popups, &bois, &pierre, &argent, &faveur);
 			}
 			
 			if(etatBoutonSouris() == DroiteAppuye){

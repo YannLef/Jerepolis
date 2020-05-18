@@ -28,7 +28,7 @@ typedef struct Unite{
 	int attaque;
 	int vitesse;
 	int capacite;
-	
+	Troupe type;
 	char* nom;
 	DonneesImageRGB *icon;
 	

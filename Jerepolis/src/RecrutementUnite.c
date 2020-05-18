@@ -19,6 +19,7 @@
  * Includes Jerepolis
  * */
 #include "../headers/structures.h"
+#include "../headers/Caserne.h"
 
 /**
  * Includes CustomGfxComponents
@@ -32,6 +33,7 @@
 #include "../headers/RecrutementUnite.h"
 
 extern CouleurTab c;
+extern int vitesse;
 
 void initRecrutementUnite(RecrutementUnite** recrutement, int nbUnite, Unite* u){
 	
@@ -40,7 +42,7 @@ void initRecrutementUnite(RecrutementUnite** recrutement, int nbUnite, Unite* u)
 	(*recrutement)->u = u;
 	
 	(*recrutement)->nbUnite = nbUnite;
-	(*recrutement)->timer = nbUnite*u->temps;
+	(*recrutement)->timer = u->temps;
 	(*recrutement)->next = NULL;
 }
 
@@ -224,5 +226,37 @@ void annulerRecrutement(int numero, RecrutementUnite** fileDeRecrutement, float*
 		
 		courant = courant->next;
 		cpt++;
+	}
+}
+
+void gereFileDeRecrutement(RecrutementUnite** fileDeRecrutement, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte){
+	debug("<gereFileDeRecrutement> begin");
+	
+	if(fileDeRecrutement == NULL){
+		error("Le pointeur de file de recrutement ne doit pas être à NULL");
+		debug("<gereFileDeRecrutement> end : le pointeur de file de recrutement est à NULL");
+		return;
+	}
+	
+	if(*fileDeRecrutement == NULL){
+		debug("<gereFileDeRecrutement> end");
+		return;
+	}
+	
+	(*fileDeRecrutement)->timer -= 20*vitesse;
+	if((*fileDeRecrutement)->timer < 0){
+		(*fileDeRecrutement)->nbUnite --;
+		printf("Le recrutement de l'unité %s est terminé\n", (*fileDeRecrutement)->u->nom);
+		ajouteUnite((*fileDeRecrutement)->u->type, nbEpee, nbFrondeur, nbArcher, nbHoplite, nbCavalier, nbChar, nbCatapulte);
+		
+		if((*fileDeRecrutement)->nbUnite == 0){
+			RecrutementUnite* tmp = *fileDeRecrutement;
+			printf("Le recrutement des unités %s est terminé\n", tmp->u->nom);
+			*fileDeRecrutement = (*fileDeRecrutement)->next;
+			free(tmp);
+			tmp = NULL;
+		}else{
+			(*fileDeRecrutement)->timer = (*fileDeRecrutement)->u->temps;
+		}
 	}
 }

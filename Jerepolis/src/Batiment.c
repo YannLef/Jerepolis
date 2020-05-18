@@ -36,6 +36,7 @@
 #include "../headers/Batiment.h"
 
 extern CouleurTab c;
+extern int vitesse;
 
 
 char* getBatimentTypeName(typeBatiment type){
@@ -285,7 +286,7 @@ void peupleBatiment(Batiment* b, int nouvellePopulation){
 void genereRessource(Batiment b, float* ressource, int stockageEntrepot){
 	debug("<genereRessource> begin");
 
-	*ressource += b.production;
+	*ressource += b.production*vitesse;
 	
 	if(*ressource > stockageEntrepot){
 		*ressource = stockageEntrepot;

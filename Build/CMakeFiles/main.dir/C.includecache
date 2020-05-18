@@ -38,6 +38,8 @@ windows.h
 stdbool.h
 -
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Accueil.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
@@ -129,4 +131,6 @@ Jerepolis/headers/Simplifications.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
 Jerepolis/headers/RecrutementUnite.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
+Jerepolis/headers/Accueil.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Accueil.h
 

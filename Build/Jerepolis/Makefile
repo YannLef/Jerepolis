@@ -125,6 +125,33 @@ Jerepolis/fast:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/build
 .PHONY : Jerepolis/fast
 
+src/Accueil.o: src/Accueil.c.o
+
+.PHONY : src/Accueil.o
+
+# target to build an object file
+src/Accueil.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Accueil.c.o
+.PHONY : src/Accueil.c.o
+
+src/Accueil.i: src/Accueil.c.i
+
+.PHONY : src/Accueil.i
+
+# target to preprocess a source file
+src/Accueil.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Accueil.c.i
+.PHONY : src/Accueil.c.i
+
+src/Accueil.s: src/Accueil.c.s
+
+.PHONY : src/Accueil.s
+
+# target to generate assembly for a file
+src/Accueil.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Accueil.c.s
+.PHONY : src/Accueil.c.s
+
 src/AmeliorationBatiment.o: src/AmeliorationBatiment.c.o
 
 .PHONY : src/AmeliorationBatiment.o
@@ -485,6 +512,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Jerepolis"
+	@echo "... src/Accueil.o"
+	@echo "... src/Accueil.i"
+	@echo "... src/Accueil.s"
 	@echo "... src/AmeliorationBatiment.o"
 	@echo "... src/AmeliorationBatiment.i"
 	@echo "... src/AmeliorationBatiment.s"
