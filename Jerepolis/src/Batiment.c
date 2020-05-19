@@ -97,7 +97,6 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox
 	b->niveau = lvl->niveau;
 	b->nbAmeliorationsEnCours = 0;
 	b->population = 0;
-	b->populationMax = 0;
 	b->populationMax = lvl->populationMax;
 	b->prixAmeliorationBois = lvl->prixAmeliorationBois;
 	b->prixAmeliorationPierre = lvl->prixAmeliorationPierre;
@@ -287,7 +286,7 @@ void peupleBatiment(Batiment* b, int nouvellePopulation){
 void genereRessource(Batiment b, float* ressource, int stockageEntrepot){
 	debug("<genereRessource> begin");
 
-	*ressource += b.production*vitesse;
+	*ressource += b.production*vitesse*(1 + 0.3*b.population);
 	
 	if(*ressource > stockageEntrepot){
 		*ressource = stockageEntrepot;
@@ -299,7 +298,7 @@ void genereRessource(Batiment b, float* ressource, int stockageEntrepot){
 void gereClicGaucheBatiment(Batiment*  b, int x, int y, Popups* popups){
 	debug("<gereClicGaucheBatiment> begin");
 	
-	if(x > b->xDebutHitBox && x < b->xFinHitBox && y > b->yDebutHitBox && y < b->yFinHitBox){
+	if(x > b->xDebutHitBox && x < b->xFinHitBox && y > b->yDebutHitBox && y < b->yFinHitBox && b->niveau > 0){
 		if(popups->actuel == popups->final){
 				popups->final = b->popupValue;
 		}

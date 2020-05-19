@@ -233,7 +233,7 @@ void annulerRecrutement(int numero, RecrutementUnite** fileDeRecrutement, float*
 	}
 }
 
-void gereFileDeRecrutement(RecrutementUnite** fileDeRecrutement, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte){
+void gereFileDeRecrutement(Batiment caserne, RecrutementUnite** fileDeRecrutement, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte){
 	debug("<gereFileDeRecrutement> begin");
 	
 	if(fileDeRecrutement == NULL){
@@ -247,7 +247,7 @@ void gereFileDeRecrutement(RecrutementUnite** fileDeRecrutement, int* nbEpee, in
 		return;
 	}
 	
-	(*fileDeRecrutement)->timer -= 20*vitesse;
+	(*fileDeRecrutement)->timer -= 50*vitesse*(1 + 0.1*caserne.population);
 	if((*fileDeRecrutement)->timer < 0){
 		(*fileDeRecrutement)->nbUnite --;
 		printf("Le recrutement de l'unité %s est terminé\n", (*fileDeRecrutement)->u->nom);

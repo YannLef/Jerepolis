@@ -180,7 +180,7 @@ void gestionEvenement(EvenementGfx evenement){
 	switch (evenement)
 	{
 		case Initialisation:
-			demandeTemporisation(20);
+			demandeTemporisation(50);
 			initCouleurTab(&c); // Initialise le tableau de couleurs
             initKeyboard(); // Initialise le clavier
             vitesse = 1;
@@ -249,7 +249,7 @@ void gestionEvenement(EvenementGfx evenement){
 					genereRessource(scierie, &bois, stockageEntrepot);
 					genereRessource(mine, &argent, stockageEntrepot);
 					genereFaveurs(temple, divinite, &faveur);
-					gereFileDeRecrutement(&fileDeRecrutement, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte);
+					gereFileDeRecrutement(caserne, &fileDeRecrutement, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte);
 					break;
 			}
 		
@@ -339,8 +339,8 @@ void gestionEvenement(EvenementGfx evenement){
 				switch(p.pActuel){
 					case accueil:
 						gereClicAccueil(abscisseSouris(), ordonneeSouris(), &accueilBackground, &background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible,
-						&maximum, &infosBatiment, &annuler, &p, &modeleSenat, &senat, &modeleFerme, &ferme, &modeleCarriere, &carriere, &modeleScierie, &scierie, &modeleMine, &mine, &modeleEntrepot,
-						&entrepot, &modeleTemple, &temple, &modeleCaserne, &caserne, &bois, &pierre, &argent, &faveur, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte,
+						&maximum, &infosBatiment, &annuler, &p, modeleSenat, &senat, modeleFerme, &ferme, modeleCarriere, &carriere, modeleScierie, &scierie, modeleMine, &mine, modeleEntrepot,
+						&entrepot, modeleTemple, &temple, modeleCaserne, &caserne, &bois, &pierre, &argent, &faveur, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte,
 						&fileDeConstructions, &fileDeRecrutement, &divinite, &popups, &divinite_selec, &troupe, &nb_troupe, &nomVille);
 						break;
 					case partie:

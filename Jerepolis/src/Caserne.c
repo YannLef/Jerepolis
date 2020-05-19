@@ -36,8 +36,9 @@
 #include "../headers/Caserne.h"
 
 extern CouleurTab c;
+extern int vitesse;
 
-void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent, int prixFaveur, int population, int temps, int attaque, int vitesse, int capacite, Troupe type){
+void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent, int prixFaveur, int population, int temps, int attaque, int vitesseTrp, int capacite, Troupe type){
 	u->prixBois = prixBois;
 	u->prixPierre = prixPierre;
 	u->prixArgent = prixArgent;
@@ -45,7 +46,7 @@ void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent
 	u->population = population;
 	u->temps = temps;
 	u->attaque = attaque;
-	u->vitesse = vitesse;
+	u->vitesse = vitesseTrp;
 	u->capacite = capacite;
 	u->nom = nom;
 	u->type = type;
@@ -62,7 +63,7 @@ void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent
 }
 
 void initUnites(Unite* epee, Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, Unite* catapulte){
-	initUnite(epee, "epee", 95, 0, 85, 0, 1, 270000, 5, 48, 16, TROUPE_EPEE);
+	initUnite(epee, "epee", 95, 0, 85, 0, 1, 10000, 5, 48, 16, TROUPE_EPEE);
 	initUnite(frondeur, "frondeur", 55, 100, 40, 0, 1, 300000, 23, 84, 8, TROUPE_FRONDEUR);
 	initUnite(archer, "archer", 120, 0, 75, 0, 1, 285000, 8, 36, 24, TROUPE_ARCHER);
 	initUnite(hoplite, "hoplite", 0, 75, 150, 0, 1, 345000, 16, 18, 8, TROUPE_HOPLITE);
@@ -71,7 +72,7 @@ void initUnites(Unite* epee, Unite* frondeur, Unite* archer, Unite* hoplite, Uni
 	initUnite(catapulte, "catapulte", 700, 700, 700, 0, 15, 3150000, 100, 6, 400, TROUPE_CATAPULTE);
 }
 
-void chargeAffichageUnite(char prixBois[100], char prixPierre[100], char prixArgent[100], char prixFaveur[100], char population[100], char temps[100], char attaque[100], char vitesse[100],
+void chargeAffichageUnite(Batiment caserne, char prixBois[100], char prixPierre[100], char prixArgent[100], char prixFaveur[100], char population[100], char temps[100], char attaque[100], char vitesseTrp[100],
 char capacite[100], Unite u, int nb_troupe){
 	// Bois
 	sprintf(prixBois, "%d", u.prixBois*nb_troupe);
@@ -90,7 +91,7 @@ char capacite[100], Unite u, int nb_troupe){
 
 	// Temps
 	int h, m, s;
-	int t = (u.temps*nb_troupe)/1000;
+	int t = ((u.temps*nb_troupe)/1000)/vitesse*(1 + 0.1*caserne.population);
 	
 	h = (t/3600);
 	m = (t - h*3600)/60;
@@ -101,7 +102,7 @@ char capacite[100], Unite u, int nb_troupe){
 	sprintf(attaque, "%d", u.attaque);
 	
 	// Vitesse
-	sprintf(vitesse, "%d", u.vitesse);
+	sprintf(vitesseTrp, "%d", u.vitesse);
 	
 	// Capacite
 	sprintf(capacite, "%d", u.capacite);
@@ -115,7 +116,7 @@ void affichePopupCaserne(Popups popups, Batiment caserne, Troupe troupe, int nb_
 	char population[100];
 	char temps[100];
 	char attaque[100];
-	char vitesse[100];
+	char vitesseTrp[100];
 	char capacite[100];
 	
 	if(popups.actuel == POPUP_CASERNE){
@@ -123,37 +124,37 @@ void affichePopupCaserne(Popups popups, Batiment caserne, Troupe troupe, int nb_
 		
 		// Epee
 		if(troupe == TROUPE_EPEE){
-			chargeAffichageUnite(prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesse, capacite, epee, nb_troupe);
+			chargeAffichageUnite(caserne, prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesseTrp, capacite, epee, nb_troupe);
 		}
 		
 		// Frondeur
 		if(troupe == TROUPE_FRONDEUR){
-			chargeAffichageUnite(prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesse, capacite, frondeur, nb_troupe);
+			chargeAffichageUnite(caserne, prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesseTrp, capacite, frondeur, nb_troupe);
 		}
 		
 		// Archer
 		if(troupe == TROUPE_ARCHER){
-			chargeAffichageUnite(prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesse, capacite, archer, nb_troupe);
+			chargeAffichageUnite(caserne, prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesseTrp, capacite, archer, nb_troupe);
 		}
 		
 		// Hoplite
 		if(troupe == TROUPE_HOPLITE){
-			chargeAffichageUnite(prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesse, capacite, hoplite, nb_troupe);
+			chargeAffichageUnite(caserne, prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesseTrp, capacite, hoplite, nb_troupe);
 		}
 		
 		// Cavalier
 		if(troupe == TROUPE_CAVALIER){
-			chargeAffichageUnite(prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesse, capacite, cavalier, nb_troupe);
+			chargeAffichageUnite(caserne, prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesseTrp, capacite, cavalier, nb_troupe);
 		}
 		
 		// Char
 		if(troupe == TROUPE_CHAR){
-			chargeAffichageUnite(prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesse, capacite, charr, nb_troupe);
+			chargeAffichageUnite(caserne, prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesseTrp, capacite, charr, nb_troupe);
 		}
 		
 		// Catapulte
 		if(troupe == TROUPE_CATAPULTE){
-			chargeAffichageUnite(prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesse, capacite, catapulte, nb_troupe);
+			chargeAffichageUnite(caserne, prixBois, prixPierre, prixArgent, prixFaveur, population, temps, attaque, vitesseTrp, capacite, catapulte, nb_troupe);
 		}
 		
 		changeColor(c.noir);
@@ -164,7 +165,7 @@ void affichePopupCaserne(Popups popups, Batiment caserne, Troupe troupe, int nb_
 		afficheChaine(population, 15, 620, 417);
 		afficheChaine(temps, 12, 620, 385);
 		afficheChaine(attaque, 12, 812, 453);
-		afficheChaine(vitesse, 12, 812, 419);
+		afficheChaine(vitesseTrp, 12, 812, 419);
 		afficheChaine(capacite, 12, 812, 383);
 		
 		char nbTroupe[100];

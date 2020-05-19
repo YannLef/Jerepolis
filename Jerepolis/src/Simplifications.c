@@ -92,6 +92,26 @@ Batiment* caserne){
 	initBatiment(caserne, *modeleCaserne, 480, 378, 483, 580, 382, 437, POPUP_CASERNE);
 }
 
+void resetBatiments(ModeleBatiment* modeleSenat, Batiment* senat, ModeleBatiment* modeleFerme, Batiment* ferme, ModeleBatiment* modeleCarriere, Batiment* carriere, ModeleBatiment* modeleScierie,
+Batiment* scierie, ModeleBatiment* modeleMine, Batiment* mine, ModeleBatiment* modeleEntrepot, Batiment* entrepot, ModeleBatiment* modeleTemple, Batiment* temple, ModeleBatiment* modeleCaserne,
+Batiment* caserne){
+	initBatiment(senat, modeleSenat, 610, 370, 605, 720, 380, 445, POPUP_SENAT);
+	
+	initBatiment(ferme, modeleFerme, 706, 400, 730, 830, 400, 460, POPUP_FERME);
+	
+	initBatiment(carriere, modeleCarriere, 414, 314, 425, 535, 320, 370, POPUP_CARRIERE);
+	
+	initBatiment(scierie, modeleScierie, 645, 238, 645, 705, 240, 290, POPUP_SCIERIE);
+	
+	initBatiment(mine, modeleMine, 435, 460, 453, 490, 472, 500, POPUP_MINE);
+	
+	initBatiment(entrepot, modeleEntrepot, 577, 326, 580, 660, 330, 370, POPUP_ENTREPOT);
+	
+	initBatiment(temple, modeleTemple, 398, 420, 400, 480, 420, 470, POPUP_TEMPLE);
+	
+	initBatiment(caserne, modeleCaserne, 480, 378, 483, 580, 382, 437, POPUP_CASERNE);
+}
+
 void afficheBatiments(Batiment senat, Batiment ferme, Batiment carriere, Batiment scierie, Batiment mine, Batiment entrepot, Batiment temple, Batiment caserne){
 	afficheBatiment(senat);
 	afficheBatiment(ferme);

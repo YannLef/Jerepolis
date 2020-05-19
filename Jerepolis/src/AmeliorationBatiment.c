@@ -121,13 +121,15 @@ void gereFileDeConstructions(ameliorationBatiment** fileDeConstructions){
 		return;
 	}
 	
-	(*fileDeConstructions)->timer = (*fileDeConstructions)->timer - 20*vitesse;
+	(*fileDeConstructions)->timer = (*fileDeConstructions)->timer - 50*vitesse;
 	if((*fileDeConstructions)->timer <= 0){
-		(*fileDeConstructions)->batiment->nbAmeliorationsEnCours--;
-		(*fileDeConstructions)->batiment->niveau = (*fileDeConstructions)->niveauSuivant;
-		(*fileDeConstructions)->batiment->image = getModeleNiveauBatiment((*fileDeConstructions)->batiment->modele,(*fileDeConstructions)->niveauSuivant)->image;
-		
 		ameliorationBatiment* tmp = *fileDeConstructions;
+		
+		tmp->batiment->nbAmeliorationsEnCours--;
+		tmp->batiment->niveau = tmp->niveauSuivant;
+		//~ tmp->batiment->image = getModeleNiveauBatiment(tmp->batiment->modele,tmp->niveauSuivant)->image;
+		actualiseNiveauBatiment(tmp->batiment);
+		
 		printf("L'amélioration du batiment %s est terminée\n", tmp->batiment->nom);
 		*fileDeConstructions = (*fileDeConstructions)->next;
 		free(tmp);
@@ -135,6 +137,14 @@ void gereFileDeConstructions(ameliorationBatiment** fileDeConstructions){
 	}
 	
 	debug("<gereFileDeConstructions> end");
+}
+
+void actualiseNiveauBatiment(Batiment* b){
+	ModeleBatiment* lvl = getModeleNiveauBatiment(b->modele, b->niveau);
+	
+	b->populationMax = lvl->populationMax;
+	b->image = lvl->image;
+	b->production = lvl->production;
 }
 
 void printAmeliorationBatiment(ameliorationBatiment* amelioration){
