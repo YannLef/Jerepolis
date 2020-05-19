@@ -244,7 +244,8 @@ void gestionEvenement(EvenementGfx evenement){
 					updateInputText(&nomVille);
 					actualisePopup(&popups);
 					actualiseStockageEntrepot(&stockageEntrepot, entrepot);
-					actualiseCapacitePopulationRestante(&capacitePopulationRestante, ferme, senat, entrepot, scierie, temple, carriere, caserne, mine);
+					actualiseCapacitePopulationRestante(&capacitePopulationRestante, ferme, senat, entrepot, scierie, temple, carriere, caserne, mine, nbEpee, nbFrondeur, nbArcher, nbHoplite,
+					nbCavalier, nbChar, nbCatapulte, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
 					genereRessource(carriere, &pierre, stockageEntrepot);
 					genereRessource(scierie, &bois, stockageEntrepot);
 					genereRessource(mine, &argent, stockageEntrepot);

@@ -311,25 +311,25 @@ Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, U
 void ajouteUnite(Troupe type, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte){
 	switch(type){
 		case TROUPE_EPEE:
-			*nbEpee++;
+			*nbEpee = *nbEpee + 1;
 			break;
 		case TROUPE_FRONDEUR:
-			*nbFrondeur++;
+			*nbFrondeur = *nbFrondeur + 1;
 			break;
 		case TROUPE_ARCHER:
-			*nbArcher++;
+			*nbArcher = *nbArcher + 1;
 			break;
 		case TROUPE_HOPLITE:
-			*nbHoplite++;
+			*nbHoplite = *nbHoplite + 1;
 			break;
 		case TROUPE_CAVALIER:
-			*nbCavalier++;
+			*nbCavalier = *nbCavalier + 1;
 			break;
 		case TROUPE_CHAR:
-			*nbChar++;
+			*nbChar = *nbChar + 1;
 			break;
 		case TROUPE_CATAPULTE:
-			*nbCatapulte++;
+			*nbCatapulte = *nbCatapulte + 1;
 			break;
 	}
 }
