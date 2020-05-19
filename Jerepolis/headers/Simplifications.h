@@ -7,3 +7,4 @@ Batiment* caserne);
 void afficheBatiments(Batiment senat, Batiment ferme, Batiment carriere, Batiment scierie, Batiment mine, Batiment entrepot, Batiment temple, Batiment caserne);
 void afficheBackground(Divinite divinite, DonneesImageRGB* background, DonneesImageRGB* backgroundZeus, DonneesImageRGB* backgroundPoseidon, DonneesImageRGB* backgroundHades);
 void gereClicVitesse(int x, int y);
+void gereClicQuitter(int x, int y, Pages* p);

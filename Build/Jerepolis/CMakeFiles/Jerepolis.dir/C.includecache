@@ -10,6 +10,8 @@
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
 
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
+
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 stdbool.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/stdbool.h
@@ -69,8 +71,18 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 ../../CustomGfxComponents/headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
+../../CustomGfxComponents/headers/InputText.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+../headers/AmeliorationBatiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
+../headers/RecrutementUnite.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
+../headers/Batiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
+../headers/Simplifications.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
 ../headers/Accueil.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Accueil.h
 

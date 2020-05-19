@@ -138,3 +138,11 @@ void gereClicVitesse(int x, int y){
 	}
 }
 
+void gereClicQuitter(int x, int y, Pages* p){
+	if(x > 989 && x < 1012 && y > 646 && y < 667){
+		if(p->pActuel == p->pFinal){
+			p->pFinal = accueil;
+		}
+	}
+}
+

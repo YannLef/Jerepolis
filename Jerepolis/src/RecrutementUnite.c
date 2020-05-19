@@ -60,7 +60,11 @@ void ajouteRecrutementUnite(RecrutementUnite** fileDeRecrutement, RecrutementUni
 	
 }
 
-void afficheFileDeRecrutement(RecrutementUnite* fileDeRecrutement, DonneesImageRGB* annuler){
+void afficheFileDeRecrutement(RecrutementUnite* fileDeRecrutement, DonneesImageRGB* annuler, Popups popups){
+	
+	if(popups.actuel != POPUP_CASERNE){
+		return;
+	}
 	
 	RecrutementUnite* courant = fileDeRecrutement;
 	int cpt = 0;
@@ -259,4 +263,27 @@ void gereFileDeRecrutement(RecrutementUnite** fileDeRecrutement, int* nbEpee, in
 			(*fileDeRecrutement)->timer = (*fileDeRecrutement)->u->temps;
 		}
 	}
+}
+
+void resetFileDeRecrutement(RecrutementUnite** fileDeRecrutement){
+	if(fileDeRecrutement == NULL){
+		error("Le pointeur de file de recrutement ne doit pas être à NULL");
+		debug("<resetFileDeRecrutement> end : le pointeur de file de recrutement est à NULL");
+		return;
+	}
+	
+	if(*fileDeRecrutement == NULL){
+		debug("<resetFileDeRecrutement> end");
+		return;
+	}
+	
+	RecrutementUnite* courant = *fileDeRecrutement;
+	RecrutementUnite* tmp;
+	while(courant != NULL){
+		tmp = courant->next;
+		free(courant);
+		courant = tmp;
+	}
+	
+	*fileDeRecrutement = NULL;
 }

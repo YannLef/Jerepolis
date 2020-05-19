@@ -176,6 +176,10 @@ void affichePopupCaserne(Popups popups, Batiment caserne, Troupe troupe, int nb_
 void gereClicGauchePopupCaserne(Popups* popups, int x, int y, Batiment* caserne, float* bois, float* pierre, float* argent, float* faveur, Troupe* troupe, int* nb_troupe, Unite* epee, 
 Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, Unite* catapulte, RecrutementUnite** fileDeRecrutement){
 	
+	if(popups->actuel != POPUP_CASERNE){
+		return;
+	}
+	
 	Unite* u;
 	// Epee
 	if(*troupe == TROUPE_EPEE){
@@ -212,8 +216,6 @@ Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, U
 		u = catapulte;
 	}
 	
-	
-	if(popups->actuel == POPUP_CASERNE){
 		// Gère clic sur la croix
 		if(x > 958 && x < 978 && y > 628 && y < 647){
 			if(popups->actuel == popups->final){
@@ -295,7 +297,7 @@ Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, U
 					*bois = *bois - (*nb_troupe)*(u->prixBois);
 					*pierre = *pierre - (*nb_troupe)*(u->prixPierre);
 					*argent = *argent - (*nb_troupe)*(u->prixArgent);
-					*faveur = *faveur - (*nb_troupe)*(u->prixArgent);
+					*faveur = *faveur - (*nb_troupe)*(u->prixFaveur);
 				}else{
 					printf("La file de recrutement est pleine\n");
 				}
@@ -303,8 +305,6 @@ Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, U
 				*nb_troupe = 0;
 			}
 		}
-		
-	}
 }
 
 void ajouteUnite(Troupe type, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte){

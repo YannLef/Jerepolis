@@ -319,3 +319,26 @@ int ameliorationsBatimentSuiteFile(ameliorationBatiment* amelioration){
 	
 	return 0;
 }
+
+void resetFileDeConstructions(ameliorationBatiment** fileDeConstructions){
+	if(fileDeConstructions == NULL){
+		error("Le pointeur de file de constructions ne doit pas être à NULL");
+		debug("<resetFileDeConstructions> end : le pointeur de file de constructions est à NULL");
+		return;
+	}
+	
+	if(*fileDeConstructions == NULL){
+		debug("<resetFileDeConstructions> end");
+		return;
+	}
+	
+	ameliorationBatiment* courant = *fileDeConstructions;
+	ameliorationBatiment* tmp;
+	while(courant != NULL){
+		tmp = courant->next;
+		free(courant);
+		courant = tmp;
+	}
+	
+	*fileDeConstructions = NULL;
+}

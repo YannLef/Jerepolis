@@ -231,8 +231,6 @@ void gestionEvenement(EvenementGfx evenement){
             nb_troupe = 0;
             fileDeRecrutement = NULL;
             
-            // Tests
-            
 			break;
 		
 		case Temporisation:
@@ -320,7 +318,7 @@ void gestionEvenement(EvenementGfx evenement){
 					affichePopupCaserne(popups, caserne, troupe, nb_troupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
 					
 					// Affichage de la file de recrutement
-					afficheFileDeRecrutement(fileDeRecrutement, annuler);
+					afficheFileDeRecrutement(fileDeRecrutement, annuler, popups);
 					break;
 			}
 
@@ -341,7 +339,9 @@ void gestionEvenement(EvenementGfx evenement){
 				switch(p.pActuel){
 					case accueil:
 						gereClicAccueil(abscisseSouris(), ordonneeSouris(), &accueilBackground, &background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible,
-						&maximum, &infosBatiment, &annuler, &p);
+						&maximum, &infosBatiment, &annuler, &p, &modeleSenat, &senat, &modeleFerme, &ferme, &modeleCarriere, &carriere, &modeleScierie, &scierie, &modeleMine, &mine, &modeleEntrepot,
+						&entrepot, &modeleTemple, &temple, &modeleCaserne, &caserne, &bois, &pierre, &argent, &faveur, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte,
+						&fileDeConstructions, &fileDeRecrutement, &divinite, &popups, &divinite_selec, &troupe, &nb_troupe, &nomVille);
 						break;
 					case partie:
 						gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
@@ -389,6 +389,9 @@ void gestionEvenement(EvenementGfx evenement){
 						
 						// Clic vitesse
 						gereClicVitesse(abscisseSouris(), ordonneeSouris());
+						
+						// Clic quitter
+						gereClicQuitter(abscisseSouris(), ordonneeSouris(), &p);
 						break;
 				}
 			}

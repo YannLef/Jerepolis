@@ -49,3 +49,4 @@ void gereClicFileDeConstruction(int x, int y, ameliorationBatiment** fileDeConst
 
 void annulerConstruction(int numero, ameliorationBatiment** fileDeConstructions, float* bois, float* pierre, float* argent);
 int ameliorationsBatimentSuiteFile(ameliorationBatiment* amelioration);
+void resetFileDeConstructions(ameliorationBatiment** fileDeConstructions);

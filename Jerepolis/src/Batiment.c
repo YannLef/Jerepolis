@@ -96,6 +96,7 @@ void initBatiment(Batiment* b, ModeleBatiment* m, int x, int y, int xDebutHitBox
 	b->type = lvl->type;
 	b->niveau = lvl->niveau;
 	b->nbAmeliorationsEnCours = 0;
+	b->population = 0;
 	b->populationMax = 0;
 	b->populationMax = lvl->populationMax;
 	b->prixAmeliorationBois = lvl->prixAmeliorationBois;
