@@ -179,6 +179,33 @@ src/AmeliorationBatiment.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/AmeliorationBatiment.c.s
 .PHONY : src/AmeliorationBatiment.c.s
 
+src/Attaque.o: src/Attaque.c.o
+
+.PHONY : src/Attaque.o
+
+# target to build an object file
+src/Attaque.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Attaque.c.o
+.PHONY : src/Attaque.c.o
+
+src/Attaque.i: src/Attaque.c.i
+
+.PHONY : src/Attaque.i
+
+# target to preprocess a source file
+src/Attaque.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Attaque.c.i
+.PHONY : src/Attaque.c.i
+
+src/Attaque.s: src/Attaque.c.s
+
+.PHONY : src/Attaque.s
+
+# target to generate assembly for a file
+src/Attaque.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Attaque.c.s
+.PHONY : src/Attaque.c.s
+
 src/Batiment.o: src/Batiment.c.o
 
 .PHONY : src/Batiment.o
@@ -260,6 +287,33 @@ src/Caserne.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Caserne.c.s
 .PHONY : src/Caserne.c.s
 
+src/Ennemi.o: src/Ennemi.c.o
+
+.PHONY : src/Ennemi.o
+
+# target to build an object file
+src/Ennemi.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Ennemi.c.o
+.PHONY : src/Ennemi.c.o
+
+src/Ennemi.i: src/Ennemi.c.i
+
+.PHONY : src/Ennemi.i
+
+# target to preprocess a source file
+src/Ennemi.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Ennemi.c.i
+.PHONY : src/Ennemi.c.i
+
+src/Ennemi.s: src/Ennemi.c.s
+
+.PHONY : src/Ennemi.s
+
+# target to generate assembly for a file
+src/Ennemi.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Ennemi.c.s
+.PHONY : src/Ennemi.c.s
+
 src/Entrepot.o: src/Entrepot.c.o
 
 .PHONY : src/Entrepot.o
@@ -286,6 +340,33 @@ src/Entrepot.s: src/Entrepot.c.s
 src/Entrepot.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Entrepot.c.s
 .PHONY : src/Entrepot.c.s
+
+src/Evenement.o: src/Evenement.c.o
+
+.PHONY : src/Evenement.o
+
+# target to build an object file
+src/Evenement.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Evenement.c.o
+.PHONY : src/Evenement.c.o
+
+src/Evenement.i: src/Evenement.c.i
+
+.PHONY : src/Evenement.i
+
+# target to preprocess a source file
+src/Evenement.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Evenement.c.i
+.PHONY : src/Evenement.c.i
+
+src/Evenement.s: src/Evenement.c.s
+
+.PHONY : src/Evenement.s
+
+# target to generate assembly for a file
+src/Evenement.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Evenement.c.s
+.PHONY : src/Evenement.c.s
 
 src/Ferme.o: src/Ferme.c.o
 
@@ -518,6 +599,9 @@ help:
 	@echo "... src/AmeliorationBatiment.o"
 	@echo "... src/AmeliorationBatiment.i"
 	@echo "... src/AmeliorationBatiment.s"
+	@echo "... src/Attaque.o"
+	@echo "... src/Attaque.i"
+	@echo "... src/Attaque.s"
 	@echo "... src/Batiment.o"
 	@echo "... src/Batiment.i"
 	@echo "... src/Batiment.s"
@@ -527,9 +611,15 @@ help:
 	@echo "... src/Caserne.o"
 	@echo "... src/Caserne.i"
 	@echo "... src/Caserne.s"
+	@echo "... src/Ennemi.o"
+	@echo "... src/Ennemi.i"
+	@echo "... src/Ennemi.s"
 	@echo "... src/Entrepot.o"
 	@echo "... src/Entrepot.i"
 	@echo "... src/Entrepot.s"
+	@echo "... src/Evenement.o"
+	@echo "... src/Evenement.i"
+	@echo "... src/Evenement.s"
 	@echo "... src/Ferme.o"
 	@echo "... src/Ferme.i"
 	@echo "... src/Ferme.s"

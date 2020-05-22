@@ -110,7 +110,7 @@ void afficheFileDeRecrutement(RecrutementUnite* fileDeRecrutement, DonneesImageR
 		sprintf(tmp, "%d", courant->nbUnite);
 		changeColor(c.blanc);
 		epaisseurDeTrait(3);
-		afficheChaine(tmp, 15, x+30, y+2);
+		afficheChaine(tmp, 15, x+20, y+2);
 		epaisseurDeTrait(1);
 		
 		courant = courant->next;

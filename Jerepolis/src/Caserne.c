@@ -64,30 +64,30 @@ void initUnite(Unite* u, char* nom, int prixBois, int prixPierre, int prixArgent
 
 void initUnites(Unite* epee, Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, Unite* catapulte){
 	initUnite(epee, "epee", 95, 0, 85, 0, 1, 10000, 5, 48, 16, TROUPE_EPEE);
-	initUnite(frondeur, "frondeur", 55, 100, 40, 0, 1, 300000, 23, 84, 8, TROUPE_FRONDEUR);
-	initUnite(archer, "archer", 120, 0, 75, 0, 1, 285000, 8, 36, 24, TROUPE_ARCHER);
-	initUnite(hoplite, "hoplite", 0, 75, 150, 0, 1, 345000, 16, 18, 8, TROUPE_HOPLITE);
-	initUnite(cavalier, "cavalier", 240, 120, 360, 0, 3, 1080000, 60, 66, 72, TROUPE_CAVALIER);
-	initUnite(charr, "char", 200, 440, 320, 0, 4, 1440000, 56, 54, 64, TROUPE_CHAR);
-	initUnite(catapulte, "catapulte", 700, 700, 700, 0, 15, 3150000, 100, 6, 400, TROUPE_CATAPULTE);
+	initUnite(frondeur, "frondeur", 55, 100, 40, 0, 1, 10000, 23, 84, 8, TROUPE_FRONDEUR);
+	initUnite(archer, "archer", 120, 0, 75, 0, 1, 10000, 8, 36, 24, TROUPE_ARCHER);
+	initUnite(hoplite, "hoplite", 0, 75, 150, 0, 1, 12000, 16, 18, 8, TROUPE_HOPLITE);
+	initUnite(cavalier, "cavalier", 240, 120, 360, 0, 3, 16000, 60, 66, 72, TROUPE_CAVALIER);
+	initUnite(charr, "char", 200, 440, 320, 0, 4, 20000, 56, 54, 64, TROUPE_CHAR);
+	initUnite(catapulte, "catapulte", 700, 700, 700, 0, 15, 50000, 100, 6, 400, TROUPE_CATAPULTE);
 }
 
 void chargeAffichageUnite(Batiment caserne, char prixBois[100], char prixPierre[100], char prixArgent[100], char prixFaveur[100], char population[100], char temps[100], char attaque[100], char vitesseTrp[100],
 char capacite[100], Unite u, int nb_troupe){
 	// Bois
-	sprintf(prixBois, "%d", u.prixBois*nb_troupe);
+	sprintf(prixBois, "%d (%d)", u.prixBois*nb_troupe, u.prixBois);
 
 	// Pierre
-	sprintf(prixPierre, "%d", u.prixPierre*nb_troupe);
+	sprintf(prixPierre, "%d (%d)", u.prixPierre*nb_troupe, u.prixPierre);
 
 	// Argent
-	sprintf(prixArgent, "%d", u.prixArgent*nb_troupe);
+	sprintf(prixArgent, "%d (%d)", u.prixArgent*nb_troupe, u.prixArgent);
 
 	// Faveur
-	sprintf(prixFaveur, "%d", u.prixFaveur*nb_troupe);
+	sprintf(prixFaveur, "%d (%d)", u.prixFaveur*nb_troupe, u.prixFaveur);
 
 	// Population
-	sprintf(population, "%d", u.population*nb_troupe);
+	sprintf(population, "%d (%d)", u.population*nb_troupe, u.population);
 
 	// Temps
 	int h, m, s;
@@ -158,15 +158,15 @@ void affichePopupCaserne(Popups popups, Batiment caserne, Troupe troupe, int nb_
 		}
 		
 		changeColor(c.noir);
-		afficheChaine(prixBois, 15, 500, 450);
-		afficheChaine(prixPierre, 15, 500, 417);
-		afficheChaine(prixArgent, 15, 500, 385);
-		afficheChaine(prixFaveur, 15, 620, 450);
-		afficheChaine(population, 15, 620, 417);
-		afficheChaine(temps, 12, 620, 385);
-		afficheChaine(attaque, 12, 812, 453);
-		afficheChaine(vitesseTrp, 12, 812, 419);
-		afficheChaine(capacite, 12, 812, 383);
+		afficheChaine(prixBois, 13, 480, 450);
+		afficheChaine(prixPierre, 13, 480, 417);
+		afficheChaine(prixArgent, 13, 480, 385);
+		afficheChaine(prixFaveur, 13, 600, 450);
+		afficheChaine(population, 13, 600, 417);
+		afficheChaine(temps, 12, 600, 385);
+		afficheChaine(attaque, 12, 800, 453);
+		afficheChaine(vitesseTrp, 12, 800, 419);
+		afficheChaine(capacite, 12, 800, 383);
 		
 		char nbTroupe[100];
 		sprintf(nbTroupe, "%d", nb_troupe);
@@ -221,6 +221,8 @@ Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, U
 		if(x > 958 && x < 978 && y > 628 && y < 647){
 			if(popups->actuel == popups->final){
 				popups->final = POPUP_NONE;
+				setPopupImage(caserne, "popup");
+				*troupe = TROUPE_EPEE;
 				*nb_troupe = 0;
 			}
 		}

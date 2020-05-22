@@ -72,3 +72,13 @@ void genereRessource(Batiment b, float* ressource, int stockageEntrepot);
 void gereClicGaucheBatiment(Batiment*  b, int x, int y, Popups* popups);
 
 void afficheInfosBatiment(Batiment senat, DonneesImageRGB* infosBatiment, Batiment ferme, Batiment scierie, Batiment entrepot, Batiment carriere, Batiment caserne, Batiment temple, Batiment mine);
+
+void initBatiments(ModeleBatiment** modeleSenat, Batiment* senat, ModeleBatiment** modeleFerme, Batiment* ferme, ModeleBatiment** modeleCarriere, Batiment* carriere, ModeleBatiment** modeleScierie,
+Batiment* scierie, ModeleBatiment** modeleMine, Batiment* mine, ModeleBatiment** modeleEntrepot, Batiment* entrepot, ModeleBatiment** modeleTemple, Batiment* temple, ModeleBatiment** modeleCaserne,
+Batiment* caserne);
+
+void resetBatiments(ModeleBatiment* modeleSenat, Batiment* senat, ModeleBatiment* modeleFerme, Batiment* ferme, ModeleBatiment* modeleCarriere, Batiment* carriere, ModeleBatiment* modeleScierie,
+Batiment* scierie, ModeleBatiment* modeleMine, Batiment* mine, ModeleBatiment* modeleEntrepot, Batiment* entrepot, ModeleBatiment* modeleTemple, Batiment* temple, ModeleBatiment* modeleCaserne,
+Batiment* caserne);
+
+void afficheBatiments(Batiment senat, Batiment ferme, Batiment carriere, Batiment scierie, Batiment mine, Batiment entrepot, Batiment temple, Batiment caserne);

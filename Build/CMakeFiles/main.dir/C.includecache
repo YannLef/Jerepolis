@@ -42,13 +42,19 @@ stdbool.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Attaque.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Carriere.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Caserne.h
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Ennemi.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Entrepot.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Evenement.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Ferme.h
 
@@ -76,6 +82,8 @@ stdlib.h
 stdio.h
 -
 math.h
+-
+time.h
 -
 GfxLib/headers/GfxLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
@@ -133,4 +141,10 @@ Jerepolis/headers/RecrutementUnite.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
 Jerepolis/headers/Accueil.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Accueil.h
+Jerepolis/headers/Attaque.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Attaque.h
+Jerepolis/headers/Ennemi.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Ennemi.h
+Jerepolis/headers/Evenement.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Evenement.h
 

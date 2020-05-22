@@ -35,9 +35,11 @@
 #include "../headers/Simplifications.h"
 
 extern int vitesse;
+extern CouleurTab c;
 
-void chargeImages(DonneesImageRGB** accueilBackground, DonneesImageRGB** background, DonneesImageRGB** backgroundZeus, DonneesImageRGB** backgroundPoseidon, DonneesImageRGB** backgroundHades, DonneesImageRGB** ameliorer,
-DonneesImageRGB** construire, DonneesImageRGB** impossible, DonneesImageRGB** maximum, DonneesImageRGB** infosBatiment, DonneesImageRGB** annuler){
+void chargeImages(DonneesImageRGB** accueilBackground, DonneesImageRGB** background, DonneesImageRGB** backgroundZeus, DonneesImageRGB** backgroundPoseidon, DonneesImageRGB** backgroundHades,
+DonneesImageRGB** ameliorer, DonneesImageRGB** construire, DonneesImageRGB** impossible, DonneesImageRGB** maximum, DonneesImageRGB** infosBatiment, DonneesImageRGB** annuler,
+DonneesImageRGB** attaquer, DonneesImageRGB** attaqueSortante, DonneesImageRGB** retourTroupe){
 	*accueilBackground = lisBMPRGB("../Jerepolis/ressources/images/accueil.bmp");
 	*background = lisBMPRGB("../Jerepolis/ressources/images/background.bmp");
 	*backgroundZeus = lisBMPRGB("../Jerepolis/ressources/images/backgroundZeus.bmp");
@@ -49,78 +51,14 @@ DonneesImageRGB** construire, DonneesImageRGB** impossible, DonneesImageRGB** ma
 	*maximum = lisBMPRGB("../Jerepolis/ressources/images/boutons/maximum.bmp");
 	*infosBatiment = lisBMPRGB("../Jerepolis/ressources/images/batiments/infos.bmp");
 	*annuler = lisBMPRGB("../Jerepolis/ressources/images/boutons/annuler.bmp");
+	*attaquer = lisBMPRGB("../Jerepolis/ressources/images/attaque.bmp");
+	*attaqueSortante = lisBMPRGB("../Jerepolis/ressources/images/attaqueSortante.bmp");
+	*retourTroupe = lisBMPRGB("../Jerepolis/ressources/images/retourTroupe.bmp");
 }
 
 void initPopups(Popups* popups){
 	popups->actuel = POPUP_NONE;
 	popups->final = POPUP_NONE;
-}
-
-void initBatiments(ModeleBatiment** modeleSenat, Batiment* senat, ModeleBatiment** modeleFerme, Batiment* ferme, ModeleBatiment** modeleCarriere, Batiment* carriere, ModeleBatiment** modeleScierie,
-Batiment* scierie, ModeleBatiment** modeleMine, Batiment* mine, ModeleBatiment** modeleEntrepot, Batiment* entrepot, ModeleBatiment** modeleTemple, Batiment* temple, ModeleBatiment** modeleCaserne,
-Batiment* caserne){
-	*modeleSenat = NULL;
-	initModeleBatiment(modeleSenat, "senat", BATIMENT_NORMAL);
-	initBatiment(senat, *modeleSenat, 610, 370, 605, 720, 380, 445, POPUP_SENAT);
-	
-	*modeleFerme = NULL;
-	initModeleBatiment(modeleFerme, "ferme", BATIMENT_NORMAL);
-	initBatiment(ferme, *modeleFerme, 706, 400, 730, 830, 400, 460, POPUP_FERME);
-	
-	*modeleCarriere = NULL;
-	initModeleBatiment(modeleCarriere, "carriere", BATIMENT_PRODUCTION);
-	initBatiment(carriere, *modeleCarriere, 414, 314, 425, 535, 320, 370, POPUP_CARRIERE);
-	
-	*modeleScierie = NULL;
-	initModeleBatiment(modeleScierie, "scierie", BATIMENT_PRODUCTION);
-	initBatiment(scierie, *modeleScierie, 645, 238, 645, 705, 240, 290, POPUP_SCIERIE);
-	
-	*modeleMine = NULL;
-	initModeleBatiment(modeleMine, "mine", BATIMENT_PRODUCTION);
-	initBatiment(mine, *modeleMine, 435, 460, 453, 490, 472, 500, POPUP_MINE);
-	
-	*modeleEntrepot = NULL;
-	initModeleBatiment(modeleEntrepot, "entrepot", BATIMENT_NORMAL);
-	initBatiment(entrepot, *modeleEntrepot, 577, 326, 580, 660, 330, 370, POPUP_ENTREPOT);
-	
-	*modeleTemple = NULL;
-	initModeleBatiment(modeleTemple, "temple", BATIMENT_PRODUCTION);
-	initBatiment(temple, *modeleTemple, 398, 420, 400, 480, 420, 470, POPUP_TEMPLE);
-	
-	*modeleCaserne = NULL;
-	initModeleBatiment(modeleCaserne, "caserne", BATIMENT_NORMAL);
-	initBatiment(caserne, *modeleCaserne, 480, 378, 483, 580, 382, 437, POPUP_CASERNE);
-}
-
-void resetBatiments(ModeleBatiment* modeleSenat, Batiment* senat, ModeleBatiment* modeleFerme, Batiment* ferme, ModeleBatiment* modeleCarriere, Batiment* carriere, ModeleBatiment* modeleScierie,
-Batiment* scierie, ModeleBatiment* modeleMine, Batiment* mine, ModeleBatiment* modeleEntrepot, Batiment* entrepot, ModeleBatiment* modeleTemple, Batiment* temple, ModeleBatiment* modeleCaserne,
-Batiment* caserne){
-	initBatiment(senat, modeleSenat, 610, 370, 605, 720, 380, 445, POPUP_SENAT);
-	
-	initBatiment(ferme, modeleFerme, 706, 400, 730, 830, 400, 460, POPUP_FERME);
-	
-	initBatiment(carriere, modeleCarriere, 414, 314, 425, 535, 320, 370, POPUP_CARRIERE);
-	
-	initBatiment(scierie, modeleScierie, 645, 238, 645, 705, 240, 290, POPUP_SCIERIE);
-	
-	initBatiment(mine, modeleMine, 435, 460, 453, 490, 472, 500, POPUP_MINE);
-	
-	initBatiment(entrepot, modeleEntrepot, 577, 326, 580, 660, 330, 370, POPUP_ENTREPOT);
-	
-	initBatiment(temple, modeleTemple, 398, 420, 400, 480, 420, 470, POPUP_TEMPLE);
-	
-	initBatiment(caserne, modeleCaserne, 480, 378, 483, 580, 382, 437, POPUP_CASERNE);
-}
-
-void afficheBatiments(Batiment senat, Batiment ferme, Batiment carriere, Batiment scierie, Batiment mine, Batiment entrepot, Batiment temple, Batiment caserne){
-	afficheBatiment(senat);
-	afficheBatiment(ferme);
-	afficheBatiment(carriere);
-	afficheBatiment(scierie);
-	afficheBatiment(mine);
-	afficheBatiment(entrepot);
-	afficheBatiment(temple);
-	afficheBatiment(caserne);
 }
 
 void afficheBackground(Divinite divinite, DonneesImageRGB* background, DonneesImageRGB* backgroundZeus, DonneesImageRGB* backgroundPoseidon, DonneesImageRGB* backgroundHades){
@@ -166,3 +104,57 @@ void gereClicQuitter(int x, int y, Pages* p){
 	}
 }
 
+void afficheArmee(int nbEpee, int nbFrondeur, int nbArcher, int nbHoplite, int nbCavalier, int nbChar, int nbCatapulte){
+char txt[100];
+	epaisseurDeTrait(3);
+	
+	// Eppee
+	sprintf(txt,"%d", nbEpee);
+	afficheChaine(txt, 15, 1010, 560);
+	
+	// Frondeur
+	sprintf(txt,"%d", nbFrondeur);
+	afficheChaine(txt, 15, 1062, 560);
+	
+	// Archer
+	sprintf(txt,"%d", nbArcher);
+	afficheChaine(txt, 15, 1110, 560);
+	
+	// Hoplite
+	sprintf(txt,"%d", nbHoplite);
+	afficheChaine(txt, 15, 1010, 510);
+	
+	// Cavalier
+	sprintf(txt,"%d", nbCavalier);
+	afficheChaine(txt, 15, 1062, 510);
+	
+	// Char
+	sprintf(txt,"%d", nbChar);
+	afficheChaine(txt, 15, 1110, 510);
+	
+	// Catapulte
+	sprintf(txt,"%d", nbCatapulte);
+	afficheChaine(txt, 15, 1010, 460);
+	
+	epaisseurDeTrait(1);
+}
+
+void afficheRessources(float faveur, float bois, float pierre, float argent, int capacitePopulationRestante){
+	changeColor(c.blanc);
+	char txt[100];
+	
+	sprintf(txt,"%.0f", faveur);
+	afficheChaine(txt, 20, 94, 520);
+	
+	sprintf(txt,"%.0f", bois);
+	afficheChaine(txt, 20, 70, 460);
+	
+	sprintf(txt,"%.0f", pierre);
+	afficheChaine(txt, 20, 70, 403);
+	
+	sprintf(txt,"%.0f", argent);
+	afficheChaine(txt, 20, 70, 345);
+	
+	sprintf(txt,"%d", capacitePopulationRestante);
+	afficheChaine(txt, 20, 70, 287);
+}

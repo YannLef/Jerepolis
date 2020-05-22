@@ -26,6 +26,7 @@ typedef struct CouleurTab{
 	Couleur bleuEcriture; // 38, 193, 225
 	Couleur fondPrincipal; // 241, 255, 251
 	Couleur invisible; // -1, -1, -1
+	Couleur rouge; // 255, 0, 0
 }CouleurTab;
 
 /**

@@ -7,11 +7,13 @@
  * */
 typedef enum{ BATIMENT_NORMAL, BATIMENT_PRODUCTION} typeBatiment;
 
-typedef enum Popup{ POPUP_NONE, POPUP_SENAT, POPUP_MINE, POPUP_FERME, POPUP_ENTREPOT, POPUP_CARRIERE, POPUP_SCIERIE, POPUP_TEMPLE, POPUP_CASERNE }Popup;
+typedef enum Popup{ POPUP_NONE, POPUP_SENAT, POPUP_MINE, POPUP_FERME, POPUP_ENTREPOT, POPUP_CARRIERE, POPUP_SCIERIE, POPUP_TEMPLE, POPUP_CASERNE, POPUP_ATTAQUER }Popup;
 
 typedef enum Divinite{ DIVINITE_NONE, DIVINITE_ZEUS, DIVINITE_POSEIDON, DIVINITE_HADES }Divinite;
 
 typedef enum Troupe{ TROUPE_EPEE, TROUPE_FRONDEUR, TROUPE_ARCHER, TROUPE_HOPLITE, TROUPE_CAVALIER, TROUPE_CHAR, TROUPE_CATAPULTE }Troupe;
+
+typedef enum TypeEvenement { EVENEMENT_ATTAQUE_SORTANTE, EVENEMENT_RETOUR_TROUPE } TypeEvenement;
 
 typedef struct Popups{
 	Popup actuel;
@@ -116,3 +118,32 @@ typedef struct ameliorationBatiment{
 	struct ameliorationBatiment* next; // Amélioration suivante dans la liste
 	
 }ameliorationBatiment;
+
+typedef struct Ennemi{
+	char* nom;
+	unsigned long distance;
+	
+	int nbEpee;
+	int nbFrondeur;
+	int nbArcher;
+	int nbHoplite;
+	int nbCavalier;
+	int nbChar;
+	int nbCatapulte;
+}Ennemi;
+
+typedef struct EvenementTroupe{
+	int timer;
+	TypeEvenement type;
+	Ennemi* ennemi;
+	
+	int nbEpee;
+	int nbFrondeur;
+	int nbArcher;
+	int nbHoplite;
+	int nbCavalier;
+	int nbChar;
+	int nbCatapulte;
+	
+	struct EvenementTroupe* next;
+}EvenementTroupe;

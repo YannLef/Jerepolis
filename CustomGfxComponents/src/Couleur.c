@@ -54,6 +54,7 @@ void initCouleurTab(CouleurTab* c){
 	initCouleur(&(c->bleuEcriture), 38, 193, 225);
 	initCouleur(&(c->fondPrincipal), 241, 255, 251);
 	initCouleur(&(c->invisible), -1, -1, -1);
+	initCouleur(&(c->rouge), 255, 0, 0);
 	
 	
 	debug("<initCouleurTab> end");

@@ -4,6 +4,7 @@
 #include <stdlib.h> // Pour pouvoir utiliser exit()
 #include <stdio.h> // Pour pouvoir utiliser printf()
 #include <math.h> // Pour pouvoir utiliser sin() et cos()
+#include <time.h>
 
 /**
  * Includes GfxLib
@@ -48,6 +49,9 @@
 #include "Jerepolis/headers/Simplifications.h"
 #include "Jerepolis/headers/RecrutementUnite.h"
 #include "Jerepolis/headers/Accueil.h"
+#include "Jerepolis/headers/Attaque.h"
+#include "Jerepolis/headers/Ennemi.h"
+#include "Jerepolis/headers/Evenement.h"
 
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1152
@@ -106,6 +110,9 @@ void gestionEvenement(EvenementGfx evenement){
 	static DonneesImageRGB *maximum = NULL;
 	static DonneesImageRGB *infosBatiment = NULL;
 	static DonneesImageRGB *annuler = NULL;
+	static DonneesImageRGB *attaquer = NULL;
+	static DonneesImageRGB *attaqueSortante = NULL;
+	static DonneesImageRGB *retourTroupe = NULL;
 	
 	// Bâtiments
 	static Batiment senat;
@@ -177,10 +184,26 @@ void gestionEvenement(EvenementGfx evenement){
 	static int nb_troupe;
 	static RecrutementUnite* fileDeRecrutement;
 	
+	// Attaque
+	static int nbAttEpee;
+	static int nbAttFrondeur;
+	static int nbAttArcher;
+	static int nbAttHoplite;
+	static int nbAttCavalier;
+	static int nbAttChar;
+	static int nbAttCatapulte;
+	
+	// Ennemi
+	static Ennemi ennemi1;
+	
+	// Evenements
+	static EvenementTroupe* listeEvenementTroupe;
+	
 	switch (evenement)
 	{
 		case Initialisation:
 			demandeTemporisation(50);
+			srand(time(NULL));
 			initCouleurTab(&c); // Initialise le tableau de couleurs
             initKeyboard(); // Initialise le clavier
             vitesse = 1;
@@ -192,7 +215,8 @@ void gestionEvenement(EvenementGfx evenement){
             initPopups(&popups);
             
             // Images
-            chargeImages(&accueilBackground, &background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible, &maximum, &infosBatiment, &annuler);
+            chargeImages(&accueilBackground, &background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible, &maximum, &infosBatiment, &annuler, &attaquer,
+            &attaqueSortante, &retourTroupe);
             
             // Bâtiments
 			initBatiments(&modeleSenat, &senat, &modeleFerme, &ferme, &modeleCarriere, &carriere, &modeleScierie, &scierie, &modeleMine, &mine, &modeleEntrepot, &entrepot, &modeleTemple, &temple, &modeleCaserne, &caserne);
@@ -231,6 +255,12 @@ void gestionEvenement(EvenementGfx evenement){
             nb_troupe = 0;
             fileDeRecrutement = NULL;
             
+            // Troupe attaque
+            initAttTroupes(&nbAttEpee, &nbAttFrondeur, &nbAttArcher, &nbAttHoplite, &nbAttCavalier, &nbAttChar, &nbAttCatapulte);
+            
+            // Ennemi
+            initEnnemi(&ennemi1, "Caromb", 3000000);
+            
 			break;
 		
 		case Temporisation:
@@ -251,6 +281,8 @@ void gestionEvenement(EvenementGfx evenement){
 					genereRessource(mine, &argent, stockageEntrepot);
 					genereFaveurs(temple, divinite, &faveur);
 					gereFileDeRecrutement(caserne, &fileDeRecrutement, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte);
+					gereArmeeEnnemi(&ennemi1, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, ferme);
+					gereListeEvenementTroupe(&listeEvenementTroupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte);
 					break;
 			}
 		
@@ -269,35 +301,21 @@ void gestionEvenement(EvenementGfx evenement){
 					// Affichage du fond
 					afficheBackground(divinite, background, backgroundZeus, backgroundPoseidon, backgroundHades);
 					
+					// Affichage vitesse du jeu
 					changeColor(c.blanc);
 					char texteVitesse[100];
 					sprintf(texteVitesse,"x%d", vitesse);
-					afficheChaine(texteVitesse, 20, 1121, 625);
+					afficheChaine(texteVitesse, 15, 1124, 700);
+					
+					// Affichage armée
+					afficheArmee(nbEpee, nbFrondeur, nbArcher, nbHoplite, nbCavalier, nbChar, nbCatapulte);
+					
 					
 					// Affichage des batiments
 					afficheBatiments(senat, ferme, carriere, scierie, mine, entrepot, temple, caserne);
 					
 					// Affichage ressources
-					changeColor(c.blanc);
-					char texteFaveur[100];
-					sprintf(texteFaveur,"%.0f", faveur);
-					afficheChaine(texteFaveur, 20, 94, 520);
-					
-					char texteBois[100];
-					sprintf(texteBois,"%.0f", bois);
-					afficheChaine(texteBois, 20, 70, 460);
-					
-					char textePierre[100];
-					sprintf(textePierre,"%.0f", pierre);
-					afficheChaine(textePierre, 20, 70, 403);
-					
-					char texteArgent[100];
-					sprintf(texteArgent,"%.0f", argent);
-					afficheChaine(texteArgent, 20, 70, 345);
-					
-					char texteCapacitePopulationRestante[100];
-					sprintf(texteCapacitePopulationRestante,"%d", capacitePopulationRestante);
-					afficheChaine(texteCapacitePopulationRestante, 20, 70, 287);
+					afficheRessources(faveur, bois, pierre, argent, capacitePopulationRestante);
 					
 					// Affichage de la file de constructions
 					afficheFileDeConstructions(fileDeConstructions, annuler);
@@ -317,9 +335,13 @@ void gestionEvenement(EvenementGfx evenement){
 					affichePopupScierie(popups, scierie);
 					affichePopupTemple(popups, temple);
 					affichePopupCaserne(popups, caserne, troupe, nb_troupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
+					affichePopupAttaque(popups, attaquer, nbAttEpee, nbAttFrondeur, nbAttArcher, nbAttHoplite, nbAttCavalier, nbAttChar, nbAttCatapulte, ennemi1);
 					
 					// Affichage de la file de recrutement
 					afficheFileDeRecrutement(fileDeRecrutement, annuler, popups);
+					
+					// Evenements
+					afficheListeEvenementTroupe(listeEvenementTroupe, attaqueSortante, retourTroupe);
 					break;
 			}
 
@@ -379,8 +401,9 @@ void gestionEvenement(EvenementGfx evenement){
 						gereClicGauchePopupScierie(&popups, abscisseSouris(), ordonneeSouris());
 						gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple, &faveur, &divinite);
 						gereClicGauchePopupCaserne(&popups, abscisseSouris(), ordonneeSouris(), &caserne, &bois, &pierre, &argent, &faveur, &troupe, &nb_troupe, &epee, &frondeur, &archer, &hoplite,
-						&cavalier, &charr,
-						&catapulte, &fileDeRecrutement);
+						&cavalier, &charr, &catapulte, &fileDeRecrutement);
+						clicPopupAttaque(abscisseSouris(), ordonneeSouris(), &popups, &nbAttEpee, &nbAttFrondeur, &nbAttArcher, &nbAttHoplite, &nbAttCavalier, &nbAttChar, &nbAttCatapulte, &nbEpee,
+						&nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte, &listeEvenementTroupe, &ennemi1, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
 						
 						// Clic File de Constructions
 						gereClicFileDeConstruction(abscisseSouris(), ordonneeSouris(), &fileDeConstructions, &bois, &pierre, &argent);
@@ -393,6 +416,9 @@ void gestionEvenement(EvenementGfx evenement){
 						
 						// Clic quitter
 						gereClicQuitter(abscisseSouris(), ordonneeSouris(), &p);
+						
+						// Clic attaquer
+						gereClicAttaquerMain(abscisseSouris(), ordonneeSouris(), &popups);
 						break;
 				}
 			}

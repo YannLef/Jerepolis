@@ -13,6 +13,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/Jerepolis.dir/src/Simplifications.c.o"
   "CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.o"
   "CMakeFiles/Jerepolis.dir/src/Accueil.c.o"
+  "CMakeFiles/Jerepolis.dir/src/Attaque.c.o"
+  "CMakeFiles/Jerepolis.dir/src/Ennemi.c.o"
+  "CMakeFiles/Jerepolis.dir/src/Evenement.c.o"
   "libJerepolis.pdb"
   "libJerepolis.a"
 )
