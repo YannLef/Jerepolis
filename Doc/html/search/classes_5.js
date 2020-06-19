@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['inputselect',['InputSelect',['../structInputSelect.html',1,'']]],
-  ['inputtext',['InputText',['../structInputText.html',1,'']]]
+  ['fichier',['Fichier',['../structFichier.html',1,'']]],
+  ['form',['Form',['../structForm.html',1,'']]]
 ];

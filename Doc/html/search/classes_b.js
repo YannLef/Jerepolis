@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['texture2d',['Texture2D',['../structTexture2D.html',1,'']]]
+  ['sliderhorizontal',['SliderHorizontal',['../structSliderHorizontal.html',1,'']]],
+  ['slidervertical',['SliderVertical',['../structSliderVertical.html',1,'']]]
 ];

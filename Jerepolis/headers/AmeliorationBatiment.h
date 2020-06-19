@@ -1,5 +1,5 @@
 /**
- * Initialise un amélioration de batiment
+ * Initialise une amélioration de batiment
  * @param amelioration l'adresse de l'amélioration à initialiser
  * @param batiment l'adresse du batiment à améliorer
  * @author Yann LEFEVRE

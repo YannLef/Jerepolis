@@ -282,7 +282,8 @@ void gestionEvenement(EvenementGfx evenement){
 					genereFaveurs(temple, divinite, &faveur);
 					gereFileDeRecrutement(caserne, &fileDeRecrutement, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte);
 					gereArmeeEnnemi(&ennemi1, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, ferme);
-					gereListeEvenementTroupe(&listeEvenementTroupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte);
+					gereListeEvenementTroupe(&listeEvenementTroupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar,
+					&nbCatapulte, &pierre, &bois, &argent);
 					break;
 			}
 		

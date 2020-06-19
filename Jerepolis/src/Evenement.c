@@ -166,7 +166,7 @@ void printListeEvenementTroupe(EvenementTroupe* listeEvenementTroupe){
 }
 
 void gereListeEvenementTroupe(EvenementTroupe** listeEvenementTroupe, Unite epee, Unite frondeur, Unite archer, Unite hoplite, Unite cavalier, Unite charr, Unite catapulte,
-int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte){
+int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte, float* pierre, float* bois, float* argent){
 	debug("<gereListeEvenementTroupe> begin");
 	
 	if(listeEvenementTroupe == NULL){
@@ -187,7 +187,8 @@ int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, in
 		courant->timer -= 50*vitesse;
 		if(courant->timer < 0){
 			*listeEvenementTroupe = courant->next;
-			finEvenementTroupe(courant, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, listeEvenementTroupe, nbEpee, nbFrondeur, nbArcher, nbHoplite, nbCavalier, nbChar, nbCatapulte);
+			finEvenementTroupe(courant, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, listeEvenementTroupe, nbEpee, nbFrondeur, nbArcher, nbHoplite, nbCavalier, nbChar, nbCatapulte,
+			pierre, bois, argent);
 		}
 		
 		courant = courant->next;
@@ -197,7 +198,7 @@ int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, in
 }
 
 void finEvenementTroupe(EvenementTroupe* e, Unite epee, Unite frondeur, Unite archer, Unite hoplite, Unite cavalier, Unite charr, Unite catapulte, EvenementTroupe** listeEvenementTroupe,
-int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte){
+int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte, float* pierre, float* bois, float* argent){
 	
 	if(e->type == EVENEMENT_ATTAQUE_SORTANTE){
 		printf("Combat contre %s\n",e->ennemi->nom);
@@ -215,6 +216,7 @@ int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, in
 	}
 	
 	if(e->type == EVENEMENT_RETOUR_TROUPE){
+		// Le joueur récupère les troupes survivantes
 		*nbEpee = *nbEpee + e->nbEpee;
 		*nbFrondeur = *nbFrondeur + e->nbFrondeur;
 		*nbArcher = *nbArcher + e->nbArcher;
@@ -222,10 +224,22 @@ int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, in
 		*nbCavalier = *nbCavalier + e->nbCavalier;
 		*nbChar = *nbChar + e->nbChar;
 		*nbCatapulte = *nbCatapulte + e->nbCatapulte;
+		
+		// Le joueur gagne les ressources pillées par ses troupes revenantes
+		float capaciteArmee = calculeCapaciteArmee(e, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
+		printf("capactié de ressources : %f\n", capaciteArmee);
+		*pierre = *pierre + capaciteArmee;
+		*bois = *bois + capaciteArmee;
+		*argent = *argent + capaciteArmee;
 	}
 	
 	free(e);
 	e = NULL;
+}
+
+float calculeCapaciteArmee(EvenementTroupe* e, Unite epee, Unite frondeur, Unite archer, Unite hoplite, Unite cavalier, Unite charr, Unite catapulte){
+	return e->nbEpee*epee.capacite/3 + e->nbFrondeur*frondeur.capacite/3 + e->nbArcher*archer.capacite/3 + e->nbHoplite*hoplite.capacite/3 + e->nbCavalier*cavalier.capacite/3
+					+ e->nbChar*charr.capacite/3 + e->nbCatapulte*catapulte.capacite/3;
 }
 
 int combat(EvenementTroupe* e, Unite epee, Unite frondeur, Unite archer, Unite hoplite, Unite cavalier, Unite charr, Unite catapulte){

@@ -7,7 +7,7 @@
 char* getBatimentTypeName(typeBatiment type);
 
 /**
- * Affiche dans la console le descriptif d'un batiment
+ * @brief Affiche dans la console le descriptif d'un batiment
  * @param batiment le batiment à afficher
  * @author Yann LEFEVRE
  * */

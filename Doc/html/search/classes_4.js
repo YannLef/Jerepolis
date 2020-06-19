@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fichier',['Fichier',['../structFichier.html',1,'']]],
-  ['form',['Form',['../structForm.html',1,'']]]
+  ['ennemi',['Ennemi',['../structEnnemi.html',1,'']]],
+  ['evenementtroupe',['EvenementTroupe',['../structEvenementTroupe.html',1,'']]]
 ];
