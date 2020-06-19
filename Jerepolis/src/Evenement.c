@@ -36,7 +36,7 @@ extern CouleurTab c;
 
 extern int vitesse;
 
-void initEvenementTroupe(EvenementTroupe** e, int timer, TypeEvenement type, Ennemi* ennemi, int nbEpee, int nbFrondeur, int nbArcher, int nbHoplite, int nbCavalier, int nbChar, int nbCatapulte){
+void initEvenementTroupe(EvenementTroupe** e, int timer, TypeEvenement type, Ennemi* ennemi, int nbEpee, int nbFrondeur, int nbArcher, int nbHoplite, int nbCavalier, int nbChar, int nbCatapulte, int victoire){
 	debug("<initEvenementTroupe> begin");
 	
 	if(e == NULL){
@@ -66,6 +66,7 @@ void initEvenementTroupe(EvenementTroupe** e, int timer, TypeEvenement type, Enn
 	(*e)->timer = timer;
 	(*e)->type = type;
 	(*e)->ennemi = ennemi;
+	(*e)->victoire = victoire;
 	(*e)->next = NULL;
 	(*e)->nbEpee = nbEpee;
 	(*e)->nbFrondeur = nbFrondeur;
@@ -210,7 +211,7 @@ int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, in
 			// Des troupes ont survécu, elles reviennent dans la ville
 			EvenementTroupe* retour;
 			initEvenementTroupe(&retour, calculeTempsDeTrajet(e->nbEpee, e->nbFrondeur, e->nbArcher, e->nbHoplite, e->nbCavalier, e->nbChar, e->nbCatapulte, epee, frondeur, archer, hoplite,
-			cavalier, charr, catapulte, *(e->ennemi)), EVENEMENT_RETOUR_TROUPE, e->ennemi, e->nbEpee, e->nbFrondeur, e->nbArcher, e->nbHoplite, e->nbCavalier, e->nbChar, e->nbCatapulte);
+			cavalier, charr, catapulte, *(e->ennemi)), EVENEMENT_RETOUR_TROUPE, e->ennemi, e->nbEpee, e->nbFrondeur, e->nbArcher, e->nbHoplite, e->nbCavalier, e->nbChar, e->nbCatapulte, 1);
 			insertEvenementTroupe(retour, listeEvenementTroupe);
 		}
 	}
@@ -225,12 +226,15 @@ int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, in
 		*nbChar = *nbChar + e->nbChar;
 		*nbCatapulte = *nbCatapulte + e->nbCatapulte;
 		
-		// Le joueur gagne les ressources pillées par ses troupes revenantes
-		float capaciteArmee = calculeCapaciteArmee(e, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
-		printf("capactié de ressources : %f\n", capaciteArmee);
-		*pierre = *pierre + capaciteArmee;
-		*bois = *bois + capaciteArmee;
-		*argent = *argent + capaciteArmee;
+		// Si le joueur a gagné une bataille, ses troupes ont pillé l'adversaire perdant
+		if(e->victoire == 1){
+			// Le joueur gagne les ressources pillées par ses troupes revenantes
+			float capaciteArmee = calculeCapaciteArmee(e, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
+			printf("capactié de ressources : %f\n", capaciteArmee);
+			*pierre = *pierre + capaciteArmee;
+			*bois = *bois + capaciteArmee;
+			*argent = *argent + capaciteArmee;
+		}
 	}
 	
 	free(e);
@@ -273,6 +277,58 @@ void calculeUnitesRestantes(int* nbEpee, int* nbFrondeur, int* nbArcher, int* nb
 	*nbCavalier = *nbCavalier - (*nbCavalier - (*nbCavalier)*resultat/attaque);
 	*nbChar = *nbChar - (*nbChar - (*nbChar)*resultat/attaque);
 	*nbCatapulte = *nbCatapulte - (*nbCatapulte - (*nbCatapulte)*resultat/attaque);
+}
+
+void gereClicListeEvenementTroupe(EvenementTroupe** listeEvenementTroupe, int x, int y, Popups p, Unite epee, Unite frondeur, Unite archer, Unite hoplite, Unite cavalier, Unite charr, Unite catapulte){
+	if(*listeEvenementTroupe == NULL){
+		return;
+	}
+	
+	if(p.actuel == p.final && p.actuel == POPUP_NONE){
+		EvenementTroupe* courant = *listeEvenementTroupe;
+		int cpt = 0;
+		EvenementTroupe* precedent;
+		
+		while(courant != NULL){
+			if(x > 940 && x < 940+211 && y > 355 - 55*cpt && y < 355 - 55*cpt + 50){
+				if(courant->type == EVENEMENT_ATTAQUE_SORTANTE){
+					if(x > 1112 && x < 1133 && y > 355 - 55*cpt + 5 && y < 355 - 55*cpt + 45){
+						printf("close\n");
+						if(cpt == 0){
+							*listeEvenementTroupe = courant->next;
+							
+							EvenementTroupe* retour;
+							initEvenementTroupe(&retour, calculeTempsDeTrajet(courant->nbEpee, courant->nbFrondeur, courant->nbArcher, courant->nbHoplite, courant->nbCavalier, courant->nbChar,
+							courant->nbCatapulte, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, *(courant->ennemi)) - courant->timer, EVENEMENT_RETOUR_TROUPE, courant->ennemi,
+							courant->nbEpee, courant->nbFrondeur, courant->nbArcher, courant->nbHoplite, courant->nbCavalier, courant->nbChar, courant->nbCatapulte, 0);
+							insertEvenementTroupe(retour, listeEvenementTroupe);
+							
+							
+							free(courant);
+							courant = NULL;
+							return;
+						}else{
+							precedent->next = courant->next;
+							
+							EvenementTroupe* retour;
+							initEvenementTroupe(&retour, calculeTempsDeTrajet(courant->nbEpee, courant->nbFrondeur, courant->nbArcher, courant->nbHoplite, courant->nbCavalier, courant->nbChar,
+							courant->nbCatapulte, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, *(courant->ennemi)) - courant->timer, EVENEMENT_RETOUR_TROUPE, courant->ennemi,
+							courant->nbEpee, courant->nbFrondeur, courant->nbArcher, courant->nbHoplite, courant->nbCavalier, courant->nbChar, courant->nbCatapulte, 0);
+							insertEvenementTroupe(retour, listeEvenementTroupe);
+							
+							free(courant);
+							courant = NULL;
+							return;
+						}
+					}
+				}
+			}
+			
+			cpt++;
+			precedent = courant;
+			courant = courant->next;
+		}
+	}
 }
 
 void afficheEvenement(EvenementTroupe* e, int numero, DonneesImageRGB* attaqueSortante, DonneesImageRGB* retourTroupe){

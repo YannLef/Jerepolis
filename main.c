@@ -420,6 +420,9 @@ void gestionEvenement(EvenementGfx evenement){
 						
 						// Clic attaquer
 						gereClicAttaquerMain(abscisseSouris(), ordonneeSouris(), &popups);
+						
+						// Clic liste evenements troupe
+						gereClicListeEvenementTroupe(&listeEvenementTroupe, abscisseSouris(), ordonneeSouris(), popups, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
 						break;
 				}
 			}

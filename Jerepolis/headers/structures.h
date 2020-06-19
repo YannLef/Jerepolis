@@ -136,6 +136,7 @@ typedef struct EvenementTroupe{
 	int timer;
 	TypeEvenement type;
 	Ennemi* ennemi;
+	int victoire;
 	
 	int nbEpee;
 	int nbFrondeur;

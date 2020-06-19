@@ -238,7 +238,7 @@ Unite hoplite, Unite cavalier, Unite charr, Unite catapulte){
 			if(*nbAttEpee + *nbAttFrondeur + *nbAttArcher + *nbAttHoplite + *nbAttCavalier + *nbAttChar + *nbAttCatapulte > 0){
 				EvenementTroupe* e;
 				initEvenementTroupe(&e, calculeTempsDeTrajet(*nbAttEpee, *nbAttFrondeur, *nbAttArcher, *nbAttHoplite, *nbAttCavalier, *nbAttChar, *nbAttCatapulte, epee, frondeur, archer, hoplite,
-				cavalier, charr, catapulte, *ennemi), EVENEMENT_ATTAQUE_SORTANTE, ennemi, *nbAttEpee, *nbAttFrondeur, *nbAttArcher, *nbAttHoplite, *nbAttCavalier, *nbAttChar, *nbAttCatapulte);
+				cavalier, charr, catapulte, *ennemi), EVENEMENT_ATTAQUE_SORTANTE, ennemi, *nbAttEpee, *nbAttFrondeur, *nbAttArcher, *nbAttHoplite, *nbAttCavalier, *nbAttChar, *nbAttCatapulte, 0);
 				insertEvenementTroupe(e, listeEvenementTroupe);
 				
 				// Retire les troupes du compteur
