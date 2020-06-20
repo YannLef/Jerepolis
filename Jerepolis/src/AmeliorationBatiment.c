@@ -139,14 +139,6 @@ void gereFileDeConstructions(ameliorationBatiment** fileDeConstructions){
 	debug("<gereFileDeConstructions> end");
 }
 
-void actualiseNiveauBatiment(Batiment* b){
-	ModeleBatiment* lvl = getModeleNiveauBatiment(b->modele, b->niveau);
-	
-	b->populationMax = lvl->populationMax;
-	b->image = lvl->image;
-	b->production = lvl->production;
-}
-
 void printAmeliorationBatiment(ameliorationBatiment* amelioration){
 	debug("<printAmeliorationBatiment> begin");
 	
@@ -351,4 +343,12 @@ void resetFileDeConstructions(ameliorationBatiment** fileDeConstructions){
 	}
 	
 	*fileDeConstructions = NULL;
+}
+
+void actualiseNiveauBatiment(Batiment* b){
+	ModeleBatiment* lvl = getModeleNiveauBatiment(b->modele, b->niveau);
+	
+	b->populationMax = lvl->populationMax;
+	b->image = lvl->image;
+	b->production = lvl->production;
 }

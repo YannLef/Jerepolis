@@ -1,25 +1,42 @@
 #define BATIMENT_NIVEAU_MAX 25
 
 /**
- * Enumération permettant de différencier les batiments normaux des batiments servant à produire des ressources.
- * Permet de leur appliquer des comportements différents dasn le code
- * @author Yann LEFEVRE
+ * @brief Enumération permettant de différencier les batiments normaux des batiments servant à produire des ressources.
+ * Permet de leur appliquer des comportements différents dans le code
  * */
 typedef enum{ BATIMENT_NORMAL, BATIMENT_PRODUCTION} typeBatiment;
 
+/**
+ * @brief Enumération permettant de différencier les popups
+ * */
 typedef enum Popup{ POPUP_NONE, POPUP_SENAT, POPUP_MINE, POPUP_FERME, POPUP_ENTREPOT, POPUP_CARRIERE, POPUP_SCIERIE, POPUP_TEMPLE, POPUP_CASERNE, POPUP_ATTAQUER }Popup;
 
+/**
+ * @brief Enumération permettant de différencier les divinités
+ * */
 typedef enum Divinite{ DIVINITE_NONE, DIVINITE_ZEUS, DIVINITE_POSEIDON, DIVINITE_HADES }Divinite;
 
+/**
+ * @brief Enumération permettant de différencier les troupes
+ * */
 typedef enum Troupe{ TROUPE_EPEE, TROUPE_FRONDEUR, TROUPE_ARCHER, TROUPE_HOPLITE, TROUPE_CAVALIER, TROUPE_CHAR, TROUPE_CATAPULTE }Troupe;
 
+/**
+ * @brief Enumération permettant de différencier les evenement
+ * */
 typedef enum TypeEvenement { EVENEMENT_ATTAQUE_SORTANTE, EVENEMENT_RETOUR_TROUPE } TypeEvenement;
 
+/**
+ * @brief Permet de gérer proprement les changements de popup
+ * */
 typedef struct Popups{
 	Popup actuel;
 	Popup final;
 }Popups;
 
+/**
+ * @brief Permet de décrire une unité
+ * */
 typedef struct Unite{
 	int prixBois;
 	int prixPierre;
@@ -36,6 +53,9 @@ typedef struct Unite{
 	
 }Unite;
 
+/**
+ * @brief Permet de décrire un recrutement d'unité
+ * */
 typedef struct RecrutementUnite{
 	Unite* u;
 	int nbUnite;
@@ -45,8 +65,7 @@ typedef struct RecrutementUnite{
 }RecrutementUnite;
 
 /**
- * Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d'un fichier .csv et permettant de déterminer le coportement d'un batiment.
- * @author Yann LEFEVRE
+ * @brief Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d'un fichier .csv et permettant de déterminer le coportement d'un batiment.
  * */
 typedef struct ModeleBatiment{
 	
@@ -69,8 +88,7 @@ typedef struct ModeleBatiment{
 }ModeleBatiment;
 
 /**
- * Permet de matérialiser un batiment
- * @author Yann LEFEVRE
+ * @brief Permet de matérialiser un batiment
  * */
 typedef struct Batiment{
 	
@@ -105,8 +123,7 @@ typedef struct Batiment{
 }Batiment;
 
 /**
- * Permet de matérialiser une amélioration de batiment, regroupant le batiment à améliorer et le temps restant avant la fin de l'amélioration
- * @author Yann LEFEVRE
+ * @brief Permet de matérialiser une amélioration de batiment, regroupant le batiment à améliorer et le temps restant avant la fin de l'amélioration
  * */
 typedef struct ameliorationBatiment{
 	int timer; // Temps d'amélioration restant
@@ -119,6 +136,9 @@ typedef struct ameliorationBatiment{
 	
 }ameliorationBatiment;
 
+/**
+ * @brief Permet de matérialiser un ennemi
+ * */
 typedef struct Ennemi{
 	char* nom;
 	unsigned long distance;
@@ -132,6 +152,9 @@ typedef struct Ennemi{
 	int nbCatapulte;
 }Ennemi;
 
+/**
+ * @brief permet de matérialiser un evenement de troupes
+ * */
 typedef struct EvenementTroupe{
 	int timer;
 	TypeEvenement type;
