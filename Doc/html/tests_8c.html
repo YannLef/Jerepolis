@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>algo-s2: /home/yncrea/Bureau/projet/algo-s2/Tests/tests.c File Reference</title>
+<title>algo-s2: /home/yncrea/Bureau/projet/algo-s2/tests.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -79,48 +79,168 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_33c78a012c8d08979f57a54a07694c46.html">Tests</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tests.c File Reference</div>  </div>
+<div class="title">/home/yncrea/Bureau/projet/algo-s2/tests.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="GfxLib_8h_source.html">GfxLib/headers/GfxLib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BmpLib_8h_source.html">GfxLib/headers/BmpLib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ESLib_8h_source.html">GfxLib/headers/ESLib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Logger_8h_source.html">Logger/headers/Logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CustomGfxComponents_2headers_2structures_8h_source.html">CustomGfxComponents/headers/structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Mouse_8h_source.html">CustomGfxComponents/headers/Mouse.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Couleur_8h_source.html">CustomGfxComponents/headers/Couleur.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Keyboard_8h_source.html">CustomGfxComponents/headers/Keyboard.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Navbar_8h_source.html">CustomGfxComponents/headers/Navbar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InputText_8h_source.html">CustomGfxComponents/headers/InputText.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Rectangle_8h_source.html">CustomGfxComponents/headers/Rectangle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Page_8h_source.html">CustomGfxComponents/headers/Page.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Image_8h_source.html">CustomGfxComponents/headers/Image.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Jerepolis_2headers_2structures_8h_source.html">Jerepolis/headers/structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ModeleBatiment_8h_source.html">Jerepolis/headers/ModeleBatiment.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AmeliorationBatiment_8h_source.html">Jerepolis/headers/AmeliorationBatiment.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Batiment_8h_source.html">Jerepolis/headers/Batiment.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Senat_8h_source.html">Jerepolis/headers/Senat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Ferme_8h_source.html">Jerepolis/headers/Ferme.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Entrepot_8h_source.html">Jerepolis/headers/Entrepot.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Mine_8h_source.html">Jerepolis/headers/Mine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Carriere_8h_source.html">Jerepolis/headers/Carriere.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scierie_8h_source.html">Jerepolis/headers/Scierie.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Temple_8h_source.html">Jerepolis/headers/Temple.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Caserne_8h_source.html">Jerepolis/headers/Caserne.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Simplifications_8h_source.html">Jerepolis/headers/Simplifications.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RecrutementUnite_8h_source.html">Jerepolis/headers/RecrutementUnite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Accueil_8h_source.html">Jerepolis/headers/Accueil.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attaque_8h_source.html">Jerepolis/headers/Attaque.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Ennemi_8h_source.html">Jerepolis/headers/Ennemi.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Evenement_8h_source.html">Jerepolis/headers/Evenement.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="minunit_8h_source.html">minunit/minunit.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="test__Carre_8c.html">CustomGfxComponents/src/test_Carre.c</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for tests.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="tests_8c__incl.png" border="0" usemap="#_2home_2yncrea_2Bureau_2projet_2algo-s2_2Tests_2tests_8c" alt=""/></div>
-<map name="_2home_2yncrea_2Bureau_2projet_2algo-s2_2Tests_2tests_8c" id="_2home_2yncrea_2Bureau_2projet_2algo-s2_2Tests_2tests_8c">
-<area shape="rect" id="node4" href="minunit_8h.html" title="minunit/minunit.h" alt="" coords="315,206,437,233"/>
-<area shape="rect" id="node6" href="test__Carre_8c.html" title="CustomGfxComponents\l/src/test_Carre.c" alt="" coords="176,109,339,151"/>
-<area shape="rect" id="node7" href="CustomGfxComponents_2headers_2structures_8h.html" title="../../../CustomGfxComponents\l/headers/structures.h" alt="" coords="93,199,291,240"/>
+<div class="center"><img src="tests_8c__incl.png" border="0" usemap="#_2home_2yncrea_2Bureau_2projet_2algo-s2_2tests_8c" alt=""/></div>
+<map name="_2home_2yncrea_2Bureau_2projet_2algo-s2_2tests_8c" id="_2home_2yncrea_2Bureau_2projet_2algo-s2_2tests_8c">
+<area shape="rect" id="node6" href="GfxLib_8h.html" title="GfxLib/headers/GfxLib.h" alt="" coords="557,102,720,129"/>
+<area shape="rect" id="node8" href="BmpLib_8h.html" title="GfxLib/headers/BmpLib.h" alt="" coords="94,102,263,129"/>
+<area shape="rect" id="node9" href="ESLib_8h.html" title="GfxLib/headers/ESLib.h" alt="" coords="795,102,955,129"/>
+<area shape="rect" id="node10" href="Logger_8h.html" title="Logger/headers/Logger.h" alt="" coords="979,102,1144,129"/>
+<area shape="rect" id="node11" href="CustomGfxComponents_2headers_2structures_8h.html" title="CustomGfxComponents\l/headers/structures.h" alt="" coords="288,95,451,136"/>
+<area shape="rect" id="node12" href="Mouse_8h.html" title="CustomGfxComponents\l/headers/Mouse.h" alt="" coords="1315,95,1477,136"/>
+<area shape="rect" id="node13" href="Couleur_8h.html" title="CustomGfxComponents\l/headers/Couleur.h" alt="" coords="1501,95,1664,136"/>
+<area shape="rect" id="node14" href="Keyboard_8h.html" title="CustomGfxComponents\l/headers/Keyboard.h" alt="" coords="1688,95,1851,136"/>
+<area shape="rect" id="node15" href="Navbar_8h.html" title="CustomGfxComponents\l/headers/Navbar.h" alt="" coords="1875,95,2037,136"/>
+<area shape="rect" id="node16" href="InputText_8h.html" title="CustomGfxComponents\l/headers/InputText.h" alt="" coords="2061,95,2224,136"/>
+<area shape="rect" id="node17" href="Rectangle_8h.html" title="CustomGfxComponents\l/headers/Rectangle.h" alt="" coords="2248,95,2411,136"/>
+<area shape="rect" id="node18" href="Page_8h.html" title="CustomGfxComponents\l/headers/Page.h" alt="" coords="2435,95,2597,136"/>
+<area shape="rect" id="node19" href="Image_8h.html" title="CustomGfxComponents\l/headers/Image.h" alt="" coords="2621,95,2784,136"/>
+<area shape="rect" id="node20" href="Jerepolis_2headers_2structures_8h.html" title="Jerepolis/headers/structures.h" alt="" coords="2808,102,3005,129"/>
+<area shape="rect" id="node21" href="ModeleBatiment_8h.html" title="Jerepolis/headers/Modele\lBatiment.h" alt="" coords="3029,95,3200,136"/>
+<area shape="rect" id="node22" href="AmeliorationBatiment_8h.html" title="Jerepolis/headers/Amelioration\lBatiment.h" alt="" coords="3224,95,3424,136"/>
+<area shape="rect" id="node23" href="Batiment_8h.html" title="Jerepolis/headers/Batiment.h" alt="" coords="3449,102,3639,129"/>
+<area shape="rect" id="node24" href="Senat_8h.html" title="Jerepolis/headers/Senat.h" alt="" coords="3664,102,3837,129"/>
+<area shape="rect" id="node25" href="Ferme_8h.html" title="Jerepolis/headers/Ferme.h" alt="" coords="3861,102,4037,129"/>
+<area shape="rect" id="node26" href="Entrepot_8h.html" title="Jerepolis/headers/Entrepot.h" alt="" coords="4062,102,4250,129"/>
+<area shape="rect" id="node27" href="Mine_8h.html" title="Jerepolis/headers/Mine.h" alt="" coords="4274,102,4441,129"/>
+<area shape="rect" id="node28" href="Carriere_8h.html" title="Jerepolis/headers/Carriere.h" alt="" coords="4465,102,4650,129"/>
+<area shape="rect" id="node29" href="Scierie_8h.html" title="Jerepolis/headers/Scierie.h" alt="" coords="4675,102,4853,129"/>
+<area shape="rect" id="node30" href="Temple_8h.html" title="Jerepolis/headers/Temple.h" alt="" coords="4878,102,5061,129"/>
+<area shape="rect" id="node31" href="Caserne_8h.html" title="Jerepolis/headers/Caserne.h" alt="" coords="5085,102,5273,129"/>
+<area shape="rect" id="node32" href="Simplifications_8h.html" title="Jerepolis/headers/Simplifications.h" alt="" coords="5297,102,5521,129"/>
+<area shape="rect" id="node33" href="RecrutementUnite_8h.html" title="Jerepolis/headers/Recrutement\lUnite.h" alt="" coords="5545,95,5748,136"/>
+<area shape="rect" id="node34" href="Accueil_8h.html" title="Jerepolis/headers/Accueil.h" alt="" coords="5773,102,5955,129"/>
+<area shape="rect" id="node35" href="Attaque_8h.html" title="Jerepolis/headers/Attaque.h" alt="" coords="5980,102,6164,129"/>
+<area shape="rect" id="node36" href="Ennemi_8h.html" title="Jerepolis/headers/Ennemi.h" alt="" coords="6189,102,6371,129"/>
+<area shape="rect" id="node37" href="Evenement_8h.html" title="Jerepolis/headers/Evenement.h" alt="" coords="6396,102,6601,129"/>
+<area shape="rect" id="node38" href="minunit_8h.html" title="minunit/minunit.h" alt="" coords="1169,102,1290,129"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a24637d10a80247ed5957a5171c1aebbe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#a24637d10a80247ed5957a5171c1aebbe">MU_TEST</a> (test_initUnite)</td></tr>
+<tr class="separator:a24637d10a80247ed5957a5171c1aebbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bb1dcd555d1f587daba80d8291163a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#a2bb1dcd555d1f587daba80d8291163a8">MU_TEST_SUITE</a> (test_suite)</td></tr>
 <tr class="separator:a2bb1dcd555d1f587daba80d8291163a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af99bca1dd29e2d28d9aa01ae22400f05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#af99bca1dd29e2d28d9aa01ae22400f05">gestionEvenement</a> (<a class="el" href="GfxLib_8h.html#a075d46fafd3b5a6a9c0d925fe4385bd8">EvenementGfx</a> evenement)</td></tr>
+<tr class="separator:af99bca1dd29e2d28d9aa01ae22400f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9687b5c71ce646a01e1bdde7824613e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCouleurTab.html">CouleurTab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#a9687b5c71ce646a01e1bdde7824613e1">c</a></td></tr>
+<tr class="separator:a9687b5c71ce646a01e1bdde7824613e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6254a9e9369eaa1d86236df201c7d42d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structKeyboard.html">Keyboard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#a6254a9e9369eaa1d86236df201c7d42d">keys</a></td></tr>
+<tr class="separator:a6254a9e9369eaa1d86236df201c7d42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa279526ef6ca138320f6b70d6a598f27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMouse.html">Mouse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#aa279526ef6ca138320f6b70d6a598f27">souris</a></td></tr>
+<tr class="separator:aa279526ef6ca138320f6b70d6a598f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ba92c9b6df0430f379d4fdb6a40290"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#a06ba92c9b6df0430f379d4fdb6a40290">loggerLevel</a></td></tr>
+<tr class="separator:a06ba92c9b6df0430f379d4fdb6a40290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b512d0a6dcc3c7d7e6dd9a7714852c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#a4b512d0a6dcc3c7d7e6dd9a7714852c4">vitesse</a></td></tr>
+<tr class="separator:a4b512d0a6dcc3c7d7e6dd9a7714852c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e8e7f61311ca20871b872655ab4a39d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structUnite.html">Unite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8c.html#a0e8e7f61311ca20871b872655ab4a39d">epee</a></td></tr>
+<tr class="separator:a0e8e7f61311ca20871b872655ab4a39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<a class="anchor" id="af99bca1dd29e2d28d9aa01ae22400f05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gestionEvenement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="GfxLib_8h.html#a075d46fafd3b5a6a9c0d925fe4385bd8">EvenementGfx</a>&#160;</td>
+          <td class="paramname"><em>evenement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a24637d10a80247ed5957a5171c1aebbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MU_TEST </td>
+          <td>(</td>
+          <td class="paramtype">test_initUnite&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -142,7 +262,83 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Includes MinUnit </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a9687b5c71ce646a01e1bdde7824613e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCouleurTab.html">CouleurTab</a> c</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Includes Classiques Includes GfxLib Includes Logger Includes CustomGfxComponents Includes Jerepolis Includes minunit </p>
+
+</div>
+</div>
+<a class="anchor" id="a0e8e7f61311ca20871b872655ab4a39d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structUnite.html">Unite</a> epee</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6254a9e9369eaa1d86236df201c7d42d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structKeyboard.html">Keyboard</a> keys</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Includes Classiques Includes GfxLib Includes Logger Includes CustomGfxComponents Includes correspondant </p>
+
+</div>
+</div>
+<a class="anchor" id="a06ba92c9b6df0430f379d4fdb6a40290"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int loggerLevel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa279526ef6ca138320f6b70d6a598f27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMouse.html">Mouse</a> souris</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Includes Classiques Includes GfxLib Includes Logger Includes CustomGfxComponents Includes correspondant </p>
+
+</div>
+</div>
+<a class="anchor" id="a4b512d0a6dcc3c7d7e6dd9a7714852c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int vitesse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Includes Classiques Includes GfxLib Includes Logger Includes CustomGfxComponents Includes Jerepolis Includes correspondant </p>
 
 </div>
 </div>

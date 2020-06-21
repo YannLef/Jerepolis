@@ -117,6 +117,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node17" href="Simplifications_8c.html" title="/home/yncrea/Bureau\l/projet/algo&#45;s2/Jerepolis\l/src/Simplifications.c" alt="" coords="2795,109,2955,165"/>
 <area shape="rect" id="node18" href="Temple_8c.html" title="/home/yncrea/Bureau\l/projet/algo&#45;s2/Jerepolis\l/src/Temple.c" alt="" coords="2979,109,3139,165"/>
 <area shape="rect" id="node19" href="main_8c.html" title="/home/yncrea/Bureau\l/projet/algo&#45;s2/main.c" alt="" coords="3163,117,3309,158"/>
+<area shape="rect" id="node20" href="tests_8c.html" title="/home/yncrea/Bureau\l/projet/algo&#45;s2/tests.c" alt="" coords="3334,117,3482,158"/>
 </map>
 </div>
 </div>
@@ -125,20 +126,28 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPopups.html">Popups</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de gérer proprement les changements de popup.  <a href="structPopups.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUnite.html">Unite</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de décrire une unité  <a href="structUnite.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRecrutementUnite.html">RecrutementUnite</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de décrire un recrutement d'unité  <a href="structRecrutementUnite.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structModeleBatiment.html">ModeleBatiment</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d'un fichier .csv et permettant de déterminer le coportement d'un batiment.  <a href="structModeleBatiment.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBatiment.html">Batiment</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de matérialiser un batiment.  <a href="structBatiment.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structameliorationBatiment.html">ameliorationBatiment</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de matérialiser une amélioration de batiment, regroupant le batiment à améliorer et le temps restant avant la fin de l'amélioration.  <a href="structameliorationBatiment.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEnnemi.html">Ennemi</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de matérialiser un ennemi.  <a href="structEnnemi.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEvenementTroupe.html">EvenementTroupe</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">permet de matérialiser un evenement de troupes  <a href="structEvenementTroupe.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -149,35 +158,48 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a412ee7e2eb7d83a259ca0c6906ccab96"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Jerepolis_2headers_2structures_8h.html#a7d74f4a271b2c023294abf0756da1300">Popup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a412ee7e2eb7d83a259ca0c6906ccab96">Popup</a></td></tr>
+<tr class="memdesc:a412ee7e2eb7d83a259ca0c6906ccab96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de différencier les popups.  <a href="#a412ee7e2eb7d83a259ca0c6906ccab96">More...</a><br /></td></tr>
 <tr class="separator:a412ee7e2eb7d83a259ca0c6906ccab96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac73e5ba4d9c353f225661625bb46d4a"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Jerepolis_2headers_2structures_8h.html#aa1061582dc8bbc875316b6d2a2b977f4">Divinite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#aac73e5ba4d9c353f225661625bb46d4a">Divinite</a></td></tr>
+<tr class="memdesc:aac73e5ba4d9c353f225661625bb46d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de différencier les divinités.  <a href="#aac73e5ba4d9c353f225661625bb46d4a">More...</a><br /></td></tr>
 <tr class="separator:aac73e5ba4d9c353f225661625bb46d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05e154d2c68b5489890e5a43b38a0c18"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Jerepolis_2headers_2structures_8h.html#a9a4f1667ca7ba4dc3c11f79c1db322dc">Troupe</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a05e154d2c68b5489890e5a43b38a0c18">Troupe</a></td></tr>
+<tr class="memdesc:a05e154d2c68b5489890e5a43b38a0c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de différencier les troupes.  <a href="#a05e154d2c68b5489890e5a43b38a0c18">More...</a><br /></td></tr>
 <tr class="separator:a05e154d2c68b5489890e5a43b38a0c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c10f23dbf716cab7258a7b0b154d0bb"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Jerepolis_2headers_2structures_8h.html#a6731c59de0f0ec4697ea30d2b209cb75">TypeEvenement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a2c10f23dbf716cab7258a7b0b154d0bb">TypeEvenement</a></td></tr>
+<tr class="memdesc:a2c10f23dbf716cab7258a7b0b154d0bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de différencier les evenement.  <a href="#a2c10f23dbf716cab7258a7b0b154d0bb">More...</a><br /></td></tr>
 <tr class="separator:a2c10f23dbf716cab7258a7b0b154d0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74d3139ddbd89d4ab873de9ca2c9a9fb"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structPopups.html">Popups</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a74d3139ddbd89d4ab873de9ca2c9a9fb">Popups</a></td></tr>
+<tr class="memdesc:a74d3139ddbd89d4ab873de9ca2c9a9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de gérer proprement les changements de popup.  <a href="#a74d3139ddbd89d4ab873de9ca2c9a9fb">More...</a><br /></td></tr>
 <tr class="separator:a74d3139ddbd89d4ab873de9ca2c9a9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c05f6ad4b3e22b07fef9774970399e0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structUnite.html">Unite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a8c05f6ad4b3e22b07fef9774970399e0">Unite</a></td></tr>
+<tr class="memdesc:a8c05f6ad4b3e22b07fef9774970399e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de décrire une unité  <a href="#a8c05f6ad4b3e22b07fef9774970399e0">More...</a><br /></td></tr>
 <tr class="separator:a8c05f6ad4b3e22b07fef9774970399e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a5db537c61c28961b6bdbbb6ad1c0fd"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structRecrutementUnite.html">RecrutementUnite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a0a5db537c61c28961b6bdbbb6ad1c0fd">RecrutementUnite</a></td></tr>
+<tr class="memdesc:a0a5db537c61c28961b6bdbbb6ad1c0fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de décrire un recrutement d'unité  <a href="#a0a5db537c61c28961b6bdbbb6ad1c0fd">More...</a><br /></td></tr>
 <tr class="separator:a0a5db537c61c28961b6bdbbb6ad1c0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e6c43b130fe9ae9718b5364262be9ec"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structModeleBatiment.html">ModeleBatiment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a5e6c43b130fe9ae9718b5364262be9ec">ModeleBatiment</a></td></tr>
+<tr class="memdesc:a5e6c43b130fe9ae9718b5364262be9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d'un fichier .csv et permettant de déterminer le coportement d'un batiment.  <a href="#a5e6c43b130fe9ae9718b5364262be9ec">More...</a><br /></td></tr>
 <tr class="separator:a5e6c43b130fe9ae9718b5364262be9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b29e6b29e80cedbb03b09ad92e419dc"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structBatiment.html">Batiment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a4b29e6b29e80cedbb03b09ad92e419dc">Batiment</a></td></tr>
+<tr class="memdesc:a4b29e6b29e80cedbb03b09ad92e419dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de matérialiser un batiment.  <a href="#a4b29e6b29e80cedbb03b09ad92e419dc">More...</a><br /></td></tr>
 <tr class="separator:a4b29e6b29e80cedbb03b09ad92e419dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc444686d5f8e254d121e432782cadab"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structameliorationBatiment.html">ameliorationBatiment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#acc444686d5f8e254d121e432782cadab">ameliorationBatiment</a></td></tr>
+<tr class="memdesc:acc444686d5f8e254d121e432782cadab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de matérialiser une amélioration de batiment, regroupant le batiment à améliorer et le temps restant avant la fin de l'amélioration.  <a href="#acc444686d5f8e254d121e432782cadab">More...</a><br /></td></tr>
 <tr class="separator:acc444686d5f8e254d121e432782cadab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a768e2f7a7c4af3aa5796682238d4473b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structEnnemi.html">Ennemi</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a768e2f7a7c4af3aa5796682238d4473b">Ennemi</a></td></tr>
+<tr class="memdesc:a768e2f7a7c4af3aa5796682238d4473b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de matérialiser un ennemi.  <a href="#a768e2f7a7c4af3aa5796682238d4473b">More...</a><br /></td></tr>
 <tr class="separator:a768e2f7a7c4af3aa5796682238d4473b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ccd18b42e7aaa8d671e852b555be22c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structEvenementTroupe.html">EvenementTroupe</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a3ccd18b42e7aaa8d671e852b555be22c">EvenementTroupe</a></td></tr>
+<tr class="memdesc:a3ccd18b42e7aaa8d671e852b555be22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">permet de matérialiser un evenement de troupes  <a href="#a3ccd18b42e7aaa8d671e852b555be22c">More...</a><br /></td></tr>
 <tr class="separator:a3ccd18b42e7aaa8d671e852b555be22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a37c1344cac2d2b915b04e689993ac605"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a37c1344cac2d2b915b04e689993ac605">typeBatiment</a> { <a class="el" href="Jerepolis_2headers_2structures_8h.html#a37c1344cac2d2b915b04e689993ac605a2b9b63ffc3dbbd7000683e3166646dce">BATIMENT_NORMAL</a>, 
 <a class="el" href="Jerepolis_2headers_2structures_8h.html#a37c1344cac2d2b915b04e689993ac605a73e3361ba1e12ec5ccbed20bfb4e8398">BATIMENT_PRODUCTION</a>
- }</td></tr>
+ }<tr class="memdesc:a37c1344cac2d2b915b04e689993ac605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de différencier les batiments normaux des batiments servant à produire des ressources. Permet de leur appliquer des comportements différents dans le code.  <a href="Jerepolis_2headers_2structures_8h.html#a37c1344cac2d2b915b04e689993ac605">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a37c1344cac2d2b915b04e689993ac605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d74f4a271b2c023294abf0756da1300"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a7d74f4a271b2c023294abf0756da1300">Popup</a> { <br />
 &#160;&#160;<a class="el" href="Jerepolis_2headers_2structures_8h.html#a7d74f4a271b2c023294abf0756da1300a7a9536a77db43def3bb3414259612428">POPUP_NONE</a>, 
@@ -193,13 +215,15 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="Jerepolis_2headers_2structures_8h.html#a7d74f4a271b2c023294abf0756da1300a582b52d45d141977213b3a47681865f6">POPUP_CASERNE</a>, 
 <a class="el" href="Jerepolis_2headers_2structures_8h.html#a7d74f4a271b2c023294abf0756da1300ac39aee0282b001a9d5bb83c9af9f68cb">POPUP_ATTAQUER</a>
 <br />
- }</td></tr>
+ }<tr class="memdesc:a7d74f4a271b2c023294abf0756da1300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de différencier les popups.  <a href="Jerepolis_2headers_2structures_8h.html#a7d74f4a271b2c023294abf0756da1300">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a7d74f4a271b2c023294abf0756da1300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1061582dc8bbc875316b6d2a2b977f4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#aa1061582dc8bbc875316b6d2a2b977f4">Divinite</a> { <a class="el" href="Jerepolis_2headers_2structures_8h.html#aa1061582dc8bbc875316b6d2a2b977f4ad82a22f92a2b6d156967d64f597c4d59">DIVINITE_NONE</a>, 
 <a class="el" href="Jerepolis_2headers_2structures_8h.html#aa1061582dc8bbc875316b6d2a2b977f4a6026f55344ab2c25e4a00bb79f9f9753">DIVINITE_ZEUS</a>, 
 <a class="el" href="Jerepolis_2headers_2structures_8h.html#aa1061582dc8bbc875316b6d2a2b977f4a3c7d1b331135b980e45d1464d875e924">DIVINITE_POSEIDON</a>, 
 <a class="el" href="Jerepolis_2headers_2structures_8h.html#aa1061582dc8bbc875316b6d2a2b977f4a700af470d3d59b77bd77b40736829b00">DIVINITE_HADES</a>
- }</td></tr>
+ }<tr class="memdesc:aa1061582dc8bbc875316b6d2a2b977f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de différencier les divinités.  <a href="Jerepolis_2headers_2structures_8h.html#aa1061582dc8bbc875316b6d2a2b977f4">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:aa1061582dc8bbc875316b6d2a2b977f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a4f1667ca7ba4dc3c11f79c1db322dc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a9a4f1667ca7ba4dc3c11f79c1db322dc">Troupe</a> { <br />
 &#160;&#160;<a class="el" href="Jerepolis_2headers_2structures_8h.html#a9a4f1667ca7ba4dc3c11f79c1db322dcae711e3e0732f3d79a5cd6994061b06ed">TROUPE_EPEE</a>, 
@@ -211,11 +235,13 @@ Enumerations</h2></td></tr>
 <a class="el" href="Jerepolis_2headers_2structures_8h.html#a9a4f1667ca7ba4dc3c11f79c1db322dcab2c8354be83ccbc15e78f72835ae6abd">TROUPE_CHAR</a>, 
 <a class="el" href="Jerepolis_2headers_2structures_8h.html#a9a4f1667ca7ba4dc3c11f79c1db322dcaa9d1b50e2987fd952cd00bd67775d77c">TROUPE_CATAPULTE</a>
 <br />
- }</td></tr>
+ }<tr class="memdesc:a9a4f1667ca7ba4dc3c11f79c1db322dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de différencier les troupes.  <a href="Jerepolis_2headers_2structures_8h.html#a9a4f1667ca7ba4dc3c11f79c1db322dc">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a9a4f1667ca7ba4dc3c11f79c1db322dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6731c59de0f0ec4697ea30d2b209cb75"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jerepolis_2headers_2structures_8h.html#a6731c59de0f0ec4697ea30d2b209cb75">TypeEvenement</a> { <a class="el" href="Jerepolis_2headers_2structures_8h.html#a6731c59de0f0ec4697ea30d2b209cb75a0446cd1a43d5fea6158a41cb53117e2e">EVENEMENT_ATTAQUE_SORTANTE</a>, 
 <a class="el" href="Jerepolis_2headers_2structures_8h.html#a6731c59de0f0ec4697ea30d2b209cb75a85f9c3be16ae459a66b6c341f1a76400">EVENEMENT_RETOUR_TROUPE</a>
- }</td></tr>
+ }<tr class="memdesc:a6731c59de0f0ec4697ea30d2b209cb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de différencier les evenement.  <a href="Jerepolis_2headers_2structures_8h.html#a6731c59de0f0ec4697ea30d2b209cb75">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a6731c59de0f0ec4697ea30d2b209cb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -241,7 +267,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Permet de matérialiser une amélioration de batiment, regroupant le batiment à améliorer et le temps restant avant la fin de l'amélioration </p><dl class="section author"><dt>Author</dt><dd>Yann LEFEVRE </dd></dl>
+
+<p>Permet de matérialiser une amélioration de batiment, regroupant le batiment à améliorer et le temps restant avant la fin de l'amélioration. </p>
 
 </div>
 </div>
@@ -254,7 +281,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Permet de matérialiser un batiment </p><dl class="section author"><dt>Author</dt><dd>Yann LEFEVRE </dd></dl>
+
+<p>Permet de matérialiser un batiment. </p>
 
 </div>
 </div>
@@ -268,6 +296,8 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Enumération permettant de différencier les divinités. </p>
+
 </div>
 </div>
 <a class="anchor" id="a768e2f7a7c4af3aa5796682238d4473b"></a>
@@ -279,6 +309,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Permet de matérialiser un ennemi. </p>
 
 </div>
 </div>
@@ -292,6 +324,8 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>permet de matérialiser un evenement de troupes </p>
+
 </div>
 </div>
 <a class="anchor" id="a5e6c43b130fe9ae9718b5364262be9ec"></a>
@@ -303,7 +337,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d'un fichier .csv et permettant de déterminer le coportement d'un batiment. </p><dl class="section author"><dt>Author</dt><dd>Yann LEFEVRE </dd></dl>
+
+<p>Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d'un fichier .csv et permettant de déterminer le coportement d'un batiment. </p>
 
 </div>
 </div>
@@ -317,6 +352,8 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Enumération permettant de différencier les popups. </p>
+
 </div>
 </div>
 <a class="anchor" id="a74d3139ddbd89d4ab873de9ca2c9a9fb"></a>
@@ -328,6 +365,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Permet de gérer proprement les changements de popup. </p>
 
 </div>
 </div>
@@ -341,6 +380,8 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Permet de décrire un recrutement d'unité </p>
+
 </div>
 </div>
 <a class="anchor" id="a05e154d2c68b5489890e5a43b38a0c18"></a>
@@ -352,6 +393,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumération permettant de différencier les troupes. </p>
 
 </div>
 </div>
@@ -365,6 +408,8 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Enumération permettant de différencier les evenement. </p>
+
 </div>
 </div>
 <a class="anchor" id="a8c05f6ad4b3e22b07fef9774970399e0"></a>
@@ -376,6 +421,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Permet de décrire une unité </p>
 
 </div>
 </div>
@@ -389,6 +436,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumération permettant de différencier les divinités. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aa1061582dc8bbc875316b6d2a2b977f4ad82a22f92a2b6d156967d64f597c4d59"></a>DIVINITE_NONE&#160;</td><td class="fielddoc">
 </td></tr>
@@ -411,6 +460,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumération permettant de différencier les popups. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a7d74f4a271b2c023294abf0756da1300a7a9536a77db43def3bb3414259612428"></a>POPUP_NONE&#160;</td><td class="fielddoc">
 </td></tr>
@@ -445,6 +496,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumération permettant de différencier les troupes. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a9a4f1667ca7ba4dc3c11f79c1db322dcae711e3e0732f3d79a5cd6994061b06ed"></a>TROUPE_EPEE&#160;</td><td class="fielddoc">
 </td></tr>
@@ -473,7 +526,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Enumération permettant de différencier les batiments normaux des batiments servant à produire des ressources. Permet de leur appliquer des comportements différents dasn le code </p><dl class="section author"><dt>Author</dt><dd>Yann LEFEVRE </dd></dl>
+
+<p>Enumération permettant de différencier les batiments normaux des batiments servant à produire des ressources. Permet de leur appliquer des comportements différents dans le code. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a37c1344cac2d2b915b04e689993ac605a2b9b63ffc3dbbd7000683e3166646dce"></a>BATIMENT_NORMAL&#160;</td><td class="fielddoc">
 </td></tr>
@@ -492,6 +546,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumération permettant de différencier les evenement. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a6731c59de0f0ec4697ea30d2b209cb75a0446cd1a43d5fea6158a41cb53117e2e"></a>EVENEMENT_ATTAQUE_SORTANTE&#160;</td><td class="fielddoc">
 </td></tr>

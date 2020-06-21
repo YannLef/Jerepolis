@@ -28,17 +28,25 @@ add_subdirectory(Logger)
 add_subdirectory(BetterTerminal)
 add_subdirectory(Jerepolis)
 
-add_subdirectory(Tests)
-
 add_dependencies(Jerepolis Logger)
 
-SET(SRC
-	main.c
-	)
-
-ADD_EXECUTABLE(main ${SRC})
+ADD_EXECUTABLE(main main.c)
 
 target_link_libraries(main
+    GfxLib
+    CustomGfxComponents
+    Logger
+    BetterTerminal
+    Jerepolis
+    ${OPENGL_LIBRARY}
+    ${GLUT_LIBRARY}
+    m
+    X11
+)
+
+ADD_EXECUTABLE(tests tests.c)
+
+target_link_libraries(tests
     GfxLib
     CustomGfxComponents
     Logger

@@ -28,6 +28,7 @@
 #include "../headers/structures.h"
 #include "../headers/Batiment.h"
 #include "../headers/ModeleBatiment.h"
+#include "../headers/Sauvegarde.h"
 
 /**
  * Includes correspondant
@@ -93,6 +94,17 @@ void gereClicVitesse(int x, int y){
 	if(x > 1115 && x < 1142 && y > 645 && y < 670){
 		vitesse = 3;
 		printf("La vitesse a été définie sur x3\n");
+	}
+}
+
+void gereClicSauvegarder(int x, int y, Pages* p, InputText* nomVille, float* bois, float* pierre, float* argent, float* faveur, Divinite* divinite, Batiment* senat, Batiment* ferme, Batiment* entrepot,
+Batiment* caserne, Batiment* temple, Batiment* scierie, Batiment* carriere, Batiment* mine, ameliorationBatiment** fileDeConstructions, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite,
+int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenementTroupe){
+	if(x > 1022 && x < 1045 && y > 646 && y < 667){
+		if(p->pActuel == p->pFinal){
+			sauvegarde(nomVille, bois, pierre, argent, faveur, divinite, senat, ferme, entrepot, caserne, temple, scierie, carriere, mine, fileDeConstructions, nbEpee, nbFrondeur, nbArcher,
+			nbHoplite, nbCavalier, nbChar, nbCatapulte, listeEvenementTroupe);
+		}
 	}
 }
 

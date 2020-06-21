@@ -10,6 +10,7 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/Accueil.c.o
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Sauvegarde.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Accueil.c
@@ -129,6 +130,20 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.o
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/RecrutementUnite.c
  /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
+Jerepolis/CMakeFiles/Jerepolis.dir/src/Sauvegarde.c.o
+ /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
+ /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
+ /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
+ /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Evenement.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Sauvegarde.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Sauvegarde.c
+ /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 Jerepolis/CMakeFiles/Jerepolis.dir/src/Scierie.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
@@ -155,6 +170,7 @@ Jerepolis/CMakeFiles/Jerepolis.dir/src/Simplifications.c.o
  /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/GfxLib.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Sauvegarde.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/src/Simplifications.c

@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/tests.dir/tests.c.o  -o tests -rdynamic GfxLib/libGfxLib.a CustomGfxComponents/libCustomGfxComponents.a Logger/libLogger.a BetterTerminal/libBetterTerminal.a Jerepolis/libJerepolis.a -lGLU -lGL -lglut -lXmu -lXi -lm -lX11 GfxLib/libGfxLib.a CustomGfxComponents/libCustomGfxComponents.a 

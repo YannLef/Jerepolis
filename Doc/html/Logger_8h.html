@@ -136,6 +136,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node36" href="Temple_8c.html" title="/home/yncrea/Bureau\l/projet/algo&#45;s2/Jerepolis\l/src/Temple.c" alt="" coords="8077,109,8237,165"/>
 <area shape="rect" id="node37" href="Logger_8c.html" title="/home/yncrea/Bureau\l/projet/algo&#45;s2/Logger\l/src/Logger.c" alt="" coords="8261,109,8407,165"/>
 <area shape="rect" id="node38" href="main_8c.html" title="/home/yncrea/Bureau\l/projet/algo&#45;s2/main.c" alt="" coords="8431,117,8578,158"/>
+<area shape="rect" id="node39" href="tests_8c.html" title="/home/yncrea/Bureau\l/projet/algo&#45;s2/tests.c" alt="" coords="8603,117,8751,158"/>
 </map>
 </div>
 </div>
@@ -149,6 +150,7 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a0d8bfe5c117d06c7af1460dc172d6e61"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="Logger_8h.html#a474fc5e1d06d669823896ac6258fbc0d">logLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a0d8bfe5c117d06c7af1460dc172d6e61">logLevel</a></td></tr>
+<tr class="memdesc:a0d8bfe5c117d06c7af1460dc172d6e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de définir les différents niveaux de log.  <a href="#a0d8bfe5c117d06c7af1460dc172d6e61">More...</a><br /></td></tr>
 <tr class="separator:a0d8bfe5c117d06c7af1460dc172d6e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -163,28 +165,38 @@ Enumerations</h2></td></tr>
 <a class="el" href="Logger_8h.html#a474fc5e1d06d669823896ac6258fbc0da930fa48d7ee2fd6b9e53c56098c14b89">fatalLvl</a>, 
 <a class="el" href="Logger_8h.html#a474fc5e1d06d669823896ac6258fbc0dab7e4e0120a041dbe6528b050c04269e0">none</a>
 <br />
- }</td></tr>
+ }<tr class="memdesc:a474fc5e1d06d669823896ac6258fbc0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération permettant de définir les différents niveaux de log.  <a href="Logger_8h.html#a474fc5e1d06d669823896ac6258fbc0d">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a474fc5e1d06d669823896ac6258fbc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6e5306ef4ed7d31c70417db9c508ff2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a6e5306ef4ed7d31c70417db9c508ff2f">setLoggerLevel</a> (char *level)</td></tr>
+<tr class="memdesc:a6e5306ef4ed7d31c70417db9c508ff2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de définir le niveau de log utilisé  <a href="#a6e5306ef4ed7d31c70417db9c508ff2f">More...</a><br /></td></tr>
 <tr class="separator:a6e5306ef4ed7d31c70417db9c508ff2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a660b00bc80984d9f15fd3f36187403a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a660b00bc80984d9f15fd3f36187403a5">addLog</a> (<a class="el" href="Logger_8h.html#a474fc5e1d06d669823896ac6258fbc0d">logLevel</a> level, char *<a class="el" href="CMakeLists_8txt.html#a4826df1c9783476f065cf29ad79d7a14">message</a>)</td></tr>
+<tr class="memdesc:a660b00bc80984d9f15fd3f36187403a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un log.  <a href="#a660b00bc80984d9f15fd3f36187403a5">More...</a><br /></td></tr>
 <tr class="separator:a660b00bc80984d9f15fd3f36187403a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc1d14166a550064f5e38f6b685a1bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a4fc1d14166a550064f5e38f6b685a1bf">trace</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a4fc1d14166a550064f5e38f6b685a1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un log du niveau trace.  <a href="#a4fc1d14166a550064f5e38f6b685a1bf">More...</a><br /></td></tr>
 <tr class="separator:a4fc1d14166a550064f5e38f6b685a1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30654c55dca96c720074d096a749999a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a30654c55dca96c720074d096a749999a">debug</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a30654c55dca96c720074d096a749999a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un log du niveau debug.  <a href="#a30654c55dca96c720074d096a749999a">More...</a><br /></td></tr>
 <tr class="separator:a30654c55dca96c720074d096a749999a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38dbef7fdf3b2bd9e8f30dae6f948ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a38dbef7fdf3b2bd9e8f30dae6f948ce8">info</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a38dbef7fdf3b2bd9e8f30dae6f948ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un log du niveau info.  <a href="#a38dbef7fdf3b2bd9e8f30dae6f948ce8">More...</a><br /></td></tr>
 <tr class="separator:a38dbef7fdf3b2bd9e8f30dae6f948ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af80d19f1297a11626fab61a248959c71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#af80d19f1297a11626fab61a248959c71">warn</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:af80d19f1297a11626fab61a248959c71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un log du niveau warn.  <a href="#af80d19f1297a11626fab61a248959c71">More...</a><br /></td></tr>
 <tr class="separator:af80d19f1297a11626fab61a248959c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac33c8a42a58a6379397850b60be22028"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#ac33c8a42a58a6379397850b60be22028">error</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:ac33c8a42a58a6379397850b60be22028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un log du niveau error.  <a href="#ac33c8a42a58a6379397850b60be22028">More...</a><br /></td></tr>
 <tr class="separator:ac33c8a42a58a6379397850b60be22028"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a677da14e8c4326bde43622f233f1ead3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a677da14e8c4326bde43622f233f1ead3">fatal</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a677da14e8c4326bde43622f233f1ead3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un log du niveau fatal.  <a href="#a677da14e8c4326bde43622f233f1ead3">More...</a><br /></td></tr>
 <tr class="separator:a677da14e8c4326bde43622f233f1ead3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c63d4795cc6de25e978893c6b4a58cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a7c63d4795cc6de25e978893c6b4a58cc">printLog</a> (<a class="el" href="Logger_8h.html#a474fc5e1d06d669823896ac6258fbc0d">logLevel</a> level, char *<a class="el" href="CMakeLists_8txt.html#a4826df1c9783476f065cf29ad79d7a14">message</a>)</td></tr>
+<tr class="memdesc:a7c63d4795cc6de25e978893c6b4a58cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche un log.  <a href="#a7c63d4795cc6de25e978893c6b4a58cc">More...</a><br /></td></tr>
 <tr class="separator:a7c63d4795cc6de25e978893c6b4a58cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38e8004092b3732fa0e32bc2339c115e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a38e8004092b3732fa0e32bc2339c115e">loggerTests</a> ()</td></tr>
 <tr class="separator:a38e8004092b3732fa0e32bc2339c115e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,6 +225,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Enumération permettant de définir les différents niveaux de log. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -225,6 +239,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumération permettant de définir les différents niveaux de log. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a474fc5e1d06d669823896ac6258fbc0da89c37db4aceb4d03c24e43c20a163828"></a>traceLvl&#160;</td><td class="fielddoc">
 </td></tr>
@@ -269,6 +285,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Ajoute un log. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>le niveau du log à ajouter </td></tr>
+    <tr><td class="paramname">message</td><td>le message du log à ajouter </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a30654c55dca96c720074d096a749999a"></a>
@@ -294,6 +319,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Ajoute un log du niveau debug. </p>
 
 </div>
 </div>
@@ -321,6 +348,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Ajoute un log du niveau error. </p>
+
 </div>
 </div>
 <a class="anchor" id="a677da14e8c4326bde43622f233f1ead3"></a>
@@ -347,6 +376,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Ajoute un log du niveau fatal. </p>
+
 </div>
 </div>
 <a class="anchor" id="a38dbef7fdf3b2bd9e8f30dae6f948ce8"></a>
@@ -372,6 +403,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Ajoute un log du niveau info. </p>
 
 </div>
 </div>
@@ -414,6 +447,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Affiche un log. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>le niveau du log à afficher </td></tr>
+    <tr><td class="paramname">message</td><td>le messsage du log à afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a6e5306ef4ed7d31c70417db9c508ff2f"></a>
@@ -429,6 +471,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Permet de définir le niveau de log utilisé </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>le niveau de log a utiliser </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -456,6 +506,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Ajoute un log du niveau trace. </p>
+
 </div>
 </div>
 <a class="anchor" id="af80d19f1297a11626fab61a248959c71"></a>
@@ -481,6 +533,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Ajoute un log du niveau warn. </p>
 
 </div>
 </div>

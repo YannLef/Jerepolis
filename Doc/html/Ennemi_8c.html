@@ -119,12 +119,16 @@ Include dependency graph for Ennemi.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac70df3ea7660d60cf6b80e940f853120"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ennemi_8c.html#ac70df3ea7660d60cf6b80e940f853120">initEnnemi</a> (<a class="el" href="structEnnemi.html">Ennemi</a> *e, char *nom, unsigned long distance)</td></tr>
+<tr class="memdesc:ac70df3ea7660d60cf6b80e940f853120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise un ennemi.  <a href="#ac70df3ea7660d60cf6b80e940f853120">More...</a><br /></td></tr>
 <tr class="separator:ac70df3ea7660d60cf6b80e940f853120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43c67845421cd03bded13d35a8c2f780"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ennemi_8c.html#a43c67845421cd03bded13d35a8c2f780">gereArmeeEnnemi</a> (<a class="el" href="structEnnemi.html">Ennemi</a> *e, <a class="el" href="structUnite.html">Unite</a> epee, <a class="el" href="structUnite.html">Unite</a> frondeur, <a class="el" href="structUnite.html">Unite</a> archer, <a class="el" href="structUnite.html">Unite</a> hoplite, <a class="el" href="structUnite.html">Unite</a> cavalier, <a class="el" href="structUnite.html">Unite</a> charr, <a class="el" href="structUnite.html">Unite</a> catapulte, <a class="el" href="structBatiment.html">Batiment</a> ferme)</td></tr>
+<tr class="memitem:a43c67845421cd03bded13d35a8c2f780"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ennemi_8c.html#a43c67845421cd03bded13d35a8c2f780">gereArmeeEnnemi</a> (<a class="el" href="structEnnemi.html">Ennemi</a> *e, <a class="el" href="structUnite.html">Unite</a> <a class="el" href="tests_8c.html#a0e8e7f61311ca20871b872655ab4a39d">epee</a>, <a class="el" href="structUnite.html">Unite</a> frondeur, <a class="el" href="structUnite.html">Unite</a> archer, <a class="el" href="structUnite.html">Unite</a> hoplite, <a class="el" href="structUnite.html">Unite</a> cavalier, <a class="el" href="structUnite.html">Unite</a> charr, <a class="el" href="structUnite.html">Unite</a> catapulte, <a class="el" href="structBatiment.html">Batiment</a> ferme)</td></tr>
+<tr class="memdesc:a43c67845421cd03bded13d35a8c2f780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère l'armée de l'ennemi : recrute des troupes en adéquation avec la situation du joueur pour que ça reste équilbré  <a href="#a43c67845421cd03bded13d35a8c2f780">More...</a><br /></td></tr>
 <tr class="separator:a43c67845421cd03bded13d35a8c2f780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af942425e1db1b37f9afcf04f1f42ec4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ennemi_8c.html#af942425e1db1b37f9afcf04f1f42ec4f">randTroupe</a> (float chanceSurMille)</td></tr>
+<tr class="memdesc:af942425e1db1b37f9afcf04f1f42ec4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule de manière aléatoire s'il faut générer une troupe ou non, basé sur les probabilité qu'on lui donne.  <a href="#af942425e1db1b37f9afcf04f1f42ec4f">More...</a><br /></td></tr>
 <tr class="separator:af942425e1db1b37f9afcf04f1f42ec4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdc4c0b81a39d244650c3f3fa110afa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ennemi_8c.html#afdc4c0b81a39d244650c3f3fa110afa0">printArmeeEnnemi</a> (<a class="el" href="structEnnemi.html">Ennemi</a> e)</td></tr>
+<tr class="memdesc:afdc4c0b81a39d244650c3f3fa110afa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche au terminal l'armée ennemie.  <a href="#afdc4c0b81a39d244650c3f3fa110afa0">More...</a><br /></td></tr>
 <tr class="separator:afdc4c0b81a39d244650c3f3fa110afa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -199,6 +203,22 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gère l'armée de l'ennemi : recrute des troupes en adéquation avec la situation du joueur pour que ça reste équilbré </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>l'ennemi dont on veut gérer l'armée </td></tr>
+    <tr><td class="paramname">epee</td><td>l'unité epee </td></tr>
+    <tr><td class="paramname">frondeur</td><td>l'unité frondeur </td></tr>
+    <tr><td class="paramname">archer</td><td>l'unité archer </td></tr>
+    <tr><td class="paramname">hoplite</td><td>l'unité hoplite </td></tr>
+    <tr><td class="paramname">cavalier</td><td>l'unité cavalier </td></tr>
+    <tr><td class="paramname">charr</td><td>l'unité char </td></tr>
+    <tr><td class="paramname">catapulte</td><td>l'unité catapulte </td></tr>
+    <tr><td class="paramname">ferme</td><td>le batiment ferme </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ac70df3ea7660d60cf6b80e940f853120"></a>
@@ -231,6 +251,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialise un ennemi. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>l'ennemi à initialiser </td></tr>
+    <tr><td class="paramname">nom</td><td>le nom du village ennemi </td></tr>
+    <tr><td class="paramname">distance</td><td>la distance entre la ville du joueur et la ville de l'ennemi </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="afdc4c0b81a39d244650c3f3fa110afa0"></a>
@@ -247,6 +277,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Affiche au terminal l'armée ennemie. </p>
+
 </div>
 </div>
 <a class="anchor" id="af942425e1db1b37f9afcf04f1f42ec4f"></a>
@@ -262,6 +294,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calcule de manière aléatoire s'il faut générer une troupe ou non, basé sur les probabilité qu'on lui donne. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chanceSurMille</td><td>la probabilité sur 1000 de générer une troupe </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

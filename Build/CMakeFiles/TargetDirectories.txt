@@ -1,4 +1,5 @@
 /home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles/rebuild_cache.dir
+/home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles/tests.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles/edit_cache.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/CMakeFiles/main.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/GfxLib/CMakeFiles/edit_cache.dir
@@ -16,6 +17,3 @@
 /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis/CMakeFiles/edit_cache.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis/CMakeFiles/rebuild_cache.dir
 /home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis/CMakeFiles/Jerepolis.dir
-/home/yncrea/Bureau/projet/algo-s2/Build/Tests/CMakeFiles/edit_cache.dir
-/home/yncrea/Bureau/projet/algo-s2/Build/Tests/CMakeFiles/rebuild_cache.dir
-/home/yncrea/Bureau/projet/algo-s2/Build/Tests/CMakeFiles/tests.dir

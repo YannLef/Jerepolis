@@ -19,6 +19,7 @@ SET(SRC
 	src/Attaque.c
 	src/Ennemi.c
 	src/Evenement.c
+	src/Sauvegarde.c
 	)
 
 SET(HEADERS
@@ -40,6 +41,7 @@ SET(HEADERS
 	headers/Attaque.h
 	headers/Ennemi.h
 	headers/Evenement.h
+	headers/Sauvegarde.h
 	)
 	
 add_library(Jerepolis ${SRC} ${HEADERS})

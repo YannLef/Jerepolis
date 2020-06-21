@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -188,19 +201,6 @@ Jerepolis/fast:
 	$(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/build
 .PHONY : Jerepolis/fast
 
-#=============================================================================
-# Target rules for targets named tests
-
-# Build rule for target.
-tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tests
-.PHONY : tests
-
-# fast build rule for target.
-tests/fast:
-	$(MAKE) -f Tests/CMakeFiles/tests.dir/build.make Tests/CMakeFiles/tests.dir/build
-.PHONY : tests/fast
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -228,6 +228,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
 
+tests.o: tests.c.o
+
+.PHONY : tests.o
+
+# target to build an object file
+tests.c.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests.c.o
+.PHONY : tests.c.o
+
+tests.i: tests.c.i
+
+.PHONY : tests.i
+
+# target to preprocess a source file
+tests.c.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests.c.i
+.PHONY : tests.c.i
+
+tests.s: tests.c.s
+
+.PHONY : tests.s
+
+# target to generate assembly for a file
+tests.c.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests.c.s
+.PHONY : tests.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -235,6 +262,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... tests"
 	@echo "... edit_cache"
 	@echo "... main"
 	@echo "... GfxLib"
@@ -242,10 +270,12 @@ help:
 	@echo "... Logger"
 	@echo "... BetterTerminal"
 	@echo "... Jerepolis"
-	@echo "... tests"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tests.o"
+	@echo "... tests.i"
+	@echo "... tests.s"
 .PHONY : help
 
 

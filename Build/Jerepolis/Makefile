@@ -476,6 +476,33 @@ src/RecrutementUnite.c.s:
 	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/RecrutementUnite.c.s
 .PHONY : src/RecrutementUnite.c.s
 
+src/Sauvegarde.o: src/Sauvegarde.c.o
+
+.PHONY : src/Sauvegarde.o
+
+# target to build an object file
+src/Sauvegarde.c.o:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Sauvegarde.c.o
+.PHONY : src/Sauvegarde.c.o
+
+src/Sauvegarde.i: src/Sauvegarde.c.i
+
+.PHONY : src/Sauvegarde.i
+
+# target to preprocess a source file
+src/Sauvegarde.c.i:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Sauvegarde.c.i
+.PHONY : src/Sauvegarde.c.i
+
+src/Sauvegarde.s: src/Sauvegarde.c.s
+
+.PHONY : src/Sauvegarde.s
+
+# target to generate assembly for a file
+src/Sauvegarde.c.s:
+	cd /home/yncrea/Bureau/projet/algo-s2/Build && $(MAKE) -f Jerepolis/CMakeFiles/Jerepolis.dir/build.make Jerepolis/CMakeFiles/Jerepolis.dir/src/Sauvegarde.c.s
+.PHONY : src/Sauvegarde.c.s
+
 src/Scierie.o: src/Scierie.c.o
 
 .PHONY : src/Scierie.o
@@ -632,6 +659,9 @@ help:
 	@echo "... src/RecrutementUnite.o"
 	@echo "... src/RecrutementUnite.i"
 	@echo "... src/RecrutementUnite.s"
+	@echo "... src/Sauvegarde.o"
+	@echo "... src/Sauvegarde.i"
+	@echo "... src/Sauvegarde.s"
 	@echo "... src/Scierie.o"
 	@echo "... src/Scierie.i"
 	@echo "... src/Scierie.s"

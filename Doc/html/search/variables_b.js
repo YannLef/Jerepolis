@@ -47,6 +47,6 @@ var searchData=
   ['key_5fx',['key_X',['../structKeyboard.html#a761b3b992d45fc8fc7394751768a3565',1,'Keyboard::key_X()'],['../structKeyboard.html#ae3a5d49f9f70890330d68add139bc069',1,'Keyboard::key_x()']]],
   ['key_5fy',['key_y',['../structKeyboard.html#a42c785294ab6240fcd6e4946410ebd27',1,'Keyboard::key_y()'],['../structKeyboard.html#aa142274d7bae03f7307489e888c1bfd0',1,'Keyboard::key_Y()']]],
   ['key_5fz',['key_z',['../structKeyboard.html#a7046ec3ba2c81fe8886635d8b3725b07',1,'Keyboard::key_z()'],['../structKeyboard.html#a0f2b4d4506a7632cb0409250030eff52',1,'Keyboard::key_Z()']]],
-  ['keys',['keys',['../InputText_8c.html#a6254a9e9369eaa1d86236df201c7d42d',1,'keys():&#160;main.c'],['../Keyboard_8c.html#a6254a9e9369eaa1d86236df201c7d42d',1,'keys():&#160;main.c'],['../main_8c.html#a6254a9e9369eaa1d86236df201c7d42d',1,'keys():&#160;main.c']]],
+  ['keys',['keys',['../InputText_8c.html#a6254a9e9369eaa1d86236df201c7d42d',1,'keys():&#160;main.c'],['../Keyboard_8c.html#a6254a9e9369eaa1d86236df201c7d42d',1,'keys():&#160;main.c'],['../main_8c.html#a6254a9e9369eaa1d86236df201c7d42d',1,'keys():&#160;main.c'],['../tests_8c.html#a6254a9e9369eaa1d86236df201c7d42d',1,'keys():&#160;tests.c']]],
   ['kind',['KIND',['../MIT-LICENSE_8txt.html#ad534efcc44ce5b32d4ffc4fbbb28779b',1,'MIT-LICENSE.txt']]]
 ];

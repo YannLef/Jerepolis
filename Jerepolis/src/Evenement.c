@@ -36,7 +36,8 @@ extern CouleurTab c;
 
 extern int vitesse;
 
-void initEvenementTroupe(EvenementTroupe** e, int timer, TypeEvenement type, Ennemi* ennemi, int nbEpee, int nbFrondeur, int nbArcher, int nbHoplite, int nbCavalier, int nbChar, int nbCatapulte, int victoire){
+void initEvenementTroupe(EvenementTroupe** e, int timer, TypeEvenement type, Ennemi* ennemi, int nbEpee, int nbFrondeur, int nbArcher, int nbHoplite, int nbCavalier, int nbChar, int nbCatapulte,
+int victoire){
 	debug("<initEvenementTroupe> begin");
 	
 	if(e == NULL){

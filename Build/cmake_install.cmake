@@ -39,7 +39,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/yncrea/Bureau/projet/algo-s2/Build/Logger/cmake_install.cmake")
   include("/home/yncrea/Bureau/projet/algo-s2/Build/BetterTerminal/cmake_install.cmake")
   include("/home/yncrea/Bureau/projet/algo-s2/Build/Jerepolis/cmake_install.cmake")
-  include("/home/yncrea/Bureau/projet/algo-s2/Build/Tests/cmake_install.cmake")
 
 endif()
 

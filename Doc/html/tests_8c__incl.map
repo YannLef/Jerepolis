@@ -1,5 +1,34 @@
-<map id="/home/yncrea/Bureau/projet/algo&#45;s2/Tests/tests.c" name="/home/yncrea/Bureau/projet/algo&#45;s2/Tests/tests.c">
-<area shape="rect" id="node4" href="$minunit_8h.html" title="minunit/minunit.h" alt="" coords="315,206,437,233"/>
-<area shape="rect" id="node6" href="$test__Carre_8c.html" title="CustomGfxComponents\l/src/test_Carre.c" alt="" coords="176,109,339,151"/>
-<area shape="rect" id="node7" href="$CustomGfxComponents_2headers_2structures_8h.html" title="../../../CustomGfxComponents\l/headers/structures.h" alt="" coords="93,199,291,240"/>
+<map id="/home/yncrea/Bureau/projet/algo&#45;s2/tests.c" name="/home/yncrea/Bureau/projet/algo&#45;s2/tests.c">
+<area shape="rect" id="node6" href="$GfxLib_8h.html" title="GfxLib/headers/GfxLib.h" alt="" coords="557,102,720,129"/>
+<area shape="rect" id="node8" href="$BmpLib_8h.html" title="GfxLib/headers/BmpLib.h" alt="" coords="94,102,263,129"/>
+<area shape="rect" id="node9" href="$ESLib_8h.html" title="GfxLib/headers/ESLib.h" alt="" coords="795,102,955,129"/>
+<area shape="rect" id="node10" href="$Logger_8h.html" title="Logger/headers/Logger.h" alt="" coords="979,102,1144,129"/>
+<area shape="rect" id="node11" href="$CustomGfxComponents_2headers_2structures_8h.html" title="CustomGfxComponents\l/headers/structures.h" alt="" coords="288,95,451,136"/>
+<area shape="rect" id="node12" href="$Mouse_8h.html" title="CustomGfxComponents\l/headers/Mouse.h" alt="" coords="1315,95,1477,136"/>
+<area shape="rect" id="node13" href="$Couleur_8h.html" title="CustomGfxComponents\l/headers/Couleur.h" alt="" coords="1501,95,1664,136"/>
+<area shape="rect" id="node14" href="$Keyboard_8h.html" title="CustomGfxComponents\l/headers/Keyboard.h" alt="" coords="1688,95,1851,136"/>
+<area shape="rect" id="node15" href="$Navbar_8h.html" title="CustomGfxComponents\l/headers/Navbar.h" alt="" coords="1875,95,2037,136"/>
+<area shape="rect" id="node16" href="$InputText_8h.html" title="CustomGfxComponents\l/headers/InputText.h" alt="" coords="2061,95,2224,136"/>
+<area shape="rect" id="node17" href="$Rectangle_8h.html" title="CustomGfxComponents\l/headers/Rectangle.h" alt="" coords="2248,95,2411,136"/>
+<area shape="rect" id="node18" href="$Page_8h.html" title="CustomGfxComponents\l/headers/Page.h" alt="" coords="2435,95,2597,136"/>
+<area shape="rect" id="node19" href="$Image_8h.html" title="CustomGfxComponents\l/headers/Image.h" alt="" coords="2621,95,2784,136"/>
+<area shape="rect" id="node20" href="$Jerepolis_2headers_2structures_8h.html" title="Jerepolis/headers/structures.h" alt="" coords="2808,102,3005,129"/>
+<area shape="rect" id="node21" href="$ModeleBatiment_8h.html" title="Jerepolis/headers/Modele\lBatiment.h" alt="" coords="3029,95,3200,136"/>
+<area shape="rect" id="node22" href="$AmeliorationBatiment_8h.html" title="Jerepolis/headers/Amelioration\lBatiment.h" alt="" coords="3224,95,3424,136"/>
+<area shape="rect" id="node23" href="$Batiment_8h.html" title="Jerepolis/headers/Batiment.h" alt="" coords="3449,102,3639,129"/>
+<area shape="rect" id="node24" href="$Senat_8h.html" title="Jerepolis/headers/Senat.h" alt="" coords="3664,102,3837,129"/>
+<area shape="rect" id="node25" href="$Ferme_8h.html" title="Jerepolis/headers/Ferme.h" alt="" coords="3861,102,4037,129"/>
+<area shape="rect" id="node26" href="$Entrepot_8h.html" title="Jerepolis/headers/Entrepot.h" alt="" coords="4062,102,4250,129"/>
+<area shape="rect" id="node27" href="$Mine_8h.html" title="Jerepolis/headers/Mine.h" alt="" coords="4274,102,4441,129"/>
+<area shape="rect" id="node28" href="$Carriere_8h.html" title="Jerepolis/headers/Carriere.h" alt="" coords="4465,102,4650,129"/>
+<area shape="rect" id="node29" href="$Scierie_8h.html" title="Jerepolis/headers/Scierie.h" alt="" coords="4675,102,4853,129"/>
+<area shape="rect" id="node30" href="$Temple_8h.html" title="Jerepolis/headers/Temple.h" alt="" coords="4878,102,5061,129"/>
+<area shape="rect" id="node31" href="$Caserne_8h.html" title="Jerepolis/headers/Caserne.h" alt="" coords="5085,102,5273,129"/>
+<area shape="rect" id="node32" href="$Simplifications_8h.html" title="Jerepolis/headers/Simplifications.h" alt="" coords="5297,102,5521,129"/>
+<area shape="rect" id="node33" href="$RecrutementUnite_8h.html" title="Jerepolis/headers/Recrutement\lUnite.h" alt="" coords="5545,95,5748,136"/>
+<area shape="rect" id="node34" href="$Accueil_8h.html" title="Jerepolis/headers/Accueil.h" alt="" coords="5773,102,5955,129"/>
+<area shape="rect" id="node35" href="$Attaque_8h.html" title="Jerepolis/headers/Attaque.h" alt="" coords="5980,102,6164,129"/>
+<area shape="rect" id="node36" href="$Ennemi_8h.html" title="Jerepolis/headers/Ennemi.h" alt="" coords="6189,102,6371,129"/>
+<area shape="rect" id="node37" href="$Evenement_8h.html" title="Jerepolis/headers/Evenement.h" alt="" coords="6396,102,6601,129"/>
+<area shape="rect" id="node38" href="$minunit_8h.html" title="minunit/minunit.h" alt="" coords="1169,102,1290,129"/>
 </map>

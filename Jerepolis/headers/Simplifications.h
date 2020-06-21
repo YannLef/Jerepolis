@@ -37,6 +37,10 @@ void afficheBackground(Divinite divinite, DonneesImageRGB* background, DonneesIm
  * */
 void gereClicVitesse(int x, int y);
 
+void gereClicSauvegarder(int x, int y, Pages* p, InputText* nomVille, float* bois, float* pierre, float* argent, float* faveur, Divinite* divinite, Batiment* senat, Batiment* ferme, Batiment* entrepot,
+Batiment* caserne, Batiment* temple, Batiment* scierie, Batiment* carriere, Batiment* mine, ameliorationBatiment** fileDeConstructions, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite,
+int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenementTroupe);
+
 /**
  * @brief gère le clic sur le bouton quitter
  * @param x l'abscisse du clic souris

@@ -1,5 +1,5 @@
 <map id="ameliorationBatiment" name="ameliorationBatiment">
-<area shape="rect" id="node2" href="$structBatiment.html" title="Batiment" alt="" coords="40,201,115,228"/>
+<area shape="rect" id="node2" href="$structBatiment.html" title="Permet de matérialiser un batiment. " alt="" coords="40,201,115,228"/>
 <area shape="rect" id="node3" href="$structDonneesImageRGB.html" title="DonneesImageRGB" alt="" coords="28,5,167,32"/>
-<area shape="rect" id="node4" href="$structModeleBatiment.html" title="ModeleBatiment" alt="" coords="121,103,237,130"/>
+<area shape="rect" id="node4" href="$structModeleBatiment.html" title="Permet de matérialiser un modèle de batiment : pouvant être chargé à partir d&#39;un fichier ..." alt="" coords="121,103,237,130"/>
 </map>

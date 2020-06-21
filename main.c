@@ -365,7 +365,7 @@ void gestionEvenement(EvenementGfx evenement){
 						gereClicAccueil(abscisseSouris(), ordonneeSouris(), &accueilBackground, &background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible,
 						&maximum, &infosBatiment, &annuler, &p, modeleSenat, &senat, modeleFerme, &ferme, modeleCarriere, &carriere, modeleScierie, &scierie, modeleMine, &mine, modeleEntrepot,
 						&entrepot, modeleTemple, &temple, modeleCaserne, &caserne, &bois, &pierre, &argent, &faveur, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte,
-						&fileDeConstructions, &fileDeRecrutement, &divinite, &popups, &divinite_selec, &troupe, &nb_troupe, &nomVille);
+						&fileDeConstructions, &fileDeRecrutement, &divinite, &popups, &divinite_selec, &troupe, &nb_troupe, &nomVille, &listeEvenementTroupe, &ennemi1);
 						break;
 					case partie:
 						gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
@@ -420,6 +420,10 @@ void gestionEvenement(EvenementGfx evenement){
 						
 						// Clic attaquer
 						gereClicAttaquerMain(abscisseSouris(), ordonneeSouris(), &popups);
+						
+						// Clic sauvegarder
+						gereClicSauvegarder(abscisseSouris(), ordonneeSouris(), &p, &nomVille, &bois, &pierre, &argent, &faveur, &divinite, &senat, &ferme, &entrepot, &caserne, &temple,
+						&scierie, &carriere, &mine, &fileDeConstructions, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte, &listeEvenementTroupe);
 						
 						// Clic liste evenements troupe
 						gereClicListeEvenementTroupe(&listeEvenementTroupe, abscisseSouris(), ordonneeSouris(), popups, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
