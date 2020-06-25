@@ -385,7 +385,7 @@ void gestionEvenement(EvenementGfx evenement){
 
 		case BoutonSouris:
 			if (etatBoutonSouris() == GaucheAppuye){
-				printf("x : %d y : %d\n", abscisseSouris(), ordonneeSouris());
+				//~ printf("x : %d y : %d\n", abscisseSouris(), ordonneeSouris());
 				mouseLeftDown();
 			}else if (etatBoutonSouris() == GaucheRelache){
 				mouseLeftUp();
