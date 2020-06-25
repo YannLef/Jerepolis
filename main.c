@@ -284,20 +284,22 @@ void gestionEvenement(EvenementGfx evenement){
 				
 					break;
 				case partie:
-					gereFileDeConstructions(&fileDeConstructions);
-					updateInputText(&nomVille);
-					actualisePopup(&popups);
-					actualiseStockageEntrepot(&stockageEntrepot, entrepot);
-					actualiseCapacitePopulationRestante(&capacitePopulationRestante, ferme, senat, entrepot, scierie, temple, carriere, caserne, mine, nbEpee, nbFrondeur, nbArcher, nbHoplite,
-					nbCavalier, nbChar, nbCatapulte, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
-					genereRessource(carriere, &pierre, stockageEntrepot);
-					genereRessource(scierie, &bois, stockageEntrepot);
-					genereRessource(mine, &argent, stockageEntrepot);
-					genereFaveurs(temple, divinite, &faveur);
-					gereFileDeRecrutement(caserne, &fileDeRecrutement, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte);
-					gereArmeeEnnemi(&ennemi1, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, ferme);
-					gereListeEvenementTroupe(&listeEvenementTroupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar,
-					&nbCatapulte, &pierre, &bois, &argent);
+					if(vitesse != 0){
+						gereFileDeConstructions(&fileDeConstructions);
+						updateInputText(&nomVille);
+						actualisePopup(&popups);
+						actualiseStockageEntrepot(&stockageEntrepot, entrepot);
+						actualiseCapacitePopulationRestante(&capacitePopulationRestante, ferme, senat, entrepot, scierie, temple, carriere, caserne, mine, nbEpee, nbFrondeur, nbArcher, nbHoplite,
+						nbCavalier, nbChar, nbCatapulte, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
+						genereRessource(carriere, &pierre, stockageEntrepot);
+						genereRessource(scierie, &bois, stockageEntrepot);
+						genereRessource(mine, &argent, stockageEntrepot);
+						genereFaveurs(temple, divinite, &faveur);
+						gereFileDeRecrutement(caserne, &fileDeRecrutement, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte);
+						gereArmeeEnnemi(&ennemi1, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, ferme);
+						gereListeEvenementTroupe(&listeEvenementTroupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar,
+						&nbCatapulte, &pierre, &bois, &argent);
+					}
 					break;
 				case explorer:
 				if(nomSave != NULL){
@@ -396,66 +398,67 @@ void gestionEvenement(EvenementGfx evenement){
 						&frondeur, &archer, &hoplite, &cavalier, &charr, &catapulte, &fichiers, &nombreFichiers);
 						break;
 					case partie:
-						gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
-				
-						// Clic Batiments
-						if(popups.actuel == POPUP_NONE){
-							gereClicGaucheBatiment(&senat, abscisseSouris(), ordonneeSouris(), &popups);
-							if(mine.niveau > 0){
-								gereClicGaucheBatiment(&mine, abscisseSouris(), ordonneeSouris(), &popups);
+					if(vitesse != 0){
+							gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
+					
+							// Clic Batiments
+							if(popups.actuel == POPUP_NONE){
+								gereClicGaucheBatiment(&senat, abscisseSouris(), ordonneeSouris(), &popups);
+								if(mine.niveau > 0){
+									gereClicGaucheBatiment(&mine, abscisseSouris(), ordonneeSouris(), &popups);
+								}
+								gereClicGaucheBatiment(&ferme, abscisseSouris(), ordonneeSouris(), &popups);
+								gereClicGaucheBatiment(&entrepot, abscisseSouris(), ordonneeSouris(), &popups);
+								if(carriere.niveau > 0){
+									gereClicGaucheBatiment(&carriere, abscisseSouris(), ordonneeSouris(), &popups);	
+								}
+								if(scierie.niveau > 0){
+									gereClicGaucheBatiment(&scierie, abscisseSouris(), ordonneeSouris(), &popups);
+								}
+								if(temple.niveau > 0){
+									gereClicGaucheBatiment(&temple, abscisseSouris(), ordonneeSouris(), &popups);
+								}
+								if(caserne.niveau > 0){
+									gereClicGaucheBatiment(&caserne, abscisseSouris(), ordonneeSouris(), &popups);
+								}
 							}
-							gereClicGaucheBatiment(&ferme, abscisseSouris(), ordonneeSouris(), &popups);
-							gereClicGaucheBatiment(&entrepot, abscisseSouris(), ordonneeSouris(), &popups);
-							if(carriere.niveau > 0){
-								gereClicGaucheBatiment(&carriere, abscisseSouris(), ordonneeSouris(), &popups);	
-							}
-							if(scierie.niveau > 0){
-								gereClicGaucheBatiment(&scierie, abscisseSouris(), ordonneeSouris(), &popups);
-							}
-							if(temple.niveau > 0){
-								gereClicGaucheBatiment(&temple, abscisseSouris(), ordonneeSouris(), &popups);
-							}
-							if(caserne.niveau > 0){
-								gereClicGaucheBatiment(&caserne, abscisseSouris(), ordonneeSouris(), &popups);
-							}
+							
+							// Clic Popups
+							gereClicGauchePopupSenat(&popups, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions, &senat, &scierie, &ferme, &carriere, &entrepot, &mine,
+							&caserne, &temple);
+							gereClicGauchePopupMine(&popups, abscisseSouris(), ordonneeSouris());
+							gereClicGauchePopupFerme(&popups, abscisseSouris(), ordonneeSouris());
+							gereClicGauchePopupEntrepot(&popups, abscisseSouris(), ordonneeSouris());
+							gereClicGauchePopupCarriere(&popups, abscisseSouris(), ordonneeSouris());
+							gereClicGauchePopupScierie(&popups, abscisseSouris(), ordonneeSouris());
+							gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple, &faveur, &divinite);
+							gereClicGauchePopupCaserne(&popups, abscisseSouris(), ordonneeSouris(), &caserne, &bois, &pierre, &argent, &faveur, &troupe, &nb_troupe, &epee, &frondeur, &archer, &hoplite,
+							&cavalier, &charr, &catapulte, &fileDeRecrutement);
+							clicPopupAttaque(abscisseSouris(), ordonneeSouris(), &popups, &nbAttEpee, &nbAttFrondeur, &nbAttArcher, &nbAttHoplite, &nbAttCavalier, &nbAttChar, &nbAttCatapulte, &nbEpee,
+							&nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte, &listeEvenementTroupe, &ennemi1, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
+							
+							// Clic File de Constructions
+							gereClicFileDeConstruction(abscisseSouris(), ordonneeSouris(), &fileDeConstructions, &bois, &pierre, &argent);
+							
+							// Clic File de Recrutement
+							gereClicFileDeRecrutement(abscisseSouris(), ordonneeSouris(), &fileDeRecrutement, popups, &bois, &pierre, &argent, &faveur);
+							
+							// Clic quitter
+							gereClicQuitter(abscisseSouris(), ordonneeSouris(), &p);
+							
+							// Clic attaquer
+							gereClicAttaquerMain(abscisseSouris(), ordonneeSouris(), &popups);
+							
+							// Clic sauvegarder
+							gereClicSauvegarder(abscisseSouris(), ordonneeSouris(), &p, &nomVille, &bois, &pierre, &argent, &faveur, &divinite, &senat, &ferme, &entrepot, &caserne, &temple,
+							&scierie, &carriere, &mine, &fileDeConstructions, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte, &listeEvenementTroupe,
+							&fileDeRecrutement);
+							
+							// Clic liste evenements troupe
+							gereClicListeEvenementTroupe(&listeEvenementTroupe, abscisseSouris(), ordonneeSouris(), popups, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
 						}
-						
-						// Clic Popups
-						gereClicGauchePopupSenat(&popups, abscisseSouris(), ordonneeSouris(), &bois, &pierre, &argent, &fileDeConstructions, &senat, &scierie, &ferme, &carriere, &entrepot, &mine,
-						&caserne, &temple);
-						gereClicGauchePopupMine(&popups, abscisseSouris(), ordonneeSouris());
-						gereClicGauchePopupFerme(&popups, abscisseSouris(), ordonneeSouris());
-						gereClicGauchePopupEntrepot(&popups, abscisseSouris(), ordonneeSouris());
-						gereClicGauchePopupCarriere(&popups, abscisseSouris(), ordonneeSouris());
-						gereClicGauchePopupScierie(&popups, abscisseSouris(), ordonneeSouris());
-						gereClicGauchePopupTemple(&popups, abscisseSouris(), ordonneeSouris(), &temple, &faveur, &divinite);
-						gereClicGauchePopupCaserne(&popups, abscisseSouris(), ordonneeSouris(), &caserne, &bois, &pierre, &argent, &faveur, &troupe, &nb_troupe, &epee, &frondeur, &archer, &hoplite,
-						&cavalier, &charr, &catapulte, &fileDeRecrutement);
-						clicPopupAttaque(abscisseSouris(), ordonneeSouris(), &popups, &nbAttEpee, &nbAttFrondeur, &nbAttArcher, &nbAttHoplite, &nbAttCavalier, &nbAttChar, &nbAttCatapulte, &nbEpee,
-						&nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte, &listeEvenementTroupe, &ennemi1, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
-						
-						// Clic File de Constructions
-						gereClicFileDeConstruction(abscisseSouris(), ordonneeSouris(), &fileDeConstructions, &bois, &pierre, &argent);
-						
-						// Clic File de Recrutement
-						gereClicFileDeRecrutement(abscisseSouris(), ordonneeSouris(), &fileDeRecrutement, popups, &bois, &pierre, &argent, &faveur);
-						
 						// Clic vitesse
 						gereClicVitesse(abscisseSouris(), ordonneeSouris());
-						
-						// Clic quitter
-						gereClicQuitter(abscisseSouris(), ordonneeSouris(), &p);
-						
-						// Clic attaquer
-						gereClicAttaquerMain(abscisseSouris(), ordonneeSouris(), &popups);
-						
-						// Clic sauvegarder
-						gereClicSauvegarder(abscisseSouris(), ordonneeSouris(), &p, &nomVille, &bois, &pierre, &argent, &faveur, &divinite, &senat, &ferme, &entrepot, &caserne, &temple,
-						&scierie, &carriere, &mine, &fileDeConstructions, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte, &listeEvenementTroupe,
-						&fileDeRecrutement);
-						
-						// Clic liste evenements troupe
-						gereClicListeEvenementTroupe(&listeEvenementTroupe, abscisseSouris(), ordonneeSouris(), popups, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
 						break;
 					case explorer :
 						gereSourisSelectionneFichier(abscisseSouris(), ordonneeSouris(), &p, &debutExplorer, nombreFichiers, fichiers, &nomSave);

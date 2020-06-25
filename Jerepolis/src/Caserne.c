@@ -89,14 +89,18 @@ char capacite[100], Unite u, int nb_troupe){
 	// Population
 	sprintf(population, "%d (%d)", u.population*nb_troupe, u.population);
 
-	// Temps
-	int h, m, s;
-	int t = ((u.temps*nb_troupe)/1000)/vitesse*(1 + 0.1*caserne.population);
-	
-	h = (t/3600);
-	m = (t - h*3600)/60;
-	s = (t - h*3600 - m*60);
-	sprintf(temps, "%dh %dmin %dsec", h, m , s);
+	if(vitesse != 0){
+		// Temps
+		int h, m, s;
+		int t = ((u.temps*nb_troupe)/1000)/vitesse*(1 + 0.1*caserne.population);
+		
+		h = (t/3600);
+		m = (t - h*3600)/60;
+		s = (t - h*3600 - m*60);
+		sprintf(temps, "%dh %dmin %dsec", h, m , s);
+	}else{
+		strcpy(temps, "infini");
+	}
 	
 	// Attaque
 	sprintf(attaque, "%d", u.attaque);

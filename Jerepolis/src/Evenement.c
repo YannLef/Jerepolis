@@ -3,6 +3,7 @@
  * */
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * Includes GfxLib
@@ -353,12 +354,16 @@ void afficheEvenement(EvenementTroupe* e, int numero, DonneesImageRGB* attaqueSo
 		changeColor(c.noir);
 		
 		// Temps restant
-		int h, m, s;
-		int t = (e->timer/1000)/vitesse;
-		h = (t/3600);
-		m = (t - h*3600)/60;
-		s = (t - h*3600 - m*60);
-		sprintf(tmp, "%dh %dmin %dsec", h, m , s);
+		if(vitesse != 0){
+			int h, m, s;
+			int t = (e->timer/1000)/vitesse;
+			h = (t/3600);
+			m = (t - h*3600)/60;
+			s = (t - h*3600 - m*60);
+			sprintf(tmp, "%dh %dmin %dsec", h, m , s);
+		}else{
+			strcpy(tmp, "infini");
+		}
 		afficheChaine(tmp, 10, 1000, 385 - 55*numero);
 		
 		// Ennemi

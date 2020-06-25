@@ -95,6 +95,11 @@ void gereClicVitesse(int x, int y){
 		vitesse = 3;
 		printf("La vitesse a été définie sur x3\n");
 	}
+	
+	if(x > 957 && x < 980 && y > 645 && y < 670){
+		vitesse = 0;
+		printf("La vitesse a été définie sur x0\n");
+	}
 }
 
 void gereClicSauvegarder(int x, int y, Pages* p, InputText* nomVille, float* bois, float* pierre, float* argent, float* faveur, Divinite* divinite, Batiment* senat, Batiment* ferme, Batiment* entrepot,
