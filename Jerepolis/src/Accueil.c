@@ -21,6 +21,7 @@
  * */
 #include "../../CustomGfxComponents/headers/structures.h"
 #include "../../CustomGfxComponents/headers/InputText.h"
+#include "../../CustomGfxComponents/headers/FileExplorer.h"
 
 /**
  * Includes Jerepolis
@@ -45,7 +46,8 @@ DonneesImageRGB** annuler, Pages* p, ModeleBatiment* modeleSenat, Batiment* sena
 ModeleBatiment* modeleScierie, Batiment* scierie, ModeleBatiment* modeleMine, Batiment* mine, ModeleBatiment* modeleEntrepot, Batiment* entrepot, ModeleBatiment* modeleTemple,
 Batiment* temple, ModeleBatiment* modeleCaserne, Batiment* caserne, float* bois, float* pierre, float* argent, float* faveur, int* nbEpee, int* nbFrondeur, int* nbArcher,
 int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte, ameliorationBatiment** fileDeConstructions, RecrutementUnite** fileDeRecrutement, Divinite* divinite, Popups* popups,
-Divinite* divinite_selec, Troupe* troupe, int* nb_troupe, InputText* nomVille, EvenementTroupe** listeEvenementTroupe, Ennemi* ennemi){
+Divinite* divinite_selec, Troupe* troupe, int* nb_troupe, InputText* nomVille, EvenementTroupe** listeEvenementTroupe, Ennemi* ennemi,
+Unite* epee, Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, Unite* catapulte, Fichier** fichiers, int* nombreFichiers){
 	
 	// Gère clic sur le bouton Nouvelle Partie
 	if(x > 333 && x < 812 && y > 434 && y < 548){
@@ -93,23 +95,20 @@ Divinite* divinite_selec, Troupe* troupe, int* nb_troupe, InputText* nomVille, E
 	if(x > 333 && x < 812 && y > 300 && y < 412){
 		if(p->pActuel == p->pFinal){
 			
-			p->pFinal = partie;
-			popups->actuel = POPUP_NONE;
-			popups->final = POPUP_NONE;
-			*divinite_selec = DIVINITE_NONE;
-			*troupe = TROUPE_EPEE;
-			*nb_troupe = 0;
-			
-			// On remet à 0 la file de constructions
-			resetFileDeConstructions(fileDeConstructions);
-			
-			// On remet à 0 la file de recrutement
-			resetFileDeRecrutement(fileDeRecrutement);
-			
-			// On charge la sauvegarde
-			charger(nomVille, bois, pierre, argent, faveur, divinite, senat, modeleSenat, ferme, modeleFerme, entrepot, modeleEntrepot, caserne, modeleCaserne, temple, modeleTemple,
-			scierie, modeleScierie, carriere, modeleCarriere, mine, modeleMine, fileDeConstructions, nbEpee, nbFrondeur, nbArcher, nbHoplite, nbCavalier, nbChar, nbCatapulte,
-			listeEvenementTroupe, ennemi);
+				p->pFinal = explorer;
+				popups->actuel = POPUP_NONE;
+				popups->final = POPUP_NONE;
+				*divinite_selec = DIVINITE_NONE;
+				*troupe = TROUPE_EPEE;
+				*nb_troupe = 0;
+				
+				// On remet à 0 la file de constructions
+				resetFileDeConstructions(fileDeConstructions);
+				
+				// On remet à 0 la file de recrutement
+				resetFileDeRecrutement(fileDeRecrutement);
+				
+				recupereInfosFichiersDansDossier("sauvegardes", fichiers, nombreFichiers);
 		}
 	}
 	

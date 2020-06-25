@@ -1,41 +1,10 @@
 #ifndef FILE_EXPLORER_H
 #define FILE_EXPLORER_H
 
- /**
-  * -------------------------------------------------
-  * -------------------- SUMMARY --------------------
-  * -------------------------------------------------
-  * 0) INTRODUCTION    - line ...
-  * 1) INITIALISATION  - line ...
-  * 2) DISPLAY         - line ...
-  * 3) EVENTS          - line ...
-  * 
-  * 
-*/
-
- /**
-  * -----------------------------------------------------------
-  * -------------------- 1) INITIALISATION --------------------
-  * -----------------------------------------------------------
-  * */
-  
 void recupereInfosFichiersDansDossier(char* cheminDossier, Fichier** fichiers, int* nombreFichiers);
 
- /**
-  * ----------------------------------------------------
-  * -------------------- 2) DISPLAY --------------------
-  * ----------------------------------------------------
-  * */
-  
-void afficheExplorateurDeFichiers(DonneesImageRGB* enteteFondExplorateur, DonneesImageRGB* fondExplorateur, Fichier* listeFichiers, BoutonChangePage exitOpenTree, BoutonChangeFichiers nextFichiers, BoutonChangeFichiers previousFichiers, int debutAffichageExplorateur, int nombreFichiers);
+void afficheExplorateurDeFichiers(Fichier* listeFichiers, int nombreFichiers, int debut);
 
- /**
-  * ----------------------------------------------------
-  * -------------------- 3) EVENTS --------------------
-  * ----------------------------------------------------
-  * */
-  
-void gereSourisSelectionneFichier(int xSouris, int ySouris, int* debutAffichageExplorateur, int nombreFichiers, Pages* pActuel, Fichier* listeFichiers, Fichier* fichierCharge, char** fileNameI,
-char** fileNameM);
+void gereSourisSelectionneFichier(int x, int y, Pages* pActuel, int* debutExplorer, int nombreFichiers, Fichier* fichiers, char** nomSave);
 
 #endif

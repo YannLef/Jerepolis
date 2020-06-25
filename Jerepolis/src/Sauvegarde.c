@@ -41,8 +41,12 @@ extern int vitesse;
 
 void sauvegarde(InputText* nomVille, float* bois, float* pierre, float* argent, float* faveur, Divinite* divinite, Batiment* senat, Batiment* ferme, Batiment* entrepot, Batiment* caserne,
 Batiment* temple, Batiment* scierie, Batiment* carriere, Batiment* mine, ameliorationBatiment** fileDeConstructions, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite,
-int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenementTroupe){
-	FILE* fichier = fopen(nomVille->string, "wb");
+int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenementTroupe, RecrutementUnite** fileDeRecrutement){
+	
+	char sauve[200];
+	strcpy(sauve, "sauvegardes/");
+	strcat(sauve, nomVille->string);
+	FILE* fichier = fopen(sauve, "wb");
 	
 	int tmpInt;
 	int tmpInt2;
@@ -138,6 +142,44 @@ int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenement
 	}
 	
 	// Sauvegarde la file de recrutement
+	RecrutementUnite* courant3 = *fileDeRecrutement;
+	tmpInt = 0;
+	while(courant3 != NULL){
+		tmpInt++;
+		courant3 = courant3->next;
+	}
+	fwrite(&tmpInt, 1, sizeof(int), fichier);
+	
+	courant3 = *fileDeRecrutement;
+	while(courant3 != NULL){
+		fwrite(&(courant3->timer), 1, sizeof(int), fichier);
+		fwrite(&(courant3->nbUnite), 1, sizeof(int), fichier);
+		switch(courant3->u->type){
+			case TROUPE_EPEE:
+				tmpInt = 0;
+				break;
+			case TROUPE_FRONDEUR:
+				tmpInt = 1;
+				break;
+			case TROUPE_ARCHER:
+				tmpInt = 2;
+				break;
+			case TROUPE_HOPLITE:
+				tmpInt = 3;
+				break;
+			case TROUPE_CAVALIER:
+				tmpInt = 4;
+				break;
+			case TROUPE_CHAR:
+				tmpInt = 5;
+				break;
+			case TROUPE_CATAPULTE:
+				tmpInt = 6;
+				break;
+		}
+		fwrite(&tmpInt, 1, sizeof(int), fichier);
+		courant3 = courant3->next;
+	}
 	
 	// Sauvegarde l'armée actuelle
 	fwrite(nbEpee, 1, sizeof(int), fichier);
@@ -187,8 +229,10 @@ int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenement
 void charger(InputText* nomVille, float* bois, float* pierre, float* argent, float* faveur, Divinite* divinite, Batiment* senat, ModeleBatiment* modeleSenat, Batiment* ferme,
 ModeleBatiment* modeleFerme, Batiment* entrepot, ModeleBatiment* modeleEntrepot, Batiment* caserne, ModeleBatiment* modeleCaserne, Batiment* temple, ModeleBatiment* modeleTemple,
 Batiment* scierie, ModeleBatiment* modeleScierie, Batiment* carriere, ModeleBatiment* modeleCarriere, Batiment* mine, ModeleBatiment* modeleMine, ameliorationBatiment** fileDeConstructions,
-int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenementTroupe, Ennemi* ennemi){
-	FILE* fichier = fopen("1", "rb");
+int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenementTroupe, Ennemi* ennemi,
+RecrutementUnite** fileDeRecrutement, Unite* epee, Unite* frondeur, Unite* archer, Unite* hoplite, Unite* cavalier, Unite* charr, Unite* catapulte, char* sauvegarde){
+	
+	FILE* fichier = fopen(sauvegarde, "rb");
 	
 	char tmpString[1000];
 	int tmpInt;
@@ -199,6 +243,8 @@ int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, in
 	fread(&tmpInt, 1, sizeof(int), fichier);
 	fread(tmpString, tmpInt, sizeof(char), fichier);
 	setString(nomVille, tmpString);
+	
+	printf("%s\n", sauvegarde);
 	
 	// Charge les ressources
 	fread(bois, 1, sizeof(float), fichier);
@@ -340,9 +386,48 @@ int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, in
 		courant->timer = tmpInt2;
 	}
 	
-	// Sauvegarde la file de recrutement
+	// Charge la file de recrutement
 	
-	// Sauvegarde l'armée actuelle
+	fread(&tmpInt, 1, sizeof(int), fichier);
+	
+	for(int i=0; i<tmpInt; i++){
+		int timer;
+		fread(&timer, 1, sizeof(int), fichier);
+		int nbUnite;
+		fread(&nbUnite, 1, sizeof(int), fichier);
+		Unite* u;
+		fread(&tmpInt2, 1, sizeof(int), fichier);
+		switch(tmpInt2){
+			case 0:
+				u = epee;
+				break;
+			case 1:
+				u = frondeur;
+				break;
+			case 2:
+				u = archer;
+				break;
+			case 3:
+				u = hoplite;
+				break;
+			case 4:
+				u = cavalier;
+				break;
+			case 5:
+				u = charr;
+				break;
+			case 6:
+				u = catapulte;
+				break;
+		}
+		
+		RecrutementUnite* recrutement;
+		initRecrutementUnite(&recrutement, nbUnite, u);
+		recrutement->timer = timer;
+		ajouteRecrutementUnite(fileDeRecrutement, recrutement);
+	}
+	
+	// Charge l'armée actuelle
 	fread(nbEpee, 1, sizeof(int), fichier);
 	fread(nbFrondeur, 1, sizeof(int), fichier);
 	fread(nbArcher, 1, sizeof(int), fichier);
@@ -351,11 +436,12 @@ int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite, int* nbCavalier, in
 	fread(nbChar, 1, sizeof(int), fichier);
 	fread(nbCatapulte, 1, sizeof(int), fichier);
 	
-	// Sauvegarde les evenements de troupe
+	// Charge les evenements de troupe
 	
 	fread(&tmpInt, 1, sizeof(int), fichier);
 	
 	for(int i=0; i<tmpInt; i++){
+		
 		int victoire;
 		fread(&victoire, 1, sizeof(int), fichier);
 		int timer;

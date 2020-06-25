@@ -8,6 +8,8 @@
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
 
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/FileExplorer.h
+
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
@@ -81,6 +83,8 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 ../../CustomGfxComponents/headers/InputText.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
+../../CustomGfxComponents/headers/FileExplorer.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/FileExplorer.h
 ../headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
 ../headers/AmeliorationBatiment.h

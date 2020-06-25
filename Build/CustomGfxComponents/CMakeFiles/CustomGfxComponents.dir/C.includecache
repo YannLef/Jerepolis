@@ -299,6 +299,18 @@ string.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/ButtonChangePage.h
 ../headers/ButtonChangeFile.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/ButtonChangeFile.h
+../../Jerepolis/headers/structures.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
+../../Jerepolis/headers/AmeliorationBatiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
+../../Jerepolis/headers/RecrutementUnite.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
+../../Jerepolis/headers/Batiment.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
+../../Jerepolis/headers/Simplifications.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
+../../Jerepolis/headers/Evenement.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Evenement.h
 ../headers/FileExplorer.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/FileExplorer.h
 
@@ -341,8 +353,6 @@ unistd.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Navbar.h
 ../headers/InputText.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
-../headers/FileExplorer.h
-/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/FileExplorer.h
 ../headers/SliderVertical.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/SliderVertical.h
 ../headers/SliderHorizontal.h
@@ -615,6 +625,18 @@ windows.h
 -
 stdbool.h
 -
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/AmeliorationBatiment.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Batiment.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Evenement.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h
+
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
 
 /home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 

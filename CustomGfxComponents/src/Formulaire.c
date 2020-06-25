@@ -32,7 +32,6 @@
 #include "../headers/DropDownMenuRight.h"
 #include "../headers/Navbar.h"
 #include "../headers/InputText.h"
-#include "../headers/FileExplorer.h"
 #include "../headers/SliderVertical.h"
 #include "../headers/SliderHorizontal.h"
 #include "../headers/Carre.h"

@@ -14,11 +14,6 @@
 #include "GfxLib/headers/ESLib.h" // Pour utiliser valeurAleatoire()
 
 /**
- * Includes Logger
- * */
-#include "Logger/headers/Logger.h"
-
-/**
  * Includes CustomGfxComponents
  * */
 #include "CustomGfxComponents/headers/structures.h"
@@ -30,6 +25,12 @@
 #include "CustomGfxComponents/headers/Rectangle.h"
 #include "CustomGfxComponents/headers/Page.h"
 #include "CustomGfxComponents/headers/Image.h"
+#include "CustomGfxComponents/headers/FileExplorer.h"
+
+/**
+ * Includes Logger
+ * */
+#include "Logger/headers/Logger.h"
 
 /**
  * Includes Jerepolis
@@ -52,6 +53,7 @@
 #include "Jerepolis/headers/Attaque.h"
 #include "Jerepolis/headers/Ennemi.h"
 #include "Jerepolis/headers/Evenement.h"
+#include "Jerepolis/headers/Sauvegarde.h"
 
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1152
@@ -77,7 +79,7 @@ int main(int argc, char **argv){
 	debug("<main> begin");
 	initialiseGfx(argc, argv);
 	
-	prepareFenetreGraphique("GfxLib", LargeurFenetre, HauteurFenetre);
+	prepareFenetreGraphique("Jerepolis", LargeurFenetre, HauteurFenetre);
 	
 	/* Lance la boucle qui aiguille les evenements sur la fonction gestionEvenement ci-apres,
 		qui elle-meme utilise fonctionAffichage ci-dessous */
@@ -94,6 +96,12 @@ void gestionEvenement(EvenementGfx evenement){
 	
 	// Pages
 	static Pages p;
+	
+	// Sauvegardes
+	static Fichier* fichiers;
+	static int nombreFichiers;
+	static int debutExplorer;
+	static char* nomSave;
 	
 	// Popup
 	static Popups popups;
@@ -211,6 +219,12 @@ void gestionEvenement(EvenementGfx evenement){
             // Pages
             initPage(&p, accueil);
             
+            // Sauvegardes
+            fichiers = NULL;
+            debutExplorer = 0;
+            nombreFichiers = 0;
+            nomSave = NULL;
+            
             // Popup
             initPopups(&popups);
             
@@ -285,6 +299,16 @@ void gestionEvenement(EvenementGfx evenement){
 					gereListeEvenementTroupe(&listeEvenementTroupe, epee, frondeur, archer, hoplite, cavalier, charr, catapulte, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar,
 					&nbCatapulte, &pierre, &bois, &argent);
 					break;
+				case explorer:
+				if(nomSave != NULL){
+					charger(&nomVille, &bois, &pierre, &argent, &faveur, &divinite, &senat, modeleSenat, &ferme, modeleFerme, &entrepot, modeleEntrepot, &caserne, modeleCaserne, &temple, modeleTemple,
+					&scierie, modeleScierie, &carriere, modeleCarriere, &mine, modeleMine, &fileDeConstructions, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte,
+					&listeEvenementTroupe, &ennemi1, &fileDeRecrutement, &epee, &frondeur, &archer, &hoplite, &cavalier, &charr, &catapulte, nomSave);
+					free(nomSave);
+					nomSave = NULL;
+					p.pFinal = partie;
+				}
+					break;
 			}
 		
 			rafraichisFenetre();
@@ -344,6 +368,9 @@ void gestionEvenement(EvenementGfx evenement){
 					// Evenements
 					afficheListeEvenementTroupe(listeEvenementTroupe, attaqueSortante, retourTroupe);
 					break;
+				case explorer :
+					afficheExplorateurDeFichiers(fichiers, nombreFichiers, debutExplorer);
+					break;
 			}
 
 			break;
@@ -365,7 +392,8 @@ void gestionEvenement(EvenementGfx evenement){
 						gereClicAccueil(abscisseSouris(), ordonneeSouris(), &accueilBackground, &background, &backgroundZeus, &backgroundPoseidon, &backgroundHades, &ameliorer, &construire, &impossible,
 						&maximum, &infosBatiment, &annuler, &p, modeleSenat, &senat, modeleFerme, &ferme, modeleCarriere, &carriere, modeleScierie, &scierie, modeleMine, &mine, modeleEntrepot,
 						&entrepot, modeleTemple, &temple, modeleCaserne, &caserne, &bois, &pierre, &argent, &faveur, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte,
-						&fileDeConstructions, &fileDeRecrutement, &divinite, &popups, &divinite_selec, &troupe, &nb_troupe, &nomVille, &listeEvenementTroupe, &ennemi1);
+						&fileDeConstructions, &fileDeRecrutement, &divinite, &popups, &divinite_selec, &troupe, &nb_troupe, &nomVille, &listeEvenementTroupe, &ennemi1, &epee,
+						&frondeur, &archer, &hoplite, &cavalier, &charr, &catapulte, &fichiers, &nombreFichiers);
 						break;
 					case partie:
 						gereSourisInputText(&nomVille, abscisseSouris(), ordonneeSouris());
@@ -423,10 +451,14 @@ void gestionEvenement(EvenementGfx evenement){
 						
 						// Clic sauvegarder
 						gereClicSauvegarder(abscisseSouris(), ordonneeSouris(), &p, &nomVille, &bois, &pierre, &argent, &faveur, &divinite, &senat, &ferme, &entrepot, &caserne, &temple,
-						&scierie, &carriere, &mine, &fileDeConstructions, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte, &listeEvenementTroupe);
+						&scierie, &carriere, &mine, &fileDeConstructions, &nbEpee, &nbFrondeur, &nbArcher, &nbHoplite, &nbCavalier, &nbChar, &nbCatapulte, &listeEvenementTroupe,
+						&fileDeRecrutement);
 						
 						// Clic liste evenements troupe
 						gereClicListeEvenementTroupe(&listeEvenementTroupe, abscisseSouris(), ordonneeSouris(), popups, epee, frondeur, archer, hoplite, cavalier, charr, catapulte);
+						break;
+					case explorer :
+						gereSourisSelectionneFichier(abscisseSouris(), ordonneeSouris(), &p, &debutExplorer, nombreFichiers, fichiers, &nomSave);
 						break;
 				}
 			}

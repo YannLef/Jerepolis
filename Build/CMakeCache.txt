@@ -240,12 +240,6 @@ projet_BINARY_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Build
 //Value Computed by CMake
 projet_SOURCE_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2
 
-//Value Computed by CMake
-tests_BINARY_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Build/Tests
-
-//Value Computed by CMake
-tests_SOURCE_DIR:STATIC=/home/yncrea/Bureau/projet/algo-s2/Tests
-
 
 ########################
 # INTERNAL cache entries

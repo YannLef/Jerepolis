@@ -99,11 +99,11 @@ void gereClicVitesse(int x, int y){
 
 void gereClicSauvegarder(int x, int y, Pages* p, InputText* nomVille, float* bois, float* pierre, float* argent, float* faveur, Divinite* divinite, Batiment* senat, Batiment* ferme, Batiment* entrepot,
 Batiment* caserne, Batiment* temple, Batiment* scierie, Batiment* carriere, Batiment* mine, ameliorationBatiment** fileDeConstructions, int* nbEpee, int* nbFrondeur, int* nbArcher, int* nbHoplite,
-int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenementTroupe){
+int* nbCavalier, int* nbChar, int* nbCatapulte, EvenementTroupe** listeEvenementTroupe, RecrutementUnite** fileDeRecrutement){
 	if(x > 1022 && x < 1045 && y > 646 && y < 667){
 		if(p->pActuel == p->pFinal){
 			sauvegarde(nomVille, bois, pierre, argent, faveur, divinite, senat, ferme, entrepot, caserne, temple, scierie, carriere, mine, fileDeConstructions, nbEpee, nbFrondeur, nbArcher,
-			nbHoplite, nbCavalier, nbChar, nbCatapulte, listeEvenementTroupe);
+			nbHoplite, nbCavalier, nbChar, nbCatapulte, listeEvenementTroupe, fileDeRecrutement);
 		}
 	}
 }

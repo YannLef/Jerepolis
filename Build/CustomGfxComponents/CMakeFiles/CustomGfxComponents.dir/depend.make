@@ -94,6 +94,12 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../CustomGfxComponents/src/FileExplorer.c
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../GfxLib/headers/BmpLib.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../GfxLib/headers/GfxLib.h
+CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../Jerepolis/headers/AmeliorationBatiment.h
+CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../Jerepolis/headers/Batiment.h
+CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../Jerepolis/headers/Evenement.h
+CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../Jerepolis/headers/RecrutementUnite.h
+CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../Jerepolis/headers/Simplifications.h
+CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../Jerepolis/headers/structures.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/FileExplorer.c.o: ../Logger/headers/Logger.h
 
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../CustomGfxComponents/headers/ButtonChangeFile.h
@@ -102,7 +108,6 @@ CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../Cu
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../CustomGfxComponents/headers/Checkbox.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../CustomGfxComponents/headers/Couleur.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../CustomGfxComponents/headers/DropDownMenuRight.h
-CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../CustomGfxComponents/headers/FileExplorer.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../CustomGfxComponents/headers/Formulaire.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../CustomGfxComponents/headers/InputText.h
 CustomGfxComponents/CMakeFiles/CustomGfxComponents.dir/src/Formulaire.c.o: ../CustomGfxComponents/headers/Keyboard.h

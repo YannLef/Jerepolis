@@ -3,6 +3,7 @@
 
 CMakeFiles/main.dir/main.c.o
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
+ /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/FileExplorer.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
  /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Keyboard.h
@@ -27,6 +28,7 @@ CMakeFiles/main.dir/main.c.o
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Mine.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/ModeleBatiment.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
+ /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Sauvegarde.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Scierie.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Senat.h
  /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Simplifications.h

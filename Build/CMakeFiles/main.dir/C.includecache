@@ -8,6 +8,8 @@
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Couleur.h
 
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/FileExplorer.h
+
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
 
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/InputText.h
@@ -64,6 +66,8 @@ stdbool.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/RecrutementUnite.h
 
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Sauvegarde.h
+
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Scierie.h
 
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Senat.h
@@ -91,8 +95,6 @@ GfxLib/headers/BmpLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/BmpLib.h
 GfxLib/headers/ESLib.h
 /home/yncrea/Bureau/projet/algo-s2/GfxLib/headers/ESLib.h
-Logger/headers/Logger.h
-/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 CustomGfxComponents/headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/structures.h
 CustomGfxComponents/headers/Mouse.h
@@ -111,6 +113,10 @@ CustomGfxComponents/headers/Page.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Page.h
 CustomGfxComponents/headers/Image.h
 /home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/Image.h
+CustomGfxComponents/headers/FileExplorer.h
+/home/yncrea/Bureau/projet/algo-s2/CustomGfxComponents/headers/FileExplorer.h
+Logger/headers/Logger.h
+/home/yncrea/Bureau/projet/algo-s2/Logger/headers/Logger.h
 Jerepolis/headers/structures.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/structures.h
 Jerepolis/headers/ModeleBatiment.h
@@ -147,4 +153,6 @@ Jerepolis/headers/Ennemi.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Ennemi.h
 Jerepolis/headers/Evenement.h
 /home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Evenement.h
+Jerepolis/headers/Sauvegarde.h
+/home/yncrea/Bureau/projet/algo-s2/Jerepolis/headers/Sauvegarde.h
 
